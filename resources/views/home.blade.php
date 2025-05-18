@@ -11,9 +11,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
+    /*BODY*/
     * {
       font-family: 'Poppins', sans-serif;
     }
+    body {
+      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    }
+
+    /* HEADER */
     .header-section {
       position: relative;
       overflow: hidden;
@@ -55,6 +64,7 @@
       margin: 0;
     }
 
+    /* CUSTOM BUTTON */
     .btn-findmore {
       background-color: transparent !important;
       color: #F0D97B !important;
@@ -97,6 +107,7 @@
       color: #ffffff !important;
     }
 
+    /* SLIDER IMG */
     <style>
     .img-slide {
       position: absolute;
@@ -122,8 +133,10 @@
       overflow: hidden;
     }
     .welcome-container {
-      padding-top: 100px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
+      padding-top: 100px;
     }
+
+    /* PLAY VIDEO */
     .play-button {
       width: 100px;
       height: 100px;
@@ -168,6 +181,8 @@
         box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
       }
     }
+
+    /* MASKOT (AWALNYA DELEAGATE) */
     .delegate-container {
       position: relative;
       overflow: hidden;
@@ -198,47 +213,15 @@
       font-size: 16px;
     }
 
+    /* MAPS */
     .map-frame {
       width: 100%;
       height: 250px;
       border: 0;
       border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
-    }
-    .info-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 2px oklab(lightness a b);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    .info-card .icon {
-      font-size: 2.5rem;
-      color: #B8141E;
-    }
-
-    .info-card .label {
-      margin-top: 10px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 576px) {
-      .info-card .icon {
-        font-size: 2rem;
-      }
-    }         
+    }        
     .arc-section {
       padding-top: 70px;
-    }
-    body {
-      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
-      background-repeat: repeat;
-      background-size: auto;
-      background-color: white;
     }
     .welcome-section p {
       font-size: 1.3rem;
@@ -248,23 +231,11 @@
       overflow: hidden;
     }
 
-    .arc-section h2 {
-      margin-bottom: 20px;
-    }
+    
 
-    .accordion-collapse {
-      font-family: 'Poppins', sans-serif;
-      font-size: 20px;
-      color: #000;
-    }
-    .accordion-button {
-      font-family: 'Poppins', sans-serif;
-      font-size: 20px !important;
-      color: #000;
-    }
-
+    /*SPONSORMEDPART*/
     .sponsor-container {
-      background-color: #f9cb56; /* warna kuning background */
+      background-color: #ffe19d;
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
@@ -285,7 +256,7 @@
     }
 
     .medpart-container {
-      background-color: #f9cb56; /* warna kuning background */
+      background-color: #ffe19d; /* warna kuning background */
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
@@ -293,6 +264,56 @@
       height: auto;
       object-fit: contain;
     }
+
+    /*FAQ*/
+    .arc-section h2 {
+      margin-bottom: 20px;
+    }
+    .accordion-button {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px !important;
+    }
+    .accordion-button {
+        background-color: #f9f9f9;
+        color: #B8141E;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      .accordion-body {
+        background-color: #fffefc;
+        border-left: 4px solid #ffe19d;
+        padding: 1rem 1.25rem;
+        font-size: 16px;
+      }
+      .accordion-button.collapsed {
+        border: 1px solid #ffe19d!important;
+        border-radius: 15px!important;  
+        background-color: #fff;    /* pastikan tetap putih */
+      }
+      .accordion-item {
+        border: none;
+        border-radius: 15px!important;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+      .accordion-button::after {
+        content: "\f078"; /* FontAwesome down arrow */
+        font-weight: 900;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+      }
+      .accordion-button.collapsed::after {
+        transform: rotate(0deg);
+      }
+      .accordion-button:not(.collapsed)::after {
+        transform: rotate(180deg);
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #ffe19d !important;
+        color:#000 !important;
+        box-shadow: none !important;
+      }
 </style>
 </head>
 <body>
@@ -305,6 +326,9 @@
   <div class="container">
     <img src="{{ asset('images/pattern/sipa2025ku.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
+    <div id="countdown" style="font-size: 2.5rem; font-weight: 600;">
+      00:00:00:00
+    </div>
     <a href="#welcome-section" class="btn btn-findmore mt-4 fw-bold">FIND MORE</a>
   </div>
 </section>
@@ -639,7 +663,7 @@
   </div>
 
     <!-- Testimoni SIPA 2024 -->
-  <div class="container py-5" style="background: linear-gradient(to bottom, #fdf6e3, #f9d88c); border-radius: 20px;">
+  <div class="container py-5" style="background: linear-gradient(to bottom,rgba(253, 246, 227, 0.28),#ffe19d); border-radius: 20px;">
     <div class="text-center mb-4">
       <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">REVIEW AUDIENCE ON EVENT</h2>
       <h2 class="fw-bold text-dark mb-3">
@@ -653,11 +677,13 @@
     <div class="row justify-content-center g-3">
       <!-- Card 1 -->
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #fff; border: 1.5px solid #19573F; font-size: 0.85rem;">
-          <p class="text-muted mb-3 text-center">"SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."</p>
-          <div class="d-flex align-items-center">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
-            <div style="line-height: 1;">
+            <div class="text-start" style="line-height: 1;">
               <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
               <small class="text-secondary">Pelajar/Mahasiswa</small>
             </div>
@@ -665,11 +691,13 @@
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #fff; border: 1.5px solid #19573F; font-size: 0.85rem;">
-          <p class="text-muted mb-3 text-center">"SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."</p>
-          <div class="d-flex align-items-center">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
-            <div style="line-height: 1;">
+            <div class="text-start" style="line-height: 1;">
               <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
               <small class="text-secondary">Pelajar/Mahasiswa</small>
             </div>
@@ -677,11 +705,41 @@
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="p-3 rounded-3 h-100 shadow-sm" style="background: #fff; border: 1.5px solid #19573F; font-size: 0.85rem;">
-          <p class="text-muted mb-3 text-center">"SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."</p>
-          <div class="d-flex align-items-center">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
-            <div style="line-height: 1;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
               <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
               <small class="text-secondary">Pelajar/Mahasiswa</small>
             </div>
@@ -936,6 +994,33 @@
       });
     });
   });
+
+  (function() {
+      // Target date: 4 Sep 2025, 19:00 WIB (UTC +7)
+      var targetDate = new Date(Date.UTC(2025, 8, 4, 12, 0, 0)); // UTC time equivalent to 19:00 WIB
+      var countdownEl = document.getElementById('countdown');
+      function updateCountdown() {
+        var now = new Date();
+        var diff = targetDate - now;
+        if (diff <= 0) {
+          countdownEl.textContent = "The event has started!";
+          clearInterval(timerInterval);
+          return;
+        }
+        var totalSeconds = Math.floor(diff / 1000);
+        var days = Math.floor(totalSeconds / (3600 * 24));
+        var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+        countdownEl.textContent = 
+          days + "d " + 
+          ("0" + hours).slice(-2) + "h " + 
+          ("0" + minutes).slice(-2) + "m " + 
+          ("0" + seconds).slice(-2) + "s";
+      }
+      updateCountdown();
+      var timerInterval = setInterval(updateCountdown, 1000);
+    })();
 
 </script>
 </body>
