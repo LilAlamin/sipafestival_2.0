@@ -10,107 +10,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
-    /*BODY*/
-    * {
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
-      background-repeat: repeat;
-      background-size: auto;
-      background-color: white;
-    }
-
-    /* HEADER */
-    .header-section {
-      position: relative;
-      overflow: hidden;
-      height: 100vh;
-      color: #F0D97B;
-    }
-
-    .header-section img.bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
-    }
-
-    .header-section .container {
-      position: absolute;
-      top: 20%;
-      left: 5%;
-      max-width: 600px;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .header-section img.text {
-      width: 130%;
-      height: auto;
-    }
-
-    .header-section p {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    /* CUSTOM BUTTON */
-    .btn-findmore {
-      background-color: transparent !important;
-      color: #F0D97B !important;
-      border: 2px solid #F0D97B !important;
-      border-radius: 12px !important;
-      font-size: 15px;
-      padding: 10px 20px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-      width: auto;
-      max-width: 200px;
-      z-index: 10;
-      position: relative;
-      opacity: 1;
-    }
-
-    .btn-findmore:hover {
-      background-color: #F0D97B !important;
-      color: #000 !important;
-    }
-
-    .btn-findmore2 {
-      background-color: transparent !important;
-      color: #B8141E !important;
-      border: 2px solid #B8141E !important;
-      border-radius: 12px !important;
-      font-size: 15px;
-      padding: 10px 20px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .btn-findmore2:hover {
-      background-color: #B8141E !important;
-      color: #ffffff !important;
-    }
-
-    /* SLIDER IMG */
+  body {
+    background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+    background-repeat: repeat;
+    background-size: auto;
+    background-color: white;
+  } 
+  /* SLIDER IMG */
     <style>
     .img-slide {
-      position: absolute;
+      position: absolute !important;
       top: 0;
       left: 0;
       transition: opacity 5s ease-in-out;
@@ -135,186 +47,7 @@
     .welcome-container {
       padding-top: 100px;
     }
-
-    /* PLAY VIDEO */
-    .play-button {
-      width: 100px;
-      height: 100px;
-      background: #B8141E;
-      border: 2px solid #B8141E;
-      border-radius: 50%;
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 20px #B8141E;
-      animation: pulse 2s infinite;
-    }
-
-    .play-button i {
-      font-size: 50px;
-      color: #ffffff;
-      transition: all 0.3s ease;
-    }
-
-    .play-button:hover {
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(184, 20, 30, 0.5);
-      transform: scale(1.05);
-    }
-
-    .play-button:hover i {
-      color: #8d0f16;
-      
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0.5);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(184, 20, 30, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
-      }
-    }
-
-    /* MASKOT (AWALNYA DELEAGATE) */
-    .delegate-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .delegates-wrapper {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .delegate-item {
-      flex-shrink: 0;
-      width: 220px;
-      margin: 0 15px; /* Lebih konsisten daripada mx-3 */
-      text-align: center;
-    }
-
-    .delegate-item img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .delegate-item p {
-      margin-top: 5px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    /* MAPS */
-    .map-frame {
-      width: 100%;
-      height: 250px;
-      border: 0;
-      border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
-    }        
-    .arc-section {
-      padding-top: 70px;
-    }
-    .welcome-section p {
-      font-size: 1.3rem;
-    }
-    .custom-rounded {
-      border-radius: 40px;
-      overflow: hidden;
-    }
-
-    
-
-    /*SPONSORMEDPART*/
-    .sponsor-container {
-      background-color: #ffe19d;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .logo-besar {
-      max-width: 100px;
-    }
-
-    .logo-sedang {
-      max-width: 70px;
-    }
-
-    .logo-kecil {
-      max-width: 50px;
-    }
-    .sponsor-logo {
-      height: auto;
-      object-fit: contain;
-    }
-
-    .medpart-container {
-      background-color: #ffe19d; /* warna kuning background */
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .medpart-logo {
-      height: auto;
-      object-fit: contain;
-    }
-
-    /*FAQ*/
-    .arc-section h2 {
-      margin-bottom: 20px;
-    }
-    .accordion-button {
-      font-family: 'Poppins', sans-serif;
-      font-size: 20px !important;
-    }
-    .accordion-button {
-        background-color: #f9f9f9;
-        color: #B8141E;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-      }
-      .accordion-body {
-        background-color: #fffefc;
-        border-left: 4px solid #ffe19d;
-        padding: 1rem 1.25rem;
-        font-size: 16px;
-      }
-      .accordion-button.collapsed {
-        border: 1px solid #ffe19d!important;
-        border-radius: 15px!important;  
-        background-color: #fff;    /* pastikan tetap putih */
-      }
-      .accordion-item {
-        border: none;
-        border-radius: 15px!important;
-        overflow: hidden;
-        margin-bottom: 0.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      }
-      .accordion-button::after {
-        content: "\f078"; /* FontAwesome down arrow */
-        font-weight: 900;
-        margin-left: auto;
-        transition: transform 0.3s ease;
-      }
-      .accordion-button.collapsed::after {
-        transform: rotate(0deg);
-      }
-      .accordion-button:not(.collapsed)::after {
-        transform: rotate(180deg);
-      }
-      .accordion-button:not(.collapsed) {
-        background-color: #ffe19d !important;
-        color:#000 !important;
-        box-shadow: none !important;
-      }
-</style>
+  </style>
 </head>
 <body>
 
@@ -326,8 +59,23 @@
   <div class="container">
     <img src="{{ asset('images/pattern/sipa2025ku.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
-    <div id="countdown" style="font-size: 2.5rem; font-weight: 600;">
-      00:00:00:00
+    <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
+      <div class="countdown-item">
+        <div class="countdown-number" id="days">00</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" id="hours">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" id="minutes">00</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" id="seconds">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
     </div>
     <a href="#welcome-section" class="btn btn-findmore mt-4 fw-bold">FIND MORE</a>
   </div>
@@ -340,6 +88,7 @@
       <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
       <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
 
+      <!-- SLIDER FOTO -->
       <div class="row mb-5 align-items-center">
         <div class="col-md-6">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h2>
@@ -347,7 +96,7 @@
                     Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
                     Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
             </p>
-          <a href="/aboutus" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+          <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
@@ -360,7 +109,7 @@
         </div>
       </div>
 
-
+    <!-- YT -->
     <div class="text-center mb-5">
       <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
@@ -379,6 +128,7 @@
       </div>
     </div>
 
+    <!-- MASKOT -->
     <div class="arc-section mb-5 text-center">
       <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
       <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
@@ -524,11 +274,12 @@
         </div>
       </div>
     </div>
+
+    <!-- Berita -->
     <div class="arc-section mb-5 text-center">
       <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
       <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h4>
     </div>
-
     <div class="row mb-5">
       <!-- Berita 1 -->
       <div class="col-md-3 mb-4">
@@ -624,9 +375,7 @@
       </div>
     </div>
 
-    <hr>
-
-    <!-- Feedback and Volunteer Form -->
+    <!-- Feedback and Form -->
     <div class="row mt-5">
       <div class="col-md-6 mb-4 mb-md-0">
         <p>We value your feedback. Whether you have a question or a suggestion, we’re here for you 24/7. Feel free to call or email us anytime.</p>
@@ -749,7 +498,7 @@
     </div>
   </div>
 
-
+    <!-- FAQ -->
   <div class="container my-5">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA (Solo International Performing Arts)</h2>
     <div class="accordion" id="faqSIPA">
@@ -833,9 +582,86 @@
           </div>
         </div>
       </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+            What will I see inside the festival?
+          </button>
+        </h2>
+        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!
+              </li>
+              <li>
+                Kalian akan menemukan berbagai pertunjukan yang beragam, termasuk musik, tari, dan teater, serta stan makanan dan pameran budaya!
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+            Will you be posting the schedule in advance?
+          </button>
+        </h2>
+        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.
+              </li>
+              <li>
+                Boleh. Ini adalah acara yang ramah keluarga, jadi silakan bawa stroller untuk anak-anak.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq9">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+            What types of cameras are allowed?
+          </button>
+        </h2>
+        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="faq9" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.
+              </li>
+              <li>
+                Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diperbolehkan. Namun, kalian boleh membawa kamera kompak dan smartphone.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq10">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+            Can I bring my video camera?
+          </button>
+        </h2>
+        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="faq10" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                No, professional video cameras are not allowed. Feel free to take photos with your personal camera!
+              </li>
+              <li>
+                Tidak diperbolehkan membawa kamera video profesional. Silakan ambil foto dengan kamera pribadi kalian!
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- SPONSOR MEDPART -->
   <div class="row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
@@ -885,143 +711,6 @@
   
 
 </section>
-
-<!-- Footer -->
 <x-footer />
-<script>
-  const slides = document.querySelectorAll('.img-slide');
-  let index = 0;
-
-  setInterval(() => {
-    slides[index].classList.add('d-none'); // Sembunyikan gambar sekarang
-    index = (index + 1) % slides.length;
-    slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
-  }, 3000);
-
-  function openVideo() {
-  const thumbnail = document.getElementById('thumbnail');
-  const iframe = document.getElementById('videoIframe');
-  const youtubeLink = "https://www.youtube.com/embed/rJtSeMMQY9g?autoplay=1"; // Autoplay enabled
-
-  thumbnail.style.display = 'none';
-  iframe.src = youtubeLink;
-  iframe.style.display = 'block';
-}
-  let currentPosition = 0;
-  const container = document.getElementById('delegatesContainer');
-  const containerWrapper = container.parentElement;
-  const itemWidth = 250; // 220 + 2*15px margin
-
-  function scrollLeft() {
-    const maxScroll = 0;
-
-    currentPosition += itemWidth;
-    if (currentPosition > maxScroll) {
-      currentPosition = maxScroll;
-    }
-
-    container.style.transform = `translateX(${currentPosition}px)`;
-  }
-
-  function scrollRight() {
-    const containerWidth = container.scrollWidth;
-    const wrapperWidth = containerWrapper.offsetWidth;
-    const maxScroll = wrapperWidth - containerWidth;
-
-    currentPosition -= itemWidth;
-    if (currentPosition < maxScroll) {
-      currentPosition = maxScroll;
-    }
-
-    container.style.transform = `translateX(${currentPosition}px)`;
-  }
-
-  // AUTO SCROLL tiap 3 detik
-  setInterval(() => {
-    const containerWidth = container.scrollWidth;
-    const wrapperWidth = containerWrapper.offsetWidth;
-    const maxScroll = wrapperWidth - containerWidth;
-
-    currentPosition -= itemWidth;
-    if (currentPosition < maxScroll) {
-      currentPosition = 0; // kalau sudah mentok kanan, reset ke awal
-    }
-
-    container.style.transform = `translateX(${currentPosition}px)`;
-  }, 1500);
-
-
-  // AJAX untuk mengirim form
-  $(document).ready(function () {
-    $('#submissionForm').submit(function (e) {
-      e.preventDefault(); // mencegah reload halaman
-
-      const form = $(this);
-      const url = form.attr('action');
-      const formData = form.serialize();
-
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: formData,
-        success: function (response) {
-          // Tampilkan notifikasi sukses
-          Swal.fire({
-            toast: true,
-            icon: 'success',
-            title: 'Form berhasil dikirim!',
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-          });
-
-          form[0].reset(); // reset form jika perlu
-        },
-        error: function (xhr, status, error) {
-          Swal.fire({
-            toast: true,
-            icon: 'error',
-            title: 'Gagal mengirim form!',
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-          });
-
-          console.log(xhr.responseText);
-        }
-      });
-    });
-  });
-
-  (function() {
-      // Target date: 4 Sep 2025, 19:00 WIB (UTC +7)
-      var targetDate = new Date(Date.UTC(2025, 8, 4, 12, 0, 0)); // UTC time equivalent to 19:00 WIB
-      var countdownEl = document.getElementById('countdown');
-      function updateCountdown() {
-        var now = new Date();
-        var diff = targetDate - now;
-        if (diff <= 0) {
-          countdownEl.textContent = "The event has started!";
-          clearInterval(timerInterval);
-          return;
-        }
-        var totalSeconds = Math.floor(diff / 1000);
-        var days = Math.floor(totalSeconds / (3600 * 24));
-        var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-        var minutes = Math.floor((totalSeconds % 3600) / 60);
-        var seconds = totalSeconds % 60;
-        countdownEl.textContent = 
-          days + "d " + 
-          ("0" + hours).slice(-2) + "h " + 
-          ("0" + minutes).slice(-2) + "m " + 
-          ("0" + seconds).slice(-2) + "s";
-      }
-      updateCountdown();
-      var timerInterval = setInterval(updateCountdown, 1000);
-    })();
-
-</script>
 </body>
 </html>

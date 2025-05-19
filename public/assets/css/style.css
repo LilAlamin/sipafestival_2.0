@@ -1,0 +1,293 @@
+:root {
+  scroll-behavior: smooth;
+}
+/*BODY*/
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+/* HEADER HOME IMG*/
+.header-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    color: #F0D97B;
+}
+
+.header-section img.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.header-section .container {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    max-width: 600px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.header-section img.text {
+    width: 130%;
+    height: auto;
+}
+.header-section p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* CUONTDOWN */
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-number {
+  background: #F0D97B;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  border-radius: 10px;
+  min-width: 80px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.countdown-label {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+/* CUSTOM BUTTON */
+.btn-findmore {
+    background-color: transparent !important;
+    color: #F0D97B !important;
+    border: 2px solid #F0D97B !important;
+    border-radius: 12px !important;
+    font-size: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    max-width: 200px;
+    z-index: 10;
+    position: relative;
+    opacity: 1;
+}
+.btn-findmore:hover {
+    background-color: #F0D97B !important;
+    color: #000 !important;
+}
+.btn-findmore2 {
+    background-color: transparent !important;
+    color: #B8141E !important;
+    border: 2px solid #B8141E !important;
+    border-radius: 12px !important;
+    font-size: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+.btn-findmore2:hover {
+    background-color: #B8141E !important;
+    color: #ffffff !important;
+}
+
+    /* PLAY VIDEO */
+    .play-button {
+      width: 100px;
+      height: 100px;
+      background: #B8141E;
+      border: 2px solid #B8141E;
+      border-radius: 50%;
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px #B8141E;
+      animation: pulse 2s infinite;
+    }
+
+    .play-button i {
+      font-size: 50px;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .play-button:hover {
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(184, 20, 30, 0.5);
+      transform: scale(1.05);
+    }
+
+    .play-button:hover i {
+      color: #8d0f16;
+      
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(184, 20, 30, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
+      }
+    }
+
+    /* MASKOT (AWALNYA DELEAGATE) */
+    .delegate-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .delegates-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .delegate-item {
+      flex-shrink: 0;
+      width: 220px;
+      margin: 0 15px; /* Lebih konsisten daripada mx-3 */
+      text-align: center;
+    }
+
+    .delegate-item img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .delegate-item p {
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* MAPS */
+    .map-frame {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
+    }        
+    .arc-section {
+      padding-top: 70px;
+    }
+    .welcome-section p {
+      font-size: 1.3rem;
+    }
+    .custom-rounded {
+      border-radius: 40px;
+      overflow: hidden;
+    }
+
+    
+
+    /*SPONSORMEDPART*/
+    .sponsor-container {
+      background-color: #ffe19d;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo-besar {
+      max-width: 100px;
+    }
+
+    .logo-sedang {
+      max-width: 70px;
+    }
+
+    .logo-kecil {
+      max-width: 50px;
+    }
+    .sponsor-logo {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .medpart-container {
+      background-color: #ffe19d; /* warna kuning background */
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .medpart-logo {
+      height: auto;
+      object-fit: contain;
+    }
+
+    /*FAQ*/
+    .arc-section h2 {
+      margin-bottom: 20px;
+    }
+    .accordion-button {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px !important;
+    }
+    .accordion-button {
+        background-color: #f9f9f9;
+        color: #B8141E;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      .accordion-body {
+        background-color: #fffefc;
+        border-left: 4px solid #ffe19d;
+        padding: 1rem 1.25rem;
+        font-size: 16px;
+      }
+      .accordion-button.collapsed {
+        border: 1px solid #ffe19d!important;
+        border-radius: 15px!important;  
+        background-color: #fff;    /* pastikan tetap putih */
+      }
+      .accordion-item {
+        border: none;
+        border-radius: 15px!important;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+      .accordion-button::after {
+        content: "\f078"; /* FontAwesome down arrow */
+        font-weight: 900;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+      }
+      .accordion-button.collapsed::after {
+        transform: rotate(0deg);
+      }
+      .accordion-button:not(.collapsed)::after {
+        transform: rotate(180deg);
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #ffe19d !important;
+        color:#000 !important;
+        box-shadow: none !important;
+      }

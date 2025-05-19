@@ -25,6 +25,9 @@
 
 <x-header title="Selamat Datang" />
 
+
+
+
 <x-footer />
 </body>
 </html>
