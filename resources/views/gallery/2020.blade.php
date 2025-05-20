@@ -54,14 +54,14 @@
       <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA 2020</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
+          <img src="{{ asset('images/AM/T.AM2020.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
           <div class="play-button position-absolute top-50 start-50 translate-middle">
             <span class="circle"></span>
             <i class="bi bi-play-fill"></i>
           </div>
         </div>
         <iframe id="videoIframe" width="1280" height="720"
-                src="https://www.youtube.com/embed/rJtSeMMQY9g"
+                src="https://www.youtube.com/embed/RPeAFRCL_CM"
                 title="YouTube video" frameborder="0"
                 allow="autoplay; encrypted-media" allowfullscreen
                 class="rounded-5" style="display: none;"></iframe>
@@ -146,5 +146,17 @@
 
 </section>
 <x-footer />
+
+<script>
+  function openVideo() {
+  const thumbnail = document.getElementById('thumbnail');
+  const iframe = document.getElementById('videoIframe');
+  const youtubeLink = "https://www.youtube.com/embed/RPeAFRCL_CM?autoplay=1"; // Autoplay enabled
+
+  thumbnail.style.display = 'none';
+  iframe.src = youtubeLink;
+  iframe.style.display = 'block';
+}
+</script>
 </body>
 </html>

@@ -135,13 +135,19 @@
             GALLERY
           </a>
           <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <li><a class="dropdown-item" href="/gallery/2009-2018">SIPA 2009-2018</a></li>
-              <li><a class="dropdown-item" href="/gallery/2019">SIPA 2019</a></li>
-              <li><a class="dropdown-item" href="/gallery/2020">SIPA 2020</a></li>
-              <li><a class="dropdown-item" href="/gallery/2021">SIPA 2021</a></li>
-              <li><a class="dropdown-item" href="/gallery/2022">SIPA 2022</a></li>
-              <li><a class="dropdown-item" href="/gallery/2023">SIPA 2023</a></li>
-              <li><a class="dropdown-item" href="/gallery/2024">SIPA 2024</a></li>
+            <li><a class="dropdown-item" href="/gallery/2024">SIPA 2024</a></li>
+            <li><a class="dropdown-item" href="/gallery/2023">SIPA 2023</a></li>
+            <li><a class="dropdown-item" href="/gallery/2022">SIPA 2022</a></li>
+            <li><a class="dropdown-item" href="/gallery/2021">SIPA 2021</a></li>
+            <li><a class="dropdown-item" href="/gallery/2020">SIPA 2020</a></li>
+            <li><a class="dropdown-item" href="/gallery/2019">SIPA 2019</a></li>
+            <li><a class="dropdown-item" href="/gallery/2009-2018">SIPA 2009-2018</a></li>
+              
+              
+              
+              
+              
+              
           </ul>
         </li>
       </ul>

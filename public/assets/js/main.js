@@ -7,6 +7,10 @@ const slides = document.querySelectorAll('.img-slide');
     slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
   }, 3000);
 
+
+
+
+
   function openVideo() {
   const thumbnail = document.getElementById('thumbnail');
   const iframe = document.getElementById('videoIframe');
@@ -16,6 +20,11 @@ const slides = document.querySelectorAll('.img-slide');
   iframe.src = youtubeLink;
   iframe.style.display = 'block';
 }
+
+
+
+
+
   let currentPosition = 0;
   const container = document.getElementById('delegatesContainer');
   const containerWrapper = container.parentElement;
