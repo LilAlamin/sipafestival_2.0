@@ -10,101 +10,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
-    .navbar-brand img {
-      max-height: 65px;
-    }
-    .navbar-custom {
-      background: white;
-      border-bottom: 1px solid #ddd;
-    }
-    .navbar-nav .nav-link {
-      color: black !important;
-      font-weight: bold;
-      margin-left: 1.2rem;
-      transition: all 0.3s ease;
-      position: relative;
-      text-transform: uppercase;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #B8141E !important;
-    }
-    .navbar-nav .nav-link.active {
-      color:#B8141E !important;
-    }
-    .navbar-toggler {
-      border: none;
-    }
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    .header-section {
-      position: relative;
-      overflow: hidden;
-      height: 100vh;
-      color: #F0D97B;
-    }
-
-    .header-section img.bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
-    }
-
-    .header-section .container {
-      position: absolute;
-      top: 20%;
-      left: 5%;
-      max-width: 600px;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .header-section img.text {
-      width: 130%;
-      height: auto;
-    }
-
-    .header-section p {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    .btn-findmore {
-      background-color: transparent;
-      color: #F0D97B;
-      border: 2px solid #F0D97B;
-      border-radius: 8px;
-      font-size: 15px;
-      padding: 10px 20px; /* cukup, tidak perlu terlalu besar */
-      font-weight: bold;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      width: auto; /* pastikan lebarnya menyesuaikan isi */
-      max-width: 200px; /* optional, jika ingin batas maksimal */
-      text-align: center;
-    }
-
-    .btn-findmore:hover {
-      background-color: #F0D97B;
-      color: #000;
-    }
-
-
-
+  body {
+    background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+    background-repeat: repeat;
+    background-size: auto;
+    background-color: white;
+  } 
+  /* SLIDER IMG */
     <style>
     .img-slide {
-      position: absolute;
+      position: absolute !important;
       top: 0;
       left: 0;
       transition: opacity 5s ease-in-out;
@@ -120,223 +38,20 @@
       z-index: 1;
     }
     #slider {
-      width: 70%;
-      max-width: 600px;
-      height: 400px;
+      width: 90%;
+      max-width: 700px;
+      height: 500px;
       position: relative;
       overflow: hidden;
     }
     .welcome-container {
-      padding-top: 80px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
+      padding-top: 100px;
     }
-    .play-button {
-      width: 100px;
-      height: 100px;
-      background: #B8141E;
-      border: 2px solid #B8141E;
-      border-radius: 50%;
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 20px #B8141E;
-      animation: pulse 2s infinite;
-    }
-
-    .play-button i {
-      font-size: 50px;
-      color: #ffffff;
-      transition: all 0.3s ease;
-    }
-
-    .play-button:hover {
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(184, 20, 30, 0.5);
-      transform: scale(1.05);
-    }
-
-    .play-button:hover i {
-      color: #8d0f16;
-      
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0.5);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(184, 20, 30, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
-      }
-    }
-    .delegate-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .delegates-wrapper {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .delegate-item {
-      flex-shrink: 0;
-      width: 220px;
-      margin: 0 15px; /* Lebih konsisten daripada mx-3 */
-      text-align: center;
-    }
-
-    .delegate-item img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .delegate-item p {
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .arrow-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .arrow-btn.left {
-      left: 10px;
-    }
-
-    .arrow-btn.right {
-      right: 10px;
-    }
-
-    .arrow-btn i {
-      font-size: 24px;
-      color: #B8141E;
-    }
-    .archive-section {
-      text-align: justify;
-    }
-
-    .section-title {
-      color: #991B1B; /* merah tua */
-      font-weight: bold;
-      margin-bottom: 40px;
-      font-size: 28px;
-    }
-
-    .content-box {
-      background-color: #FFF7D1; /* krem muda */
-      border: 2px solid #B8141E;
-      border-radius: 40px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .image-container {
-      width: 100%;
-      max-width: 400px;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 50px;
-    }
-
-    .responsive-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .content-text {
-      color: #991B1B;
-      text-align: justify;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .row {
-        flex-direction: column;
-      }
-      .image-container {
-        margin-bottom: 20px;
-      }
-    }
-    .map-frame {
-      width: 100%;
-      height: 250px;
-      border: 0;
-      border-radius: 0.5rem; /* Rounded corner seperti Bootstrap rounded */
-    }
-    .info-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  .info-card .icon {
-    font-size: 2.5rem;
-  }
-
-  .info-card .label {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 576px) {
-    .info-card .icon {
-      font-size: 2rem;
-    }
-  }
-  .arc-section {
-    padding-top: 70px;
-  }
-  
-</style>
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active fw-bold" href="/">HOME</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/aboutus">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<x-header title="Selamat Datang" />
 
 <!-- Header -->
 <section class="text-justify py-5 header-section">
@@ -344,45 +59,62 @@
   <div class="container">
     <img src="{{ asset('images/pattern/sipa2025ku.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
+    <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
+      <div class="countdown-item">
+        <div class="countdown-number" id="days">00</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" id="hours">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" id="minutes">00</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" id="seconds">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
     <a href="#welcome-section" class="btn btn-findmore mt-4 fw-bold">FIND MORE</a>
   </div>
 </section>
 
-
-
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h3 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h3>
-      <h3 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h3>
-      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h4>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h1>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
+      <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
 
+      <!-- SLIDER FOTO -->
       <div class="row mb-5 align-items-center">
         <div class="col-md-6">
-          <h4 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h4>
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
                     Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
             </p>
-          <a href="/aboutus" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+          <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 90%;">
-            <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
+            <img src="{{ asset('images/sliderwelcome/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/sliderwelcome/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+            <img src="{{ asset('images/sliderwelcome/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+            <img src="{{ asset('images/sliderwelcome/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+            <img src="{{ asset('images/sliderwelcome/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
           </div>
         </div>
       </div>
 
-
+    <!-- YT -->
     <div class="text-center mb-5">
-      <h3 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h3>
+      <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-4" alt="On SIPA Last Year">
+          <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
           <div class="play-button position-absolute top-50 start-50 translate-middle">
             <span class="circle"></span>
             <i class="bi bi-play-fill"></i>
@@ -392,112 +124,162 @@
                 src="https://www.youtube.com/embed/rJtSeMMQY9g"
                 title="YouTube video" frameborder="0"
                 allow="autoplay; encrypted-media" allowfullscreen
-                class="rounded-4" style="display: none;"></iframe>
+                class="rounded-5" style="display: none;"></iframe>
       </div>
     </div>
 
+    <!-- MASKOT -->
     <div class="arc-section mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">DELEGATES</h3>
+      <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
+      <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
+        <div class="carousel-inner custom-rounded">
+          <div class="carousel-item active">
+            <img src="{{ asset('images/2024.png') }}" class="d-block w-100" alt="Gambar 1">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/2023.png') }}" class="d-block w-100" alt="Gambar 2">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/2024.png') }}" class="d-block w-100" alt="Gambar 3">
+          </div>
+        </div>
+        <p class="mt-3" style="font-size: 18px;">
+          <span class="fw-bold">2009</span><br>
+          <span class="fw-normal">SIPAfestival</span>
+        </p>
+      </div>
     </div>
-
     <div class="delegates-section text-center my-5">
-      
       <div class="delegate-container position-relative" style="overflow: hidden;">
         <div id="delegatesContainer" class="delegates-wrapper">
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Denmark</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2009</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">France</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2010</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Germany</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2011</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2012</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2013</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2014</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2015</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2016</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2017</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2018</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2019</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2020</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2021</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2022</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2023</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2024</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2" style="font-size: 16px;">
+              <span class="fw-bold">2024</span><br>
+              <span class="fw-normal">SIPAfestival</span>
+            </p>
           </div>
         </div>
-        <button class="arrow-btn left" onclick="scrollLeft()">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-
-        <button class="arrow-btn right" onclick="scrollRight()">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-        
       </div>
     </div>
 
-    <div class="mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">ARCHIVE OF SIPA</h3>
-    </div>
-
-    <section class="archive-section">
-      <div class="content-box">
-        <div class="row align-items-center">
-          <div class="col-md-6 d-flex justify-content-center">
-            <div class="image-container">
-              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="SIPA Performance" class="responsive-image">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <h3 class="text-justify fw-bold" style="color: #B8141E;">Director’s Profile</h3>
-              <p class="content-text">
-              Irawati Kusumorasri, born in Solo in 1963, directs Solo International Performing Arts (SIPA), a prestigious festival since 2009 that showcases arts from Indonesia and abroad. She’s also a renowned traditional dancer, representing Indonesia globally in cultural missions.
-              <br>
-              <br>
-              Irawati’s achievements include awards from the Ministry of Tourism, the Top 30 Event Calendar accolade, and the first prize from ABBI in 2020. She studied at Sebelas Maret University and ISI Surakarta, excelling in choreographies like “Oncot Srimpi Topeng Sumunar” and founded Semarak Candrakirana Art Center . . .
-              </p>
-            <a href="#" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- <div class="row mb-5 align-items-center">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
-        <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
-      </div>
-    </div> -->
-
+    <!-- Berita -->
     <div class="arc-section mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h3>
-      <h5 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h5>
+      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
+      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h4>
     </div>
-
     <div class="row mb-5">
       <!-- Berita 1 -->
       <div class="col-md-3 mb-4">
@@ -593,9 +375,7 @@
       </div>
     </div>
 
-    <hr>
-
-    <!-- Feedback and Volunteer Form -->
+    <!-- Feedback and Form -->
     <div class="row mt-5">
       <div class="col-md-6 mb-4 mb-md-0">
         <p>We value your feedback. Whether you have a question or a suggestion, we’re here for you 24/7. Feel free to call or email us anytime.</p>
@@ -631,110 +411,310 @@
     </div>
   </div>
 
-</section>
-
-<!-- Festival Info -->
-<section>
-  <div class="container text-center">
-    <div class="row g-4">
-      <div class="col-sm-6 col-md-4">
-        <a href="/" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-house"></i></div>
-            <div class="label">HOME</div>
+    <!-- Testimoni SIPA 2024 -->
+  <div class="container py-5" style="background: linear-gradient(to bottom,rgba(253, 246, 227, 0.28),#ffe19d); border-radius: 20px;">
+    <div class="text-center mb-4">
+      <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">REVIEW AUDIENCE ON EVENT</h2>
+      <h2 class="fw-bold text-dark mb-3">
+        🌟 What Our Audience Says About SIPA 2024! 🌟
+      </h2>
+      <p class="text-secondary col-md-8 mx-auto">
+        Explore heartfelt testimonials from attendees who experienced mesmerizing performances and vibrant cultural celebrations. <br>
+        Relive the unforgettable moments that made SIPA 2024 truly remarkable!
+      </p>
+    </div>
+    <div class="row justify-content-center g-3">
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/lineup" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-music"></i></div>
-            <div class="label">LINE UP</div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/aboutus" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-users"></i></div>
-            <div class="label">ABOUT US</div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/faq" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-question-circle"></i></div>
-            <div class="label">FAQ</div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/login" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-lock"></i></div>
-            <div class="label">ADMIN</div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
+          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
+            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+          </p>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
+            <div class="text-start" style="line-height: 1;">
+              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
+              <small class="text-secondary">Pelajar/Mahasiswa</small>
+            </div>
           </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/ticket" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-ticket-alt"></i></div>
-            <div class="label">TICKET</div>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
+    <!-- FAQ -->
+  <div class="container my-5">
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA (Solo International Performing Arts)</h2>
+    <div class="accordion" id="faqSIPA">
 
-<!-- Footer -->
-<footer style="background: linear-gradient(to bottom,rgb(255, 255, 255), #f8d98d); font-family: 'Arial', sans-serif; color: #b21e22; padding: 60px 20px 40px;">
-  <div class="container">
-
-    <!-- Tiga Kolom: Kiri - Tengah - Kanan -->
-    <div class="row text-center text-md-start align-items-center">
-
-      <!-- Kiri: Logo dan Deskripsi -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 90px;">
-      </div>
-
-      <!-- Tengah: Sosial Media -->
-      <div class="col-md-4 mb-4 mb-md-0 text-center">
-        <div style="font-weight: bold; color: black; font-size: 16px;">Follow Us</div>
-        <div class="d-flex justify-content-center gap-4 mt-2">
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-twitter"></i>
-          </a>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+            When's the best time to arrive?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>We recommend arriving early to fully enjoy the festival experience and catch all the performances.</li>
+              <li>Akan lebih baik apabila kalian datang lebih awal untuk menikmati pengalaman festival secara maksimal dan menyaksikan semua pertunjukan.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Kanan: Site by dan copyright -->
-      <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
-        <small style="color: #b21e22;">SITE BY</small><br>
-        <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
-        <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+            Is there an admission fee for the festival?
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)</li>
+              <li>Tidak ada biaya masuk untuk festival ini! Kalian dapat menikmati semua pertunjukan dan kegiatan tanpa dikenakan biaya. (ACARA GRATIS)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+            Do I need to buy tickets to attend the festival?
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>No tickets are required to attend SIPA. Just come and enjoy the festival atmosphere and all the amazing performances!</li>
+              <li>Tidak perlu membeli tiket untuk menghadiri SIPA. Cukup datang dan nikmati suasana festival serta semua pertunjukan yang luar biasa!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+            What are the different seating categories available at SIPA?
+          </button>
+        </h2>
+        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances.</li>
+              <li>Ada tiga kategori tempat duduk yang tersedia: VIP Seat, Undangan Seat, dan Umum Seat. Setiap kategori menawarkan pengalaman dan pemandangan yang berbeda terhadap pertunjukan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+            How can I obtain VIP or Invitation Seats for the festival?
+          </button>
+        </h2>
+        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>VIP Seats and Invitation Seats are limited and typically require prior registration or an invitation. Please check our official website for more details on how to secure these seats.</li>
+              <li>VIP Seat dan Undangan Seat terbatas dan biasanya memerlukan pendaftaran sebelumnya atau undangan. Silakan cek situs resmi kami untuk informasi lebih lanjut tentang cara mendapatkan tempat duduk ini.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+            What will I see inside the festival?
+          </button>
+        </h2>
+        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!
+              </li>
+              <li>
+                Kalian akan menemukan berbagai pertunjukan yang beragam, termasuk musik, tari, dan teater, serta stan makanan dan pameran budaya!
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+            Will you be posting the schedule in advance?
+          </button>
+        </h2>
+        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.
+              </li>
+              <li>
+                Boleh. Ini adalah acara yang ramah keluarga, jadi silakan bawa stroller untuk anak-anak.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq9">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+            What types of cameras are allowed?
+          </button>
+        </h2>
+        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="faq9" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.
+              </li>
+              <li>
+                Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diperbolehkan. Namun, kalian boleh membawa kamera kompak dan smartphone.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq10">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+            Can I bring my video camera?
+          </button>
+        </h2>
+        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="faq10" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                No, professional video cameras are not allowed. Feel free to take photos with your personal camera!
+              </li>
+              <li>
+                Tidak diperbolehkan membawa kamera video profesional. Silakan ambil foto dengan kamera pribadi kalian!
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</footer>
+
+  <!-- SPONSOR MEDPART -->
+  <div class="row mb-5 align-items-center justify-content-center">
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
+    <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
+      <div class="sponsor-container p-4 text-center">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <img src="{{ asset('images/211.jpg') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
+          <img src="{{ asset('images/211.jpg') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
+          <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
+          <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
+          <img src="{{ asset('images/211.jpg') }}" alt="Logo Kecil" class="sponsor-logo logo-kecil" />
+          <!-- Tambahkan logo lainnya -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5 align-items-center justify-content-center">
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
+    <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
+      <div class="medpart-container p-4 text-center">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <img src="logo1.png" alt="Logo 1" class="medpart-logo" />
+          <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
+          <img src="logo3.png" alt="Logo 3" class="medpart-logo" />
+          <img src="logo4.png" alt="Logo 4" class="medpart-logo" />
+          <img src="logo5.png" alt="Logo 5" class="medpart-logo" />
+          <!-- Tambahkan logo lainnya -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+  <!-- <div class="row mb-5 align-items-center">
+    <div class="col-md-6">
+      <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
+      <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
+    </div>
+  </div> -->
+
+  
+
+</section>
+
+<x-footer />
 
 <script>
-  const slides = document.querySelectorAll('.img-slide');
-  let index = 0;
-
-  setInterval(() => {
-    slides[index].classList.add('d-none'); // Sembunyikan gambar sekarang
-    index = (index + 1) % slides.length;
-    slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
-  }, 3000);
-
   function openVideo() {
   const thumbnail = document.getElementById('thumbnail');
   const iframe = document.getElementById('videoIframe');
@@ -744,94 +724,8 @@
   iframe.src = youtubeLink;
   iframe.style.display = 'block';
 }
-  let currentPosition = 0;
-  const container = document.getElementById('delegatesContainer');
-  const containerWrapper = container.parentElement;
-  const itemWidth = 250; // 220 + 2*15px margin
-
-  function scrollLeft() {
-    const maxScroll = 0;
-
-    currentPosition += itemWidth;
-    if (currentPosition > maxScroll) {
-      currentPosition = maxScroll;
-    }
-
-    container.style.transform = `translateX(${currentPosition}px)`;
-  }
-
-  function scrollRight() {
-    const containerWidth = container.scrollWidth;
-    const wrapperWidth = containerWrapper.offsetWidth;
-    const maxScroll = wrapperWidth - containerWidth;
-
-    currentPosition -= itemWidth;
-    if (currentPosition < maxScroll) {
-      currentPosition = maxScroll;
-    }
-
-    container.style.transform = `translateX(${currentPosition}px)`;
-  }
-
-  // AUTO SCROLL tiap 3 detik
-  setInterval(() => {
-    const containerWidth = container.scrollWidth;
-    const wrapperWidth = containerWrapper.offsetWidth;
-    const maxScroll = wrapperWidth - containerWidth;
-
-    currentPosition -= itemWidth;
-    if (currentPosition < maxScroll) {
-      currentPosition = 0; // kalau sudah mentok kanan, reset ke awal
-    }
-
-    container.style.transform = `translateX(${currentPosition}px)`;
-  }, 3000); // 3000 ms = 3 detik
-
-
-  // AJAX untuk mengirim form
-  $(document).ready(function () {
-    $('#submissionForm').submit(function (e) {
-      e.preventDefault(); // mencegah reload halaman
-
-      const form = $(this);
-      const url = form.attr('action');
-      const formData = form.serialize();
-
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: formData,
-        success: function (response) {
-          // Tampilkan notifikasi sukses
-          Swal.fire({
-            toast: true,
-            icon: 'success',
-            title: 'Form berhasil dikirim!',
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-          });
-
-          form[0].reset(); // reset form jika perlu
-        },
-        error: function (xhr, status, error) {
-          Swal.fire({
-            toast: true,
-            icon: 'error',
-            title: 'Gagal mengirim form!',
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-          });
-
-          console.log(xhr.responseText);
-        }
-      });
-    });
-  });
-
 </script>
+
+
 </body>
 </html>

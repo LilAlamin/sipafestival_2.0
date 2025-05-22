@@ -16,11 +16,32 @@ Route::get('/', function () {
 Route::get('/lineup', function () {
     return view('lineup');
 });
-Route::get('/faq', function () {
-    return view('faq');
+Route::get('/aboutus/history', function () {
+    return view('aboutus/history');
 });
-Route::get('/aboutus', function () {
-    return view('aboutus');
+Route::get('/aboutus/director', function () {
+    return view('aboutus/director');
+});
+Route::get('/gallery/2009-2018', function () {
+    return view('gallery/2009-2018');
+});
+Route::get('/gallery/2019', function () {
+    return view('gallery/2019');
+});
+Route::get('/gallery/2020', function () {
+    return view('gallery/2020');
+});
+Route::get('/gallery/2021', function () {
+    return view('gallery/2021');
+});
+Route::get('/gallery/2022', function () {
+    return view('gallery/2022');
+});
+Route::get('/gallery/2023', function () {
+    return view('gallery/2023');
+});
+Route::get('/gallery/2024', function () {
+    return view('gallery/2024');
 });
 
 Route::post('/', [ComplaintController::class, 'store'])->name('data.store');
