@@ -64,8 +64,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard/reply', function () {
         return view('admin.reply');
     });
+    Route::get('/admin/dashboard/news', function () {
+        return view('admin.news');
+    });
 });
-
 
 // Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
 // Route::get('/admin/dashboard', [ComplaintController::class, 'store'])->name('admin.dashboard.store');

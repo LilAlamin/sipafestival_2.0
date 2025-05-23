@@ -54,6 +54,18 @@
                         <span class="ms-2">Sudah dibaca</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center nav-link link-body-emphasis">
+                        <div class="border-icon p-2 bg-white shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="16" viewBox="0 0 512 512"
+                                fill="currentColor" style="color: #4F1C51;">
+                                <path
+                                    d="M512 240c0 114.9-114.6 208-256 208-37.1 0-72.3-6.4-104.1-17.9-11.9 8.7-31.3 20.6-54.3 30.6-45.9 20.3-74.8 29.2-103.5 29.2-6.5 0-12.3-3.9-14.8-9.9-2.5-6-1.1-12.8 3.4-17.4 1.1-1.2 2.8-3.1 4.9-5.7 4.1-5 9.6-12.4 15.2-21.6 10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240 0 125.1 114.6 32 256 32s256 93.1 256 208z" />
+                            </svg>
+                        </div>
+                        <span class="ms-2">Daftar berita</span>
+                    </a>
+                </li>
             </ul>
 
             <!-- Account Section -->
