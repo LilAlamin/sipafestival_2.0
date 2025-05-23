@@ -6,7 +6,7 @@
         <h4 class="mb-4">Buat Berita</h4>
     
         <!-- Form Balasan -->
-        <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+       <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
             <label for="subject" class="form-label">Judul Berita</label>
