@@ -1,15 +1,11 @@
 <?php
 
-use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
-use App\Mail\EmailReply;
-use App\Models\Complaint;
-use App\Models\News;
+
 
 Route::get('/', function () {
     return view('home');
@@ -67,11 +63,11 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.reply');
     });
 
-    // Route::get('/admin/dashboard/news', function () {
-    //     return view('admin.news');
-    // });
+    Route::get('/admin/dashboard/news/makeNews', function () {
+        return view('admin.news.makeNews');
+    });
 
-    Route::post('/admin/dashboard/news', [NewsController::class, 'store'])->name('news.store');
+    Route::post('/admin/dashboard/news/makeNews', [NewsController::class, 'store'])->name('news.store');
     Route::get('/admin/dashboard/news', [NewsController::class, 'showNews'])->name('news.showNews');
 });
 

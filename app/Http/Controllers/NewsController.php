@@ -18,10 +18,12 @@ class NewsController extends Controller
                 'title' => 'required|string',
                 'slug' => 'required|email',
                 'description' => 'required|string',
-                'image_path' => 'required|string'
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
             // dd($validated);
+
+            $path = $request->file('image')->store('images', 'public');
 
             DB::beginTransaction();
             // Save complaint data
@@ -29,7 +31,8 @@ class NewsController extends Controller
                 'title' => $request->title,
                 'slug' => $request->slug,
                 'description' => $request->description,
-                'image_path' => $request->image_path
+                'image_path' => $path,
+                'sent_at' => now()
             ]);
 
             DB::commit();
@@ -43,6 +46,6 @@ class NewsController extends Controller
     public function showNews()
     {
         $News = News::all();
-        return view('admin/news/makeNews', compact('News'));
+        return view('admin/news/showNews');
     }
 }
