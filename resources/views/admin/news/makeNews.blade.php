@@ -10,8 +10,8 @@
           @csrf
           <div class="mb-3">
             <label for="subject" class="form-label">Judul Berita</label>
-            <input name="title" type="text" class="form-control" id="subject" placeholder="Masukkan subjek balasan">
-          </div>
+            <input name=" title" type="text" class="form-control" id="subject" placeholder="Masukkan subjek balasan">
+          </div>  
 
           <div class="mb-3">
             <label for="message" class="form-label">Isi Berita</label>

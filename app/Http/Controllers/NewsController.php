@@ -43,6 +43,6 @@ class NewsController extends Controller
     public function showNews()
     {
         $News = News::all();
-        return view('admin/news');
+        return view('admin/news/makeNews', compact('News'));
     }
 }

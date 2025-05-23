@@ -698,7 +698,7 @@
 
 
 
-  <!-- <div class="row mb-5 align-items-center">
+  {{-- <div class="row mb-5 align-items-center">
     <div class="col-md-6">
       <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
       <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
@@ -706,7 +706,7 @@
     <div class="col-md-6">
       <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
     </div>
-  </div> -->
+  </div> --}}
 
   
 
