@@ -6,11 +6,11 @@
         <h4 class="mb-4">Buat Berita</h4>
     
         <!-- Form Balasan -->
-        <form action="{{ route('news.store') }}" method="POST">
+        <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
             <label for="subject" class="form-label">Judul Berita</label>
-            <input name=" title" type="text" class="form-control" id="subject" placeholder="Masukkan subjek balasan">
+            <input name="title" type="text" class="form-control" id="subject" placeholder="Masukkan subjek balasan">
           </div>  
 
           <div class="mb-3">
@@ -24,7 +24,7 @@
                 class="form-control"
                 type="file"
                 id="photo"
-                name="photo"
+                name="image"
                 accept=".jpg, .jpeg, .png"
                 required
             />

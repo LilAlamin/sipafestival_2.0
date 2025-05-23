@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\News; // Make sure you have a Complaint model
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
+
 
 class NewsController extends Controller
 {
@@ -16,12 +15,12 @@ class NewsController extends Controller
             // Validate input
             $validated = $request->validate([
                 'title' => 'required|string',
-                'slug' => 'required|email',
+                'slug' => 'string',
                 'description' => 'required|string',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
-            // dd($validated);
+            // dd($request->all());
 
             $path = $request->file('image')->store('images', 'public');
 

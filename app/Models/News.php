@@ -11,7 +11,6 @@ class News extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'slug',
         'description',
         'image_path',
         'sent_at',
