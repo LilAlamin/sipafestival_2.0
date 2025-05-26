@@ -1,25 +1,4 @@
-const slides = document.querySelectorAll('.img-slide');
-  let index = 0;
 
-  setInterval(() => {
-    slides[index].classList.add('d-none'); // Sembunyikan gambar sekarang
-    index = (index + 1) % slides.length;
-    slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
-  }, 3000);
-
-
-
-
-
-  function openVideo() {
-  const thumbnail = document.getElementById('thumbnail');
-  const iframe = document.getElementById('videoIframe');
-  const youtubeLink = "https://www.youtube.com/embed/rJtSeMMQY9g?autoplay=1"; // Autoplay enabled
-
-  thumbnail.style.display = 'none';
-  iframe.src = youtubeLink;
-  iframe.style.display = 'block';
-}
 
 
 

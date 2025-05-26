@@ -32,17 +32,19 @@
       transition: opacity 1s ease-in-out;
       opacity: 0;
       z-index: 0;
+      border-radius: 50px 100px 50px 100px !important;
     }
     .img-slide.active {
       opacity: 1;
       z-index: 1;
     }
     #slider {
-      width: 90%;
+      width: 100%;
       max-width: 700px;
       height: 500px;
       position: relative;
       overflow: hidden;
+      border-radius: 50px 100px 50px 100px !important;
     }
     .welcome-container {
       padding-top: 100px;
@@ -55,7 +57,7 @@
 
 <!-- Header -->
 <section class="text-justify py-5 header-section">
-  <img src="{{ asset('images/pattern/org.png') }}" alt="Background" class="bg">
+  <img src="{{ asset('images/pattern/headerr.png') }}" alt="Background" class="bg">
   <div class="container">
     <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
@@ -100,11 +102,12 @@
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/sliderwelcome/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/sliderwelcome/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/sliderwelcome/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/sliderwelcome/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/sliderwelcome/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+            <img src="{{ asset('images/slider/1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/slider/2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+            <img src="{{ asset('images/slider/3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+            <img src="{{ asset('images/slider/4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+            <img src="{{ asset('images/slider/5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+            <img src="{{ asset('images/slider/6.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 6">
           </div>
         </div>
       </div>
@@ -134,17 +137,11 @@
       <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
         <div class="carousel-inner custom-rounded">
           <div class="carousel-item active">
-            <img src="{{ asset('images/2024.png') }}" class="d-block w-100" alt="Gambar 1">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ asset('images/2023.png') }}" class="d-block w-100" alt="Gambar 2">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ asset('images/2024.png') }}" class="d-block w-100" alt="Gambar 3">
+            <img src="{{ asset('images/pattern/coomingsoon.png') }}" class="d-block w-100" alt="Gambar 1">
           </div>
         </div>
         <p class="mt-3" style="font-size: 18px;">
-          <span class="fw-bold">2009</span><br>
+          <span class="fw-bold">2025</span><br>
           <span class="fw-normal">SIPAfestival</span>
         </p>
       </div>
@@ -363,7 +360,7 @@
   </div>
 
     <!-- Testimoni SIPA 2024 -->
-  <div class="container py-5" style="background: linear-gradient(to bottom,rgba(253, 246, 227, 0.28),#ffe19d); border-radius: 20px;">
+  <div class="container py-5 testi">
     <div class="text-center mb-4">
       <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">REVIEW AUDIENCE ON EVENT</h2>
       <h2 class="fw-bold text-dark mb-3">
@@ -618,11 +615,12 @@
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
       <div class="sponsor-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
+          <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
+          <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
+          <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
+          <!-- <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
           <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Kecil" class="sponsor-logo logo-kecil" />
+          <img src="{{ asset('images/211.jpg') }}" alt="Logo Kecil" class="sponsor-logo logo-kecil" /> -->
           <!-- Tambahkan logo lainnya -->
         </div>
       </div>
@@ -675,6 +673,44 @@
   iframe.src = youtubeLink;
   iframe.style.display = 'block';
 }
+const slides = document.querySelectorAll('.img-slide');
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.add('d-none'); // Sembunyikan gambar sekarang
+    index = (index + 1) % slides.length;
+    slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
+  }, 3000);
+
+
+
+
+
+  function openVideo() {
+  const thumbnail = document.getElementById('thumbnail');
+  const iframe = document.getElementById('videoIframe');
+  const youtubeLink = "https://www.youtube.com/embed/rJtSeMMQY9g?autoplay=1"; // Autoplay enabled
+
+  thumbnail.style.display = 'none';
+  iframe.src = youtubeLink;
+  iframe.style.display = 'block';
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.delegates-wrapper');
+    const items = document.querySelectorAll('.delegate-item');
+    const itemWidth = items[0].offsetWidth + 30; // 220px width + 2*15px margin
+    let currentIndex = 0;
+    const totalItems = items.length;
+
+    setInterval(() => {
+      currentIndex++;
+      if (currentIndex > totalItems - Math.floor(container.parentElement.offsetWidth / itemWidth)) {
+        currentIndex = 0;
+      }
+
+      container.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }, 3000); // 3000ms = 3 detik
+  });
 </script>
 
 
