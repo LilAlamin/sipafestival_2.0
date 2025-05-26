@@ -236,15 +236,15 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .logo-besar {
-    max-width: 150px;
+    max-width: 250px;
 }
 
 .logo-sedang {
-    max-width: 70px;
+    max-width: 150px;
 }
 
 .logo-kecil {
-    max-width: 50px;
+    max-width: 100px;
 }
 .sponsor-logo {
     height: auto;

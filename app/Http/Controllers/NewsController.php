@@ -62,6 +62,12 @@ class NewsController extends Controller
         return view('home', compact('news'));
     }
 
+    public function showAllNews()
+    {
+        $news = News::all();
+        return view('news', compact('news'));
+    }
+
     public function edit($id)
     {
         $news = News::findOrFail($id);

@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeNewsController;
 // });
 
 Route::get('/', [NewsController::class, 'showNewsHome'])->name('news.showNewsHome');
+Route::get('/news', [NewsController::class, 'showAllNews'])->name('news.showAllNews');
 
 Route::get('/lineup', function () {
     return view('lineup');
