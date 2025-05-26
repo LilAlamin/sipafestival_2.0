@@ -18,12 +18,15 @@ class NewsController extends Controller
                 'title' => 'required|string',
                 'description' => 'required|string',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'slug' => 'nullable|string|unique:news,slug', // opsional
+                'slug' => 'nullable|string|unique:news,slug',
             ]);
 
-
-            // Simpan file gambar
-            $path = $request->file('image')->store('images', 'public');
+            // Simpan file gambar ke public/images/news
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $destinationPath = public_path('images/news');
+            $image->move($destinationPath, $imageName);
+            $path = 'images/news/' . $imageName;
 
             // Generate slug jika tidak diberikan
             $slug = $request->slug ?: Str::slug($request->title);
@@ -45,12 +48,12 @@ class NewsController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
 
-            // Logging untuk debug
             Log::error('Error saat simpan berita: ' . $e->getMessage());
 
             return back()->with('error', 'Gagal menyimpan berita: ' . $e->getMessage());
         }
     }
+
 
     public function showNews()
     {

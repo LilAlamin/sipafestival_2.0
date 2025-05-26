@@ -25,7 +25,7 @@
                               <p class="my-0"><strong>{{ $new->title }}</strong></p><p class="my-0 text-muted" style="font-size: 0.75rem;">
                                 {{ $new->created_at->translatedFormat('d M Y') }}
                             </p>
-                            <img src="{{ asset('storage/' . $new->image_path) }}" alt="Gambar">
+                            <img src="{{ asset('/images/news/' . $new->image_path) }}" alt="Gambar">
 
                             
                               <p class="my-0">{{ $new->description }}</p>
