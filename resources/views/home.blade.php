@@ -57,7 +57,7 @@
 <section class="text-justify py-5 header-section">
   <img src="{{ asset('images/pattern/org.png') }}" alt="Background" class="bg">
   <div class="container">
-    <img src="{{ asset('images/pattern/sipa2025ku.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
+    <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
@@ -286,7 +286,7 @@
         <div class="col-md-3 mb-4">
           <div class="card h-100 shadow-sm border-0">
             <div class="position-relative">
-              <img src="{{ asset('storage/images/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
+              <img src="{{ asset('/images/news/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
             </div>
             <div class="card-body">
