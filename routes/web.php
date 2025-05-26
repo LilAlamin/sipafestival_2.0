@@ -5,11 +5,14 @@ use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\HomeNewsController;
 
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', [NewsController::class, 'showNewsHome'])->name('news.showNewsHome');
 
 Route::get('/lineup', function () {
     return view('lineup');

@@ -48,7 +48,7 @@
 
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/admin/dashboard" class="sidebar-link nav-link d-flex align-items-center active">
+        <a href="/admin/dashboard                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   " class="sidebar-link nav-link d-flex align-items-center active">
           <div class="icon-wrapper p-2 me-2 shadow-sm">
             <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="16"
               viewBox="0 0 384 512">
