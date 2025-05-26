@@ -63,19 +63,19 @@
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
-        <div class="countdown-number" id="days">00</div>
+        <div class="countdown-number" id="days"></div>
         <div class="countdown-label">Days</div>
       </div>
       <div class="countdown-item">
-        <div class="countdown-number" id="hours">00</div>
+        <div class="countdown-number" id="hours"></div>
         <div class="countdown-label">Hours</div>
       </div>
       <div class="countdown-item">
-        <div class="countdown-number" id="minutes">00</div>
+        <div class="countdown-number" id="minutes"></div>
         <div class="countdown-label">Minutes</div>
       </div>
       <div class="countdown-item">
-        <div class="countdown-number" id="seconds">00</div>
+        <div class="countdown-number" id="seconds"></div>
         <div class="countdown-label">Seconds</div>
       </div>
     </div>
@@ -88,15 +88,16 @@
   <div class="container welcome-container" id="welcome-section">
       <h1 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h1>
       <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
-      <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
+      <h2 class="text-center fw-medium mb-5" style="color: #000;">Let’s make new journey on SIPA</h2>
 
       <!-- SLIDER FOTO -->
       <div class="row mb-5 align-items-center">
         <div class="col-md-6">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h2>
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+                    Solo International Performing Arts (SIPA) is an international masterpiece performance featuring dancers, musicians and theater performers from countries around the world. SIPA 2025 is organized in a hybrid manner, online and offline.
+                    <br>
+                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call / curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
             </p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
@@ -245,28 +246,28 @@
               <img src="{{ asset('images/maskot/2022.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2022</span><br>
-                <span class="fw-normal">SIPAfestival</span>
+                <span class="fw-normal">Rianto</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
               <img src="{{ asset('images/maskot/2023.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2023</span><br>
-                <span class="fw-normal">SIPAfestival</span>
+                <span class="fw-normal">Wirastuti Sulistyaningsih</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
               <img src="{{ asset('images/maskot/2024.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2024</span><br>
-                <span class="fw-normal">SIPAfestival</span>
+                <span class="fw-normal">GRAj Ancillasura Marina Sudjiwo</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
               <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2024</span><br>
-                <span class="fw-normal">SIPAfestival</span>
+                <span class="fw-bold">Jangan dihapus</span><br>
+                <span class="fw-normal">ini untuk tutupnya</span>
               </p>
             </div>
           </div>
@@ -276,33 +277,32 @@
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
       <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
-      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h4>
+      <h4 class="text-center fw-medium mb-5" style="color: #000;">Update news about SIPA</h4>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 news-wrapper">
       <!-- Berita 1 -->
-      @foreach ($news as $new)
+      @foreach ($news->take(3) as $new)
         <div class="col-md-3 mb-4">
           <div class="card h-100 shadow-sm border-0">
             <div class="position-relative">
               <img src="{{ asset('/images/news/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
             </div>
             <div class="card-body">
               <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
               <h6 class="fw-bold">{{ $new->title }}</h6>
               <p class="text-muted mb-2" style="font-size: 0.875rem;">{{ Str::limit($new->description, 100, '...') }}</p>
-              <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+              <a href="{{ url('/detailNews/' . $new->slug) }}" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
       @endforeach
-
+      <a href="/news" class="btn btn-findmore2 mt-4 fw-bold">OTHER NEWS</a>
     </div>
 
 
     <!-- Section Title -->
-    <div class="text-center mb-4">
-      <h5 class="text-danger fw-bold">We’d love to hear from you</h5>
+    <div class="text-center mb-4 title-loc">
+      <h5 class="fw-bold" style="color: #B8141E;">We’re Closer Than You Think!</h5>
       <h5 class="fw-bold">@SIPAFESTIVAL</h5>
     </div>
 
@@ -311,7 +311,7 @@
       <div class="col-md-6">
         <h6 class="text-danger fw-bold">LOCATION</h6>
         <p class="fw-bold">Address</p>
-        <p>Jl. Kedasih No.22, <br>Kerten, Laweyan, Solo, Central Java, INA</p>
+        <p>22 Kedasih Street, <br> Kerten Sub-district, Laweyan District, Surakarta City, <br>Central Java 57143, Indonesia</p>
       </div>
       <div class="col-md-6">
         <iframe 
@@ -327,16 +327,14 @@
     <!-- Feedback and Form -->
     <div class="row mt-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <p>We value your feedback. Whether you have a question or a suggestion, we’re here for you 24/7. Feel free to call or email us anytime.</p>
+        <p>We greatly appreciate your insights. For any further information or suggestions, please contact us anytime—our dedicated team is available 24 hours a day, 7 days a week.</p>
         <h6 class="text-danger fw-bold">Contact information</h6>
-        <p>000888-5556-7856<br>@sipafestival@gmail.com</p>
-        <p class="fw-bold">Address</p>
-        <p>Jl. Kedasih No.22,<br>Kerten, Laweyan, Solo, Central Java, INA</p>
+        <p>+62 856-4722-5058<br>sipafestival@gmail.com</p>
       </div>
 
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
-          <h6 class="text-danger fw-bold text-center mb-4">SUBMISSION VOLUNTEER FORM</h6>
+          <h6 class="text-danger fw-bold text-center mb-4">Feedback & Suggestions</h6>
           <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
@@ -352,7 +350,7 @@
               <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" form="submissionForm" class="btn btn-danger btn-sm px-4 rounded-pill" id="submitBtn">SEND THE FORM</button>
+              <button type="submit" form="submissionForm" class="btn btn-danger btn-sm px-4 rounded-pill" id="submitBtn">Submit Feedback</button>
             </div>
           </form>
         </div>
@@ -449,31 +447,16 @@
 
     <!-- FAQ -->
   <div class="container my-5">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA (Solo International Performing Arts)</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA</h2>
     <div class="accordion" id="faqSIPA">
 
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq1">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-            When's the best time to arrive?
+            How much is the entrance fee to watch SIPA?
           </button>
         </h2>
         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>We recommend arriving early to fully enjoy the festival experience and catch all the performances.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-            Is there an admission fee for the festival?
-          </button>
-        </h2>
-        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
               <li>No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)</li>
@@ -483,15 +466,30 @@
       </div>
 
       <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+            What I will find at the SIPA Festival
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqSIPA">
+          <div class="accordion-body">
+            <ul>
+              <li>Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
         <h2 class="accordion-header" id="faq3">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-            Do I need to buy tickets to attend the festival?
+            What are the different seating categories available at SIPA?
           </button>
         </h2>
         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>No tickets are required to attend SIPA. Just come and enjoy the festival atmosphere and all the amazing performances!</li>
+              <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances</li>
             </ul>
           </div>
         </div>
@@ -500,13 +498,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq4">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-            What are the different seating categories available at SIPA?
+            Will you be posting the schedule in advance?
           </button>
         </h2>
         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances.</li>
+              <li>Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.</li>
             </ul>
           </div>
         </div>
@@ -515,77 +513,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq5">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-            How can I obtain VIP or Invitation Seats for the festival?
+            What types of cameras are allowed?
           </button>
         </h2>
         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>VIP Seats and Invitation Seats are limited and typically require prior registration or an invitation. Please check our official website for more details on how to secure these seats.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq7">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-            What will I see inside the festival?
-          </button>
-        </h2>
-        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq8">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-            Will you be posting the schedule in advance?
-          </button>
-        </h2>
-        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq9">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-            What types of cameras are allowed?
-          </button>
-        </h2>
-        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="faq9" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq10">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-            Can I bring my video camera?
-          </button>
-        </h2>
-        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="faq10" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                No, professional video cameras are not allowed. Feel free to take photos with your personal camera!
-              </li>
+              <li>VProfessional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.</li>
             </ul>
           </div>
         </div>
@@ -594,7 +528,7 @@
   </div>
 
   <!-- SPONSOR MEDPART -->
-  <div class="row mb-5 align-items-center justify-content-center">
+  <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
       <div class="sponsor-container p-4 text-center">
@@ -610,7 +544,7 @@
       </div>
     </div>
   </div>
-  <div class="row mb-5 align-items-center justify-content-center">
+  <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
       <div class="medpart-container p-4 text-center">

@@ -25,7 +25,6 @@
           <div class="card h-100 shadow-sm border-0">
             <div class="position-relative">
               <img src="{{ asset('/images/news/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
             </div>
             <div class="card-body">
               <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>

@@ -27,6 +27,11 @@
         border-top: 3px solid #B8141E;
         text-align: center;
         margin-top: 11vh;
+        background-image: url('{{ asset("images/pemkot.png") }}');
+        background-repeat: no-repeat;
+        background-size: 120rem;
+        background-position: bottom;
+        padding-top: 50px;
       }
       .sipa-custom {
         display: flex;
@@ -51,38 +56,6 @@
     </style>
 </head>
 <body>
-<!-- <footer style="font-family: 'Arial', sans-serif; color: #b21e22; padding: 60px 20px 40px;">
-  <div class="container">
-
-    <div class="row text-center text-md-start align-items-center">
-
-
-      <div class="col-md-4 mb-4 mb-md-0">
-        <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 90px;">
-      </div>
-
-
-      <div class="col-md-4 mb-4 mb-md-0 text-center">
-        <div style="font-weight: bold; color: black; font-size: 16px;">Follow Us</div>
-        <div class="d-flex justify-content-center gap-4 mt-2">
-          <a href="https://www.instagram.com/sipafestival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="https://youtube.com/@sipafestival?feature=shared" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-youtube"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
-        <small style="color: #b21e22;">SITE BY</small><br>
-        <a href="https://www.instagram.com/sipacommunity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-findmore2 btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold;">SIPA COMMUNITY</a>
-        <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
-      </div>
-    </div>
-  </div>
-</footer> -->
-
 <div class="garis">
 
 </div>
@@ -102,18 +75,6 @@
           </div>
           <div class="col">
             <div class="icons">
-              <!-- <div class="col-md-4 mb-4 mb-md-0 text-center">
-                <div class="d-flex gap-4 mt-2">
-                  <a href="https://www.instagram.com/sipafestival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-                    <i class="bi bi-instagram"></i>
-                  </a>
-                </div>
-                <div class="d-flex gap-4 mt-2">
-                  <a href="https://www.instagram.com/sipafestival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-                    <i class="bi bi-instagram"></i>
-                  </a>
-                </div>
-              </div> -->
               <div class="d-flex gap-3">
                 <div class="d-flex justify-content-center gap-4 mt-2">
                   <a href="https://www.instagram.com/sipafestival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
@@ -126,16 +87,11 @@
                     <i class="bi bi-facebook"></i>
                   </a>
                 </div>
-                
-                
               </div>
-              
-  
             </div>
           </div>
         </div>
       </div>
-      <!-- Example Code End -->
   </footer>
 </div>
 </body>
