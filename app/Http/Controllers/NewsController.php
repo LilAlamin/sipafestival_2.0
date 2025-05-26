@@ -123,7 +123,7 @@ class NewsController extends Controller
     public function viewBySlug($slug)
     {
         $news = News::where('slug', $slug)->firstOrFail();
-        return view('admin.news.view', compact('news'));
+        return view('admin.news.viewNews', compact('news'));
     }
 
     public function editBySlug($slug)

@@ -26,9 +26,8 @@
                               <p class="my-0"><strong>{{ $new->title }}</strong></p><p class="my-0 text-muted" style="font-size: 0.75rem;">
                                 {{ $new->created_at->translatedFormat('d M Y') }}
                             </p>
-                            <img src="{{ asset('/images/news/' . $new->image_path) }}" alt="Gambar" weight="20" height="20" class="img-fluid mb-2">
+                            <img src="{{ asset('/images/news/' . $new->image_path) }}" alt="Gambar" style="weight: 100px;  height: 100px"  class="img-fluid mb-2">
 
-                            
                               <p class="my-0">{{ Str::limit($new->description, 200, '...') }}</p>
                               <p class="my-0 text-muted" style="font-size: 0.75rem;">
                                 {{ $new->created_at->format('H.i') }}
