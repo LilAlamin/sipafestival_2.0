@@ -55,6 +55,7 @@ Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout')
 
 Route::middleware(['auth'])->group(function () {
     // Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
+    Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
     Route::post('/admin/dashboard/', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
     Route::get('/admin/dashboard/', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
