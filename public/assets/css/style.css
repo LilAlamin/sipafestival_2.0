@@ -1,22 +1,23 @@
 :root {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 /*BODY*/
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-
-
-
-
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 
 /* HEADER HOME IMG*/
 .header-section {
     position: relative;
     overflow: hidden;
     height: 100vh;
-    color: #F0D97B;
+    color: #f0d97b;
 }
 
 .header-section img.bg {
@@ -27,8 +28,18 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+    );
 }
 .header-section .container {
     position: absolute;
@@ -44,6 +55,7 @@
     width: 130%;
     height: auto;
 }
+
 .header-section p {
     font-size: 1.5rem;
     font-weight: bold;
@@ -52,32 +64,31 @@
 
 /* CUONTDOWN */
 .countdown-item {
-  text-align: center;
+    text-align: center;
 }
 
 .countdown-number {
-  background: #F0D97B;
-  color: #000;
-  padding: 10px 20px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  border-radius: 10px;
-  min-width: 80px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background: #f0d97b;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 10px;
+    min-width: 80px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-label {
-  margin-top: 8px;
-  font-size: 1rem;
-  font-weight: 400;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 400;
 }
-
 
 /* CUSTOM BUTTON */
 .btn-findmore {
     background-color: transparent !important;
-    color: #F0D97B !important;
-    border: 2px solid #F0D97B !important;
+    color: #f0d97b !important;
+    border: 2px solid #f0d97b !important;
     border-radius: 12px !important;
     font-size: 15px;
     padding: 10px 20px;
@@ -92,13 +103,13 @@
     opacity: 1;
 }
 .btn-findmore:hover {
-    background-color: #F0D97B !important;
+    background-color: #f0d97b !important;
     color: #000 !important;
 }
 .btn-findmore2 {
     background-color: transparent !important;
-    color: #B8141E !important;
-    border: 2px solid #B8141E !important;
+    color: #b8141e !important;
+    border: 2px solid #b8141e !important;
     border-radius: 12px !important;
     font-size: 15px;
     padding: 10px 20px;
@@ -109,185 +120,325 @@
     text-align: center;
 }
 .btn-findmore2:hover {
-    background-color: #B8141E !important;
+    background-color: #b8141e !important;
     color: #ffffff !important;
 }
 
-    /* PLAY VIDEO */
-    .play-button {
-      width: 100px;
-      height: 100px;
-      background: #B8141E;
-      border: 2px solid #B8141E;
-      border-radius: 50%;
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 20px #B8141E;
-      animation: pulse 2s infinite;
-    }
+/* PLAY VIDEO */
+.play-button {
+    width: 100px;
+    height: 100px;
+    background: #b8141e;
+    border: 2px solid #b8141e;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 20px #b8141e;
+    animation: pulse 2s infinite;
+}
 
-    .play-button i {
-      font-size: 50px;
-      color: #ffffff;
-      transition: all 0.3s ease;
-    }
+.play-button i {
+    font-size: 50px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
 
-    .play-button:hover {
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(184, 20, 30, 0.5);
-      transform: scale(1.05);
-    }
+.play-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(184, 20, 30, 0.5);
+    transform: scale(1.05);
+}
 
-    .play-button:hover i {
-      color: #8d0f16;
-      
-    }
+.play-button:hover i {
+    color: #8d0f16;
+}
 
-    @keyframes pulse {
-      0% {
+@keyframes pulse {
+    0% {
         box-shadow: 0 0 0 0 rgba(184, 20, 30, 0.5);
-      }
-      70% {
+    }
+    70% {
         box-shadow: 0 0 0 20px rgba(184, 20, 30, 0);
-      }
-      100% {
+    }
+    100% {
         box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
-      }
+    }
+}
+
+/* MASKOT (AWALNYA DELEAGATE) */
+.delegate-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.delegates-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.delegate-item {
+    flex-shrink: 0;
+    width: 220px;
+    margin: 0 15px; /* Lebih konsisten daripada mx-3 */
+    text-align: center;
+}
+
+.delegate-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.delegate-item p {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* MAPS */
+.map-frame {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
+}
+.arc-section {
+    padding-top: 70px;
+}
+.welcome-section p {
+    font-size: 1.3rem;
+}
+.custom-rounded {
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+/*SPONSORMEDPART*/
+.sponsor-container {
+    background-color: #ffe19d;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.logo-besar {
+    max-width: 100px;
+}
+
+.logo-sedang {
+    max-width: 70px;
+}
+
+.logo-kecil {
+    max-width: 50px;
+}
+.sponsor-logo {
+    height: auto;
+    object-fit: contain;
+}
+
+.medpart-container {
+    background-color: #ffe19d; /* warna kuning background */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.medpart-logo {
+    height: auto;
+    object-fit: contain;
+}
+
+/*FAQ*/
+.arc-section h2 {
+    margin-bottom: 20px;
+}
+.accordion-button {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px !important;
+}
+.accordion-button {
+    background-color: #f9f9f9;
+    color: #b8141e;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.accordion-body {
+    background-color: #fffefc;
+    border-left: 4px solid #ffe19d;
+    padding: 1rem 1.25rem;
+    font-size: 16px;
+}
+.accordion-button.collapsed {
+    border: 1px solid #ffe19d !important;
+    border-radius: 15px !important;
+    background-color: #fff; /* pastikan tetap putih */
+}
+.accordion-item {
+    border: none;
+    border-radius: 15px !important;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.accordion-button::after {
+    content: "\f078"; /* FontAwesome down arrow */
+    font-weight: 900;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+.accordion-button.collapsed::after {
+    transform: rotate(0deg);
+}
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+.accordion-button:not(.collapsed) {
+    background-color: #ffe19d !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Aturan CSS untuk layar dengan lebar maksimum 768px (tablet dan di bawahnya) */
+@media (max-width: 768px) {
+    .header-section img.text {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+}
+/* Aturan CSS untuk layar dengan lebar maksimum 390px (hp dan di bawahnya) */
+@media (max-width: 390px) {
+    #countdown .countdown-number {
+        font-size: 15px;
+        min-width: 55px;
+    }
+    .navbar-toggler {
+        width: 50px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    /* MASKOT (AWALNYA DELEAGATE) */
-    .delegate-container {
-      position: relative;
-      overflow: hidden;
+    .navbar-toggler-icon {
+        width: 23px;
+    }
+    .navbar-brand img {
+        height: 30px;
+    }
+    .gap-3 {
+        gap: 3rem 48px !important;
+    }
+    .header-section .container {
+        align-items: center;
     }
 
-    .delegates-wrapper {
-      display: flex;
-      transition: transform 0.5s ease;
+    .header-section p {
+        font-size: 18px;
+    }
+    #countdown {
+        max-width: 220;
+    }
+    .countdown-label {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .countdown-item {
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+    /* #countdown-number {
+        min-width: 30px;
+        padding: 0px;
+    } */
+    .d-flex {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        max-width: 300px;
     }
 
-    .delegate-item {
-      flex-shrink: 0;
-      width: 220px;
-      margin: 0 15px; /* Lebih konsisten daripada mx-3 */
-      text-align: center;
+    .countdown-number {
+        background: #f0d97b;
+        color: #000;
+        padding: 11px 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border-radius: 10px;
+        min-width: 80px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
-
-    .delegate-item img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
+    .header-section .container {
+        position: static;
+        top: auto;
+        left: auto;
+        max-width: 600px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
-
-    .delegate-item p {
-      margin-top: 5px;
-      font-weight: bold;
-      font-size: 16px;
+    .py-5 {
+        padding-top: 7rem 112px !important;
+        padding-bottom: 3rem !important;
     }
-
-    /* MAPS */
-    .map-frame {
-      width: 100%;
-      height: 250px;
-      border: 0;
-      border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
-    }        
-    .arc-section {
-      padding-top: 70px;
+    .text-justify {
+        height: 420px;
     }
-    .welcome-section p {
-      font-size: 1.3rem;
+    .welcome-container {
+        padding-top: 0px;
+        padding-inline: 25px;
     }
-    .custom-rounded {
-      border-radius: 40px;
-      overflow: hidden;
+    #welcome-section {
+        padding-inline: 15px;
     }
-
-    
-
-    /*SPONSORMEDPART*/
-    .sponsor-container {
-      background-color: #ffe19d;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .text-center {
+        font-size: 1.2rem;
     }
-    .logo-besar {
-      max-width: 100px;
+    .col-md-6 h2 {
+        font-size: 1.2rem;
     }
-
-    .logo-sedang {
-      max-width: 70px;
-    }
-
-    .logo-kecil {
-      max-width: 50px;
-    }
-    .sponsor-logo {
-      height: auto;
-      object-fit: contain;
-    }
-
-    .medpart-container {
-      background-color: #ffe19d; /* warna kuning background */
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .medpart-logo {
-      height: auto;
-      object-fit: contain;
-    }
-
-    /*FAQ*/
-    .arc-section h2 {
-      margin-bottom: 20px;
-    }
-    .accordion-button {
-      font-family: 'Poppins', sans-serif;
-      font-size: 20px !important;
-    }
-    .accordion-button {
-        background-color: #f9f9f9;
-        color: #B8141E;
+    .col-md-6 p {
         font-size: 1rem;
-        transition: background-color 0.3s ease;
-      }
-      .accordion-body {
-        background-color: #fffefc;
-        border-left: 4px solid #ffe19d;
-        padding: 1rem 1.25rem;
-        font-size: 16px;
-      }
-      .accordion-button.collapsed {
-        border: 1px solid #ffe19d!important;
-        border-radius: 15px!important;  
-        background-color: #fff;    /* pastikan tetap putih */
-      }
-      .accordion-item {
-        border: none;
-        border-radius: 15px!important;
-        overflow: hidden;
-        margin-bottom: 0.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      }
-      .accordion-button::after {
-        content: "\f078"; /* FontAwesome down arrow */
-        font-weight: 900;
-        margin-left: auto;
-        transition: transform 0.3s ease;
-      }
-      .accordion-button.collapsed::after {
-        transform: rotate(0deg);
-      }
-      .accordion-button:not(.collapsed)::after {
-        transform: rotate(180deg);
-      }
-      .accordion-button:not(.collapsed) {
-        background-color: #ffe19d !important;
-        color:#000 !important;
-        box-shadow: none !important;
-      }
+    }
+    .row {
+        flex-direction: column-reverse;
+    }
+    .position-relative {
+        max-width: 100%;
+        margin-bottom: -250px;
+    }
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+    .text-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #videoIframe {
+        display: block;
+        width: 90vw;
+        height: 200px;
+        /* margin-bottom: 170px; */
+    }
+    .container-yt-carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 164px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+}
