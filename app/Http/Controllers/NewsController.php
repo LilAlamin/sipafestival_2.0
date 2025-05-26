@@ -119,4 +119,16 @@ class NewsController extends Controller
             return back()->with('error', 'Gagal menghapus berita: ' . $e->getMessage());
         }
     }
+
+    public function viewBySlug($slug)
+    {
+        $news = News::where('slug', $slug)->firstOrFail();
+        return view('admin.news.view', compact('news'));
+    }
+
+    public function editBySlug($slug)
+    {
+        $news = News::where('slug', $slug)->firstOrFail();
+        return view('admin.news.edit', compact('news'));
+    }
 }

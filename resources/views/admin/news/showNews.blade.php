@@ -41,17 +41,32 @@
                             </div>
 
                           </td>
-                              <td class="align-middle" style="white-space: nowrap;">
-                                <i class="bi bi-pencil-square"></i>
-                                <a href=#
-                                   class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-secondary"
-                                   style="font-size: 0.75rem;"> edit</a>
-                                <i class="bi bi-trash3-fill"></i>
-                                <form method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-link text-secondary p-0" style="font-size: 0.75rem;">hapus</button>
-                              </td>
+                          <td class="align-middle" style="white-space: nowrap;">
+    <!-- View -->
+    <a href="{{ url('/admin/dashboard/news/' . $new->slug) }}"
+       class="text-success me-2"
+       style="font-size: 0.75rem;">
+        <i class="bi bi-eye-fill"></i> lihat
+    </a>
+
+    <!-- Edit -->
+    <a href="{{ url('/admin/dashboard/news/edit/' . $new->slug) }}"
+       class="text-primary me-2"
+       style="font-size: 0.75rem;">
+        <i class="bi bi-pencil-square"></i> edit
+    </a>
+
+    <!-- Delete -->
+    <form action="{{ url('/admin/dashboard/news/' . $new->id) }}" method="POST" class="d-inline"
+          onsubmit="return confirm('Yakin ingin menghapus berita ini?');">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-link text-danger p-0" style="font-size: 0.75rem;">
+            <i class="bi bi-trash3-fill"></i> hapus
+        </button>
+    </form>
+</td>
+
 
                       </tr>
                   @endforeach
