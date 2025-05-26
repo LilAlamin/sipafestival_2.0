@@ -74,10 +74,10 @@ class NewsController extends Controller
         return view('admin.news.edit', compact('news'));
     }
 
-    public function update(Request $request, $id)
+    public function updateBySlug(Request $request, $slug)
     {
         try {
-            $news = News::findOrFail($id);
+            $news = News::where('slug', $slug)->firstOrFail();
 
             $validated = $request->validate([
                 'title' => 'required|string',
@@ -91,7 +91,7 @@ class NewsController extends Controller
                 $imageName = time() . '_' . $image->getClientOriginalName();
                 $destinationPath = public_path('images/news');
                 $image->move($destinationPath, $imageName);
-                $news->image_path = $imageName; // simpan nama file saja
+                $news->image_path = $imageName;
             }
 
             $news->title = $request->title;
@@ -105,6 +105,7 @@ class NewsController extends Controller
             return back()->with('error', 'Gagal memperbarui berita: ' . $e->getMessage());
         }
     }
+
 
     public function destroy($id)
     {
@@ -124,5 +125,17 @@ class NewsController extends Controller
             Log::error('Error saat hapus berita: ' . $e->getMessage());
             return back()->with('error', 'Gagal menghapus berita: ' . $e->getMessage());
         }
+    }
+
+    public function viewBySlug($slug)
+    {
+        $news = News::where('slug', $slug)->firstOrFail();
+        return view('admin.news.viewNews', compact('news'));
+    }
+
+    public function editBySlug($slug)
+    {
+        $news = News::where('slug', $slug)->firstOrFail();
+        return view('admin.news.makeNews', compact('news'));
     }
 }
