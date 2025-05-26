@@ -76,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
     // News routes (dalam group middleware auth)
     Route::get('/admin/dashboard/news/{slug}', [NewsController::class, 'viewBySlug'])->name('news.view');
     Route::get('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'editBySlug'])->name('news.editBySlug');
+    Route::put('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'updateBySlug'])->name('news.updateBySlug');
     Route::delete('/admin/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 });
 // Route::get('/admin/dashboard/news/{id}/delete', function ($id) {
