@@ -461,7 +461,6 @@
           <div class="accordion-body">
             <ul>
               <li>We recommend arriving early to fully enjoy the festival experience and catch all the performances.</li>
-              <li>Akan lebih baik apabila kalian datang lebih awal untuk menikmati pengalaman festival secara maksimal dan menyaksikan semua pertunjukan.</li>
             </ul>
           </div>
         </div>
@@ -477,7 +476,6 @@
           <div class="accordion-body">
             <ul>
               <li>No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)</li>
-              <li>Tidak ada biaya masuk untuk festival ini! Kalian dapat menikmati semua pertunjukan dan kegiatan tanpa dikenakan biaya. (ACARA GRATIS)</li>
             </ul>
           </div>
         </div>
@@ -493,7 +491,6 @@
           <div class="accordion-body">
             <ul>
               <li>No tickets are required to attend SIPA. Just come and enjoy the festival atmosphere and all the amazing performances!</li>
-              <li>Tidak perlu membeli tiket untuk menghadiri SIPA. Cukup datang dan nikmati suasana festival serta semua pertunjukan yang luar biasa!</li>
             </ul>
           </div>
         </div>
@@ -509,7 +506,6 @@
           <div class="accordion-body">
             <ul>
               <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances.</li>
-              <li>Ada tiga kategori tempat duduk yang tersedia: VIP Seat, Undangan Seat, dan Umum Seat. Setiap kategori menawarkan pengalaman dan pemandangan yang berbeda terhadap pertunjukan.</li>
             </ul>
           </div>
         </div>
@@ -525,7 +521,6 @@
           <div class="accordion-body">
             <ul>
               <li>VIP Seats and Invitation Seats are limited and typically require prior registration or an invitation. Please check our official website for more details on how to secure these seats.</li>
-              <li>VIP Seat dan Undangan Seat terbatas dan biasanya memerlukan pendaftaran sebelumnya atau undangan. Silakan cek situs resmi kami untuk informasi lebih lanjut tentang cara mendapatkan tempat duduk ini.</li>
             </ul>
           </div>
         </div>
@@ -541,9 +536,6 @@
             <ul>
               <li>
                 Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!
-              </li>
-              <li>
-                Kalian akan menemukan berbagai pertunjukan yang beragam, termasuk musik, tari, dan teater, serta stan makanan dan pameran budaya!
               </li>
             </ul>
           </div>
@@ -561,9 +553,6 @@
               <li>
                 Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.
               </li>
-              <li>
-                Boleh. Ini adalah acara yang ramah keluarga, jadi silakan bawa stroller untuk anak-anak.
-              </li>
             </ul>
           </div>
         </div>
@@ -580,9 +569,6 @@
               <li>
                 Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.
               </li>
-              <li>
-                Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diperbolehkan. Namun, kalian boleh membawa kamera kompak dan smartphone.
-              </li>
             </ul>
           </div>
         </div>
@@ -598,9 +584,6 @@
             <ul>
               <li>
                 No, professional video cameras are not allowed. Feel free to take photos with your personal camera!
-              </li>
-              <li>
-                Tidak diperbolehkan membawa kamera video profesional. Silakan ambil foto dengan kamera pribadi kalian!
               </li>
             </ul>
           </div>
