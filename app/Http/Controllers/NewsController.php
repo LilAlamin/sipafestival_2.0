@@ -57,4 +57,10 @@ class NewsController extends Controller
         $news = News::all();
         return view('admin.news.showNews', compact('news'));
     }
+
+    public function showNewsHome()
+    {
+        $news = News::all();
+        return view('home', compact('news'));
+    }
 }

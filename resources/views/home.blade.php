@@ -282,75 +282,26 @@
     </div>
     <div class="row mb-5">
       <!-- Berita 1 -->
-      <div class="col-md-3 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="position-relative">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
-            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
-          </div>
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
-            <h6 class="fw-bold">
-              Launching Poster dan Tema Wayang Jogja Night Carnival #9
-            </h6>
-            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+      @foreach ($news as $new)
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="position-relative">
+              <img src="{{ asset('storage/images/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
+              <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
+            </div>
+            <div class="card-body">
+              <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
+              <h6 class="fw-bold">{{ $new->title }}</h6>
+              <p class="text-muted mb-2" style="font-size: 0.875rem;">{{ Str::limit($new->description, 100, '...') }}</p>
+              <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+            </div>
           </div>
         </div>
-      </div>
+      @endforeach
 
-      <!-- Berita 2 -->
-      <div class="col-md-3 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="position-relative">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
-            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
-          </div>
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
-            <h6 class="fw-bold">
-              Launching Poster dan Tema Wayang Jogja Night Carnival #9
-            </h6>
-            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Berita 3 -->
-      <div class="col-md-3 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="position-relative">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
-            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
-          </div>
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
-            <h6 class="fw-bold">
-              Launching Poster dan Tema Wayang Jogja Night Carnival #9
-            </h6>
-            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Berita 4 -->
-      <div class="col-md-3 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="position-relative">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
-            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
-          </div>
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
-            <h6 class="fw-bold">
-              Launching Poster dan Tema Wayang Jogja Night Carnival #9
-            </h6>
-            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="container py-5">
+
+
     <!-- Section Title -->
     <div class="text-center mb-4">
       <h5 class="text-danger fw-bold">We’d love to hear from you</h5>
