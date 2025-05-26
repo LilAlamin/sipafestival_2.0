@@ -113,165 +113,168 @@
       </div>
 
     <!-- YT -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
-      <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
-        <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
-          <div class="play-button position-absolute top-50 start-50 translate-middle">
-            <span class="circle"></span>
-            <i class="bi bi-play-fill"></i>
-          </div>
-        </div>
-        <iframe id="videoIframe" width="1280" height="720"
-                src="https://www.youtube.com/embed/rJtSeMMQY9g"
-                title="YouTube video" frameborder="0"
-                allow="autoplay; encrypted-media" allowfullscreen
-                class="rounded-5" style="display: none;"></iframe>
-      </div>
-    </div>
+    <div class="container-yt-carousel">
 
-    <!-- MASKOT -->
-    <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
-      <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
-        <div class="carousel-inner custom-rounded">
-          <div class="carousel-item active">
-            <img src="{{ asset('images/pattern/coomingsoon.png') }}" class="d-block w-100" alt="Gambar 1">
-          </div>
-        </div>
-        <p class="mt-3" style="font-size: 18px;">
-          <span class="fw-bold">2025</span><br>
-          <span class="fw-normal">SIPAfestival</span>
-        </p>
-      </div>
-    </div>
-    <div class="delegates-section text-center my-5">
-      <div class="delegate-container position-relative" style="overflow: hidden;">
-        <div id="delegatesContainer" class="delegates-wrapper">
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2009</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2010</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2011</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2012</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2013</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2014</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2015</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2016</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2017</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2018</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2019</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2020</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2021</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2022</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2023</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2024</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2024</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
+        <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
+          <div id="thumbnail" onclick="openVideo()" style="position: relative;">
+            <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
+            <div class="play-button position-absolute top-50 start-50 translate-middle">
+              <span class="circle"></span>
+              <i class="bi bi-play-fill"></i>
+            </div>
+          </div>
+          <iframe id="videoIframe" width="1280" height="720"
+                  src="https://www.youtube.com/embed/rJtSeMMQY9g"
+                  title="YouTube video" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen
+                  class="rounded-5" style="display: none;"></iframe>
+        </div>
+      </div>
+
+      <!-- MASKOT -->
+      <div class="arc-section mb-5 text-center">
+        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
+        <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
+          <div class="carousel-inner custom-rounded">
+            <div class="carousel-item active">
+              <img src="{{ asset('images/pattern/coomingsoon.png') }}" class="d-block w-100" alt="Gambar 1">
+            </div>
+          </div>
+          <p class="mt-3" style="font-size: 18px;">
+            <span class="fw-bold">2025</span><br>
+            <span class="fw-normal">SIPA festival</span>
+          </p>
+        </div>
+      </div>
+      <div class="delegates-section text-center">
+        <div class="delegate-container position-relative" style="overflow: hidden;">
+          <div id="delegatesContainer" class="delegates-wrapper">
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2009</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2010</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2011</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2012</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2013</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2014</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2015</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2016</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2017</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2018</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2019</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2020</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2021</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2022</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2023</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2024</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2024</span><br>
+                <span class="fw-normal">SIPAfestival</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
       <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>

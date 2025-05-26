@@ -322,8 +322,8 @@ body {
         height: auto;
     }
 }
-/* Aturan CSS untuk layar dengan lebar maksimum 390px (hp dan di bawahnya) */
-@media (max-width: 390px) {
+/* Aturan CSS untuk layar dengan lebar maksimum 412px (hp dan di bawahnya) */
+@media (max-width: 412px) {
     #countdown .countdown-number {
         font-size: 15px;
         min-width: 55px;
@@ -413,6 +413,7 @@ body {
     }
     #welcome-section {
         padding-inline: 15px;
+        padding-top: 0px;
     }
     .text-center {
         font-size: 1.2rem;
@@ -425,6 +426,7 @@ body {
     }
     .row {
         flex-direction: column-reverse;
+        gap: 36px;
     }
     .position-relative {
         max-width: 100%;
@@ -451,5 +453,15 @@ body {
         gap: 164px;
         align-items: center;
         flex-wrap: nowrap;
+    }
+    .delegates-section {
+        margin-top: -210px;
+        margin-bottom: 210px;
+    }
+    .arc-section h2 {
+        margin-bottom: 10px;
+    }
+    .card-body {
+        margin-top: 250px;
     }
 }
