@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- YT -->
     <div class="container-yt-carousel">
       <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">SIPA LAST YEAR</h2>
         <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
           <div id="thumbnail" onclick="openVideo()" style="position: relative;">
             <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">

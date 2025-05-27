@@ -32,7 +32,7 @@
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
       <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA</h1>
-      <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
+      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6">
@@ -70,7 +70,7 @@
 
     <div class="container my-5">
         <div class="arc-section mb-5 text-center">
-            <h2 class="fw-bold" style="color: #B8141E;">FOTO FOTO</h2>
+            <h2 class="fw-bold" style="color: #B8141E;">DOKUMENTASI</h2>
         </div>
         <div class="row justify-content-center text-center">
             <!-- Gambar 1 -->
