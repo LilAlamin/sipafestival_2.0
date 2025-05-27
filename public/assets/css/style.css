@@ -90,7 +90,7 @@ body {
     background-color: transparent !important;
     color: #f0d97b !important;
     border: 2px solid #f0d97b !important;
-    border-radius: 12px !important;
+    border-radius: 10px !important;
     font-size: 15px;
     padding: 10px 20px;
     font-weight: bold;
@@ -111,7 +111,7 @@ body {
     background-color: transparent !important;
     color: #b8141e !important;
     border: 2px solid #b8141e !important;
-    border-radius: 12px !important;
+    border-radius: 10px !important;
     font-size: 15px;
     padding: 10px 20px;
     font-weight: bold;
@@ -131,7 +131,7 @@ body {
     height: 100px;
     background: #b8141e;
     border: 2px solid #b8141e;
-    border-radius: 50%;
+    border-radius: 20px;
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
@@ -240,7 +240,7 @@ body {
     width: 200px;
     height: 150px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 20px !important;
 }
 
 .delegate-item p {
@@ -248,6 +248,36 @@ body {
     font-weight: bold;
     font-size: 16px;
 }
+.delegate-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator-line {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator-segment {
+    width: 30px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.indicator-segment.active {
+    background-color: white;
+}
+
 
 /* MAPS */
 .title-loc{
@@ -257,7 +287,7 @@ body {
     width: 100%;
     height: 250px;
     border: 0;
-    border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
+    border-radius: 20px; /* Rounded corner seperti Bootstrap rounded */
 }
 .arc-section {
     padding-top: 70px;
@@ -266,9 +296,40 @@ body {
     font-size: 1.3rem;
 }
 .custom-rounded {
-    border-radius: 40px;
+    border-radius: 20px;
     overflow: hidden;
 }
+
+/*feedback*/
+#submission {
+  max-width: 800px; /* Batasi lebar form */
+  margin: 0 auto; /* Tengah jika tidak dalam grid */
+}
+
+#submission .form-control {
+  border-width: 2px;
+  border-radius: 8px;
+  box-shadow: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#submission .form-control:focus {
+  border-color: #B8141E;
+  box-shadow: 0 0 0 0.2rem rgba(184, 20, 30, 0.25);
+}
+
+#submission textarea.form-control {
+  resize: vertical;
+}
+
+#submission .btn-danger {
+  background-color: #B8141E;
+  border-color: #B8141E;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+
 
 /*testi*/
 .testi {
