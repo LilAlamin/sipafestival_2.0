@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
-              <img src="{{ asset('images/pattern/cooming soon.webp') }}" class="d-block w-100" alt="Gambar 1">
+              <img src="{{ asset('images/pattern/coomingsoon.webp') }}" class="d-block w-100" alt="Gambar 1">
             </div>
           </div>
           <p class="mt-3" style="font-size: 18px;">
