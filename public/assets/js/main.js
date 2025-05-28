@@ -29,7 +29,7 @@
     container.style.transform = `translateX(${currentPosition}px)`;
   }
 
-  // AUTO SCROLL tiap 3 detik
+  // AUTO SCROLL tiap 1 detik
   setInterval(() => {
     const containerWidth = container.scrollWidth;
     const wrapperWidth = containerWrapper.offsetWidth;
@@ -41,7 +41,7 @@
     }
 
     container.style.transform = `translateX(${currentPosition}px)`;
-  }, 1500);
+  }, 1000);
 
 
   // AJAX untuk mengirim form

@@ -46,13 +46,14 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2019</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+                    Solo International Performing Arts (SIPA) 2019 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
+                    Digelar di Benteng Vastenburg, Solo, SIPA 2019 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
+                     <strong><em>"Arts as a Social Action".</em></strong> Melalui panggung ini, seni diposisikan bukan hanya sebagai ekspresi estetika, melainkan juga sebagai wujud nyata dari respons terhadap berbagai isu sosial seperti lingkungan, gender, hingga politik. Dengan menjadikan Elizabeth Sudira sebagai maskot, SIPA 2019 berupaya menjembatani karya seni yang menyuarakan kepedulian, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat damai, harmonis, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2019.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/maskot/2019.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           </div>
         </div>
       </div>

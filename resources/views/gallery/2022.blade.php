@@ -46,13 +46,15 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2022</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+                    Solo International Performing Arts (SIPA) 2022 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
+                    Digelar di Kota Solo, SIPA 2022 mengusung semangat perubahan melalui seni sebagai energi penggerak kehidupan. Dengan mengangkat tema 
+                    <strong><em>"Art as The Spirit of Life Changing"</em></strong> dan menghadirkan Rianto sebagai maskot, SIPA 2022 menegaskan peran seni sebagai penjaga, 
+                    penyelaras, sekaligus penggerak harapan dalam menghadapi perubahan zaman. Melalui pertunjukan yang menggugah, panggung SIPA menjadi ruang refleksi bahwa dalam setiap perubahan, seni hadir membawa cahaya dan semangat kehidupan yang terus menyala.
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2022.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/maskot/2022.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           </div>
         </div>
       </div>

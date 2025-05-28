@@ -46,13 +46,15 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2021</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+                    Solo International Performing Arts (SIPA) 2021 merupakan ajang tahunan yang merayakan kemegahan seni pertunjukan dari berbagai penjuru dunia. 
+                    Digelar di Kota Solo, SIPA 2021 menyuguhkan pancaran energi kehidupan melalui berbagai karya seni, mulai dari suara, rupa, hingga simbol-simbol artistik yang penuh makna. 
+                    Dengan mengangkat tema <strong><em>"The Great Light of Arts"</em></strong> dan menghadirkan Endah Laras sebagai maskot, SIPA 2021 menghadirkan seni bukan hanya sebagai ekspresi keindahan, tetapi juga sebagai kekuatan yang menghidupkan dan menerangi. Pada panggung SIPA, cahaya agung dari dunia seni dipanjatkan sebagai doa bagi dunia yang tengah sakit—menjadi penerang dalam kegelapan dan menghadirkan harapan bagi seluruh jagad raya.
+
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2021.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/maskot/2021.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           </div>
         </div>
       </div>

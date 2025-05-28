@@ -226,13 +226,13 @@ body {
 
 .delegates-wrapper {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.1s ease-in-out;
 }
 
 .delegate-item {
     flex-shrink: 0;
     width: 220px;
-    margin: 0 15px; /* Lebih konsisten daripada mx-3 */
+    margin: 0 5px; /* Lebih konsisten daripada mx-3 */
     text-align: center;
 }
 
