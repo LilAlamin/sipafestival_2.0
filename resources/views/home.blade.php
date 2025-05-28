@@ -182,35 +182,35 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="delegate-container position-relative" style="overflow: hidden;">
           <div id="delegatesContainer" class="delegates-wrapper">
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2009.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2009</span><br>
                 <span class="fw-normal">Rahma Putri Parimita</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2010.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2010</span><br>
                 <span class="fw-normal">Sruti Respati</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2011.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2011</span><br>
                 <span class="fw-normal">GPH. Paundrakarna</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2012.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2012</span><br>
                 <span class="fw-normal">GKR. Timoer Rumbai K</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2013.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2013</span><br>
                 <span class="fw-normal">Rachel Georghea S</span>
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2015.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2015</span><br>
                 <span class="fw-normal">Fajar Satriadi</span>
