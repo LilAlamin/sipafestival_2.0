@@ -83,70 +83,42 @@
             <h2 class="fw-bold" style="color: #B8141E;">DOKUMENTASI</h2>
         </div>
         <div class="row justify-content-center text-center">
+            <!-- Gambar 1 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/f.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2021/g.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
                 </div>
             </div>
-
         </div>
     </div>
 

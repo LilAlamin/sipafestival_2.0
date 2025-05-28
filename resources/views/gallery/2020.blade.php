@@ -85,68 +85,39 @@
             <!-- Gambar 1 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/f.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2020/g.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
                 </div>
             </div>
-
         </div>
     </div>
 
