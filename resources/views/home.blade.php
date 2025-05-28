@@ -32,7 +32,7 @@
       transition: opacity 1s ease-in-out;
       opacity: 0;
       z-index: 0;
-      border-radius: 50px 100px 50px 100px !important;
+      border-radius: 20px 100px 20px 100px !important;
     }
     .img-slide.active {
       opacity: 1;
@@ -44,7 +44,7 @@
       height: 500px;
       position: relative;
       overflow: hidden;
-      border-radius: 50px 100px 50px 100px !important;
+      border-radius: 20px 100px 20px 100px !important;
     }
     .welcome-container {
       padding-top: 100px;
@@ -123,17 +123,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <!-- SLIDER FOTO -->
       <div class="row mb-5 align-items-center">
-        <div class="col-md-6">
+        <div class="col-md-6 text-container" style="padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) is an international masterpiece performance featuring dancers, musicians and theater performers from countries around the world. SIPA 2025 is organized in a hybrid manner, online and offline.
-                    <br>
                     SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call / curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
             </p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
+        <div class="col-md-6 d-flex justify-content-end">
+          <div id="slider" class="position-relative overflow-hidden rounded" style="width: 100%;">
             <img src="{{ asset('images/slider/1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
             <img src="{{ asset('images/slider/2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
             <img src="{{ asset('images/slider/3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
@@ -365,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
-          <h6 class="text-danger fw-bold text-center mb-4">Feedback & Suggestions</h6>
+          <h6 class="fw-bold text-center mb-4" style="color: #B8141E;">Feedback & Suggestions</h6>
           <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
@@ -380,8 +379,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="mb-3">
               <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
             </div>
-            <div class="text-center">
-              <button type="submit" form="submissionForm" class="btn btn-danger btn-sm px-4 rounded-pill" id="submitBtn">Submit Feedback</button>
+            <div class="text-center ">
+              <button type="submit" form="submissionForm" class=" btn-sm btn-findmore2" id="submitBtn">Submit Feedback</button>
             </div>
           </form>
         </div>

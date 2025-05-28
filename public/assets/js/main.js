@@ -1,9 +1,5 @@
 
 
-
-
-
-
   let currentPosition = 0;
   const container = document.getElementById('delegatesContainer');
   const containerWrapper = container.parentElement;
