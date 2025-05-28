@@ -53,28 +53,16 @@
     <!-- Deskripsi -->
     <div class="text-start">
       <p style="text-align: justify;">
-        Solo International Performing Arts (SIPA) merupakan festival seni pertunjukan tahunan yang diselenggarakan di Kota Solo sejak tahun 2009. Kementerian Pariwisata dan Ekonomi Kreatif memberikan apresiasi kepada SIPA dengan mengumumkan SIPA sebagai salah satu dari 100 wonderful events pada Kalender Event 2020.
+        Solo International Performing Arts (SIPA) is an annual performing arts festival held in the city of Solo since 2009. The initiator of SIPA was Ir. Joko Widodo, who at the time served as the Mayor of Surakarta.
       </p>
       <p style="text-align: justify;">
-        Presiden Joko Widodo yang tahun 2009 menjabat sebagai Walikota Solo memprakarsai penyelenggaraan seni pertunjukan berskala internasional yang diwujudkan melalui SIPA. Dra. Irawati Kusumorasri, M.Sn. menyambut baik gagasan Pak Joko Widodo dengan menyelenggarakan SIPA.
+        The SIPA performances were initially held at the Pamedan Pura Mangkunegaran (2009–2012), then moved to Vastenburg Fortress (2013–2019), the Central Java Cultural Park in Surakarta (2020), Bengawan Solo Park (2021), returned to Vastenburg Fortress (2022–2023), and most recently back to the Pamedan Pura Mangkunegaran in 2024.
       </p>
       <p style="text-align: justify;">
-        Harapan Presiden Joko Widodo yang menjadi misi SIPA yaitu SIPA sebagai wadah diplomasi antar kota, antar negara, dan yang terpenting antara rakyat dengan rakyat.
+        SIPA’s stage features a variety of performing arts from different countries, including music, dance, drama (theater), and more. The event takes place over three consecutive nights. Each SIPA performance aims to educate and foster public appreciation for the power of the performing arts.
       </p>
       <p style="text-align: justify;">
-        Selama tiga hari penyelenggaraan SIPA, terdapat beragam pertunjukan tari, musik, dan teater yang berasal dari Indonesia dan mancanegara yang tampil pada panggung megah secara live. Multiplier effect SIPA juga telah dirasakan masyarakat Kota Solo yang tercermin dari para pedagang kuliner yang menjajakan masakannya di bazaar SIPA sekaligus peningkatan kunjungan wisatawan selama acara berlangsung.
-      </p>
-      <p style="text-align: justify;">
-        Tahun 2009 hingga 2012, SIPA diselenggarakan di Pamedan Pura Mangkunegaran Solo secara live. SIPA mulai digelar di Benteng Vastenburg Solo sejak tahun 2013.
-      </p>
-      <p style="text-align: justify;">
-        Sehubungan dengan pandemi COVID-19, SIPA 2020 akan hadir secara virtual. SIPA akan tayang secara live dari studio di Solo pada 10, 11, dan 12 September 2020 dari pukul 5 sore hingga 9 malam melalui YouTube SIPA FESTIVAL sebagai platform utama.
-      </p>
-      <p style="text-align: justify;">
-        Setiap tahunnya, penonton SIPA mencapai 30.000 orang. Bahkan, SIPA 2019 mencetak angka 40,294 penonton selama tiga hari penyelenggaraan event. Melalui virtual festival, SIPA diharapkan mampu meraih 100.000 viewers.
-      </p>
-      <p style="text-align: justify;">
-        Pada SIPA Virtual Festival 2020, viewers bukan hanya menyaksikan beragam seni pertunjukan dan melihat tayangan pariwisata Indonesia, tetapi juga dapat mengikuti lelang barang seni, sekaligus memberikan donasi kepada para seniman yang telah pensiun.
+        The festival also promotes cultural convergence, which in turn is expected to help create a more harmonious global society through the spirit of the performing arts. The core concept of SIPA is to be a part of cultural life that is intentionally presented to educate and enhance public appreciation for the potential and strength of the performing arts.
       </p>
     </div>
   </div>
