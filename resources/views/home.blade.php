@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
-              <img src="{{ asset('images/pattern/coomingsoon.png') }}" class="d-block w-100" alt="Gambar 1">
+              <img src="{{ asset('images/pattern/cooming soon.webp') }}" class="d-block w-100" alt="Gambar 1">
             </div>
           </div>
           <p class="mt-3" style="font-size: 18px;">
@@ -183,112 +183,112 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="delegate-container position-relative" style="overflow: hidden;">
           <div id="delegatesContainer" class="delegates-wrapper">
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2009</span><br>
                 <span class="fw-normal">Rahma Putri Parimita</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2010</span><br>
                 <span class="fw-normal">Sruti Respati</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2011</span><br>
                 <span class="fw-normal">GPH. Paundrakarna</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2012</span><br>
                 <span class="fw-normal">GKR. Timoer Rumbai K</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2013</span><br>
                 <span class="fw-normal">Rachel Georghea S</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2014</span><br>
                 <span class="fw-normal">Tunku Atiah</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2015</span><br>
                 <span class="fw-normal">Fajar Satriadi</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2016.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2016.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2016</span><br>
                 <span class="fw-normal">Peni Candra Rini</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2017.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2017.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2017</span><br>
                 <span class="fw-normal">Dr. Eko Supriyanto, S.Sn., MFA</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2018.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2018.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2018</span><br>
                 <span class="fw-normal">Melati Suryodarmo</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2019.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2019.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2019</span><br>
                 <span class="fw-normal">Elizabeth Sudira</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2020.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2020.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2020</span><br>
                 <span class="fw-normal">Dory Harsa</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2021.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2021.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2021</span><br>
                 <span class="fw-normal">Endah Laras</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2022.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2022.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2022</span><br>
                 <span class="fw-normal">Rianto</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2023.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2023.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2023</span><br>
                 <span class="fw-normal">Wirastuti Sulistyaningsih</span>
               </p>
             </div>
             <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2024.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <img src="{{ asset('images/maskot/2024.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2024</span><br>
                 <span class="fw-normal">GRAj Ancillasura Marina Sudjiwo</span>
