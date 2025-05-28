@@ -32,7 +32,7 @@
       transition: opacity 1s ease-in-out;
       opacity: 0;
       z-index: 0;
-      border-radius: 50px 100px 50px 100px !important;
+      border-radius: 20px 100px 20px 100px !important;
     }
     .img-slide.active {
       opacity: 1;
@@ -44,7 +44,7 @@
       height: 500px;
       position: relative;
       overflow: hidden;
-      border-radius: 50px 100px 50px 100px !important;
+      border-radius: 20px 100px 20px 100px !important;
     }
     .welcome-container {
       padding-top: 100px;
@@ -63,19 +63,19 @@
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
-        <div class="countdown-number" id="days">00</div>
+        <div class="countdown-number" id="days"></div>
         <div class="countdown-label">Days</div>
       </div>
       <div class="countdown-item">
-        <div class="countdown-number" id="hours">00</div>
+        <div class="countdown-number" id="hours"></div>
         <div class="countdown-label">Hours</div>
       </div>
       <div class="countdown-item">
-        <div class="countdown-number" id="minutes">00</div>
+        <div class="countdown-number" id="minutes"></div>
         <div class="countdown-label">Minutes</div>
       </div>
       <div class="countdown-item">
-        <div class="countdown-number" id="seconds">00</div>
+        <div class="countdown-number" id="seconds"></div>
         <div class="countdown-label">Seconds</div>
       </div>
     </div>
@@ -83,25 +83,56 @@
   </div>
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var targetDate = new Date(Date.UTC(2025, 8, 4, 12, 0, 0)); // 4 Sep 2025, 19:00 WIB (UTC+7)
+
+  function updateCountdown() {
+    var now = new Date();
+    var diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = "The event has started!";
+      clearInterval(timerInterval);
+      return;
+    }
+
+    var totalSeconds = Math.floor(diff / 1000);
+    var days = Math.floor(totalSeconds / (3600 * 24));
+    var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = ("0" + hours).slice(-2);
+    document.getElementById("minutes").textContent = ("0" + minutes).slice(-2);
+    document.getElementById("seconds").textContent = ("0" + seconds).slice(-2);
+  }
+
+  updateCountdown();
+  var timerInterval = setInterval(updateCountdown, 1000);
+});
+</script>
+
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
       <h1 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h1>
       <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
-      <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
+      <h2 class="text-center fw-medium mb-5" style="color: #000;">Let’s make new journey on SIPA</h2>
 
       <!-- SLIDER FOTO -->
       <div class="row mb-5 align-items-center">
-        <div class="col-md-6">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h2>
+        <div class="col-md-6 text-container" style="padding-right: 50px;">
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+                    Solo International Performing Arts (SIPA) is an international masterpiece performance featuring dancers, musicians and theater performers from countries around the world. SIPA 2025 is organized in a hybrid manner, online and offline.
+                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call / curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
             </p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
+        <div class="col-md-6 d-flex justify-content-end">
+          <div id="slider" class="position-relative overflow-hidden rounded" style="width: 100%;">
             <img src="{{ asset('images/slider/1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
             <img src="{{ asset('images/slider/2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
             <img src="{{ asset('images/slider/3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
@@ -113,195 +144,195 @@
       </div>
 
     <!-- YT -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
-      <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
-        <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
-          <div class="play-button position-absolute top-50 start-50 translate-middle">
-            <span class="circle"></span>
-            <i class="bi bi-play-fill"></i>
+    <div class="container-yt-carousel">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: #B8141E;">SIPA LAST YEAR</h2>
+        <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
+          <div id="thumbnail" onclick="openVideo()" style="position: relative;">
+            <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
+            <div class="play-button position-absolute top-50 start-50 translate-middle">
+              <span class="circle"></span>
+              <i class="bi bi-play-fill"></i>
+            </div>
           </div>
+          <iframe id="videoIframe" width="1280" height="720"
+                  src="https://www.youtube.com/embed/rJtSeMMQY9g"
+                  title="YouTube video" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen
+                  class="rounded-5" style="display: none;"></iframe>
         </div>
-        <iframe id="videoIframe" width="1280" height="720"
-                src="https://www.youtube.com/embed/rJtSeMMQY9g"
-                title="YouTube video" frameborder="0"
-                allow="autoplay; encrypted-media" allowfullscreen
-                class="rounded-5" style="display: none;"></iframe>
       </div>
-    </div>
 
-    <!-- MASKOT -->
-    <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
-      <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
-        <div class="carousel-inner custom-rounded">
-          <div class="carousel-item active">
-            <img src="{{ asset('images/pattern/coomingsoon.png') }}" class="d-block w-100" alt="Gambar 1">
+      <!-- MASKOT -->
+      <div class="arc-section mb-5 text-center">
+        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
+        <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
+          <div class="carousel-inner custom-rounded">
+            <div class="carousel-item active">
+              <img src="{{ asset('images/pattern/coomingsoon.webp') }}" class="d-block w-100" alt="Gambar 1">
+            </div>
           </div>
-        </div>
-        <p class="mt-3" style="font-size: 18px;">
-          <span class="fw-bold">2025</span><br>
-          <span class="fw-normal">SIPAfestival</span>
-        </p>
-      </div>
-    </div>
-    <div class="delegates-section text-center my-5">
-      <div class="delegate-container position-relative" style="overflow: hidden;">
-        <div id="delegatesContainer" class="delegates-wrapper">
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2009</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2010</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2011</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2012</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2013</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2014</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2015</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2016</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2017</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2018</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2019</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2020</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2021</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2022</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2023</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2024</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
-          <div class="delegate-item text-center flex-shrink-0 mx-3">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-            <p class="mt-2" style="font-size: 16px;">
-              <span class="fw-bold">2024</span><br>
-              <span class="fw-normal">SIPAfestival</span>
-            </p>
-          </div>
+          <p class="mt-3" style="font-size: 18px;">
+            <span class="fw-bold">2025</span><br>
+            <span class="fw-normal">SIPA festival</span>
+          </p>
         </div>
       </div>
+      <div class="delegates-section text-center">
+        <div class="delegate-container position-relative" style="overflow: hidden;">
+          <div id="delegatesContainer" class="delegates-wrapper">
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2009.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2009</span><br>
+                <span class="fw-normal">Rahma Putri Parimita</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2010.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2010</span><br>
+                <span class="fw-normal">Sruti Respati</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2011.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2011</span><br>
+                <span class="fw-normal">GPH. Paundrakarna</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2012.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2012</span><br>
+                <span class="fw-normal">GKR. Timoer Rumbai K</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2013.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2013</span><br>
+                <span class="fw-normal">Rachel Georghea S</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2014</span><br>
+                <span class="fw-normal">Tunku Atiah</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2015.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2015</span><br>
+                <span class="fw-normal">Fajar Satriadi</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2016.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2016</span><br>
+                <span class="fw-normal">Peni Candra Rini</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2017.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2017</span><br>
+                <span class="fw-normal">Dr. Eko Supriyanto, S.Sn., MFA</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2018.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2018</span><br>
+                <span class="fw-normal">Melati Suryodarmo</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2019.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2019</span><br>
+                <span class="fw-normal">Elizabeth Sudira</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2020.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2020</span><br>
+                <span class="fw-normal">Dory Harsa</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2021.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2021</span><br>
+                <span class="fw-normal">Endah Laras</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2022.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2022</span><br>
+                <span class="fw-normal">Rianto</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2023.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2023</span><br>
+                <span class="fw-normal">Wirastuti Sulistyaningsih</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/maskot/2024.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">2024</span><br>
+                <span class="fw-normal">GRAj Ancillasura Marina Sudjiwo</span>
+              </p>
+            </div>
+            <div class="delegate-item text-center flex-shrink-0 mx-3">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+              <p class="mt-2" style="font-size: 16px;">
+                <span class="fw-bold">Jangan dihapus</span><br>
+                <span class="fw-normal">ini untuk tutupnya</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
       <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
-      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h4>
+      <h4 class="text-center fw-medium mb-5" style="color: #000;">Update news about SIPA</h4>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 news-wrapper">
       <!-- Berita 1 -->
-      @foreach ($news as $new)
+      @foreach ($news->take(3) as $new)
         <div class="col-md-3 mb-4">
           <div class="card h-100 shadow-sm border-0">
             <div class="position-relative">
               <img src="{{ asset('/images/news/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
-              <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
             </div>
             <div class="card-body">
               <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
               <h6 class="fw-bold">{{ $new->title }}</h6>
               <p class="text-muted mb-2" style="font-size: 0.875rem;">{{ Str::limit($new->description, 100, '...') }}</p>
-              <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+              <a href="{{ url('/detailNews/' . $new->slug) }}" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
       @endforeach
-
+      <a href="/news" class="btn btn-findmore2 mt-4 fw-bold">OTHER NEWS</a>
     </div>
 
 
     <!-- Section Title -->
-    <div class="text-center mb-4">
-      <h5 class="text-danger fw-bold">We’d love to hear from you</h5>
+    <div class="text-center mb-4 title-loc">
+      <h5 class="fw-bold" style="color: #B8141E;">We’re Closer Than You Think!</h5>
       <h5 class="fw-bold">@SIPAFESTIVAL</h5>
     </div>
 
@@ -310,7 +341,7 @@
       <div class="col-md-6">
         <h6 class="text-danger fw-bold">LOCATION</h6>
         <p class="fw-bold">Address</p>
-        <p>Jl. Kedasih No.22, <br>Kerten, Laweyan, Solo, Central Java, INA</p>
+        <p>22 Kedasih Street, <br> Kerten Sub-district, Laweyan District, Surakarta City, <br>Central Java 57143, Indonesia</p>
       </div>
       <div class="col-md-6">
         <iframe 
@@ -326,16 +357,14 @@
     <!-- Feedback and Form -->
     <div class="row mt-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <p>We value your feedback. Whether you have a question or a suggestion, we’re here for you 24/7. Feel free to call or email us anytime.</p>
+        <p>We greatly appreciate your insights. For any further information or suggestions, please contact us anytime—our dedicated team is available 24 hours a day, 7 days a week.</p>
         <h6 class="text-danger fw-bold">Contact information</h6>
-        <p>000888-5556-7856<br>@sipafestival@gmail.com</p>
-        <p class="fw-bold">Address</p>
-        <p>Jl. Kedasih No.22,<br>Kerten, Laweyan, Solo, Central Java, INA</p>
+        <p>+62 856-4722-5058<br>sipafestival@gmail.com</p>
       </div>
 
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
-          <h6 class="text-danger fw-bold text-center mb-4">SUBMISSION VOLUNTEER FORM</h6>
+          <h6 class="fw-bold text-center mb-4" style="color: #B8141E;">Feedback & Suggestions</h6>
           <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
@@ -350,8 +379,8 @@
             <div class="mb-3">
               <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
             </div>
-            <div class="text-center">
-              <button type="submit" form="submissionForm" class="btn btn-danger btn-sm px-4 rounded-pill" id="submitBtn">SEND THE FORM</button>
+            <div class="text-center ">
+              <button type="submit" form="submissionForm" class=" btn-sm btn-findmore2" id="submitBtn">Submit Feedback</button>
             </div>
           </form>
         </div>
@@ -448,20 +477,19 @@
 
     <!-- FAQ -->
   <div class="container my-5">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA (Solo International Performing Arts)</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA</h2>
     <div class="accordion" id="faqSIPA">
 
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq1">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-            When's the best time to arrive?
+            How much is the entrance fee to watch SIPA?
           </button>
         </h2>
         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>We recommend arriving early to fully enjoy the festival experience and catch all the performances.</li>
-              <li>Akan lebih baik apabila kalian datang lebih awal untuk menikmati pengalaman festival secara maksimal dan menyaksikan semua pertunjukan.</li>
+              <li>No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)</li>
             </ul>
           </div>
         </div>
@@ -470,14 +498,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq2">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-            Is there an admission fee for the festival?
+            What I will find at the SIPA Festival
           </button>
         </h2>
         <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)</li>
-              <li>Tidak ada biaya masuk untuk festival ini! Kalian dapat menikmati semua pertunjukan dan kegiatan tanpa dikenakan biaya. (ACARA GRATIS)</li>
+              <li>Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!</li>
             </ul>
           </div>
         </div>
@@ -486,14 +513,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq3">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-            Do I need to buy tickets to attend the festival?
+            What are the different seating categories available at SIPA?
           </button>
         </h2>
         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>No tickets are required to attend SIPA. Just come and enjoy the festival atmosphere and all the amazing performances!</li>
-              <li>Tidak perlu membeli tiket untuk menghadiri SIPA. Cukup datang dan nikmati suasana festival serta semua pertunjukan yang luar biasa!</li>
+              <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances</li>
             </ul>
           </div>
         </div>
@@ -502,14 +528,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq4">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-            What are the different seating categories available at SIPA?
+            Will you be posting the schedule in advance?
           </button>
         </h2>
         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances.</li>
-              <li>Ada tiga kategori tempat duduk yang tersedia: VIP Seat, Undangan Seat, dan Umum Seat. Setiap kategori menawarkan pengalaman dan pemandangan yang berbeda terhadap pertunjukan.</li>
+              <li>Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.</li>
             </ul>
           </div>
         </div>
@@ -518,90 +543,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq5">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-            How can I obtain VIP or Invitation Seats for the festival?
+            What types of cameras are allowed?
           </button>
         </h2>
         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>VIP Seats and Invitation Seats are limited and typically require prior registration or an invitation. Please check our official website for more details on how to secure these seats.</li>
-              <li>VIP Seat dan Undangan Seat terbatas dan biasanya memerlukan pendaftaran sebelumnya atau undangan. Silakan cek situs resmi kami untuk informasi lebih lanjut tentang cara mendapatkan tempat duduk ini.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq7">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-            What will I see inside the festival?
-          </button>
-        </h2>
-        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!
-              </li>
-              <li>
-                Kalian akan menemukan berbagai pertunjukan yang beragam, termasuk musik, tari, dan teater, serta stan makanan dan pameran budaya!
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq8">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-            Will you be posting the schedule in advance?
-          </button>
-        </h2>
-        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.
-              </li>
-              <li>
-                Boleh. Ini adalah acara yang ramah keluarga, jadi silakan bawa stroller untuk anak-anak.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq9">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-            What types of cameras are allowed?
-          </button>
-        </h2>
-        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="faq9" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.
-              </li>
-              <li>
-                Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diperbolehkan. Namun, kalian boleh membawa kamera kompak dan smartphone.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq10">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-            Can I bring my video camera?
-          </button>
-        </h2>
-        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="faq10" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>
-                No, professional video cameras are not allowed. Feel free to take photos with your personal camera!
-              </li>
-              <li>
-                Tidak diperbolehkan membawa kamera video profesional. Silakan ambil foto dengan kamera pribadi kalian!
-              </li>
+              <li>VProfessional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.</li>
             </ul>
           </div>
         </div>
@@ -610,7 +558,7 @@
   </div>
 
   <!-- SPONSOR MEDPART -->
-  <div class="row mb-5 align-items-center justify-content-center">
+  <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
       <div class="sponsor-container p-4 text-center">
@@ -626,17 +574,17 @@
       </div>
     </div>
   </div>
-  <div class="row mb-5 align-items-center justify-content-center">
+  <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
       <div class="medpart-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <img src="logo1.png" alt="Logo 1" class="medpart-logo" />
+          <p>COMING SOON</p>
+          <!-- <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="sponsor-logo logo-sedang" />
           <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
           <img src="logo3.png" alt="Logo 3" class="medpart-logo" />
           <img src="logo4.png" alt="Logo 4" class="medpart-logo" />
-          <img src="logo5.png" alt="Logo 5" class="medpart-logo" />
-          <!-- Tambahkan logo lainnya -->
+          <img src="logo5.png" alt="Logo 5" class="medpart-logo" /> -->
         </div>
       </div>
     </div>

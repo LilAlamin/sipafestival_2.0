@@ -1,9 +1,5 @@
 
 
-
-
-
-
   let currentPosition = 0;
   const container = document.getElementById('delegatesContainer');
   const containerWrapper = container.parentElement;
@@ -92,32 +88,3 @@
     });
   });
 
-  (function() {
-    var targetDate = new Date(Date.UTC(2025, 8, 4, 12, 0, 0)); // 4 Sep 2025, 19:00 WIB (UTC+7)
-    
-    function updateCountdown() {
-        var now = new Date();
-        var diff = targetDate - now;
-
-        if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "The event has started!";
-        clearInterval(timerInterval);
-        return;
-        }
-
-        var totalSeconds = Math.floor(diff / 1000);
-        var days = Math.floor(totalSeconds / (3600 * 24));
-        var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-        var minutes = Math.floor((totalSeconds % 3600) / 60);
-        var seconds = totalSeconds % 60;
-
-        // Isi setiap elemen countdown
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = ("0" + hours).slice(-2);
-        document.getElementById("minutes").textContent = ("0" + minutes).slice(-2);
-        document.getElementById("seconds").textContent = ("0" + seconds).slice(-2);
-    }
-
-    updateCountdown();
-    var timerInterval = setInterval(updateCountdown, 1000);
-    })();

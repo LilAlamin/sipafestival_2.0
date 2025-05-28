@@ -62,6 +62,12 @@ class NewsController extends Controller
         return view('home', compact('news'));
     }
 
+    public function showAllNews()
+    {
+        $news = News::all();
+        return view('news', compact('news'));
+    }
+
     public function edit($id)
     {
         $news = News::findOrFail($id);
@@ -125,6 +131,11 @@ class NewsController extends Controller
     {
         $news = News::where('slug', $slug)->firstOrFail();
         return view('admin.news.viewNews', compact('news'));
+    }
+    public function viewNews($slug)
+    {
+        $news = News::where('slug', $slug)->firstOrFail();
+        return view('detailNews', compact('news'));
     }
 
     public function editBySlug($slug)
