@@ -553,9 +553,9 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- SPONSOR MEDPART -->
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
-    <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
-      <div class="sponsor-container p-4 text-center">
-        <div class="d-flex justify-content-center gap-4 flex-nowrap">
+    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
+      <div class="sponsor-container p-4 text-center sponsor-flex">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
             <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo" />
@@ -563,21 +563,25 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </div>
   </div>
+
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
-    <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
+    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="medpart-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <p>COMING SOON</p>
-          <!-- <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="sponsor-logo logo-sedang" />
+          <p class="mb-0">COMING SOON</p>
+          <!-- 
+          <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="medpart-logo" />
           <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
           <img src="logo3.png" alt="Logo 3" class="medpart-logo" />
           <img src="logo4.png" alt="Logo 4" class="medpart-logo" />
-          <img src="logo5.png" alt="Logo 5" class="medpart-logo" /> -->
+          <img src="logo5.png" alt="Logo 5" class="medpart-logo" /> 
+          -->
         </div>
       </div>
     </div>
   </div>
+
   
 
 

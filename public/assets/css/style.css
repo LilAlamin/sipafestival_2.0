@@ -483,12 +483,6 @@ body {
 }
 
 /*SPONSORMEDPART*/
-.sponsor-container {
-    background-color: #ffffff;
-    border-radius: 20px;
-    border: 3px solid #ffe19d;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 .logo-besar {
     max-width: 250px;
 }
@@ -500,29 +494,54 @@ body {
 .logo-kecil {
     max-width: 100px;
 }
-.sponsor-logo {
-    max-width: 180px; /* pastikan semua muat di satu baris */
-    max-height: 100px; 
-    height: auto;
-    object-fit: contain;
-}
-.sponsor-item {
-    width: 200px; /* atau sesuai kebutuhan */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.medpart-container {
-    background-color: #ffffff; /* warna kuning background */
+.sponsor-container {
+    background-color: #ffffff;
     border-radius: 20px;
     border: 3px solid #ffe19d;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* pastikan tidak melewati parent */
 }
-.medpart-logo {
+
+.sponsor-flex {
+    display: flex;
+    flex-direction: column; /* biar flex di dalamnya tetap vertical */
+}
+
+.sponsor-logo {
+    max-width: 250px;
+    max-height: 100px;
     height: auto;
     object-fit: contain;
 }
+
+@media (max-width: 768px) {
+    .sponsor-logo {
+        max-width: 150px;
+    }
+}
+
+.medpart-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 3px solid #ffe19d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* biar nggak melebihi parent */
+}
+
+.medpart-logo {
+    max-width: 180px;
+    max-height: 80px;
+    height: auto;
+    object-fit: contain;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .medpart-logo {
+        max-width: 120px;
+    }
+}
+
 
 /*FAQ*/
 
