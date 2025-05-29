@@ -9,6 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
     * {
       font-family: 'Poppins', sans-serif;
@@ -79,13 +81,13 @@
 </head>
 <body>
 
-<x-header title="Selamat Datang" />
+@include('components.header')
 
 <!-- Lineup Section -->
 <section style="color: #B8141E; padding: 60px 20px;">
   <div class="container text-center">
     <h2 class="fw-bold mb-2" style="font-size: 36px;">LINEUP INFORMATION</h2>
-    <h5 class="mb-4">AMBASADOR SIPA PERFORMANCE</h5>
+    <h5 class="mb-4" style="color: #000;">AMBASADOR SIPA PERFORMANCE</h5>
     
     <!-- <div class="card mb-5" style="background-color: #7e001c; border: 3px solid #f8d98d; border-radius: 20px; overflow: hidden;">
       <img src="{{ asset('images/ambasador.png') }}" alt="Ambasador SIPA" class="img-fluid">
@@ -167,5 +169,38 @@
 </section>
 
 <x-footer />
+
+<script>
+  /*Navbar*/
+  document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    const showAreaHeight = 50; // area atas layar untuk mouseover
+
+    if (!navbar) return;
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if(scrollTop > lastScrollTop && scrollTop > 100){
+        // scroll down → sembunyikan navbar
+        navbar.style.top = '-80px';
+      } else {
+        // scroll up → tampilkan navbar
+        navbar.style.top = '0';
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    window.addEventListener('mousemove', function(e) {
+      if (e.clientY <= showAreaHeight) {
+        navbar.style.top = '0';
+      }
+    });
+  });
+
+
+</script>
 </body>
 </html>

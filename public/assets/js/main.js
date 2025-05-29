@@ -88,3 +88,34 @@
     });
   });
 
+
+/*Navbar*/
+  document.addEventListener('DOMContentLoaded', function() {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar');
+  const showAreaHeight = 50; // area atas layar untuk mouseover
+
+  if (!navbar) return;
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if(scrollTop > lastScrollTop && scrollTop > 100){
+      // scroll down → sembunyikan navbar
+      navbar.style.top = '-80px';
+    } else {
+      // scroll up → tampilkan navbar
+      navbar.style.top = '0';
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
+  window.addEventListener('mousemove', function(e) {
+    if (e.clientY <= showAreaHeight) {
+      navbar.style.top = '0';
+    }
+  });
+});
+
+
