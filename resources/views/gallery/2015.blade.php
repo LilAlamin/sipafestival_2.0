@@ -46,14 +46,13 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2015</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2019 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                    Digelar di Benteng Vastenburg, Solo, SIPA 2019 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
-                     <strong><em>"Arts as a Social Action".</em></strong> Melalui panggung ini, seni diposisikan bukan hanya sebagai ekspresi estetika, melainkan juga sebagai wujud nyata dari respons terhadap berbagai isu sosial seperti lingkungan, gender, hingga politik. Dengan menjadikan Elizabeth Sudira sebagai maskot, SIPA 2019 berupaya menjembatani karya seni yang menyuarakan kepedulian, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat damai, harmonis, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                    SoSolo International Performing Arts (SIPA) 2015 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2015 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema
+                     <strong><em>"Live in the Contemporary World".</em></strong> Acara yang berlangsung pada tanggal 10, 11, dan 12 September 2015 ini menampilkan karya seni yang merefleksikan dinamika kehidupan modern serta tantangan budaya di era kontemporer. Dengan menjadikan Fajar Satriadi sebagai maskot, SIPA 2015 berupaya menjembatani karya seni yang merespons perkembangan zaman, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat inovasi, kebebasan berekspresi, dan harmoni global, SIPA menjadi wadah yang menyatukan dunia melalui seni.
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2019.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/maskot/2015.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           </div>
         </div>
       </div>

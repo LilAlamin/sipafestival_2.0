@@ -46,14 +46,14 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2018</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2019 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                    Digelar di Benteng Vastenburg, Solo, SIPA 2019 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
-                     <strong><em>"Arts as a Social Action".</em></strong> Melalui panggung ini, seni diposisikan bukan hanya sebagai ekspresi estetika, melainkan juga sebagai wujud nyata dari respons terhadap berbagai isu sosial seperti lingkungan, gender, hingga politik. Dengan menjadikan Elizabeth Sudira sebagai maskot, SIPA 2019 berupaya menjembatani karya seni yang menyuarakan kepedulian, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat damai, harmonis, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                    Solo International Performing Arts (SIPA) 2018 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2018 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
+                     <strong><em>"We Are the World, We Are the Nations".</em></strong> Acara yang berlangsung pada tanggal 6, 7, dan 8 September 2018 ini menyuarakan pesan tentang pentingnya solidaritas global dan kesatuan dalam keberagaman melalui bahasa seni. Dengan menjadikan Melati Suryodarmo sebagai maskot, 
+                     SIPA 2018 berupaya menjembatani karya seni lintas budaya yang menyuarakan kebersamaan, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat perdamaian, inklusivitas, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2019.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/maskot/2018.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           </div>
         </div>
       </div>
