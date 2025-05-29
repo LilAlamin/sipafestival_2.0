@@ -70,7 +70,7 @@
           </div>
         </div>
         <iframe id="videoIframe" width="1280" height="720"
-                src="https://www.youtube.com/embed/nMGUIV3y2DE"
+                src="https://www.youtube.com/embed/VEzTltNsPzc"
                 title="YouTube video" frameborder="0"
                 allow="autoplay; encrypted-media" allowfullscreen
                 class="rounded-5" style="display: none;"></iframe>
@@ -131,7 +131,7 @@
   function openVideo() {
   const thumbnail = document.getElementById('thumbnail');
   const iframe = document.getElementById('videoIframe');
-  const youtubeLink = "https://www.youtube.com/embed/nMGUIV3y2DE?autoplay=1"; // Autoplay enabled
+  const youtubeLink = "https://www.youtube.com/embed/VEzTltNsPzc?autoplay=1"; // Autoplay enabled
 
   thumbnail.style.display = 'none';
   iframe.src = youtubeLink;
