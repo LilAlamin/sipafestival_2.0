@@ -12,6 +12,42 @@ body {
     overflow-x: hidden;
 }
 
+/*Maskot*/
+.slider-indicator {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .slider-indicator span {
+      width: 40px;
+      height: 6px;
+      background-color: red;
+      opacity: 0.3;
+      margin: 0 5px;
+      border-radius: 3px;
+      transition: opacity 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .slider-indicator span.active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .delegate-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .delegates-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .delegate-item {
+      flex: 0 0 auto;
+    }
 /* HEADER HOME IMG*/
 .header-section {
     position: relative;
@@ -359,8 +395,16 @@ body {
     max-width: 100px;
 }
 .sponsor-logo {
+    max-width: 180px; /* pastikan semua muat di satu baris */
+    max-height: 100px; 
     height: auto;
     object-fit: contain;
+}
+.sponsor-item {
+    width: 200px; /* atau sesuai kebutuhan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .medpart-container {

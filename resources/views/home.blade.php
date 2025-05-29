@@ -179,130 +179,123 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
       <div class="delegates-section text-center">
-        <div class="delegate-container position-relative" style="overflow: hidden;">
-          <div id="delegatesContainer" class="delegates-wrapper">
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+        <div class="delegate-container">
+          <div class="delegates-wrapper">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2009.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2009</span><br>
                 <span class="fw-normal">Rahma Putri Parimita</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2010.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2010</span><br>
                 <span class="fw-normal">Sruti Respati</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2011.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2011</span><br>
                 <span class="fw-normal">GPH. Paundrakarna</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2012.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2012</span><br>
                 <span class="fw-normal">GKR. Timoer Rumbai K</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2013.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2013</span><br>
                 <span class="fw-normal">Rachel Georghea S</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2014</span><br>
                 <span class="fw-normal">Tunku Atiah</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2015.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2015</span><br>
                 <span class="fw-normal">Fajar Satriadi</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2016.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2016</span><br>
                 <span class="fw-normal">Peni Candra Rini</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2017.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2017</span><br>
                 <span class="fw-normal">Dr. Eko Supriyanto, S.Sn., MFA</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2018.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2018</span><br>
                 <span class="fw-normal">Melati Suryodarmo</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2019.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2019</span><br>
                 <span class="fw-normal">Elizabeth Sudira</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2020.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2020</span><br>
                 <span class="fw-normal">Dory Harsa</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2021.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2021</span><br>
                 <span class="fw-normal">Endah Laras</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2022.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2022</span><br>
                 <span class="fw-normal">Rianto</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2023.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2023</span><br>
                 <span class="fw-normal">Wirastuti Sulistyaningsih</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <div class="delegate-item text-center mx-3">
               <img src="{{ asset('images/maskot/2024.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
               <p class="mt-2" style="font-size: 16px;">
                 <span class="fw-bold">2024</span><br>
                 <span class="fw-normal">GRAj Ancillasura Marina Sudjiwo</span>
               </p>
             </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">Jangan dihapus</span><br>
-                <span class="fw-normal">ini untuk tutupnya</span>
-              </p>
-            </div>
           </div>
         </div>
-      </div>
+      <div class="slider-indicator"></div>
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
@@ -562,14 +555,10 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
     <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
       <div class="sponsor-container p-4 text-center">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <!-- <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Kecil" class="sponsor-logo logo-kecil" /> -->
-          <!-- Tambahkan logo lainnya -->
+        <div class="d-flex justify-content-center gap-4 flex-nowrap">
+            <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo" />
         </div>
       </div>
     </div>
@@ -646,19 +635,50 @@ const slides = document.querySelectorAll('.img-slide');
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.delegates-wrapper');
     const items = document.querySelectorAll('.delegate-item');
-    const itemWidth = items[0].offsetWidth + 30; // 220px width + 2*15px margin
+    const indicatorContainer = document.querySelector('.slider-indicator');
+    const itemWidth = items[0].offsetWidth + 30; // width + margin
+    const itemsPerSlide = 4;
+    const totalSlides = Math.ceil(items.length / itemsPerSlide);
     let currentIndex = 0;
-    const totalItems = items.length;
+    let interval;
 
-    setInterval(() => {
-      currentIndex++;
-      if (currentIndex > totalItems - Math.floor(container.parentElement.offsetWidth / itemWidth)) {
-        currentIndex = 0;
-      }
+    // Generate indicators sesuai jumlah grup slide
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        indicatorContainer.appendChild(dot);
+    }
 
-      container.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }, 3000); // 3000ms = 3 detik
-  });
+    const indicators = document.querySelectorAll('.slider-indicator span');
+
+    function goToSlide(index) {
+        currentIndex = index;
+        const translateX = currentIndex * itemWidth * itemsPerSlide;
+        container.style.transform = `translateX(-${translateX}px)`;
+        indicators.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function startAutoSlide() {
+        clearInterval(interval);
+        interval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(currentIndex);
+        }, 3000);
+    }
+
+    // Set klik event ke indikator
+    indicators.forEach(dot => {
+        dot.addEventListener('click', () => {
+            goToSlide(parseInt(dot.dataset.index));
+            startAutoSlide(); // reset timer
+        });
+    });
+
+    startAutoSlide();
+});
 </script>
 
 
