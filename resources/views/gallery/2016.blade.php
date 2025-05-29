@@ -85,37 +85,37 @@
             <!-- Gambar 1 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
+                    <img src="{{ asset('images/gallery/2016/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
+                    <img src="{{ asset('images/gallery/2016/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
+                    <img src="{{ asset('images/gallery/2016/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
+                    <img src="{{ asset('images/gallery/2016/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
+                    <img src="{{ asset('images/gallery/2016/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/f.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
+                    <img src="{{ asset('images/gallery/2016/f.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2019/g.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
+                    <img src="{{ asset('images/gallery/2016/g.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
                 </div>
             </div>
         </div>
