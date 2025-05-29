@@ -141,7 +141,16 @@
             <li><a class="dropdown-item" href="/gallery/2021">SIPA 2021</a></li>
             <li><a class="dropdown-item" href="/gallery/2020">SIPA 2020</a></li>
             <li><a class="dropdown-item" href="/gallery/2019">SIPA 2019</a></li>
-            <li><a class="dropdown-item" href="/gallery/2009-2018">SIPA 2009-2018</a></li>
+            <li><a class="dropdown-item" href="/gallery/2018">SIPA 2018</a></li>
+            <li><a class="dropdown-item" href="/gallery/2017">SIPA 2017</a></li>
+            <li><a class="dropdown-item" href="/gallery/2016">SIPA 2016</a></li>
+            <li><a class="dropdown-item" href="/gallery/2015">SIPA 2015</a></li>
+            <li><a class="dropdown-item" href="/gallery/2014">SIPA 2014</a></li>
+            <li><a class="dropdown-item" href="/gallery/2013">SIPA 2013</a></li>
+            <li><a class="dropdown-item" href="/gallery/2012">SIPA 2012</a></li>
+            <li><a class="dropdown-item" href="/gallery/2011">SIPA 2011</a></li>
+            <li><a class="dropdown-item" href="/gallery/2010">SIPA 2010</a></li>
+            <li><a class="dropdown-item" href="/gallery/2009">SIPA 2009</a></li>
               
               
               

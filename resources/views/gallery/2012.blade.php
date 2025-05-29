@@ -44,7 +44,7 @@
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2019</h2>
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2012</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) 2019 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
                     Digelar di Benteng Vastenburg, Solo, SIPA 2019 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
@@ -60,7 +60,7 @@
 
 
     <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA 2019</h2>
+      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA 2012</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
           <img src="{{ asset('images/AM/T.AM2019.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">

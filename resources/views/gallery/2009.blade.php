@@ -85,37 +85,27 @@
             <!-- Gambar 1 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
+                    <img src="{{ asset('images/gallery/2009/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
+                    <img src="{{ asset('images/gallery/2009/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
+                    <img src="{{ asset('images/gallery/2009/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
+                    <img src="{{ asset('images/gallery/2009/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2010/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
+                    <img src="{{ asset('images/gallery/2009/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
                 </div>
             </div>
         </div>
