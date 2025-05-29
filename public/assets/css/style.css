@@ -163,37 +163,51 @@ body {
 
 /* PLAY VIDEO */
 .play-button {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: #b8141e;
     border: 2px solid #b8141e;
-    border-radius: 20px;
+    border-radius: 50%; /* bulat sempurna */
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     transition: all 0.4s ease;
-    box-shadow: 0 0 20px #b8141e;
+    box-shadow: 0 0 15px #b8141e;
     animation: pulse 2s infinite;
 }
 
 .play-button i {
-    font-size: 50px;
+    font-size: 36px;
     color: #ffffff;
     transition: all 0.3s ease;
 }
 
 .play-button:hover {
     background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
-        0 0 40px rgba(184, 20, 30, 0.5);
-    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8),
+        0 0 35px rgba(184, 20, 30, 0.5);
+    transform: scale(1.1);
 }
 
 .play-button:hover i {
     color: #8d0f16;
 }
+
+/* Optional: pulse animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(184, 20, 30, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
+    }
+}
+
 
 @keyframes pulse {
     0% {
