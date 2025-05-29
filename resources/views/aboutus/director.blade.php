@@ -14,7 +14,7 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+      background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
       background-repeat: repeat;
       background-size: auto;
       background-color: white;

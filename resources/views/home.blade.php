@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
   body {
-    background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+    background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
     background-repeat: repeat;
     background-size: auto;
     background-color: white;
@@ -57,7 +57,7 @@
 
 <!-- Header -->
 <section class="text-justify py-5 header-section">
-  <img src="{{ asset('images/pattern/headerr.png') }}" alt="Background" class="bg">
+  <img src="{{ asset('images/pattern/headerr.webp') }}" alt="Background" class="bg">
   <div class="container">
     <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
@@ -133,12 +133,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="col-md-6 d-flex justify-content-end">
           <div id="slider" class="position-relative overflow-hidden rounded" style="width: 100%;">
-            <img src="{{ asset('images/slider/1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/slider/2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/slider/3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/slider/4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/slider/5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
-            <img src="{{ asset('images/slider/6.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 6">
+            <img src="{{ asset('images/slider/1.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/slider/2.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+            <img src="{{ asset('images/slider/3.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+            <img src="{{ asset('images/slider/4.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+            <img src="{{ asset('images/slider/5.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+            <img src="{{ asset('images/slider/6.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 6">
           </div>
         </div>
       </div>

@@ -12,6 +12,14 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
+  <style>
+    body {
+      background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    } 
+  </style>
 </head>
 <body>
 <x-header title="Selamat Datang" />
