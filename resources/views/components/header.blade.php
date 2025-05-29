@@ -118,6 +118,7 @@
         <li class="nav-item"><a class="nav-link fw-bold" href="/faq">FAQ</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li> -->
 
+
         <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
         <li class="nav-item dropdown">
           <a class="nav-link  {{ request()->is('aboutus*') ? 'active' : '' }}" href="#" id="aboutDropdown"
