@@ -132,13 +132,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="width: 100%;">
-            <img src="{{ asset('images/slider/1.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/slider/2.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/slider/3.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/slider/4.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/slider/5.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
-            <img src="{{ asset('images/slider/6.webp') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 6">
+          <div id="slider" class="position-relative overflow-hidden rounded w-100">
+              @foreach (range(1, 6) as $i)
+                  <img src="{{ asset("images/slider/{$i}.webp") }}" 
+                      class="img-slide img-fluid w-100 {{ $i === 1 ? 'd-block' : 'd-none' }}" 
+                      alt="Slide {{ $i }}">
+              @endforeach
           </div>
         </div>
       </div>
@@ -164,6 +163,26 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <!-- MASKOT -->
+      @php
+            $delegates = [
+                2009 => 'Rahma Putri Parimita',
+                2010 => 'Sruti Respati',
+                2011 => 'GPH. Paundrakarna',
+                2012 => 'GKR. Timoer Rumbai K',
+                2013 => 'Rachel Georghea S',
+                2014 => 'Tunku Atiah',
+                2015 => 'Fajar Satriadi',
+                2016 => 'Peni Candra Rini',
+                2017 => 'Dr. Eko Supriyanto, S.Sn., MFA',
+                2018 => 'Melati Suryodarmo',
+                2019 => 'Elizabeth Sudira',
+                2020 => 'Dory Harsa',
+                2021 => 'Endah Laras',
+                2022 => 'Rianto',
+                2023 => 'Wirastuti Sulistyaningsih',
+                2024 => 'GRAj Ancillasura Marina Sudjiwo',
+            ];
+      @endphp
       <div class="arc-section mb-5 text-center">
         <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
@@ -181,120 +200,21 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="delegates-section text-center">
         <div class="delegate-container">
           <div class="delegates-wrapper">
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2009.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2009</span><br>
-                <span class="fw-normal">Rahma Putri Parimita</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2010.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2010</span><br>
-                <span class="fw-normal">Sruti Respati</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2011.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2011</span><br>
-                <span class="fw-normal">GPH. Paundrakarna</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2012.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2012</span><br>
-                <span class="fw-normal">GKR. Timoer Rumbai K</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2013.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2013</span><br>
-                <span class="fw-normal">Rachel Georghea S</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2014</span><br>
-                <span class="fw-normal">Tunku Atiah</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2015.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2015</span><br>
-                <span class="fw-normal">Fajar Satriadi</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2016.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2016</span><br>
-                <span class="fw-normal">Peni Candra Rini</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2017.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2017</span><br>
-                <span class="fw-normal">Dr. Eko Supriyanto, S.Sn., MFA</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2018.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2018</span><br>
-                <span class="fw-normal">Melati Suryodarmo</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2019.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2019</span><br>
-                <span class="fw-normal">Elizabeth Sudira</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2020.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2020</span><br>
-                <span class="fw-normal">Dory Harsa</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2021.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2021</span><br>
-                <span class="fw-normal">Endah Laras</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2022.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2022</span><br>
-                <span class="fw-normal">Rianto</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2023.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2023</span><br>
-                <span class="fw-normal">Wirastuti Sulistyaningsih</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center mx-3">
-              <img src="{{ asset('images/maskot/2024.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2024</span><br>
-                <span class="fw-normal">GRAj Ancillasura Marina Sudjiwo</span>
-              </p>
-            </div>
+            @foreach ($delegates as $year => $name)
+                <div class="delegate-item text-center mx-3">
+                    <img src="{{ asset("images/maskot/{$year}.webp") }}"
+                         alt="Delegate"
+                         class="img-fluid rounded-4"
+                         style="width: 220px; height: 220px; object-fit: cover;">
+                    <p class="mt-2" style="font-size: 16px;">
+                        <span class="fw-bold">{{ $year }}</span><br>
+                        <span class="fw-normal">{{ $name }}</span>
+                    </p>
+                </div>
+            @endforeach
           </div>
         </div>
+      </div>
       <div class="slider-indicator"></div>
     </div>
     <!-- Berita -->
