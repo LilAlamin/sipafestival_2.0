@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) is an international masterpiece performance featuring dancers, musicians and theater performers from countries around the world. SIPA 2025 is organized in a hybrid manner, online and offline.
-                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call / curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
+                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call or curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
             </p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
@@ -318,13 +318,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "Ini suatu bentuk event yang menurut saya sangat menyenangkan. Ada pertukaran budaya di dalamnya. Untuk itu kita akan terus dukung pelaksanaan SIPA di tahun-tahun mendatang."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Angela Tanoesoedibjo</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary">Wamenparekraf</small>
             </div>
           </div>
         </div>
@@ -332,13 +332,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "SIPA 2023 telah berlangsung selama tiga malam dengan lancar dan sukses, di mana berhasil mem-branding Kota Solo sebagai kota festival seni pertunjukan."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Puan Maharani</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary">Ketua DPR RI</small>
             </div>
           </div>
         </div>
@@ -346,13 +346,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "SIPA ini merupakan suatu acara seni pertunjukan yang telah berjalan selama bertahun-tahun. Dan SIPA ini menurut saya merupakan salah satu event kebanggaan di kota yang kita cintai."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Gusti Bhre</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary">KGPAA Mangkunegara X</small>
             </div>
           </div>
         </div>
@@ -360,27 +360,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "Di tengah pandemi pun, SIPA tetap aktif dan menjadi rujukan seni pertunjukan. Terlebih dinanti dan banyak disukai masyarakat."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
-          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
-          </p>
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
-            <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Kim Yong Woon</strong> <small class="text-muted">(Korea)</small><br>
+              <small class="text-secondary">Direktur KCCI</small>
             </div>
           </div>
         </div>
