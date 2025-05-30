@@ -64,22 +64,22 @@
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
         <div class="countdown-number" id="days"></div>
-        <div class="countdown-label">Days</div>
+        <div class="countdown-label">@lang('messages.days')</div>
       </div>
       <div class="countdown-item">
         <div class="countdown-number" id="hours"></div>
-        <div class="countdown-label">Hours</div>
+        <div class="countdown-label">@lang('messages.hours')</div>
       </div>
       <div class="countdown-item">
         <div class="countdown-number" id="minutes"></div>
-        <div class="countdown-label">Minutes</div>
+        <div class="countdown-label">@lang('messages.minutes')</div>
       </div>
       <div class="countdown-item">
         <div class="countdown-number" id="seconds"></div>
-        <div class="countdown-label">Seconds</div>
+        <div class="countdown-label">@lang('messages.seconds')</div>
       </div>
     </div>
-    <a href="#welcome-section" class="btn btn-findmore mt-4 fw-bold">FIND MORE</a>
+    <a href="#welcome-section" class="btn btn-findmore mt-4 fw-bold">@lang('messages.find_more')</a>
   </div>
 </section>
 
@@ -117,18 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h1>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.welcome_sipa')</h1>
       <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
-      <h2 class="text-center fw-medium mb-5" style="color: #000;">Let’s make new journey on SIPA</h2>
+      <h2 class="text-center fw-medium mb-5" style="color: #000;">@lang('messages.lets_journey')</h2>
 
       <!-- SLIDER FOTO -->
       <div class="row mb-5 align-items-center">
         <div class="col-md-6 text-container" style="padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
-            <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) is an international masterpiece performance featuring dancers, musicians and theater performers from countries around the world. SIPA 2025 is organized in a hybrid manner, online and offline.
-                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call or curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
-            </p>
+            <p style="text-align: justify;">@lang('messages.journey_description')</p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
@@ -234,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
               <h6 class="fw-bold">{{ $new->title }}</h6>
               <p class="text-muted mb-2" style="font-size: 0.875rem;">{{ Str::limit($new->description, 100, '...') }}</p>
-              <a href="{{ url('/detailNews/' . $new->slug) }}" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+              <a href="{{ route('news.HomeView', ['slug' => $new->slug]) }}" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
             </div>
           </div>
         </div>

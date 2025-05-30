@@ -38,7 +38,7 @@
               <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
               <h6 class="fw-bold">{{ $new->title }}</h6>
               <p class="text-muted mb-2" style="font-size: 0.875rem;">{{ Str::limit($new->description, 100, '...') }}</p>
-              <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+              <a href="{{ route('news.HomeView', ['slug' => $new->slug]) }}" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
