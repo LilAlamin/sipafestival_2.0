@@ -5,12 +5,21 @@ use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\HomeNewsController;
 
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/trylang', function () {
+    return view('trylang');
+});
+
+Route::get('lang/{lang}', function ($lang) {
+    if (in_array($lang, ['en', 'id'])) {
+        session(['locale' => $lang]);
+    }
+    return back();
+})->name('lang.switch');
+
 
 Route::get('/', [NewsController::class, 'showNewsHome'])->name('news.showNewsHome');
 Route::get('/news', [NewsController::class, 'showAllNews'])->name('news.showAllNews');
@@ -87,6 +96,7 @@ Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout')
 
 Route::middleware(['auth'])->group(function () {
     // Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
+    Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
     Route::post('/admin/dashboard/', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
     Route::get('/admin/dashboard/', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
