@@ -32,7 +32,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
+        <li class="nav-item">
+          <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link {{ request()->is('aboutus*') ? 'active' : '' }}" href="#" id="aboutDropdown"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,7 +45,9 @@
             <li><a class="dropdown-item" href="/aboutus/history">HISTORY OF SIPA</a></li>
           </ul>
         </li>
-        <a class="nav-link fw-bold {{ request()->is('lineup') ? 'active' : '' }}" href="/lineup">LINE UP</a>
+        <li class="nav-item">
+          <a class="nav-link fw-bold {{ request()->is('lineup') ? 'active' : '' }}" href="/lineup">LINE UP</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link fw-bold {{ request()->is('gallery*') ? 'active' : '' }}" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             GALLERY
@@ -53,6 +57,11 @@
               <li><a class="dropdown-item" href="/gallery/{{ $year }}">SIPA {{ $year }}</a></li>
             @endfor
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="lang-switch" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
+            {{ app()->getLocale() == 'id' ? 'EN' : 'ID' }}
+          </a>
         </li>
       </ul>
     </div>
