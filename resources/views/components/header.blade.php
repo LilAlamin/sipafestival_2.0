@@ -119,7 +119,10 @@
         <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li> -->
 
 
-        <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
+      <a href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
+          Switch to {{ app()->getLocale() == 'id' ? 'English' : 'Bahasa Indonesia' }}
+      </a>
+      <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
         <li class="nav-item dropdown">
           <a class="nav-link  {{ request()->is('aboutus*') ? 'active' : '' }}" href="#" id="aboutDropdown"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
