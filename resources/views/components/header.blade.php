@@ -11,98 +11,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
-    .navbar-brand img {
-      max-height: 65px;
-    }
-    .navbar-custom {
-      background: white;
-      border-bottom: 3px solid #B8141E;
-    }
-    .navbar-nav .nav-link {
-      color: black !important;
-      font-weight: bold;
-      margin-left: 1.2rem;
-      transition: all 0.3s ease;
-      position: relative;
-      text-transform: uppercase;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #B8141E !important;
-    }
-    .navbar-nav .nav-link.active {
-      color:#B8141E !important;
-    }
-    .navbar-toggler {
-      border: none;
-    }
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    /* Show dropdown on hover */
-
-
-
-    .dropdown-menu {
-  display: block;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-    .nav-item.dropdown:hover .dropdown-menu {
-      display: block!important;
-      opacity: 1!important;
-      visibility: visible!important;
-      transform: scaleY(1)!important;
-      pointer-events: auto!important;
-    }
-
-    .dropdown-menu {
-      border-radius: 12px!important;
-      background-color: #fff!important;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1)!important;
-      display: block!important;
-      transform: scaleY(0)!important;
-      transform-origin: top!important;
-      transition: transform 0.5s ease, opacity 0.5s ease!important;
-      opacity: 0!important;
-      visibility: hidden!important;
-      pointer-events: none!important;
-    }
-
-    .dropdown-item {
-      color: #000 !important;
-      font-weight: bold !important;
-    }
-
-    .dropdown-item:hover {
-      color: #B8141E!important;
-      background-color: #ffffff!important;
-    }
-
-    .nav-link:focus,
-    .nav-link:active,
-    .dropdown-item:focus,
-    .dropdown-item:active {
-      background-color: transparent !important;
-      color: #B8141E !important;
-      outline: none!important;
-      box-shadow: none!important;
-    }
-
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-custom shadow-sm fixed-top" style="transition: top 0.3s;">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo">
@@ -112,19 +32,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <!-- <li class="nav-item"><a class="nav-link fw-bold" href="/">HOME</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/aboutus">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li> -->
-
-
-      <a href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
-          Switch to {{ app()->getLocale() == 'id' ? 'English' : 'Bahasa Indonesia' }}
-      </a>
-      <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
+        <li class="nav-item">
+          <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
+        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link  {{ request()->is('aboutus*') ? 'active' : '' }}" href="#" id="aboutDropdown"
+          <a class="nav-link {{ request()->is('aboutus*') ? 'active' : '' }}" href="#" id="aboutDropdown"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ABOUT US
           </a>
@@ -133,28 +45,27 @@
             <li><a class="dropdown-item" href="/aboutus/history">HISTORY OF SIPA</a></li>
           </ul>
         </li>
+        <li class="nav-item">
           <a class="nav-link fw-bold {{ request()->is('lineup') ? 'active' : '' }}" href="/lineup">LINE UP</a>
-          <li class="nav-item dropdown">
-          <a class="nav-link fw-bold {{ request()->is('gallery*') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-bold {{ request()->is('gallery*') ? 'active' : '' }}" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             GALLERY
           </a>
-          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="/gallery/2024">SIPA 2024</a></li>
-            <li><a class="dropdown-item" href="/gallery/2023">SIPA 2023</a></li>
-            <li><a class="dropdown-item" href="/gallery/2022">SIPA 2022</a></li>
-            <li><a class="dropdown-item" href="/gallery/2021">SIPA 2021</a></li>
-            <li><a class="dropdown-item" href="/gallery/2020">SIPA 2020</a></li>
-            <li><a class="dropdown-item" href="/gallery/2019">SIPA 2019</a></li>
-            <li><a class="dropdown-item" href="/gallery/2009-2018">SIPA 2009-2018</a></li>
-              
-              
-              
-              
-              
-              
+          <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
+            @for ($year = 2024; $year >= 2009; $year--)
+              <li><a class="dropdown-item" href="/gallery/{{ $year }}">SIPA {{ $year }}</a></li>
+            @endfor
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="lang-switch" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
+            {{ app()->getLocale() == 'id' ? 'EN' : 'ID' }}
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+</body>
+</html>

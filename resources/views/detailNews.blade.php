@@ -12,6 +12,14 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
+  <style>
+    body {
+      background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    } 
+  </style>
 </head>
 <body>
 <x-header title="Selamat Datang" />
@@ -38,5 +46,38 @@
   </div>
 </section>
 <x-footer />
+
+<script>
+  /*Navbar*/
+  document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    const showAreaHeight = 50; // area atas layar untuk mouseover
+
+    if (!navbar) return;
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if(scrollTop > lastScrollTop && scrollTop > 100){
+        // scroll down → sembunyikan navbar
+        navbar.style.top = '-80px';
+      } else {
+        // scroll up → tampilkan navbar
+        navbar.style.top = '0';
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    window.addEventListener('mousemove', function(e) {
+      if (e.clientY <= showAreaHeight) {
+        navbar.style.top = '0';
+      }
+    });
+  });
+
+
+</script>
 </body>
 </html>

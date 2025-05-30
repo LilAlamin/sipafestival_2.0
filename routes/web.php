@@ -34,8 +34,38 @@ Route::get('/aboutus/history', function () {
 Route::get('/aboutus/director', function () {
     return view('aboutus/director');
 });
-Route::get('/gallery/2009-2018', function () {
-    return view('gallery/2009-2018');
+Route::get('/gallery/2009', function () {
+    return view('gallery/2009');
+});
+Route::get('/gallery/2010', function () {
+    return view('gallery/2010');
+});
+Route::get('/gallery/2011', function () {
+    return view('gallery/2011');
+});
+Route::get('/gallery/2012', function () {
+    return view('gallery/2012');
+});
+Route::get('/gallery/2013', function () {
+    return view('gallery/2013');
+});
+Route::get('/gallery/2013', function () {
+    return view('gallery/2013');
+});
+Route::get('/gallery/2014', function () {
+    return view('gallery/2014');
+});
+Route::get('/gallery/2015', function () {
+    return view('gallery/2015');
+});
+Route::get('/gallery/2016', function () {
+    return view('gallery/2016');
+});
+Route::get('/gallery/2017', function () {
+    return view('gallery/2017');
+});
+Route::get('/gallery/2018', function () {
+    return view('gallery/2018');
 });
 Route::get('/gallery/2019', function () {
     return view('gallery/2019');

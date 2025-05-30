@@ -27,9 +27,9 @@
         border-top: 3px solid #B8141E;
         text-align: center;
         margin-top: 11vh;
-        background-image: url('{{ asset("images/pemkot.png") }}');
+        background-image: url('{{ asset("images/solo.webp") }}');
         background-repeat: no-repeat;
-        background-size: 120rem;
+        background-size: 50rem;
         background-position: bottom;
         padding-top: 50px;
       }

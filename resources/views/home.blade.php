@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
   body {
-    background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+    background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
     background-repeat: repeat;
     background-size: auto;
     background-color: white;
@@ -57,7 +57,7 @@
 
 <!-- Header -->
 <section class="text-justify py-5 header-section">
-  <img src="{{ asset('images/pattern/headerr.png') }}" alt="Background" class="bg">
+  <img src="{{ asset('images/pattern/headerr.webp') }}" alt="Background" class="bg">
   <div class="container">
     <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
@@ -127,18 +127,17 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) is an international masterpiece performance featuring dancers, musicians and theater performers from countries around the world. SIPA 2025 is organized in a hybrid manner, online and offline.
-                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call / curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
+                    SIPA 2025 is held at the Outdoor Stage with a series of events, namely SIPA Show Case Stage (stages held at various crowd points in Solo such as shopping centers, Car Freeday, city parks or traditional markets in collaboration with the community through open call or curation. SIPA also collaborates with MSMEs (Culinary, Textil and Craft) to market their superior products.
             </p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="width: 100%;">
-            <img src="{{ asset('images/slider/1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/slider/2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/slider/3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/slider/4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/slider/5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
-            <img src="{{ asset('images/slider/6.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 6">
+          <div id="slider" class="position-relative overflow-hidden rounded w-100">
+              @foreach (range(1, 6) as $i)
+                  <img src="{{ asset("images/slider/{$i}.webp") }}" 
+                      class="img-slide img-fluid w-100 {{ $i === 1 ? 'd-block' : 'd-none' }}" 
+                      alt="Slide {{ $i }}">
+              @endforeach
           </div>
         </div>
       </div>
@@ -164,6 +163,26 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <!-- MASKOT -->
+      @php
+            $delegates = [
+                2009 => 'Rahma Putri Parimita',
+                2010 => 'Sruti Respati',
+                2011 => 'GPH. Paundrakarna',
+                2012 => 'GKR. Timoer Rumbai K',
+                2013 => 'Rachel Georghea S',
+                2014 => 'Tunku Atiah',
+                2015 => 'Fajar Satriadi',
+                2016 => 'Peni Candra Rini',
+                2017 => 'Dr. Eko Supriyanto, S.Sn., MFA',
+                2018 => 'Melati Suryodarmo',
+                2019 => 'Elizabeth Sudira',
+                2020 => 'Dory Harsa',
+                2021 => 'Endah Laras',
+                2022 => 'Rianto',
+                2023 => 'Wirastuti Sulistyaningsih',
+                2024 => 'GRAj Ancillasura Marina Sudjiwo',
+            ];
+      @endphp
       <div class="arc-section mb-5 text-center">
         <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
@@ -179,130 +198,24 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
       <div class="delegates-section text-center">
-        <div class="delegate-container position-relative" style="overflow: hidden;">
-          <div id="delegatesContainer" class="delegates-wrapper">
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2009.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2009</span><br>
-                <span class="fw-normal">Rahma Putri Parimita</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2010.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2010</span><br>
-                <span class="fw-normal">Sruti Respati</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2011.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2011</span><br>
-                <span class="fw-normal">GPH. Paundrakarna</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2012.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2012</span><br>
-                <span class="fw-normal">GKR. Timoer Rumbai K</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2013.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2013</span><br>
-                <span class="fw-normal">Rachel Georghea S</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2014.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2014</span><br>
-                <span class="fw-normal">Tunku Atiah</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2015.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2015</span><br>
-                <span class="fw-normal">Fajar Satriadi</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2016.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2016</span><br>
-                <span class="fw-normal">Peni Candra Rini</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2017.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2017</span><br>
-                <span class="fw-normal">Dr. Eko Supriyanto, S.Sn., MFA</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2018.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2018</span><br>
-                <span class="fw-normal">Melati Suryodarmo</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2019.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2019</span><br>
-                <span class="fw-normal">Elizabeth Sudira</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2020.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2020</span><br>
-                <span class="fw-normal">Dory Harsa</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2021.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2021</span><br>
-                <span class="fw-normal">Endah Laras</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2022.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2022</span><br>
-                <span class="fw-normal">Rianto</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2023.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2023</span><br>
-                <span class="fw-normal">Wirastuti Sulistyaningsih</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/maskot/2024.webp') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">2024</span><br>
-                <span class="fw-normal">GRAj Ancillasura Marina Sudjiwo</span>
-              </p>
-            </div>
-            <div class="delegate-item text-center flex-shrink-0 mx-3">
-              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
-              <p class="mt-2" style="font-size: 16px;">
-                <span class="fw-bold">Jangan dihapus</span><br>
-                <span class="fw-normal">ini untuk tutupnya</span>
-              </p>
-            </div>
+        <div class="delegate-container">
+          <div class="delegates-wrapper">
+            @foreach ($delegates as $year => $name)
+                <div class="delegate-item text-center mx-3">
+                    <img src="{{ asset("images/maskot/{$year}.webp") }}"
+                         alt="Delegate"
+                         class="img-fluid rounded-4"
+                         style="width: 220px; height: 220px; object-fit: cover;">
+                    <p class="mt-2" style="font-size: 16px;">
+                        <span class="fw-bold">{{ $year }}</span><br>
+                        <span class="fw-normal">{{ $name }}</span>
+                    </p>
+                </div>
+            @endforeach
           </div>
         </div>
       </div>
+      <div class="slider-indicator"></div>
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
@@ -405,13 +318,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "Ini suatu bentuk event yang menurut saya sangat menyenangkan. Ada pertukaran budaya di dalamnya. Untuk itu kita akan terus dukung pelaksanaan SIPA di tahun-tahun mendatang."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Angela Tanoesoedibjo</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary">Wamenparekraf</small>
             </div>
           </div>
         </div>
@@ -419,13 +332,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "SIPA 2023 telah berlangsung selama tiga malam dengan lancar dan sukses, di mana berhasil mem-branding Kota Solo sebagai kota festival seni pertunjukan."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Puan Maharani</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary">Ketua DPR RI</small>
             </div>
           </div>
         </div>
@@ -433,13 +346,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "SIPA ini merupakan suatu acara seni pertunjukan yang telah berjalan selama bertahun-tahun. Dan SIPA ini menurut saya merupakan salah satu event kebanggaan di kota yang kita cintai."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Gusti Bhre</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary">KGPAA Mangkunegara X</small>
             </div>
           </div>
         </div>
@@ -447,27 +360,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
+            "Di tengah pandemi pun, SIPA tetap aktif dan menjadi rujukan seni pertunjukan. Terlebih dinanti dan banyak disukai masyarakat."
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
-          <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2024 luar biasa! Kreativitas dan budaya yang ditampilkan sangat menginspirasi."
-          </p>
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
-            <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Maya</strong> <small class="text-muted">(Yogyakarta)</small><br>
-              <small class="text-secondary">Pelajar/Mahasiswa</small>
+              <strong style="font-size: 0.85rem;">Kim Yong Woon</strong> <small class="text-muted">(Korea)</small><br>
+              <small class="text-secondary">Direktur KCCI</small>
             </div>
           </div>
         </div>
@@ -560,35 +459,35 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- SPONSOR MEDPART -->
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
-    <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
-      <div class="sponsor-container p-4 text-center">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo logo-besar" />
-          <!-- <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Sedang" class="sponsor-logo logo-sedang" />
-          <img src="{{ asset('images/211.jpg') }}" alt="Logo Kecil" class="sponsor-logo logo-kecil" /> -->
-          <!-- Tambahkan logo lainnya -->
+    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
+      <div class="sponsor-container p-4 text-center sponsor-flex">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo" />
         </div>
       </div>
     </div>
   </div>
+
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
-    <div class="col-md-6 mx-auto"> <!-- Tambahkan mx-auto -->
+    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="medpart-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <p>COMING SOON</p>
-          <!-- <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="sponsor-logo logo-sedang" />
+          <p class="mb-0">COMING SOON</p>
+          <!-- 
+          <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="medpart-logo" />
           <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
           <img src="logo3.png" alt="Logo 3" class="medpart-logo" />
           <img src="logo4.png" alt="Logo 4" class="medpart-logo" />
-          <img src="logo5.png" alt="Logo 5" class="medpart-logo" /> -->
+          <img src="logo5.png" alt="Logo 5" class="medpart-logo" /> 
+          -->
         </div>
       </div>
     </div>
   </div>
+
   
 
 
@@ -646,19 +545,82 @@ const slides = document.querySelectorAll('.img-slide');
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.delegates-wrapper');
     const items = document.querySelectorAll('.delegate-item');
-    const itemWidth = items[0].offsetWidth + 30; // 220px width + 2*15px margin
+    const indicatorContainer = document.querySelector('.slider-indicator');
+    const itemWidth = items[0].offsetWidth + 30; // width + margin
+    const itemsPerSlide = 4;
+    const totalSlides = Math.ceil(items.length / itemsPerSlide);
     let currentIndex = 0;
-    const totalItems = items.length;
+    let interval;
 
-    setInterval(() => {
-      currentIndex++;
-      if (currentIndex > totalItems - Math.floor(container.parentElement.offsetWidth / itemWidth)) {
-        currentIndex = 0;
-      }
+    // Generate indicators sesuai jumlah grup slide
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        indicatorContainer.appendChild(dot);
+    }
 
-      container.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }, 3000); // 3000ms = 3 detik
+    const indicators = document.querySelectorAll('.slider-indicator span');
+
+    function goToSlide(index) {
+        currentIndex = index;
+        const translateX = currentIndex * itemWidth * itemsPerSlide;
+        container.style.transform = `translateX(-${translateX}px)`;
+        indicators.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function startAutoSlide() {
+        clearInterval(interval);
+        interval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(currentIndex);
+        }, 3000);
+    }
+
+    // Set klik event ke indikator
+    indicators.forEach(dot => {
+        dot.addEventListener('click', () => {
+            goToSlide(parseInt(dot.dataset.index));
+            startAutoSlide(); // reset timer
+        });
+    });
+
+    startAutoSlide();
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar');
+  const showAreaHeight = 50; // area atas layar untuk mouseover
+
+  if (!navbar) return;
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if(scrollTop > lastScrollTop && scrollTop > 100){
+      // scroll down → sembunyikan navbar
+      navbar.style.top = '-80px';
+    } else {
+      // scroll up → tampilkan navbar
+      navbar.style.top = '0';
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
+
+  window.addEventListener('mousemove', function(e) {
+    if (e.clientY <= showAreaHeight) {
+      navbar.style.top = '0';
+    }
+  });
+});
+
 </script>
 
 

@@ -16,7 +16,7 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+      background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
       background-repeat: repeat;
       background-size: auto;
       background-color: white;
@@ -46,13 +46,14 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2019</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+                    Solo International Performing Arts (SIPA) 2019 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
+                    Digelar di Benteng Vastenburg, Solo, SIPA 2019 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
+                     <strong><em>"Arts as a Social Action".</em></strong> Melalui panggung ini, seni diposisikan bukan hanya sebagai ekspresi estetika, melainkan juga sebagai wujud nyata dari respons terhadap berbagai isu sosial seperti lingkungan, gender, hingga politik. Dengan menjadikan Elizabeth Sudira sebagai maskot, SIPA 2019 berupaya menjembatani karya seni yang menyuarakan kepedulian, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat damai, harmonis, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2019.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/maskot/2019.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           </div>
         </div>
       </div>
@@ -84,68 +85,39 @@
             <!-- Gambar 1 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/f.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <div class="card border-0">
-                    <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid custom-rounded" alt="Foto 1">
-                    <div class="mt-2">
-                        <h6 class="mb-0 fw-bold">Direktur SIPA</h6>
-                        <small class="text-muted">Dra. Irawati Kusumorasri, M.Sn.</small>
-                    </div>
+                    <img src="{{ asset('images/gallery/2019/g.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -165,6 +137,35 @@
   iframe.src = youtubeLink;
   iframe.style.display = 'block';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar');
+  const showAreaHeight = 50; // area atas layar untuk mouseover
+
+  if (!navbar) return;
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if(scrollTop > lastScrollTop && scrollTop > 100){
+      // scroll down → sembunyikan navbar
+      navbar.style.top = '-80px';
+    } else {
+      // scroll up → tampilkan navbar
+      navbar.style.top = '0';
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
+  window.addEventListener('mousemove', function(e) {
+    if (e.clientY <= showAreaHeight) {
+      navbar.style.top = '0';
+    }
+  });
+});
+
 </script>
 </body>
 </html>
