@@ -96,75 +96,69 @@
         <a href="#" class="btn btn-outline-light mt-3">SEE THE DETAILS</a>
       </div>
     </div> -->
+
     <!-- International Delegates -->
-    <div class="p-4 mb-5" style="background-color:#ffeab3; border-radius: 40px;">
+    <div class="p-4" style="background-color: #ffeab3; border-radius: 40px;">
       <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">INTERNATIONAL DELEGATES</h4>
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100 border-0 bg-transparent">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="delegates-img" alt="Park Na Hoon Company">
+        <div class="col-md-4">
+          <div class="card h-100 ">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Park Na Hoon Company">
             <div class="card-body text-center">
-              <h6 class="card-title fw-bold">PARK NA HOON COMPANY</h6>
+              <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100 border-0 bg-transparent">
-            <img src="{{ asset('images/delegates/delegates 2.png') }}" class="delegates-img" alt="ART8">
+        <div class="col-md-4">
+          <div class="card h-100 ">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="ART8">
             <div class="card-body text-center">
-              <h6 class="card-title fw-bold">ART8</h6>
+              <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100 border-0 bg-transparent">
-            <img src="{{ asset('images/delegates/delegates 3.png') }}" class="delegates-img" alt="Hanayura">
+        <div class="col-md-4">
+          <div class="card h-100 ">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Hanayura">
             <div class="card-body text-center">
-              <h6 class="card-title fw-bold">HANAYURA</h6>
+              <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="card h-100 border-0 bg-transparent">
-            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="delegates-img" alt="New Delegate">
-            <div class="card-body text-center">
-              <h6 class="card-title fw-bold">NEW DELEGATE</h6>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
+
+
     <!-- Indonesian Delegates -->
-    <div class="p-4" style="background-color: #ffeab3; border-radius: 40px;">
+    <div class="p-4 mt-5" style="background-color: #ffeab3; border-radius: 40px;">
       <h4 class="fw-bold mb-4" style="color: #B8141E;">INDONESIAN DELEGATES</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="{{ asset('images/indo1.png') }}" class="card-img-top" alt="Mahoni Musik">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="card-img-top" alt="Mahoni Musik">
             <div class="card-body text-center">
-              <h6 class="card-title fw-bold">MAHONI MUSIK</h6>
+              <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="{{ asset('images/indo2.png') }}" class="card-img-top" alt="Darmawan Dadjiono">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="card-img-top" alt="Darmawan Dadjiono">
             <div class="card-body text-center">
-              <h6 class="card-title fw-bold">DARMAWAN DADJIONO</h6>
+              <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="{{ asset('images/indo3.png') }}" class="card-img-top" alt="Artmay Studio">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="card-img-top" alt="Artmay Studio">
             <div class="card-body text-center">
-              <h6 class="card-title fw-bold">ARTMAY STUDIO</h6>
+              <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
-      </div>
     </div>
-
   </div>
 </section>
 
