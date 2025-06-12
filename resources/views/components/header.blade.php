@@ -12,7 +12,8 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
+  <script src="{{ asset('assets/js/main.js') }}"></script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -27,9 +28,13 @@
     <a class="navbar-brand" href="#">
       <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <!-- Ganti tombol -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars" id="burgerIcon"></i>
     </button>
+
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -67,5 +72,34 @@
     </div>
   </div>
 </nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const burgerIcon = document.getElementById("burgerIcon");
+    const navCollapse = document.getElementById("navbarNav");
+    if (navbarToggler && burgerIcon && navCollapse) {
+      navbarToggler.addEventListener("click", function () {
+        // Toggle the icon based on the collapse state
+        if (navCollapse.classList.contains("show")) {
+          burgerIcon.classList.remove("fa-xmark");
+          burgerIcon.classList.add("fa-bars");
+        } else {
+          burgerIcon.classList.remove("fa-bars");
+          burgerIcon.classList.add("fa-xmark");
+        }
+      });
+      navCollapse.addEventListener("show.bs.collapse", function () {
+        burgerIcon.classList.remove("fa-bars");
+        burgerIcon.classList.add("fa-xmark");
+      });
+      navCollapse.addEventListener("hide.bs.collapse", function () {
+        burgerIcon.classList.remove("fa-xmark");
+        burgerIcon.classList.add("fa-bars");
+      });
+    }
+  });
+</script>
+
+
 </body>
 </html>
