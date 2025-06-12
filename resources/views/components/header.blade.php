@@ -60,7 +60,7 @@
         </li>
         <li class="nav-item">
           <a class="lang-switch" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
-            {{ app()->getLocale() == 'id' ? 'en' : 'id' }}
+            {{ app()->getLocale() == 'id' ? 'id' : 'en' }}
           </a>
         </li>
       </ul>
