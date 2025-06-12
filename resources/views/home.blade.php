@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-md-6 mb-4 mb-md-0">
         <p>We greatly appreciate your insights. For any further information or suggestions, please contact us anytime—our dedicated team is available 24 hours a day, 7 days a week.</p>
         <h6 class="text-danger fw-bold">Contact information</h6>
-        <p>+62 856-4722-5058<br>sipafestival@gmail.com</p>
+        <p>+62 882-2505-2982<br>sipafestival@gmail.com</p>
       </div>
 
       <div class="col-md-6" id="submission">
