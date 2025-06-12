@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- YT -->
     <div class="container-yt-carousel">
       <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: #B8141E;">SIPA LAST YEAR</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">SIPA FESTIVAL LAST YEAR</h2>
         <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
           <div id="thumbnail" onclick="openVideo()" style="position: relative;">
             <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ];
       @endphp
       <div class="arc-section mb-5 text-center">
-        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPA FESTIVAL</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <p class="mt-3" style="font-size: 18px;">
             <span class="fw-bold">2025</span><br>
-            <span class="fw-normal">SIPA festival</span>
+            <span class="fw-normal">SIPA Festival</span>
           </p>
         </div>
       </div>
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
+      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA FESTIVAL</h2>
       <h4 class="text-center fw-medium mb-5" style="color: #000;">Update news about SIPA</h4>
     </div>
     <div class="row mb-5 news-wrapper">
@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- FAQ -->
   <div class="container my-5">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA FESTIVAL</h2>
     <div class="accordion" id="faqSIPA">
 
       <div class="accordion-item">

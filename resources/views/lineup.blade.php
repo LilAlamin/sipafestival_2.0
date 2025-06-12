@@ -87,7 +87,7 @@
 <section style="color: #B8141E; padding: 60px 20px;">
   <div class="container text-center">
     <h2 class="fw-bold mb-2" style="font-size: 36px;">LINEUP INFORMATION</h2>
-    <h5 class="mb-4" style="color: #000;">AMBASADOR SIPA PERFORMANCE</h5>
+    <h5 class="mb-4" style="color: #000;">AMBASADOR SIPA FESTIVAL PERFORMANCE</h5>
     
     <!-- <div class="card mb-5" style="background-color: #7e001c; border: 3px solid #f8d98d; border-radius: 20px; overflow: hidden;">
       <img src="{{ asset('images/ambasador.png') }}" alt="Ambasador SIPA" class="img-fluid">
@@ -132,11 +132,11 @@
 
     <!-- Indonesian Delegates -->
     <div class="p-4 mt-5" style="background-color: #ffeab3; border-radius: 40px;">
-      <h4 class="fw-bold mb-4" style="color: #B8141E;">INDONESIAN DELEGATES</h4>
+      <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">INDONESIAN DELEGATES</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="card-img-top" alt="Mahoni Musik">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Mahoni Musik">
             <div class="card-body text-center">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
@@ -144,7 +144,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="card-img-top" alt="Darmawan Dadjiono">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Darmawan Dadjiono">
             <div class="card-body text-center">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
@@ -152,7 +152,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="card-img-top" alt="Artmay Studio">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Artmay Studio">
             <div class="card-body text-center">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>

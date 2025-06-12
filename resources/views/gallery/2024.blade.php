@@ -40,12 +40,12 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA</h1>
-      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA</h2>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA FESTIVAL</h1>
+      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA Festival</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2024</h2>
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2024</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
                     Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
@@ -60,7 +60,7 @@
 
 
     <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA 2024</h2>
+      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA FESTIVAL 2024</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
           <img src="{{ asset('images/AM/T.AM2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">

@@ -39,12 +39,12 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA</h1>
-      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA</h2>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA FESTIVAL</h1>
+      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA Festival</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2012</h2>
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2012</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) 2012 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2012 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema
                      <strong><em>"Go Green - save our world".</em></strong> Acara yang berlangsung pada tanggal 28,29,30 September 2012 ini menampilkan karya seni yang mengangkat kesadaran akan pentingnya pelestarian lingkungan dan keberlanjutan bumi. Dengan menjadikan GKR.
@@ -60,7 +60,7 @@
 
 
     <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA 2012</h2>
+      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA FESTIVAL 2012</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
           <img src="{{ asset('images/gallery/2012/2012.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
