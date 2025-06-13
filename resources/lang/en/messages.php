@@ -58,11 +58,12 @@ return [
     'directors_description_5' => 'Moreover, Irawati once served as the Chairperson of the Mangkunegaran Arts Academy (ASGA) in Solo until 2018. She envisions expanding SIPA to a broader international level. Under her leadership, SIPA has established partnerships with several international organizations through the signing of Memorandums of Understanding (MoUs), such as with the Andong Festival Tourism Foundation in South Korea and Universiti Teknologi MARA in Malaysia. Irawati hopes that in the future, SIPA will continue collaborating with more international institutions to foster global friendship through the arts.',
 
 
-
-
-
-
-
+    // HISTORY PAGE
+    'history' => 'History',
+    'history_description_1' => 'Solo International Performing Arts (SIPA) is an annual performing arts festival held in the city of Solo since 2009. The initiator of SIPA was Ir. Joko Widodo, who at the time served as the Mayor of Surakarta.',
+    'history_description_2' => 'The SIPA performances were initially held at the Pamedan Pura Mangkunegaran (2009–2012), then moved to Vastenburg Fortress (2013–2019), the Central Java Cultural Park in Surakarta (2020), Bengawan Solo Park (2021), returned to Vastenburg Fortress (2022–2023), and most recently back to the Pamedan Pura Mangkunegaran in 2024.',
+    'history_description_3' => 'SIPA’s stage features a variety of performing arts from different countries, including music, dance, drama (theater), and more. The event takes place over three consecutive nights. Each SIPA performance aims to educate and foster public appreciation for the power of the performing arts.',
+    'history_description_4' => 'The festival also promotes cultural convergence, which in turn is expected to help create a more harmonious global society through the spirit of the performing arts. The core concept of SIPA is to be a part of cultural life that is intentionally presented to educate and enhance public appreciation for the potential and strength of the performing arts.'
 
 
 ];
