@@ -14,178 +14,151 @@ body {
 }
 
 /*navbar*/
-.navbar-custom {
-    background: white;
-    border-bottom: 3px solid #b8141e;
-    padding: 10px 0;
+/* Import Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* General Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-.navbar-brand img {
-    max-height: 65px;
+/* Custom Navbar Styling */
+.navbar-custom .container {
+  max-width: 1200px;
 }
 
-.navbar-toggler {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1051;
-    border: none;
-    background: transparent;
+/* --- PERBAIKAN UTAMA ADA DI BAGIAN INI --- */
+
+/* 1. Gaya Dasar untuk Link Navigasi Desktop */
+.navbar-custom .hidden.md\:flex a.font-bold,
+.navbar-custom .hidden.md\:flex button.font-bold {
+  color: #1f2937; /* Warna default: hitam */
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none !important; /* Memastikan tidak ada garis bawah */
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
+/* 2. Gaya untuk Link yang Sudah Dikunjungi (agar tidak biru) */
+.navbar-custom .hidden.md\:flex a.font-bold:visited {
+  color: #1f2937; /* Tetap hitam */
 }
 
-.navbar-toggler-icon {
-    width: 30px;
-    height: 3px;
-    position: relative;
-    display: block;
-    background: none !important;
-    margin: 0 auto;
-    transition: background 0.3s;
+/* 3. Gaya HOVER (Sekarang dengan selector yang benar dan kuat) */
+.navbar-custom .hidden.md\:flex a.font-bold:hover,
+.navbar-custom .hidden.md\:flex button.font-bold:hover {
+  color: #B8141E; /* Warna hover: merah */
 }
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 30px;
-    height: 3px;
-    background: #000;
-    transition: all 0.3s;
+/* 4. Gaya untuk Link AKTIF (HOME) */
+.navbar-custom .hidden.md\:flex a.font-bold.nav-link-active {
+  color: #B8141E;
 }
 
-.navbar-toggler-icon::before {
-    top: -10px;
+/* --- AKHIR PERBAIKAN --- */
+
+
+/* Dropdown Menu Styling */
+[data-dropdown-menu] {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.navbar-toggler-icon::after {
-    top: 10px;
+[data-dropdown-menu] a {
+  color: #1f2937;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background: transparent;
+[data-dropdown-menu] a:hover {
+  color: #B8141E;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg) translate(5px, 5px);
-    top: 0;
+/* Mobile Menu Styling */
+#mobile-menu {
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg) translate(5px, -5px);
-    top: 0;
+#mobile-menu a {
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-bottom: 1px solid #f3f4f6;
+  text-decoration: none !important;
+  color: #1f2937;
 }
 
-.navbar-nav .nav-link {
-    color: black !important;
-    font-weight: bold;
-    margin-left: 1.2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    text-transform: uppercase;
+#mobile-menu a:last-child {
+  border-bottom: none;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #b8141e !important;
+#mobile-menu a:hover {
+  background-color: #f3f4f6;
+  color: #B8141E;
 }
 
-.navbar-nav .nav-link.active {
-    color: #b8141e !important;
+#mobile-menu a.nav-link-active {
+  color: #B8141E;
+  background-color: #fef2f2;
 }
 
-.news-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+/* Mobile Language Switcher Styling */
+#mobile-menu a.block.py-2.px-4.text-sm {
+    background-color: #e5e7eb;
+    margin: 0.5rem 1.5rem;
+    width: calc(100% - 3rem);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    color: #1f2937;
+}
+#mobile-menu a.block.py-2.px-4.text-sm:hover {
+    background-color: #d1d5db;
+    color: #1f2937;
 }
 
-/* Desktop styles */
-@media (min-width: 992px) {
-    .nav-item.dropdown:hover .dropdown-menu {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: scaleY(1) !important;
-        pointer-events: auto !important;
-    }
+/* Other styles */
+#menu-icon { transition: transform 0.3s ease-in-out; }
+button:focus { outline: none; }
+[data-dropdown-button] i { transition: transform 0.3s ease; }
+[data-dropdown-button]:not(.collapsed) i { transform: rotate(180deg); }
+/* TAMBAHKAN BLOK CSS INI KE BAGIAN AKHIR FILE CSS ANDA */
 
-    .dropdown-menu {
-        border-radius: 12px !important;
-        background-color: #fff !important;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
-        display: block !important;
-        transform: scaleY(0) !important;
-        transform-origin: top !important;
-        transition: transform 0.5s ease, opacity 0.3s ease !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        border: none !important;
-    }
+/* === MOBILE ACCORDION MENU STYLING === */
 
-    .dropdown-item {
-        font-family: "Poppins", sans-serif !important;
-        font-weight: bold !important;
-        text-transform: uppercase !important;
-        font-size: 1rem !important;
-        color: #000 !important;
-        letter-spacing: 0.5px;
-    }
-
-    .dropdown-item:hover {
-        color: #b8141e !important;
-        background-color: #ffffff !important;
-    }
+/* Tombol untuk membuka dropdown mobile (e.g., "ABOUT US") */
+.mobile-dropdown-toggle {
+    -webkit-tap-highlight-color: transparent; /* Hilangkan highlight biru saat diklik di mobile */
+    text-align: left; /* Pastikan teks rata kiri */
 }
 
-/* Mobile styles */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        background: white;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        margin-top: 10px;
-    }
+/* Mengatur ikon panah saat dropdown terbuka */
+.mobile-dropdown-toggle.open i {
+    transform: rotate(180deg);
+}
 
-    .navbar-nav .nav-link {
-        margin: 8px 0;
-        padding: 8px 0;
-    }
+/* Submenu item (e.g., "DIRECTOR PROFILE") */
+.mobile-submenu a {
+    background-color: #fafafa; /* Latar sedikit abu-abu untuk membedakan */
+    font-weight: 500; /* Font tidak setebal menu utama */
+    color: #374151; /* Warna teks lebih lembut */
+    border-bottom: 1px solid #f3f4f6;
+}
 
-    .dropdown-menu {
-        border-radius: 12px;
-        background-color: #fff;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        border: none;
-        padding: 8px;
-        margin: 5px 0;
-    }
+/* Hover state untuk submenu item */
+.mobile-submenu a:hover {
+    background-color: #fef2f2;
+    color: #B8141E;
+}
 
-    .dropdown-item {
-        font-family: "Poppins", sans-serif !important;
-        font-weight: bold !important;
-        text-transform: uppercase !important;
-        font-size: 1rem !important;
-        color: #000 !important;
-        letter-spacing: 0.5px;
-    }
-
-    .dropdown-item:hover {
-        color: #b8141e;
-        background-color: #ffffff;
-    }
-
-    .navbar-toggler {
-        padding: 5px;
-        border-radius: 8px;
-    }
+/* Hapus border pada link terakhir di dalam submenu */
+.mobile-submenu a:last-of-type {
+    border-bottom: none;
 }
 
 /*Maskot*/

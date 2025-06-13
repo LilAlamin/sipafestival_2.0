@@ -3,95 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sipafestival 2025</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <title>Sipafestival 2025 (Tailwind Version)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  <script src="{{ asset('assets/js/main.js') }}"></script>
-
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
+    body { font-family: 'Poppins', sans-serif; }
+    .nav-link-active { color: #B8141E; }
   </style>
 </head>
-<body>
+<body class="bg-gray-100">
 
-<nav class="navbar navbar-expand-lg navbar-custom shadow-sm fixed-top" style="transition: top 0.3s;">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa-solid fa-bars" id="burgerIcon"></i>
-    </button>
+<nav class="navbar-custom  bg-white shadow-md fixed top-0 left-0 right-0 z-50 border-b-2 border-b-[#B8141E]">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-3">
+      
+      <a href="/"><img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" class="h-12"></a>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link {{ request()->is('aboutus*') ? 'active' : '' }}" href="#" id="aboutDropdown"
-             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ABOUT US
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="/aboutus/director">DIRECTOR PROFILE</a></li>
-            <li><a class="dropdown-item" href="/aboutus/history">HISTORY OF SIPA</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold {{ request()->is('lineup') ? 'active' : '' }}" href="/lineup">LINE UP</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link fw-bold {{ request()->is('gallery*') ? 'active' : '' }}" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            GALLERY
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
+      <div class="hidden md:flex items-center space-x-6">
+        <a class="font-bold hover:text-red-500 {{ request()->is('/') ? 'nav-link-active' : '' }}" href="/">HOME</a>
+        
+        <div class="relative" data-dropdown>
+          <button class="font-bold hover:text-red-500 flex items-center" data-dropdown-button>
+            ABOUT US <i class="fa-solid fa-chevron-down text-xs ml-2"></i>
+          </button>
+          <div data-dropdown-menu class="absolute bg-white shadow-lg rounded-md mt-2 py-2 w-48 transition-all duration-200 ease-in-out transform origin-top opacity-0 scale-95 pointer-events-none">
+            <a href="/aboutus/director" class="block px-4 py-2 text-sm hover:bg-gray-100">DIRECTOR PROFILE</a>
+            <a href="/aboutus/history" class="block px-4 py-2 text-sm hover:bg-gray-100">HISTORY OF SIPA</a>
+          </div>
+        </div>
+        
+        <a class="font-bold hover:text-red-500 {{ request()->is('lineup') ? 'nav-link-active' : '' }}" href="/lineup">LINE UP</a>
+
+        <div class="relative" data-dropdown>
+          <button class="font-bold hover:text-red-500 flex items-center" data-dropdown-button>
+            GALLERY <i class="fa-solid fa-chevron-down text-xs ml-2"></i>
+          </button>
+          <div data-dropdown-menu class="absolute bg-white shadow-lg rounded-md mt-2 py-2 w-48 transition-all duration-200 ease-in-out transform origin-top opacity-0 scale-95 pointer-events-none">
             @for ($year = 2024; $year >= 2009; $year--)
-              <li><a class="dropdown-item" href="/gallery/{{ $year }}">SIPA {{ $year }}</a></li>
+              <a href="/gallery/{{ $year }}" class="block px-4 py-2 text-sm hover:bg-gray-100">SIPA {{ $year }}</a>
             @endfor
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="lang-switch" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
-            {{ app()->getLocale() == 'id' ? 'id' : 'en' }}
-          </a>
-        </li>
-      </ul>
+          </div>
+        </div>
+        
+        <a class="lang-switch bg-gray-200 px-3 py-1 rounded-full text-sm font-bold" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
+            {{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}
+        </a>
+      </div>
+
+      <div class="md:hidden"><button id="menu-toggle" class="text-gray-800 focus:outline-none"><i class="fa-solid fa-bars text-2xl" id="menu-icon"></i></button></div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white shadow-md pb-4 transition-all duration-300 ease-in-out transform origin-top opacity-0 scale-95 pointer-events-none">
+    
+        <a href="/" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('/') ? 'nav-link-active' : '' }}">HOME</a>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle w-full flex justify-between items-center py-3 px-6 text-sm font-bold hover:bg-gray-100">
+                <span>ABOUT US</span>
+                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-submenu overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                <a href="/aboutus/director" class="block py-3 pl-10 pr-6 text-sm hover:bg-gray-50">DIRECTOR PROFILE</a>
+                <a href="/aboutus/history" class="block py-3 pl-10 pr-6 text-sm hover:bg-gray-50">HISTORY OF SIPA</a>
+            </div>
+        </div>
+
+        <a href="/lineup" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('lineup') ? 'nav-link-active' : '' }}">LINE UP</a>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle w-full flex justify-between items-center py-3 px-6 text-sm font-bold hover:bg-gray-100">
+                <span>GALLERY</span>
+                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-submenu overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                @for ($year = 2024; $year >= 2009; $year--)
+                    <a href="/gallery/{{ $year }}" class="block py-3 pl-10 pr-6 text-sm hover:bg-gray-50">SIPA {{ $year }}</a>
+                @endfor
+            </div>
+        </div>
+        
+        <a class="block mt-2 mx-4 py-2 px-4 text-sm text-center rounded-lg bg-gray-100 hover:bg-gray-200" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
+          {{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}
+        </a>
     </div>
   </div>
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const burgerIcon = document.getElementById("burgerIcon");
-    const navCollapse = document.getElementById("navbarNav");
+// GANTI SELURUH ISI TAG SCRIPT DENGAN INI
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- LOGIKA UNTUK MENU UTAMA (DESKTOP & HAMBURGER) ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
-    // Pastikan elemen ditemukan sebelum menambahkan listener
-    if (burgerIcon && navCollapse) {
-      
-      // Gunakan event bawaan Bootstrap untuk mengubah ikon.
-      // Ini akan terpicu TEPAT SAAT menu MULAI DIBUKA.
-      navCollapse.addEventListener("show.bs.collapse", function () {
-        burgerIcon.classList.remove("fa-bars");
-        burgerIcon.classList.add("fa-xmark");
-      });
+    if (menuToggle && mobileMenu && menuIcon) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('scale-95');
+            mobileMenu.classList.toggle('pointer-events-none');
 
-      // Ini akan terpicu TEPAT SAAT menu MULAI DITUTUP.
-      navCollapse.addEventListener("hide.bs.collapse", function () {
-        burgerIcon.classList.remove("fa-xmark");
-        burgerIcon.classList.add("fa-bars");
-      });
+            const isHidden = mobileMenu.classList.contains('opacity-0');
+            if (isHidden) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
     }
-  });
+
+    // --- LOGIKA UNTUK DROPDOWN DESKTOP ---
+    const dropdowns = document.querySelectorAll('[data-dropdown]');
+    
+    function closeAllDropdowns() {
+        dropdowns.forEach(dropdown => {
+            const menu = dropdown.querySelector('[data-dropdown-menu]');
+            if (menu) {
+                menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            }
+        });
+    }
+
+    dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('[data-dropdown-button]');
+        const menu = dropdown.querySelector('[data-dropdown-menu]');
+        if (button && menu) {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = menu.classList.contains('opacity-0');
+                closeAllDropdowns();
+                if (isHidden) {
+                    menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                }
+            });
+        }
+    });
+
+    window.addEventListener('click', () => {
+        closeAllDropdowns();
+    });
+    
+
+    // --- LOGIKA BARU UNTUK DROPDOWN/ACCORDION MOBILE ---
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+    mobileDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            // Dapatkan submenu yang terkait
+            const submenu = this.nextElementSibling;
+            
+            // Toggle class 'open' pada tombol untuk rotasi ikon
+            this.classList.toggle('open');
+            
+            // Cek apakah submenu sedang terbuka atau tertutup
+            if (submenu.style.maxHeight) {
+                // Jika terbuka (ada maxHeight), tutup
+                submenu.style.maxHeight = null;
+            } else {
+                // Jika tertutup, buka dengan mengatur maxHeight sesuai tinggi kontennya
+                submenu.style.maxHeight = submenu.scrollHeight + "px";
+            } 
+        });
+    });
+
+});
 </script>
 
 </body>

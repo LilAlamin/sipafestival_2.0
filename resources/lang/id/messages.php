@@ -9,8 +9,9 @@ return [
     'find_more' => 'SELENGKAPNYA',
     'welcome_sipa' => 'SELAMAT DATANG DI SIPA FESTIVAL!',
     'lets_journey' => 'Mari kita memulai perjalanan baru di SIPA Festival',
-    'journey_description' => 'Solo International Performing Arts (SIPA) adalah pertunjukan mahakarya internasional yang menampilkan penari, musisi, dan pelaku teater dari berbagai negara di seluruh dunia. SIPA 2025 diselenggarakan secara hybrid, online dan offline.
-                    SIPA 2025 diadakan di Panggung Terbuka dengan serangkaian acara, yaitu SIPA Show Case Stage (panggung yang diadakan di berbagai titik keramaian di Solo seperti pusat perbelanjaan, Car Freeday, taman kota, atau pasar tradisional bekerja sama dengan komunitas melalui open call atau kurasi. SIPA juga berkolaborasi dengan UMKM (Kuliner, Tekstil, dan Kerajinan) untuk memasarkan produk unggulan mereka.',
+    'journey_description' => 'Solo International Performing Arts (SIPA) merupakan festival seni pertunjukan tahunan yang diselenggarakan di Kota Solo sejak tahun 2009.
+    Pagelaran SIPA pada mulanya diselenggarakan di Pamedan Pura Mangkunegaran (2009-2012) lalu berpindah di Benteng Vastenburg (2013-2019), Taman Budaya Jawa Tengah di Surakarta (2020), Bengawan Solo Park (2021), Benteng Vasternburg Surakarta (2022-2023), dan kini kembali lagi ke Pamedan Pura Mangkunegaran (2024). 
+    Panggung pagelaran SIPA menampilkan beragam seni pertunjukan dari berbagai negara yakni seni musik, seni tari, seni drama (teater) dan lain-lain. Waktu penyelenggaraan tiga malam berturut-turut.',
 
 
 
