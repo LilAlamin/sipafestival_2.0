@@ -46,10 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2022</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2022 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                    Digelar di Kota Solo, SIPA 2022 mengusung semangat perubahan melalui seni sebagai energi penggerak kehidupan. Dengan mengangkat tema 
-                    <strong><em>"Art as The Spirit of Life Changing"</em></strong> dan menghadirkan Rianto sebagai maskot, SIPA 2022 menegaskan peran seni sebagai penjaga, 
-                    penyelaras, sekaligus penggerak harapan dalam menghadapi perubahan zaman. Melalui pertunjukan yang menggugah, panggung SIPA menjadi ruang refleksi bahwa dalam setiap perubahan, seni hadir membawa cahaya dan semangat kehidupan yang terus menyala.
+                @lang('messages.gallery_2022')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

@@ -46,10 +46,8 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2023</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2023 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                    Digelar di Kota Solo, SIPA 2023 menghadirkan karya-karya penuh makna sebagai wujud kepedulian terhadap harmoni dan toleransi yang mulai memudar di dunia. 
-                    Dengan mengangkat semangat <strong><em>"Say All with Arts",</em></strong> dan SIPA 2023 menegaskan bahwa kesenian adalah pusat keindahan yang mampu menyatukan perbedaan. Diperkuat dengan kehadiran Wirastuti Sulistyaningsih sebagai maskot, SIPA 2025 mengajak seluruh masyarakat untuk merawat kehidupan melalui seni, agar dunia tidak kehilangan keindahan yang sesungguhnya.
-         </p>
+                @lang('messages.gallery_2023')
+            </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">

@@ -46,10 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2021</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2021 merupakan ajang tahunan yang merayakan kemegahan seni pertunjukan dari berbagai penjuru dunia. 
-                    Digelar di Kota Solo, SIPA 2021 menyuguhkan pancaran energi kehidupan melalui berbagai karya seni, mulai dari suara, rupa, hingga simbol-simbol artistik yang penuh makna. 
-                    Dengan mengangkat tema <strong><em>"The Great Light of Arts"</em></strong> dan menghadirkan Endah Laras sebagai maskot, SIPA 2021 menghadirkan seni bukan hanya sebagai ekspresi keindahan, tetapi juga sebagai kekuatan yang menghidupkan dan menerangi. Pada panggung SIPA, cahaya agung dari dunia seni dipanjatkan sebagai doa bagi dunia yang tengah sakit—menjadi penerang dalam kegelapan dan menghadirkan harapan bagi seluruh jagad raya.
-
+                @lang('messages.gallery_2021')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

@@ -46,9 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2012</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2012 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2012 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema
-                     <strong><em>"Go Green - save our world".</em></strong> Acara yang berlangsung pada tanggal 28,29,30 September 2012 ini menampilkan karya seni yang mengangkat kesadaran akan pentingnya pelestarian lingkungan dan keberlanjutan bumi. Dengan menjadikan GKR.
-                      Timoer Rumbai K sebagai maskot, SIPA 2012 berupaya menjembatani karya seni yang menyuarakan kepedulian ekologis serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat hijau, lestari, dan bertanggung jawab, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2012')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

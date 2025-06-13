@@ -46,10 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2011</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2011 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Diselenggarakan di Pamedan Pura Mangkunegaran, Solo, SIPA 2011 mengusung tema 
-                     <strong><em>"Art is an Expression of Honesty Leads Life Toward Glory".</em></strong> Acara yang berlangsung pada tanggal 1, 2, dan 3 Juli 2011 ini menampilkan pertunjukan yang sarat makna dan kejujuran artistik, 
-                     mengajak masyarakat untuk melihat seni sebagai cermin kejujuran yang menuntun pada kemuliaan hidup. Dengan menjadikan GPH. Paundrakarna sebagai maskot, SIPA 2011 menghadirkan ruang pertemuan budaya yang menyuarakan nilai-nilai luhur, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat integritas, penghargaan terhadap perbedaan, dan kemuliaan melalui ekspresi seni, SIPA kembali memperkuat perannya sebagai wadah yang menyatukan dunia melalui panggung budaya.
-            </p>
+                    @lang('messages.gallery_2011')</p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">

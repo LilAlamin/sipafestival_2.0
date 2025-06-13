@@ -46,9 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2018</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2018 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2018 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
-                     <strong><em>"We Are the World, We Are the Nations".</em></strong> Acara yang berlangsung pada tanggal 6, 7, dan 8 September 2018 ini menyuarakan pesan tentang pentingnya solidaritas global dan kesatuan dalam keberagaman melalui bahasa seni. Dengan menjadikan Melati Suryodarmo sebagai maskot, 
-                     SIPA 2018 berupaya menjembatani karya seni lintas budaya yang menyuarakan kebersamaan, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat perdamaian, inklusivitas, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2018')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

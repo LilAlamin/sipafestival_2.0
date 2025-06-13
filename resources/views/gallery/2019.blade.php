@@ -46,9 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2019</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2019 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                    Digelar di Benteng Vastenburg, Solo, SIPA 2019 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
-                     <strong><em>"Arts as a Social Action".</em></strong> Melalui panggung ini, seni diposisikan bukan hanya sebagai ekspresi estetika, melainkan juga sebagai wujud nyata dari respons terhadap berbagai isu sosial seperti lingkungan, gender, hingga politik. Dengan menjadikan Elizabeth Sudira sebagai maskot, SIPA 2019 berupaya menjembatani karya seni yang menyuarakan kepedulian, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat damai, harmonis, dan saling menghormati, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2019')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

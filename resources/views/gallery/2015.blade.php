@@ -46,8 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2015</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2015 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2015 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema
-                     <strong><em>"Live in the Contemporary World".</em></strong> Acara yang berlangsung pada tanggal 10, 11, dan 12 September 2015 ini menampilkan karya seni yang merefleksikan dinamika kehidupan modern serta tantangan budaya di era kontemporer. Dengan menjadikan Fajar Satriadi sebagai maskot, SIPA 2015 berupaya menjembatani karya seni yang merespons perkembangan zaman, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat inovasi, kebebasan berekspresi, dan harmoni global, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2015')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

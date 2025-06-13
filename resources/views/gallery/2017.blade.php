@@ -46,9 +46,7 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2017</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2017 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2017 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema
-                     <strong><em>"Bahari Kencana Maestro Karya".</em></strong> Acara yang berlangsung pada tanggal 7, 8, dan 9 September 2017 ini menampilkan karya seni yang terinspirasi dari kekayaan bahari serta keunggulan maestro seni sebagai pencipta karya bernilai tinggi. Dengan menjadikan Dr. Eko Supriyanto, S.Sn., MFA sebagai maskot, 
-                     SIPA 2017 berupaya menjembatani karya seni yang memadukan tradisi bahari dan kreativitas maestro, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat kekayaan budaya dan keahlian, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2017')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

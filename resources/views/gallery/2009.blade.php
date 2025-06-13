@@ -46,10 +46,8 @@
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2009</h2>
             <p style="text-align: justify;">
-                Solo International Performing Arts (SIPA) 2009 merupakan ajang perdana yang merayakan keindahan seni pertunjukan dari berbagai penjuru dunia. Diselenggarakan di Pamedan Pura Mangkunegaran, SIPA 2009 hadir dengan semangat membangun jembatan budaya melalui tema
-                <strong><em>"Art Brings Unity, Unity Brings Harmony".</em></strong> Acara yang digelar pada tanggal 7, 8, dan 10 Agustus 2009 ini mempersembahkan beragam pertunjukan yang mencerminkan kekuatan seni dalam menyatukan perbedaan dan menciptakan keharmonisan global. 
-                Dengan menghadirkan Rahma Putri Parimita sebagai maskot, SIPA 2009 memulai langkahnya sebagai ruang pertemuan lintas budaya, komunitas, dan negara. Dalam semangat persatuan, toleransi, dan harmoni, SIPA menjadi awal dari gerakan seni yang menyatukan dunia melalui panggung kolaborasi lintas bangsa.
-            </p>
+                @lang('messages.gallery_2009')
+              </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
