@@ -1,5 +1,6 @@
 <?php
 return [
+    // HOME PAGE
     'welcome' => 'selamat datang di situs kami',
     'news' => 'Berita',
     'days' => 'Hari',
@@ -45,5 +46,14 @@ return [
     'faq_answer_4' => 'Tentu saja! Periksa situs web resmi kami dan media sosial Instagram @sipafestival untuk pembaruan terbaru tentang jadwal festival.',
     'faq_question_5' => 'Jenis kamera apa yang diizinkan?',
     'faq_answer_5' => 'Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diizinkan. Namun, Anda dapat membawa kamera kompak dan smartphone.',
+
+
+    // DIRECTORS PROFILE
+    'directors_profile' => 'Direktur Solo International Performing Arts (SIPA)',
+    'directors_description_1' => 'Dr. R.Ay. Irawati Kusumorasri, M.Sn. adalah Direktur Solo International Performing Arts (SIPA), lahir di Solo, Jawa Tengah, Indonesia, pada bulan Desember 1963. SIPA adalah festival internasional yang diselenggarakan di kota Solo yang menampilkan beragam seni pertunjukan dari para seniman domestik dan internasional, termasuk tari, musik, dan teater. Sejak acara perdananya pada tahun 2009, SIPA telah menjadi salah satu festival paling bergengsi di Solo. Di bawah kepemimpinan Irawati, SIPA telah mencapai prestasi yang lebih tinggi dan meraih berbagai penghargaan, termasuk pengakuan dari Kementerian Pariwisata dan Ekonomi Kreatif Republik Indonesia (Kemenparekraf) sebagai salah satu Top 30 Event dalam Kalender Event Wonderful pada tahun 2019, serta meraih juara pertama pada Anugerah Bangga Buatan Indonesia (ABBI) pada tahun 2020.',
+    'directors_description_2' => 'Selain perannya sebagai Direktur SIPA, Irawati juga merupakan penari terkenal di Solo yang telah tampil dalam berbagai pertunjukan tari baik di tingkat nasional maupun internasional. Ia adalah seniman multitalenta yang mulai belajar tari tradisional Jawa sejak usia dini di lingkungan budaya Pura Mangkunegaran, yang membentuk keahliannya dalam tari Jawa. Irawati telah mewakili Indonesia dalam misi budaya ke berbagai negara seperti Jepang, Prancis, Inggris, Malaysia, Jerman, Rusia, Kamboja, dan Belanda antara tahun 1986 hingga 2010.',
+    'directors_description_3' => 'Secara akademis, Irawati memiliki gelar sarjana dari Fakultas Sastra, Jurusan Sastra Inggris di Universitas Sebelas Maret (UNS) Surakarta. Ia kemudian melanjutkan studi pascasarjananya di Institut Seni Indonesia (ISI) Surakarta. Melalui dedikasi dan karya-karyanya yang luar biasa, Irawati telah membawa kebanggaan bagi Indonesia di panggung internasional dan telah menerima berbagai penghargaan. Koreografi adalah salah satu spesialisasinya yang menonjol dengan karya-karya terkenal seperti Oncot Srimpi Topeng Sumunar (1994), Operet Timun Emas (1996), Obong (1997), Beksan Sekar Ratri Srimpen Kendi Sekar Putri (1999), Bedhaya Kakung “Siguse” (2000), dan Sekar Jagad (2002). Ia juga telah menampilkan banyak tarian tradisional, termasuk Srimpi Anglir Mendung, Srimpi Moncar, Gambyong, Mondraswara, Mondrokusumo, Mondrorini, dan Langendriyan.',
+    'directors_description_4' => 'Didorong oleh kecintaannya pada seni dan budaya, Irawati mendirikan Pusat Seni Semarak Candrakirana (SCK) pada tahun 1998. Saat ini, pusat tersebut memiliki lebih dari 150 siswa aktif dan telah meluluskan lebih dari 1.000 siswa. SCK telah mencapai berbagai prestasi, termasuk menyelenggarakan upacara pembukaan SIPA sejak tahun 2009 dan tampil di acara-acara budaya seperti International Mask Festival (IMF), Little Puppeteer Festival, dan Semarak Budaya Indonesia (SBI). SCK juga mewakili Indonesia di Andong Mask Dance Festival di Korea Selatan pada tahun 2014 dan 2015. Melalui karyanya di SCK, Irawati terus menginspirasi generasi muda untuk mencintai dan mempelajari budaya Indonesia melalui tari.',
+    'directors_description_5' => 'Selain itu, Irawati pernah menjabat sebagai Ketua Akademi Seni Mangkunegaran (ASGA) di Solo hingga tahun 2018. Ia memiliki visi untuk memperluas SIPA ke tingkat internasional yang lebih luas. Di bawah kepemimpinannya, SIPA telah menjalin kemitraan dengan beberapa organisasi internasional melalui penandatanganan Nota Kesepahaman (MoU), seperti dengan Andong Festival Tourism Foundation di Korea Selatan dan Universiti Teknologi MARA di Malaysia. Irawati berharap bahwa di masa depan, SIPA akan terus berkolaborasi dengan lebih banyak lembaga internasional untuk memperkuat persahabatan global melalui seni.',
 
 ];
