@@ -35,7 +35,18 @@ return [
     'review_angela' => 'This is a form of event that I find very enjoyable. There is a cultural exchange within it. For that, we will continue to support the implementation of SIPA in the years to come.',
     'review_puan' => 'SIPA 2023 has successfully taken place over three nights, branding Solo City as a city of performing arts festivals.',
     'review_gusti' => 'SIPA is an art performance event that has been running for years. And SIPA is one of the pride events in the city we love.',
-    'review_kim' => 'Even in the midst of a pandemic, SIPA remains active and has become a reference for performing arts. Moreover, it is highly anticipated and loved by the community.'
+    'review_kim' => 'Even in the midst of a pandemic, SIPA remains active and has become a reference for performing arts. Moreover, it is highly anticipated and loved by the community.',
+    'faq_question_1' => 'How much is the entrance fee to watch SIPA?',
+    'faq_answer_1' => 'No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)',
+    'faq_question_2' => 'What I will find at the SIPA Festival?',
+    'faq_answer_2' => 'Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!',
+    'faq_question_3' => 'What are the different seating categories available at SIPA?',
+    'faq_answer_3' => 'There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances',
+    'faq_question_4' => 'Will you be posting the schedule in advance?',
+    'faq_answer_4' => 'Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.',
+    'faq_question_5' => 'What types of cameras are allowed?',
+    'faq_answer_5' => 'Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.',
+
 
 
 

@@ -34,7 +34,16 @@ return [
     'review_angela' => 'Ini suatu bentuk event yang menurut saya sangat menyenangkan. Ada pertukaran budaya di dalamnya. Untuk itu kita akan terus dukung pelaksanaan SIPA di tahun-tahun mendatang.',
     'review_puan' => 'SIPA 2023 telah berlangsung selama tiga malam dengan lancar dan sukses, di mana berhasil mem-branding Kota Solo sebagai kota festival seni pertunjukan.',
     'review_gusti' => 'SIPA ini merupakan suatu acara seni pertunjukan yang telah berjalan selama bertahun-tahun. Dan SIPA ini menurut saya merupakan salah satu event kebanggaan di kota yang kita cintai.',
-    'review_kim' => 'Di tengah pandemi pun, SIPA tetap aktif dan menjadi rujukan seni pertunjukan. Terlebih dinanti dan banyak disukai masyarakat.'
-
+    'review_kim' => 'Di tengah pandemi pun, SIPA tetap aktif dan menjadi rujukan seni pertunjukan. Terlebih dinanti dan banyak disukai masyarakat.',
+    'faq_question_1' => 'Berapa biaya masuk untuk menonton SIPA?',
+    'faq_answer_1' => 'Tidak, masuk ke SIPA sepenuhnya gratis! Anda dapat menikmati semua pertunjukan dan aktivitas tanpa biaya apapun. (ACARA GRATIS)',
+    'faq_question_2' => 'Apa yang akan saya temukan di Festival SIPA?',
+    'faq_answer_2' => 'Harapkan campuran pertunjukan yang beragam, termasuk musik, tari, dan teater, bersama dengan stan makanan dan pameran budaya!',
+    'faq_question_3' => 'Apa saja kategori tempat duduk yang tersedia di SIPA?',
+    'faq_answer_3' => 'Tersedia tiga kategori tempat duduk: Kursi VIP, Kursi Undangan, dan Kursi Umum. Setiap kategori menawarkan pengalaman dan pemandangan unik dari pertunjukan.',
+    'faq_question_4' => 'Apakah Anda akan memposting jadwal sebelumnya?',
+    'faq_answer_4' => 'Tentu saja! Periksa situs web resmi kami dan media sosial Instagram @sipafestival untuk pembaruan terbaru tentang jadwal festival.',
+    'faq_question_5' => 'Jenis kamera apa yang diizinkan?',
+    'faq_answer_5' => 'Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diizinkan. Namun, Anda dapat membawa kamera kompak dan smartphone.',
 
 ];
