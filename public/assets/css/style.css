@@ -15,16 +15,16 @@ body {
 
 /*navbar*/
 /* Import Font Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 /* General Body Styling */
 body {
-  font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Custom Navbar Styling */
 .navbar-custom .container {
-  max-width: 1200px;
+    max-width: 1200px;
 }
 
 /* --- PERBAIKAN UTAMA ADA DI BAGIAN INI --- */
@@ -32,79 +32,79 @@ body {
 /* 1. Gaya Dasar untuk Link Navigasi Desktop */
 .navbar-custom .hidden.md\:flex a.font-bold,
 .navbar-custom .hidden.md\:flex button.font-bold {
-  color: #1f2937; /* Warna default: hitam */
-  background-color: transparent;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none !important; /* Memastikan tidak ada garis bawah */
+    color: #1f2937; /* Warna default: hitam */
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none !important; /* Memastikan tidak ada garis bawah */
 }
 
 /* 2. Gaya untuk Link yang Sudah Dikunjungi (agar tidak biru) */
 .navbar-custom .hidden.md\:flex a.font-bold:visited {
-  color: #1f2937; /* Tetap hitam */
+    color: #1f2937; /* Tetap hitam */
 }
 
 /* 3. Gaya HOVER (Sekarang dengan selector yang benar dan kuat) */
 .navbar-custom .hidden.md\:flex a.font-bold:hover,
 .navbar-custom .hidden.md\:flex button.font-bold:hover {
-  color: #B8141E; /* Warna hover: merah */
+    color: #b8141e; /* Warna hover: merah */
 }
 
 /* 4. Gaya untuk Link AKTIF (HOME) */
 .navbar-custom .hidden.md\:flex a.font-bold.nav-link-active {
-  color: #B8141E;
+    color: #b8141e;
 }
 
 /* --- AKHIR PERBAIKAN --- */
 
-
 /* Dropdown Menu Styling */
 [data-dropdown-menu] {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 [data-dropdown-menu] a {
-  color: #1f2937;
-  transition: color 0.2s ease;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.875rem;
+    color: #1f2937;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.875rem;
 }
 
 [data-dropdown-menu] a:hover {
-  color: #B8141E;
+    color: #b8141e;
 }
 
 /* Mobile Menu Styling */
 #mobile-menu {
-  background-color: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #mobile-menu a {
-  padding: 1rem 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  border-bottom: 1px solid #f3f4f6;
-  text-decoration: none !important;
-  color: #1f2937;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-bottom: 1px solid #f3f4f6;
+    text-decoration: none !important;
+    color: #1f2937;
 }
 
 #mobile-menu a:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 #mobile-menu a:hover {
-  background-color: #f3f4f6;
-  color: #B8141E;
+    background-color: #f3f4f6;
+    color: #b8141e;
 }
 
 #mobile-menu a.nav-link-active {
-  color: #B8141E;
-  background-color: #fef2f2;
+    color: #b8141e;
+    background-color: #fef2f2;
 }
 
 /* Mobile Language Switcher Styling */
@@ -123,10 +123,18 @@ body {
 }
 
 /* Other styles */
-#menu-icon { transition: transform 0.3s ease-in-out; }
-button:focus { outline: none; }
-[data-dropdown-button] i { transition: transform 0.3s ease; }
-[data-dropdown-button]:not(.collapsed) i { transform: rotate(180deg); }
+#menu-icon {
+    transition: transform 0.3s ease-in-out;
+}
+button:focus {
+    outline: none;
+}
+[data-dropdown-button] i {
+    transition: transform 0.3s ease;
+}
+[data-dropdown-button]:not(.collapsed) i {
+    transform: rotate(180deg);
+}
 /* TAMBAHKAN BLOK CSS INI KE BAGIAN AKHIR FILE CSS ANDA */
 
 /* === MOBILE ACCORDION MENU STYLING === */
@@ -153,7 +161,7 @@ button:focus { outline: none; }
 /* Hover state untuk submenu item */
 .mobile-submenu a:hover {
     background-color: #fef2f2;
-    color: #B8141E;
+    color: #b8141e;
 }
 
 /* Hapus border pada link terakhir di dalam submenu */
@@ -354,6 +362,79 @@ button:focus { outline: none; }
 
 .play-button:hover i {
     color: #8d0f16;
+}
+
+/* CSS untuk membuat video responsif */
+.video-container {
+    /* Ini adalah parent dari thumbnail dan iframe wrapper */
+    max-width: 800px; /* Contoh: Anda bisa sesuaikan ini */
+    width: 100%; /* Pastikan kontainer mengambil lebar penuh dari parent-nya */
+    margin: 0 auto; /* Untuk menengahkan kontainer */
+}
+.video-container {
+    width: 90vw;
+}
+
+.thumbnail-wrapper,
+.iframe-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio aspek 16:9 (tinggi 9 / lebar 16 * 100%) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem; /* Menyesuaikan rounded-5 dari Bootstrap/Tailwind */
+}
+
+/* CSS baru untuk gambar thumbnail */
+.video-thumbnail-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar thumbnail memenuhi area tanpa terdistorsi */
+    z-index: 1; /* Pastikan gambar berada di bawah play button jika ada z-index lain */
+}
+
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Gaya untuk Play Button (disesuaikan dari Bootstrap) */
+.play-button {
+    font-size: 3rem; /* Sesuaikan ukuran ikon */
+    color: white;
+    cursor: pointer;
+    z-index: 10; /* Pastikan di atas thumbnail gambar */
+}
+
+.play-button .circle {
+    display: inline-block;
+    width: 4rem; /* Ukuran lingkaran */
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Warna latar belakang lingkaran */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Di atas gambar, di bawah ikon play */
+}
+
+.play-button i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; /* Pastikan ikon play di atas lingkaran */
+}
+
+.play-button:hover .circle {
+    background-color: rgba(0, 0, 0, 0.8); /* Efek hover */
 }
 
 /* Optional: pulse animation */
