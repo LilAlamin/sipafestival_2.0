@@ -22,18 +22,15 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-custom shadow-sm fixed-top" style="transition: top 0.3s;">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo">
     </a>
-    <!-- Ganti tombol -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars" id="burgerIcon"></i>
     </button>
-
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
@@ -72,26 +69,23 @@
     </div>
   </div>
 </nav>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const navbarToggler = document.querySelector(".navbar-toggler");
     const burgerIcon = document.getElementById("burgerIcon");
     const navCollapse = document.getElementById("navbarNav");
-    if (navbarToggler && burgerIcon && navCollapse) {
-      navbarToggler.addEventListener("click", function () {
-        // Toggle the icon based on the collapse state
-        if (navCollapse.classList.contains("show")) {
-          burgerIcon.classList.remove("fa-xmark");
-          burgerIcon.classList.add("fa-bars");
-        } else {
-          burgerIcon.classList.remove("fa-bars");
-          burgerIcon.classList.add("fa-xmark");
-        }
-      });
+
+    // Pastikan elemen ditemukan sebelum menambahkan listener
+    if (burgerIcon && navCollapse) {
+      
+      // Gunakan event bawaan Bootstrap untuk mengubah ikon.
+      // Ini akan terpicu TEPAT SAAT menu MULAI DIBUKA.
       navCollapse.addEventListener("show.bs.collapse", function () {
         burgerIcon.classList.remove("fa-bars");
         burgerIcon.classList.add("fa-xmark");
       });
+
+      // Ini akan terpicu TEPAT SAAT menu MULAI DITUTUP.
       navCollapse.addEventListener("hide.bs.collapse", function () {
         burgerIcon.classList.remove("fa-xmark");
         burgerIcon.classList.add("fa-bars");
@@ -99,7 +93,6 @@
     }
   });
 </script>
-
 
 </body>
 </html>

@@ -41,10 +41,10 @@
     #slider {
       width: 100%;
       max-width: 700px;
-      height: 500px;
+      /* height: 500px; */
       position: relative;
       overflow: hidden;
-      border-radius: 20px 100px 20px 100px !important;
+      /* border-radius: 20px 100px 20px 100px !important; */
     }
     .welcome-container {
       padding-top: 100px;
@@ -59,7 +59,7 @@
 <section class="text-justify py-5 header-section">
   <img src="{{ asset('images/pattern/headerr.webp') }}" alt="Background" class="bg">
   <div class="container">
-    <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
+    <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="Solo International Performing Arts Logo" class="text">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
@@ -122,10 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <h2 class="text-center fw-medium mb-5" style="color: #000;">@lang('messages.lets_journey')</h2>
 
       <!-- SLIDER FOTO -->
-      <div class="row mb-5 align-items-center">
+      {{-- <div class="row mb-5 align-items-center explain-section">
         <div class="col-md-6 text-container" style="padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
-            <p style="text-align: justify;">@lang('messages.journey_description')</p>
+          <p style="text-align: justify;">@lang('messages.journey_description')</p>
           <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
@@ -137,12 +137,30 @@ document.addEventListener("DOMContentLoaded", function () {
               @endforeach
           </div>
         </div>
-      </div>
+      </div> --}}
+
+      <div class="row mb-5 align-items-start explain-section flex-column flex-md-row">
+    <div class="col-md-6 text-container order-2 order-md-1" >
+        <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
+        <p style="text-align: justify;">@lang('messages.journey_description')</p>
+        <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+    </div>
+    <div id="slider-parent" class="col-md-6 d-flex justify-content-end order-1 order-md-2 mb-4 mb-md-0 self-start">
+        <div id="slider" class="position-relative overflow-hidden w-100">
+            @foreach (range(1, 6) as $i)
+                <img src="{{ asset("images/slider/{$i}.webp") }}" 
+                    class="img-slide img-fluid w-100 {{ $i === 1 ? 'd-block' : 'd-none' }}" 
+                    alt="Slide {{ $i }}">
+            @endforeach
+        </div>
+    </div>
+</div>
 
     <!-- YT -->
     <div class="container-yt-carousel">
+      <!-- VIDEO PLAYER -->
       <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: #B8141E;">SIPA FESTIVAL LAST YEAR</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">SIPA LAST YEAR</h2>
         <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
           <div id="thumbnail" onclick="openVideo()" style="position: relative;">
             <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
@@ -159,29 +177,29 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
 
-      <!-- MASKOT -->
+      <!-- MASKOT SIPA FESTIVAL -->
       @php
-            $delegates = [
-                2009 => 'Rahma Putri Parimita',
-                2010 => 'Sruti Respati',
-                2011 => 'GPH. Paundrakarna',
-                2012 => 'GKR. Timoer Rumbai K',
-                2013 => 'Rachel Georghea S',
-                2014 => 'Tunku Atiah',
-                2015 => 'Fajar Satriadi',
-                2016 => 'Peni Candra Rini',
-                2017 => 'Dr. Eko Supriyanto, S.Sn., MFA',
-                2018 => 'Melati Suryodarmo',
-                2019 => 'Elizabeth Sudira',
-                2020 => 'Dory Harsa',
-                2021 => 'Endah Laras',
-                2022 => 'Rianto',
-                2023 => 'Wirastuti Sulistyaningsih',
-                2024 => 'GRAj Ancillasura Marina Sudjiwo',
-            ];
+        $delegates = [
+            2009 => 'Rahma Putri Parimita',
+            2010 => 'Sruti Respati',
+            2011 => 'GPH. Paundrakarna',
+            2012 => 'GKR. Timoer Rumbai K',
+            2013 => 'Rachel Georghea S',
+            2014 => 'Tunku Atiah',
+            2015 => 'Fajar Satriadi',
+            2016 => 'Peni Candra Rini',
+            2017 => 'Dr. Eko Supriyanto, S.Sn., MFA',
+            2018 => 'Melati Suryodarmo',
+            2019 => 'Elizabeth Sudira',
+            2020 => 'Dory Harsa',
+            2021 => 'Endah Laras',
+            2022 => 'Rianto',
+            2023 => 'Wirastuti Sulistyaningsih',
+            2024 => 'GRAj Ancillasura Marina Sudjiwo',
+        ];
       @endphp
       <div class="arc-section mb-5 text-center">
-        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPA FESTIVAL</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
@@ -190,54 +208,61 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <p class="mt-3" style="font-size: 18px;">
             <span class="fw-bold">2025</span><br>
-            <span class="fw-normal">SIPA Festival</span>
+            <span class="fw-normal">SIPA festival</span>
           </p>
         </div>
       </div>
+
+      <!-- CAROUSEL DELEGATES -->
       <div class="delegates-section text-center">
         <div class="delegate-container">
           <div class="delegates-wrapper">
             @foreach ($delegates as $year => $name)
-                <div class="delegate-item text-center mx-3">
-                    <img src="{{ asset("images/maskot/{$year}.webp") }}"
-                         alt="Delegate"
-                         class="img-fluid rounded-4"
-                         style="width: 220px; height: 220px; object-fit: cover;">
-                    <p class="mt-2" style="font-size: 16px;">
-                        <span class="fw-bold">{{ $year }}</span><br>
-                        <span class="fw-normal">{{ $name }}</span>
-                    </p>
-                </div>
+              <div class="delegate-item text-center mx-3">
+                <img src="{{ asset("images/maskot/{$year}.webp") }}"
+                     alt="Delegate"
+                     class="delegates-img img-fluid rounded-4">
+                <p class="mt-2" style="font-size: 16px;">
+                  <span class="fw-bold">{{ $year }}</span><br>
+                  <span class="fw-normal">{{ $name }}</span>
+                </p>
+              </div>
             @endforeach
           </div>
         </div>
+        <div class="slider-indicator"></div>
       </div>
-      <div class="slider-indicator"></div>
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA FESTIVAL</h2>
+      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
       <h4 class="text-center fw-medium mb-5" style="color: #000;">Update news about SIPA</h4>
     </div>
-    <div class="row mb-5 news-wrapper">
-      <!-- Berita 1 -->
-      @foreach ($news->take(3) as $new)
-        <div class="col-md-3 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <div class="position-relative">
-              <img src="{{ asset('/images/news/' . $new->image_path) }}" class="card-img-top rounded-top" alt="{{ $new->title }}">
-            </div>
-            <div class="card-body">
-              <small class="text-muted d-block mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
-              <h6 class="fw-bold">{{ $new->title }}</h6>
-              <p class="text-muted mb-2" style="font-size: 0.875rem;">{{ Str::limit($new->description, 100, '...') }}</p>
-              <a href="{{ route('news.HomeView', ['slug' => $new->slug]) }}" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
-            </div>
+    <div class="mb-5">
+
+  <div class="row justify-content-center g-4 pb-5">
+    @foreach ($news->take(3) as $new)
+      <div class="col-12 col-md-4 d-flex">
+        <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden bg-white flex-fill d-flex flex-column">
+          <div class="position-relative">
+            <img src="{{ asset('/images/news/' . $new->image_path) }}" class="w-100 h-auto" alt="{{ $new->title }}">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <small class="text-muted mb-2">{{ $new->created_at->translatedFormat('l, d F Y H:i') }}</small>
+            <h6 class="fw-bold mb-1">{{ $new->title }}</h6>
+            <p class="text-secondary mb-2 text-xs flex-grow-1" style="font-size: 12px;">{{ Str::limit($new->description, 100, '...') }}</p>
+            <a href="{{ route('news.HomeView', ['slug' => $new->slug]) }}" class="text-primary fw-medium mt-3 text-decoration-underline">Baca Selengkapnya</a>
           </div>
         </div>
-      @endforeach
-      <a href="/news" class="btn btn-findmore2 mt-4 fw-bold">OTHER NEWS</a>
-    </div>
+      </div>
+    @endforeach
+  </div>
+
+  <div class="flex justify-center items-center w-full">
+    <a href="/news" class="btn btn-findmore2 fw-bold">OTHER NEWS</a>
+  </div>
+
+</div>
 
 
     <!-- Section Title -->
@@ -269,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-md-6 mb-4 mb-md-0">
         <p>We greatly appreciate your insights. For any further information or suggestions, please contact us anytime—our dedicated team is available 24 hours a day, 7 days a week.</p>
         <h6 class="text-danger fw-bold">Contact information</h6>
-        <p>+62 882-2505-2982<br>sipafestival@gmail.com</p>
+        <p>+62 856-4722-5058<br>sipafestival@gmail.com</p>
       </div>
 
       <div class="col-md-6" id="submission">
@@ -373,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- FAQ -->
   <div class="container my-5">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA FESTIVAL</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA</h2>
     <div class="accordion" id="faqSIPA">
 
       <div class="accordion-item">
@@ -540,51 +565,72 @@ const slides = document.querySelectorAll('.img-slide');
   iframe.style.display = 'block';
 }
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.delegates-wrapper');
-    const items = document.querySelectorAll('.delegate-item');
-    const indicatorContainer = document.querySelector('.slider-indicator');
-    const itemWidth = items[0].offsetWidth + 30; // width + margin
-    const itemsPerSlide = 4;
-    const totalSlides = Math.ceil(items.length / itemsPerSlide);
-    let currentIndex = 0;
-    let interval;
+  const container = document.querySelector('.delegates-wrapper');
+  const items = document.querySelectorAll('.delegate-item');
+  const indicatorContainer = document.querySelector('.slider-indicator');
+  const itemWidth = items[0].offsetWidth + 30; // width + margin
+  const itemsPerSlide = 4;
+  const totalSlides = Math.ceil(items.length / itemsPerSlide);
+  let currentIndex = 0;
+  let interval;
 
-    // Generate indicators sesuai jumlah grup slide
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('span');
-        if (i === 0) dot.classList.add('active');
-        dot.dataset.index = i;
-        indicatorContainer.appendChild(dot);
-    }
+  // Clone first N items and append to the end for infinite loop effect
+  for (let i = 0; i < itemsPerSlide; i++) {
+    const clone = items[i].cloneNode(true);
+    container.appendChild(clone);
+  }
 
-    const indicators = document.querySelectorAll('.slider-indicator span');
+  // Set container width to fit all items (original + clones)
+  container.style.width = ((items.length + itemsPerSlide) * itemWidth) + 'px';
+  container.style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1)';
 
-    function goToSlide(index) {
-        currentIndex = index;
-        const translateX = currentIndex * itemWidth * itemsPerSlide;
-        container.style.transform = `translateX(-${translateX}px)`;
-        indicators.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
-    }
+  // Generate indicators sesuai jumlah grup slide
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.index = i;
+    indicatorContainer.appendChild(dot);
+  }
 
-    function startAutoSlide() {
-        clearInterval(interval);
-        interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(currentIndex);
-        }, 3000);
-    }
+  const indicators = document.querySelectorAll('.slider-indicator span');
 
-    // Set klik event ke indikator
-    indicators.forEach(dot => {
-        dot.addEventListener('click', () => {
-            goToSlide(parseInt(dot.dataset.index));
-            startAutoSlide(); // reset timer
-        });
+  function goToSlide(index, animated = true) {
+    currentIndex = index;
+    if (!animated) container.style.transition = 'none';
+    else container.style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1)';
+    const translateX = currentIndex * itemWidth * itemsPerSlide;
+    container.style.transform = `translateX(-${translateX}px)`;
+    indicators.forEach((dot, i) => {
+      dot.classList.toggle('active', i === (currentIndex % totalSlides));
     });
+  }
 
-    startAutoSlide();
+  function startAutoSlide() {
+    clearInterval(interval);
+    interval = setInterval(() => {
+      currentIndex++;
+      goToSlide(currentIndex, true);
+
+      // Jika sudah sampai slide clone, reset ke awal tanpa animasi
+      if (currentIndex === totalSlides) {
+        setTimeout(() => {
+          goToSlide(0, false);
+        }, 700);
+        currentIndex = 0;
+      }
+    }, 3000);
+  }
+
+  // Set klik event ke indikator
+  indicators.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.dataset.index));
+      startAutoSlide(); // reset timer
+    });
+  });
+
+  goToSlide(0, false);
+  startAutoSlide();
 });
 
 
@@ -616,6 +662,21 @@ document.addEventListener('DOMContentLoaded', function() {
       navbar.style.top = '0';
     }
   });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+      function setParentHeight() {
+          var slider = document.getElementById('slider');
+          var parent = document.getElementById('slider-parent');
+          if (slider && parent) {
+              parent.style.height = 'auto'; // Reset dulu!
+              parent.style.height = slider.offsetHeight + 'px';
+          }
+      }
+    setParentHeight();
+    window.addEventListener('resize', setParentHeight);
 });
 
 </script>

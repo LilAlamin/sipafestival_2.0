@@ -85,6 +85,9 @@ Route::get('/gallery/2023', function () {
 Route::get('/gallery/2024', function () {
     return view('gallery/2024');
 });
+Route::get('/components/new-header', function () {
+    return view('components.new-header');
+});
 
 Route::post('/', [ComplaintController::class, 'store'])->name('data.store');
 
