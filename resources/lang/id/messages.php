@@ -10,8 +10,9 @@ return [
     'find_more' => 'SELENGKAPNYA',
     'welcome_sipa' => 'SELAMAT DATANG DI SIPA FESTIVAL!',
     'lets_journey' => 'Mari kita memulai perjalanan baru di SIPA Festival',
-    'journey_description' => 'Solo International Performing Arts (SIPA) adalah pertunjukan mahakarya internasional yang menampilkan penari, musisi, dan pelaku teater dari berbagai negara di seluruh dunia. SIPA 2025 diselenggarakan secara hybrid, online dan offline.
-                    SIPA 2025 diadakan di Panggung Terbuka dengan serangkaian acara, yaitu SIPA Show Case Stage (panggung yang diadakan di berbagai titik keramaian di Solo seperti pusat perbelanjaan, Car Freeday, taman kota, atau pasar tradisional bekerja sama dengan komunitas melalui open call atau kurasi. SIPA juga berkolaborasi dengan UMKM (Kuliner, Tekstil, dan Kerajinan) untuk memasarkan produk unggulan mereka.',
+    'journey_description' => 'Solo International Performing Arts (SIPA) merupakan festival seni pertunjukan tahunan yang diselenggarakan di Kota Solo sejak tahun 2009.
+    Pagelaran SIPA pada mulanya diselenggarakan di Pamedan Pura Mangkunegaran (2009-2012) lalu berpindah di Benteng Vastenburg (2013-2019), Taman Budaya Jawa Tengah di Surakarta (2020), Bengawan Solo Park (2021), Benteng Vasternburg Surakarta (2022-2023), dan kini kembali lagi ke Pamedan Pura Mangkunegaran (2024). 
+    Panggung pagelaran SIPA menampilkan beragam seni pertunjukan dari berbagai negara yakni seni musik, seni tari, seni drama (teater) dan lain-lain. Waktu penyelenggaraan tiga malam berturut-turut',
     'last_year' => 'TAHUN LALU',
     'update_news' => 'Berita Terbaru Mengenai SIPA Festival',
     'find_out' => 'TEMUKAN LEBIH LANJUT',
@@ -71,7 +72,8 @@ return [
 
     // GALLERY
     'gallery_title' => 'GALERI SIPA FESTIVAL',
-    'gallery_subtitle' => 'Mari ciptakan perjalanan baru di SIPA FESTIVAL',
+    'gallery_subtitle' => 'KILAS BALIK VISUAL PERHELATAN SIPA FESTIVAL',
+    'gallery_btn' => 'LIHAT SELENGKAPNYA',
     'gallery_2009' => 'Solo International Performing Arts (SIPA) 2009 merupakan ajang perdana yang merayakan keindahan seni pertunjukan dari berbagai penjuru dunia. Diselenggarakan di Pamedan Pura Mangkunegaran, SIPA 2009 hadir dengan semangat membangun jembatan budaya melalui tema <strong><em>"Art Brings Unity, Unity Brings Harmony".</em></strong> Acara yang digelar pada tanggal 7, 8, dan 10 Agustus 2009 ini mempersembahkan beragam pertunjukan yang mencerminkan kekuatan seni dalam menyatukan perbedaan dan menciptakan keharmonisan global. Dengan menghadirkan Rahma Putri Parimita sebagai maskot, SIPA 2009 memulai langkahnya sebagai ruang pertemuan lintas budaya, komunitas, dan negara. Dalam semangat persatuan, toleransi, dan harmoni, SIPA menjadi awal dari gerakan seni yang menyatukan dunia melalui panggung kolaborasi lintas bangsa.',
 
     'gallery_2010' => 'Solo International Performing Arts (SIPA) 2010 merupakan perhelatan seni tahunan yang memadukan keindahan budaya dari berbagai penjuru dunia. Bertempat di Pamedan Istana Mangkunegaran, Solo, SIPA 2010 digelar pada tanggal 16, 17, dan 18 Juli 2010 dengan mengusung tema <strong><em>"Nature Inspire the Soul of Art".</em></strong> Melalui tema ini, SIPA mengajak para seniman dan penonton untuk merefleksikan hubungan harmonis antara alam dan seni, serta menjadikan alam sebagai sumber inspirasi utama dalam penciptaan karya. Dengan menghadirkan Sruti Respati sebagai maskot, SIPA 2010 menampilkan pertunjukan yang menyentuh jiwa, serta memperkuat pesan kepedulian terhadap lingkungan. Dalam balutan harmoni alam dan budaya, SIPA terus menjadi wadah kolaborasi lintas bangsa yang mengedepankan semangat pelestarian dan keindahan seni yang bersumber dari bumi.',

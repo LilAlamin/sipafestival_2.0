@@ -121,8 +121,8 @@
 
 <section class="programs-section">
   <div class="container text-center">
-    <h2 class="fw-bold mb-2" style="font-size: 36px; color: #B8141E">LINEUP INFORMATION</h2>
-    <h5 class="mb-4" style="color: #000;">AMBASADOR SIPA FESTIVAL PERFORMANCE</h5>
+    <h2 class="fw-bold mb-2" style="font-size: 36px; color: #B8141E">@lang('messages.gallery_title')</h2>
+    <h5 class="mb-4" style="color: #000;">@lang('messages.gallery_subtitle')</h5>
     
     <div class="row g-4 justify-content-center">
       @for ($year = 2024; $year >= 2009; $year--)
@@ -130,7 +130,7 @@
             <div class="program-card" style="background-image: url('{{ asset('images/maskot/' . $year . '.webp') }}');">
             <div class="program-card-overlay" >
                 <h3 class="program-title">{{ $year }}</h3>
-                <a href="/gallery/{{ $year }}" class="btn-details">SEE THE DETAILS</a>
+                <a href="/gallery/{{ $year }}" class="btn-details">@lang('messages.gallery_btn')</a>
             </div>
             </div>
         </div>
