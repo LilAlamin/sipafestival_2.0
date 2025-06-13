@@ -13,38 +13,86 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
-    body {
-      background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
-      background-repeat: repeat;
-      background-size: auto;
-      background-color: white;
-    } 
-  </style>
+  body {
+    background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
+    background-repeat: repeat;
+    background-size: auto;
+    background-color: white;
+    font-family: 'Poppins', sans-serif; /* Pastikan font konsisten */
+  }
+
+  /* === CSS UNTUK HALAMAN BERITA === */
+  
+  .news-detail-section {
+    color: #333; /* Warna teks default agar mudah dibaca */
+  }
+  
+  .news-meta {
+    font-size: 0.9rem;
+    color: #6c757d; /* Warna abu-abu untuk metadata */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .news-title {
+    color: #B8141E; /* Warna merah khas Anda untuk judul */
+    font-size: 2.8rem; /* Ukuran font judul lebih besar */
+    line-height: 1.2;
+  }
+  
+  .news-image {
+    border-radius: 15px; /* Sudut gambar lebih melengkung */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    width: 80%;
+    height: auto;
+  }
+  
+  .news-content p {
+    font-size: 1.1rem; /* Ukuran font konten agar nyaman dibaca */
+    line-height: 1.9; /* Jarak antar baris lebih lega */
+    text-align: justify; /* Teks rata kiri-kanan */
+    margin-bottom: 1.5rem; /* Jarak antar paragraf */
+  }
+
+  /* Penyesuaian untuk layar kecil (mobile) */
+  @media (max-width: 768px) {
+    .news-title {
+      font-size: 2rem; /* Judul lebih kecil di mobile */
+    }
+    .news-content p {
+      font-size: 1rem;
+      text-align: left; /* Rata kiri lebih baik di mobile */
+    }
+  }
+</style>
 </head>
 <body>
 <x-header title="Selamat Datang" />
 
-<section class="py-5 welcome-section" id="welcome-section">
-  <div class="container welcome-container" id="welcome-section">
-    <h1 class="text-center fw-bold" style="color: #B8141E;">{{ $news->title }}</h1>
-      <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
+<section class="news-detail-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center">
+        
+        <header class="news-header">
+          <div class="news-meta mb-3">
+            </div>
+          
+          <h1 class="news-title fw-bolder">{{ $news->title }}</h1>
+        </header>
 
-      <div class="row mb-5 align-items-center">
-        <div class="col-md-6">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA 2024</h2>
-          <p class="text-muted">{{ $news->created_at->translatedFormat('d F Y H:i') }}</p>
-            <p style="text-align: justify;">
-              {{ $news->description }}
-            </p>
-        </div>
-        <div class="col-md-6 d-flex justify-content-center">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('/images/news/' . $news->image_path) }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-          </div>
-        </div>
+        <img src="{{ asset('/images/news/' . $news->image_path) }}" class="news-image img-fluid d-block mx-auto mb-5" alt="{{ $news->title }}">
+        <span><i class="fas fa-calendar-alt me-2"></i>{{ $news->created_at->translatedFormat('d F Y') }}</span>
+
+        <article class="news-content">
+          <p>{!! nl2br(e($news->description)) !!}</p>
+        </article>
+        
       </div>
+    </div>
   </div>
 </section>
+
 <x-footer />
 
 <script>

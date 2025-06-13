@@ -104,7 +104,7 @@ return [
 
     'gallery_2023' => 'Solo International Performing Arts (SIPA) 2023 kembali hadir di Benteng Vastenburg, Solo, sebagai ajang seni pertunjukan dunia yang mengangkat tema <strong><em>"The Root of Equity".</em></strong> Diselenggarakan pada tanggal 31 Agustus, 1, dan 2 September 2023, festival ini menyoroti pentingnya keadilan sosial dan kesetaraan melalui ekspresi seni. Dengan menghadirkan Anter Asmorodono sebagai maskot, SIPA 2023 menjadi ruang refleksi dan inspirasi untuk mewujudkan dunia yang lebih adil dan inklusif.',
 
-    'gallery_2024' => 'Solo International Performing Arts (SIPA) 2024 kembali digelar di Benteng Vastenburg, Solo, dengan mengangkat tema <strong><em>"Generasi Bhineka Tunggal Ika".</em></strong> Diselenggarakan pada tanggal 5, 6, dan 7 September 2024, SIPA 2024 menghadirkan semangat generasi muda yang menjunjung tinggi keberagaman dan persatuan. Dengan menghadirkan Syifa Fauziah sebagai maskot, SIPA 2024 menjadi wadah kolaborasi seni antarbangsa yang memperkuat identitas Indonesia dalam keragaman global.',
+    'gallery_2024' => 'Solo International Performing Arts (SIPA) 2024 kembali digelar di Benteng Vastenburg, Solo, dengan mengangkat tema <strong><em>"Performing Royal Genesis".</em></strong> Diselenggarakan pada tanggal 5, 6, dan 7 September 2024, SIPA 2024 menghadirkan semangat generasi muda yang menjunjung tinggi keberagaman dan persatuan. Dengan menghadirkan Syifa Fauziah sebagai maskot, SIPA 2024 menjadi wadah kolaborasi seni antarbangsa yang memperkuat identitas Indonesia dalam keragaman global.',
 
 
 ];
