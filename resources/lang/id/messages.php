@@ -1,7 +1,7 @@
 <?php
 return [
     'welcome' => 'selamat datang di situs kami',
-    'news' => 'Berita :name',
+    'news' => 'Berita',
     'days' => 'Hari',
     'hours' => 'Jam',
     'minutes' => 'Menit',
@@ -11,7 +11,30 @@ return [
     'lets_journey' => 'Mari kita memulai perjalanan baru di SIPA Festival',
     'journey_description' => 'Solo International Performing Arts (SIPA) adalah pertunjukan mahakarya internasional yang menampilkan penari, musisi, dan pelaku teater dari berbagai negara di seluruh dunia. SIPA 2025 diselenggarakan secara hybrid, online dan offline.
                     SIPA 2025 diadakan di Panggung Terbuka dengan serangkaian acara, yaitu SIPA Show Case Stage (panggung yang diadakan di berbagai titik keramaian di Solo seperti pusat perbelanjaan, Car Freeday, taman kota, atau pasar tradisional bekerja sama dengan komunitas melalui open call atau kurasi. SIPA juga berkolaborasi dengan UMKM (Kuliner, Tekstil, dan Kerajinan) untuk memasarkan produk unggulan mereka.',
-
+    'last_year' => 'TAHUN LALU',
+    'update_news' => 'Berita Terbaru Mengenai SIPA Festival',
+    'find_out' => 'TEMUKAN LEBIH LANJUT',
+    'other_news' => 'BERITA LAINNYA',
+    'we_are_closer' => 'Kami berada lebih dekat darippada yang anda kira',
+    'location' => 'Lokasi',
+    'address' => 'Alamat',
+    'kedasih' => 'Jalan Kedasih No. 22',
+    'subdistrict' => 'Kelurahan Kerten, Kecamatan Laweyan, Kota Surakarta',
+    'city' => 'Jawa Tengah 57143, Indonesia',
+    'greeting_form' => 'Kami sangat menghargai masukan Anda. Untuk informasi atau saran lebih lanjut, silakan hubungi kami kapan saja—tim kami siap membantu 24 jam sehari, 7 hari seminggu.',
+    'contact' => 'Informasi kontak',
+    'feedback' => 'Kritik & Saran',
+    'submit_feedback' => 'Kirim Pesan',
+    'name' => 'Nama',
+    'subject' => 'Subjek',
+    'message' => 'Isi Pesan',
+    'review_title' => 'ULASAN AUDIENS DI ACARA',
+    'review_description_1' => 'Jelajahi testimoni yang tulus dari para peserta yang mengalami pertunjukan yang memukau dan perayaan budaya yang meriah.',
+    'review_description_2' => 'Hidupkan kembali momen tak terlupakan yang membuat SIPA 2024 benar-benar luar biasa!',
+    'review_angela' => 'Ini suatu bentuk event yang menurut saya sangat menyenangkan. Ada pertukaran budaya di dalamnya. Untuk itu kita akan terus dukung pelaksanaan SIPA di tahun-tahun mendatang.',
+    'review_puan' => 'SIPA 2023 telah berlangsung selama tiga malam dengan lancar dan sukses, di mana berhasil mem-branding Kota Solo sebagai kota festival seni pertunjukan.',
+    'review_gusti' => 'SIPA ini merupakan suatu acara seni pertunjukan yang telah berjalan selama bertahun-tahun. Dan SIPA ini menurut saya merupakan salah satu event kebanggaan di kota yang kita cintai.',
+    'review_kim' => 'Di tengah pandemi pun, SIPA tetap aktif dan menjadi rujukan seni pertunjukan. Terlebih dinanti dan banyak disukai masyarakat.'
 
 
 ];

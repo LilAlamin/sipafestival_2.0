@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="col-md-6 text-container" style="padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
             <p style="text-align: justify;">@lang('messages.journey_description')</p>
-          <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+          <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">@lang('messages.find_out')</a>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
           <div id="slider" class="position-relative overflow-hidden rounded w-100">
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- YT -->
     <div class="container-yt-carousel">
       <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: #B8141E;">SIPA FESTIVAL LAST YEAR</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">SIPA FESTIVAL @lang('messages.last_year')</h2>
         <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
           <div id="thumbnail" onclick="openVideo()" style="position: relative;">
             <img src="{{ asset('images/AM/T.T2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
@@ -216,8 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA FESTIVAL</h2>
-      <h4 class="text-center fw-medium mb-5" style="color: #000;">Update news about SIPA</h4>
+      <h2 class="fw-bold" style="color: #B8141E;">@lang('messages.news') SIPA FESTIVAL</h2>
+      <h4 class="text-center fw-medium mb-5" style="color: #000;">@lang('messages.update_news')</h4>
     </div>
     <div class="row mb-5 news-wrapper">
       <!-- Berita 1 -->
@@ -236,22 +236,22 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       @endforeach
-      <a href="/news" class="btn btn-findmore2 mt-4 fw-bold">OTHER NEWS</a>
+      <a href="/news" class="btn btn-findmore2 mt-4 fw-bold">@lang('messages.other_news')</a>
     </div>
 
 
     <!-- Section Title -->
     <div class="text-center mb-4 title-loc">
-      <h5 class="fw-bold" style="color: #B8141E;">We’re Closer Than You Think!</h5>
+      <h5 class="fw-bold" style="color: #B8141E;">@lang('messages.we_are_closer')</h5>
       <h5 class="fw-bold">@SIPAFESTIVAL</h5>
     </div>
 
     <!-- Location and Map -->
     <div class="row mb-5 align-items-center">
       <div class="col-md-6">
-        <h6 class="text-danger fw-bold">LOCATION</h6>
-        <p class="fw-bold">Address</p>
-        <p>22 Kedasih Street, <br> Kerten Sub-district, Laweyan District, Surakarta City, <br>Central Java 57143, Indonesia</p>
+        <h6 class="text-danger fw-bold">@lang('messages.location')</h6>
+        <p class="fw-bold">@lang('messages.address')</p>
+        <p>@lang('messages.kedasih'), <br> @lang('messages.subdistrict'), <br>@lang('messages.city')</p>
       </div>
       <div class="col-md-6">
         <iframe 
@@ -267,30 +267,30 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Feedback and Form -->
     <div class="row mt-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <p>We greatly appreciate your insights. For any further information or suggestions, please contact us anytime—our dedicated team is available 24 hours a day, 7 days a week.</p>
-        <h6 class="text-danger fw-bold">Contact information</h6>
+        <p>@lang('messages.greeting_form')</p>
+        <h6 class="text-danger fw-bold">@lang('messages.contact')</h6>
         <p>+62 882-2505-2982<br>sipafestival@gmail.com</p>
       </div>
 
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
-          <h6 class="fw-bold text-center mb-4" style="color: #B8141E;">Feedback & Suggestions</h6>
+          <h6 class="fw-bold text-center mb-4" style="color: #B8141E;">@lang('messages.feedback')</h6>
           <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
               <input name="email" type="email" class="form-control border-danger" placeholder="Email">
             </div>
             <div class="mb-3">
-              <input name="name" type="text" class="form-control border-danger" placeholder="Name">
+              <input name="name" type="text" class="form-control border-danger" placeholder="@lang('messages.name')">
             </div>
             <div class="mb-3">
-              <input name="subject" type="text" class="form-control border-danger" placeholder="Subject">
+              <input name="subject" type="text" class="form-control border-danger" placeholder="@lang('messages.subject')">
             </div>
             <div class="mb-3">
-              <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
+              <textarea name="message" class="form-control border-danger" rows="4" placeholder="@lang('messages.message')"></textarea>
             </div>
             <div class="text-center ">
-              <button type="submit" form="submissionForm" class=" btn-sm btn-findmore2" id="submitBtn">Submit Feedback</button>
+              <button type="submit" form="submissionForm" class=" btn-sm btn-findmore2" id="submitBtn">@lang('messages.submit_feedback')</button>
             </div>
           </form>
         </div>
