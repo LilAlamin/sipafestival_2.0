@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- YT -->
     <div class="container-yt-carousel">
       <!-- VIDEO PLAYER -->
-      <div class="container-yt-carousel">
+      <div class="container-yt-carousel d-flex justify-content-center align-items-center" style="min-height: 400px;">
         <div class="text-center mb-5">
           <h2 class="fw-bold" style="color: #B8141E;">SIPA LAST YEAR</h2>
           <div class="container-video position-relative d-inline-block mt-4 video-container">
