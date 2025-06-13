@@ -61,5 +61,13 @@ return [
     'history_description_1' => 'Solo International Performing Arts (SIPA) adalah festival seni pertunjukan tahunan yang diselenggarakan di kota Solo sejak tahun 2009. Penggagas SIPA adalah Ir. Joko Widodo, yang saat itu menjabat sebagai Wali Kota Surakarta.',
     'history_description_2' => 'Pertunjukan SIPA awalnya diadakan di Pamedan Pura Mangkunegaran (2009–2012), kemudian berpindah ke Benteng Vastenburg (2013–2019), Taman Budaya Jawa Tengah di Surakarta (2020), Taman Bengawan Solo (2021), kembali ke Benteng Vastenburg (2022–2023), dan terakhir kembali ke Pamedan Pura Mangkunegaran pada tahun 2024.',
     'history_description_3' => 'Panggung SIPA menampilkan berbagai seni pertunjukan dari berbagai negara, termasuk musik, tari, drama (teater), dan lainnya. Acara ini berlangsung selama tiga malam berturut-turut. Setiap pertunjukan SIPA bertujuan untuk mendidik dan menumbuhkan apresiasi masyarakat terhadap kekuatan seni pertunjukan.',
-    'history_description_4' => 'Festival ini juga mempromosikan konvergensi budaya, yang diharapkan dapat membantu menciptakan masyarakat global yang lebih harmonis melalui semangat seni pertunjukan. Konsep inti SIPA adalah menjadi bagian dari kehidupan budaya yang sengaja dihadirkan untuk mendidik dan meningkatkan apresiasi masyarakat terhadap potensi dan kekuatan seni pertunjukan.'
+    'history_description_4' => 'Festival ini juga mempromosikan konvergensi budaya, yang diharapkan dapat membantu menciptakan masyarakat global yang lebih harmonis melalui semangat seni pertunjukan. Konsep inti SIPA adalah menjadi bagian dari kehidupan budaya yang sengaja dihadirkan untuk mendidik dan meningkatkan apresiasi masyarakat terhadap potensi dan kekuatan seni pertunjukan.',
+
+    // LINE UP
+    'line_up' => 'DAFTAR PENAMPIL',
+    'ambassador' => 'PENAMPILAN DUTA FESTIVAL SIPA',
+    'international_delegation' => 'DELEGASI INTERNASIONAL',
+    'indonesian_delegation' => 'DELEGASI INDONESIA',
+
+
 ];
