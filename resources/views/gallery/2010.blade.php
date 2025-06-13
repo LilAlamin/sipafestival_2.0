@@ -39,17 +39,15 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA FESTIVAL</h1>
-      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA Festival</h2>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.gallery_title')</h1>
+      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">@lang('messages.gallery_subtitle')</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2010</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2010 merupakan perhelatan seni tahunan yang memadukan keindahan budaya dari berbagai penjuru dunia. Bertempat di Pamedan Istana Mangkunegaran, Solo, SIPA 2010 digelar pada tanggal 16, 17, dan 18 Juli 2010 dengan mengusung tema
-                     <strong><em>"Nature Inspire the Soul of Art".</em></strong> Melalui tema ini, SIPA mengajak para seniman dan penonton untuk merefleksikan hubungan harmonis antara alam dan seni, serta menjadikan alam sebagai sumber inspirasi utama dalam penciptaan karya. 
-                     Dengan menghadirkan Sruti Respati sebagai maskot, SIPA 2010 menampilkan pertunjukan yang menyentuh jiwa, serta memperkuat pesan kepedulian terhadap lingkungan. Dalam balutan harmoni alam dan budaya, SIPA terus menjadi wadah kolaborasi lintas bangsa yang mengedepankan semangat pelestarian dan keindahan seni yang bersumber dari bumi.
-            </p>
+                    @lang('messages.gallery_2010')
+                  </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">

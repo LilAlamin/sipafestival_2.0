@@ -37,7 +37,7 @@
 <section class="py-5" id="welcome-section">
   <div class="container text-center">
     <!-- Judul Dipindah ke Atas Gambar -->
-    <h1 class="fw-bold display-5 mb-4">History Solo International Performing Arts (SIPA)</h1>
+    <h1 class="fw-bold display-5 mb-4">@lang('messages.history') Solo International Performing Arts (SIPA)</h1>
 
     <!-- Gambar Di Tengah -->
     <div class="d-flex justify-content-center mb-4">
@@ -53,16 +53,16 @@
     <!-- Deskripsi -->
     <div class="text-start">
       <p style="text-align: justify;">
-        Solo International Performing Arts (SIPA) is an annual performing arts festival held in the city of Solo since 2009. The initiator of SIPA was Ir. Joko Widodo, who at the time served as the Mayor of Surakarta.
+        @lang('messages.history_description_1')
       </p>
       <p style="text-align: justify;">
-        The SIPA performances were initially held at the Pamedan Pura Mangkunegaran (2009–2012), then moved to Vastenburg Fortress (2013–2019), the Central Java Cultural Park in Surakarta (2020), Bengawan Solo Park (2021), returned to Vastenburg Fortress (2022–2023), and most recently back to the Pamedan Pura Mangkunegaran in 2024.
+        @lang('messages.history_description_2')
       </p>
       <p style="text-align: justify;">
-        SIPA’s stage features a variety of performing arts from different countries, including music, dance, drama (theater), and more. The event takes place over three consecutive nights. Each SIPA performance aims to educate and foster public appreciation for the power of the performing arts.
+        @lang('messages.history_description_3')
       </p>
       <p style="text-align: justify;">
-        The festival also promotes cultural convergence, which in turn is expected to help create a more harmonious global society through the spirit of the performing arts. The core concept of SIPA is to be a part of cultural life that is intentionally presented to educate and enhance public appreciation for the potential and strength of the performing arts.
+        @lang('messages.history_description_4')
       </p>
     </div>
   </div>

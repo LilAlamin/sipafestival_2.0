@@ -39,16 +39,14 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA FESTIVAL</h1>
-      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA Festival</h2>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.gallery_title')</h1>
+      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">@lang('messages.gallery_subtitle')</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2020</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2020 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                    Digelar secara online melalui channel YouTube SIPA Festival, SIPA 2020 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema 
-                    <strong><em>"Recognition and Acceleration".</em></strong> Melalui panggung virtual ini, seni diposisikan tidak hanya sebagai apresiasi atas keberagaman karya, tetapi juga sebagai dorongan percepatan perkembangan kreativitas dan inovasi dalam dunia seni. Dengan menjadikan Dory Harsa sebagai maskot, SIPA 2020 berupaya menjembatani karya seni yang mengakui pencapaian sekaligus mempercepat kemajuan, serta membangun komunikasi lintas individu, komunitas, bahkan negara. Dalam semangat inklusif, dinamis, dan progresif, SIPA menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2020')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">

@@ -86,8 +86,8 @@
 <!-- Lineup Section -->
 <section style="color: #B8141E; padding: 60px 20px;">
   <div class="container text-center">
-    <h2 class="fw-bold mb-2" style="font-size: 36px;">LINEUP INFORMATION</h2>
-    <h5 class="mb-4" style="color: #000;">AMBASADOR SIPA FESTIVAL PERFORMANCE</h5>
+    <h2 class="fw-bold mb-2" style="font-size: 36px;">@lang('messages.line_up')</h2>
+    <h5 class="mb-4" style="color: #000;">@lang('messages.ambassador')</h5>
     
     <!-- <div class="card mb-5" style="background-color: #7e001c; border: 3px solid #f8d98d; border-radius: 20px; overflow: hidden;">
       <img src="{{ asset('images/ambasador.png') }}" alt="Ambasador SIPA" class="img-fluid">
@@ -99,7 +99,7 @@
 
     <!-- International Delegates -->
     <div class="p-4" style="background-color: #ffeab3; border-radius: 40px;">
-      <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">INTERNATIONAL DELEGATES</h4>
+      <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">@lang('messages.international_delegation')</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100 ">
@@ -132,7 +132,7 @@
 
     <!-- Indonesian Delegates -->
     <div class="p-4 mt-5" style="background-color: #ffeab3; border-radius: 40px;">
-      <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">INDONESIAN DELEGATES</h4>
+      <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">@lang('messages.indonesian_delegation')</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100">

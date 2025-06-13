@@ -39,16 +39,14 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">GALLERY SIPA FESTIVAL</h1>
-      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">Let’s make new journey on SIPA Festival</h2>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.gallery_title')</h1>
+      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">@lang('messages.gallery_subtitle')</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
           <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2014</h2>
             <p style="text-align: justify;">
-                    Solo International Performing Arts (SIPA) 2014 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Benteng Vastenburg, Solo, SIPA 2014 menghadirkan berbagai pertunjukan yang menggugah, dengan mengusung tema
-                     <strong><em>"Generation of World Culture".</em></strong> Acara yang berlangsung pada tanggal 11, 12, dan 13 September 2014 ini menampilkan karya seni yang menggambarkan peran generasi muda dalam melestarikan, mengembangkan, dan mewariskan kekayaan budaya dunia. Melalui panggung ini, seni diposisikan sebagai medium komunikasi antar generasi yang mampu memperkuat identitas sekaligus membuka dialog lintas budaya. 
-                     Dengan semangat inovasi dan kesinambungan, SIPA 2014 menjadi wadah yang menyatukan dunia melalui seni.
+                @lang('messages.gallery_2014')
             </p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
