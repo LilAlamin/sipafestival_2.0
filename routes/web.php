@@ -34,6 +34,9 @@ Route::get('/aboutus/history', function () {
 Route::get('/aboutus/director', function () {
     return view('aboutus/director');
 });
+Route::get('/gallery', function () {
+    return view('gallery');
+});
 Route::get('/gallery/2009', function () {
     return view('gallery/2009');
 });

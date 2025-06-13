@@ -833,7 +833,7 @@ button:focus { outline: none; }
         object-fit: cover;
     } */
     .delegates-img {
-        width: 1px;
+        width: 10px;
     }
     .card {
         gap: 15rem;

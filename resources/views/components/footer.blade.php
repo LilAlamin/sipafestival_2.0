@@ -29,7 +29,7 @@
         margin-top: 11vh;
         background-image: url('{{ asset("images/footerlogo.webp") }}');
         background-repeat: no-repeat;
-        background-size: 70rem;
+        background-size: 90rem;
         background-position: bottom;
         padding-top: 50px;
       }

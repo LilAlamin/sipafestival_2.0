@@ -35,8 +35,9 @@
         </div>
         
         <a class="font-bold hover:text-red-500 {{ request()->is('lineup') ? 'nav-link-active' : '' }}" href="/lineup">LINE UP</a>
+        <a class="font-bold hover:text-red-500 {{ request()->is('gallery') ? 'nav-link-active' : '' }}" href="/gallery">GALLERY</a>
 
-        <div class="relative" data-dropdown>
+        <!-- <div class="relative" data-dropdown>
           <button class="font-bold hover:text-red-500 flex items-center" data-dropdown-button>
             GALLERY <i class="fa-solid fa-chevron-down text-xs ml-2"></i>
           </button>
@@ -45,7 +46,7 @@
               <a href="/gallery/{{ $year }}" class="block px-4 py-2 text-sm hover:bg-gray-100">SIPA {{ $year }}</a>
             @endfor
           </div>
-        </div>
+        </div> -->
         
         <a class="lang-switch bg-gray-200 px-3 py-1 rounded-full text-sm font-bold" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
             {{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}
@@ -71,18 +72,7 @@
         </div>
 
         <a href="/lineup" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('lineup') ? 'nav-link-active' : '' }}">LINE UP</a>
-
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle w-full flex justify-between items-center py-3 px-6 text-sm font-bold hover:bg-gray-100">
-                <span>GALLERY</span>
-                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
-            </button>
-            <div class="mobile-submenu overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-                @for ($year = 2024; $year >= 2009; $year--)
-                    <a href="/gallery/{{ $year }}" class="block py-3 pl-10 pr-6 text-sm hover:bg-gray-50">SIPA {{ $year }}</a>
-                @endfor
-            </div>
-        </div>
+        <a href="/lineup" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('gallery') ? 'nav-link-active' : '' }}">GALLERY</a>
         
         <a class="block mt-2 mx-4 py-2 px-4 text-sm text-center rounded-lg bg-gray-100 hover:bg-gray-200" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
           {{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}
