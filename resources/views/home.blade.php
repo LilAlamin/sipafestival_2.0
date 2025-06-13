@@ -211,8 +211,9 @@ document.addEventListener("DOMContentLoaded", function () {
             @endforeach
           </div>
         </div>
+        <div class="slider-indicator"></div>
       </div>
-      <div class="slider-indicator"></div>
+      
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">

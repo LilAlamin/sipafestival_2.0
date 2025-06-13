@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sipafestival 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
+  {{-- These asset links are placeholders for your Laravel project --}}
+  {{-- <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"> --}}
+  {{-- <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}"> --}}
   <style>
     * {
       font-family: 'Poppins', sans-serif;
@@ -32,23 +32,21 @@
       opacity: 0.4;
     }
     .delegates-img {
-      width: 100%;           /* Biar gambar full lebar kolom */
-      height: 100%;          /* Tinggi tetap seragam */
-      object-fit: cover;      /* Gambar crop rapi tanpa gepeng */
-      border-radius: 10px;    /* Biar sudut gambar membulat */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambah bayangan halus */
+      width: 100%;           /* Fill the column width */
+      height: 250px;          /* Set a fixed height for consistency on desktop */
+      object-fit: cover;      /* Crop the image neatly without distortion */
+      border-radius: 10px;    /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
       transition: transform 0.3s ease; /* Smooth hover effect */
     }
-
     .delegates-img:hover {
-      transform: scale(1.05); /* Pas hover gambar membesar sedikit */
+      transform: scale(1.05); /* Slightly enlarge image on hover */
     }
     .card-body {
-      margin-top: 20px; /* jarak antara gambar dan tulisan */
+      margin-top: 15px; /* Adjust spacing between image and text */
     }
-
     .card-title {
-      font-size: 1rem;
+      font-size: 1.1rem; /* Slightly larger for better readability */
       color: #B8141E;
     }
     .info-card {
@@ -56,134 +54,141 @@
       border: none;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     .info-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
-
     .info-card .icon {
       font-size: 2.5rem;
     }
-
     .info-card .label {
       margin-top: 10px;
       font-weight: 600;
       font-size: 1.1rem;
     }
 
+    /* --- Mobile Responsive Styles --- */
+    @media (max-width: 768px) {
+        .lineup-section {
+            padding: 40px 15px; /* Reduce padding for tablets and mobile */
+        }
+    }
+
     @media (max-width: 576px) {
       .info-card .icon {
         font-size: 2rem;
       }
+      .lineup-section h2.fw-bold {
+        font-size: 28px; /* Reduce title font size */
+      }
+      .delegates-container {
+        padding: 20px; /* Reduce inner padding */
+      }
+      .delegates-img {
+        height: auto; /* Allow image height to adjust to maintain aspect ratio */
+      }
+      .card.h-100 {
+        text-align: center; /* Ensure content is centered */
+      }
     }
   </style>
+
 </head>
+
 <body>
+<x-header title="Selamat Datang" />
 
-@include('components.header')
 
-<!-- Lineup Section -->
-<section style="color: #B8141E; padding: 60px 20px;">
+<section class="lineup-section" style="color: #B8141E; padding: 60px 20px;">
   <div class="container text-center">
     <h2 class="fw-bold mb-2" style="font-size: 36px;">@lang('messages.line_up')</h2>
     <h5 class="mb-4" style="color: #000;">@lang('messages.ambassador')</h5>
-    
-    <!-- <div class="card mb-5" style="background-color: #7e001c; border: 3px solid #f8d98d; border-radius: 20px; overflow: hidden;">
-      <img src="{{ asset('images/ambasador.png') }}" alt="Ambasador SIPA" class="img-fluid">
-      <div class="card-body">
-        <h4 class="card-title fw-bold" style="color: #f8d98d;">GRAj. Ancillasura Marina Sudjiwo.</h4>
-        <a href="#" class="btn btn-outline-light mt-3">SEE THE DETAILS</a>
-      </div>
-    </div> -->
 
-    <!-- International Delegates -->
-    <div class="p-4" style="background-color: #ffeab3; border-radius: 40px;">
+    <div class="p-4 delegates-container" style="background-color: #ffeab3; border-radius: 40px;">
       <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">@lang('messages.international_delegation')</h4>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100 ">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Park Na Hoon Company">
-            <div class="card-body text-center">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100 ">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="ART8">
-            <div class="card-body text-center">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100 ">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Hanayura">
-            <div class="card-body text-center">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-
-    <!-- Indonesian Delegates -->
-    <div class="p-4 mt-5" style="background-color: #ffeab3; border-radius: 40px;">
+    <div class="p-4 mt-5 delegates-container" style="background-color: #ffeab3; border-radius: 40px;">
       <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">@lang('messages.indonesian_delegation')</h4>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Mahoni Musik">
-            <div class="card-body text-center">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Darmawan Dadjiono">
-            <div class="card-body text-center">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Artmay Studio">
-            <div class="card-body text-center">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
               <h6 class="card-title fw-bold">TBA</h6>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
 
 <x-footer />
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 <script>
-  /*Navbar*/
+  /* Navbar Scroll Behavior */
   document.addEventListener('DOMContentLoaded', function() {
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
-    const showAreaHeight = 50; // area atas layar untuk mouseover
+    const showAreaHeight = 50; // Top area of the screen for mouseover
 
+    // Exit if no navbar is found
     if (!navbar) return;
 
     window.addEventListener('scroll', function() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if(scrollTop > lastScrollTop && scrollTop > 100){
-        // scroll down → sembunyikan navbar
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scroll down -> hide navbar
         navbar.style.top = '-80px';
       } else {
-        // scroll up → tampilkan navbar
+        // Scroll up -> show navbar
         navbar.style.top = '0';
       }
-
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
@@ -193,8 +198,6 @@
       }
     });
   });
-
-
 </script>
 </body>
 </html>

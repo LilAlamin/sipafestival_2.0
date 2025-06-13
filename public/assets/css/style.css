@@ -807,7 +807,7 @@ button:focus { outline: none; }
     }
     .delegates-section {
         margin-top: -210px;
-        margin-bottom: 0px;
+        margin-bottom: 50px;
     }
     .arc-section h2 {
         margin-bottom: 10px;

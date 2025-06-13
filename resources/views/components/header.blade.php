@@ -72,7 +72,7 @@
         </div>
 
         <a href="/lineup" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('lineup') ? 'nav-link-active' : '' }}">LINE UP</a>
-        <a href="/lineup" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('gallery') ? 'nav-link-active' : '' }}">GALLERY</a>
+        <a href="/gallery" class="block py-3 px-6 text-sm font-bold hover:bg-gray-100 {{ request()->is('gallery') ? 'nav-link-active' : '' }}">GALLERY</a>
         
         <a class="block mt-2 mx-4 py-2 px-4 text-sm text-center rounded-lg bg-gray-100 hover:bg-gray-200" href="{{ route('lang.switch', app()->getLocale() == 'id' ? 'en' : 'id') }}">
           {{ app()->getLocale() == 'id' ? 'ID' : 'EN' }}

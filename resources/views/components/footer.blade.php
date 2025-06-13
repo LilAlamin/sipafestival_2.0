@@ -22,6 +22,7 @@
       .logo-sipa {
         max-height: 90px;
         margin-bottom: 15px;
+        size: 90px;
       }
       .footer-line {
         border-top: 3px solid #B8141E;
