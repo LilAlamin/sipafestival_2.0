@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
       @endphp
       <div class="arc-section mb-5 text-center">
-        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPAFESTIVAL</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPA FESTIVAL</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <p class="mt-3" style="font-size: 18px;">
             <span class="fw-bold">2025</span><br>
-            <span class="fw-normal">SIPA festival</span>
+            <span class="fw-normal">SIPA Festival</span>
           </p>
         </div>
       </div>
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">@lang('messages.news') SIPA</h2>
+      <h2 class="fw-bold" style="color: #B8141E;">@lang('messages.news') SIPA FESTIVAL</h2>
       <h4 class="text-center fw-medium mb-5" style="color: #000;">@lang('messages.update_news')</h4>
     </div>
     <div class="mb-5">
