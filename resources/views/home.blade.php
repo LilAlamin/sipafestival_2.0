@@ -575,75 +575,7 @@ const slides = document.querySelectorAll('.img-slide');
   iframe.style.display = 'block';
 }
 
-// CAROUSEL MASKOT
-// document.addEventListener('DOMContentLoaded', () => {
-//   const container = document.querySelector('.delegates-wrapper');
-//   const items = document.querySelectorAll('.delegate-item');
-//   const indicatorContainer = document.querySelector('.slider-indicator');
-//   const itemWidth = items[0].offsetWidth + 30; // width + margin
-//   const itemsPerSlide = 4;
-//   const totalSlides = Math.ceil(items.length / itemsPerSlide);
-//   let currentIndex = 0;
-//   let interval;
-
-//   // Clone first N items and append to the end for infinite loop effect
-//   for (let i = 0; i < itemsPerSlide; i++) {
-//     const clone = items[i].cloneNode(true);
-//     container.appendChild(clone);
-//   }
-
-//   // Set container width to fit all items (original + clones)
-//   container.style.width = ((items.length + itemsPerSlide) * itemWidth) + 'px';
-//   container.style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1)';
-
-//   // Generate indicators sesuai jumlah grup slide
-//   for (let i = 0; i < totalSlides; i++) {
-//     const dot = document.createElement('span');
-//     if (i === 0) dot.classList.add('active');
-//     dot.dataset.index = i;
-//     indicatorContainer.appendChild(dot);
-//   }
-
-//   const indicators = document.querySelectorAll('.slider-indicator span');
-
-//   function goToSlide(index, animated = true) {
-//     currentIndex = index;
-//     if (!animated) container.style.transition = 'none';
-//     else container.style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1)';
-//     const translateX = currentIndex * itemWidth * itemsPerSlide;
-//     container.style.transform = `translateX(-${translateX}px)`;
-//     indicators.forEach((dot, i) => {
-//       dot.classList.toggle('active', i === (currentIndex % totalSlides));
-//     });
-//   }
-
-//   function startAutoSlide() {
-//     clearInterval(interval);
-//     interval = setInterval(() => {
-//       currentIndex++;
-//       goToSlide(currentIndex, true);
-
-//       // Jika sudah sampai slide clone, reset ke awal tanpa animasi
-//       if (currentIndex === totalSlides) {
-//         setTimeout(() => {
-//           goToSlide(0, false);
-//         }, 700);
-//         currentIndex = 0;
-//       }
-//     }, 3000);
-//   }
-
-//   // Set klik event ke indikator
-//   indicators.forEach(dot => {
-//     dot.addEventListener('click', () => {
-//       goToSlide(parseInt(dot.dataset.index));
-//       startAutoSlide(); // reset timer
-//     });
-//   });
-
-//   goToSlide(0, false);
-//   startAutoSlide();
-// });
+// SCRIPT UNTUK MASKOT CAROUSEL =====================================
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".delegates-wrapper");
