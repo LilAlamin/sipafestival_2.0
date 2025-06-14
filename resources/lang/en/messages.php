@@ -2,7 +2,7 @@
 return [
     // HOME PAGE
     'welcome' => 'Welcome to our website',
-    'news' => 'News',
+    'news' => 'NEWS',
     'days' => 'Days',
     'hours' => 'Hours',
     'minutes' => 'Minutes',
@@ -50,6 +50,7 @@ return [
     'faq_answer_5' => 'Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.',
     'coming_soon' => 'COMING SOON',
     'we_are_sipa' => 'We Are SIPA FESTIVAL',
+    'supported'=> 'SUPPORTED BY',
 
 
     // DIRECTORS PROFILE

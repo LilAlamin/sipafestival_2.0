@@ -2,7 +2,7 @@
 return [
     // HOME PAGE
     'welcome' => 'selamat datang di situs kami',
-    'news' => 'Berita',
+    'news' => 'BERITA',
     'days' => 'Hari',
     'hours' => 'Jam',
     'minutes' => 'Menit',
@@ -50,6 +50,7 @@ return [
     'faq_answer_5' => 'Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diizinkan. Namun, Anda dapat membawa kamera kompak dan smartphone.',
     'coming_soon' => 'SEGERA HADIR',
     'we_are_sipa' => 'Tentang SIPA FESTIVAL',
+    'supported'=> 'DIDUKUNG OLEH',
 
     // DIRECTORS PROFILE
     'directors_profile' => 'Direktur Solo International Performing Arts (SIPA)',

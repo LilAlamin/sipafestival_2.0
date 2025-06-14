@@ -61,7 +61,7 @@
   <img src="{{ asset('images/pattern/headerr.webp') }}" alt="Background" class="bg">
   <div class="container">
     <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="Solo International Performing Arts Logo" class="text">
-    <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
+    <p class="fw-bold mb-2">4 ━ 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
         <div class="countdown-number" id="days"></div>
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             2011 => 'GPH. Paundrakarna',
             2012 => 'GKR. Timoer Rumbai K',
             2013 => 'Rachel Georghea S',
-            2014 => 'Tunku Atiah',
+            2014 => 'Yang Mulia Tunku Atiah',
             2015 => 'Fajar Satriadi',
             2016 => 'Peni Candra Rini',
             2017 => 'Dr. Eko Supriyanto, S.Sn., MFA',
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
       @endphp
       <div class="arc-section mb-5 text-center">
-        <h2 class="fw-bold" style="color: #B8141E;">MASKOT SIPA FESTIVAL</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">AMBASSADOR SIPA FESTIVAL</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
   <div class="flex justify-center items-center w-full">
-    <a href="/news" class="btn btn-findmore2 fw-bold">@lang('messages.other news')</a>
+    <a href="/news" class="btn btn-findmore2 fw-bold">@lang('messages.other_news')</a>
   </div>
 
 </div>
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <!-- SPONSOR MEDPART -->
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">@lang('messages.supported')</h2>
     <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="sponsor-container p-4 text-center sponsor-flex">
         <div class="d-flex justify-content-center gap-4 flex-wrap">
@@ -503,6 +503,23 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
+    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
+      <div class="medpart-container p-4 text-center">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <p class="mb-0">@lang('messages.coming_soon')</p>
+          <!-- 
+          <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="medpart-logo" />
+          <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
+          <img src="logo3.png" alt="Logo 3" class="medpart-logo" />
+          <img src="logo4.png" alt="Logo 4" class="medpart-logo" />
+          <img src="logo5.png" alt="Logo 5" class="medpart-logo" /> 
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
     <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="medpart-container p-4 text-center">
