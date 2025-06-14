@@ -919,6 +919,9 @@ button:focus {
     .card {
         gap: 15rem;
     }
+    .slider-indicator span {
+        width: 6px;
+    }
 }
 
 /* Language Switch Button */
