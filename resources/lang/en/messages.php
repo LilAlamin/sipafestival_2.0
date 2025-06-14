@@ -48,6 +48,8 @@ return [
     'faq_answer_4' => 'Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.',
     'faq_question_5' => 'What types of cameras are allowed?',
     'faq_answer_5' => 'Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.',
+    'coming_soon' => 'COMING SOON',
+    'we_are_sipa' => 'We Are SIPA FESTIVAL',
 
 
     // DIRECTORS PROFILE

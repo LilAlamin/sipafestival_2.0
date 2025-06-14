@@ -142,9 +142,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <div class="row mb-5 align-items-start explain-section flex-column flex-md-row">
     <div class="col-md-6 text-container order-2 order-md-1" >
-        <h2 class="fw-bold mb-3" style="color: #B8141E;">We Are SIPA Festival</h2>
+        <h2 class="fw-bold mb-3" style="color: #B8141E;">@lang('messages.we_are_sipa')</h2>
         <p style="text-align: justify;">@lang('messages.journey_description')</p>
-        <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+        <a href="/aboutus/history" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">@lang('messages.find_out')</a>
     </div>
     <div id="slider-parent" class="col-md-6 d-flex justify-content-end order-1 order-md-2 mb-4 mb-md-0 self-start">
         <div id="slider" class="position-relative overflow-hidden w-100">
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- VIDEO PLAYER -->
       <div class="container-yt-carousel d-flex justify-content-center align-items-center" style="min-height: 400px;">
         <div class="text-center mb-5">
-          <h2 class="fw-bold" style="color: #B8141E;">SIPA LAST YEAR</h2>
+          <h2 class="fw-bold" style="color: #B8141E;">SIPA @lang('messages.last_year')</h2>
           <div class="container-video position-relative d-inline-block mt-4 video-container">
             <div id="videoThumbnail" class="thumbnail-wrapper" style="position: relative; cursor: pointer;">
               <img src="images/AM/T.T2024.jpg" alt="Video Thumbnail" class="img-fluid video-thumbnail-img">
@@ -245,8 +245,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <!-- Berita -->
     <div class="arc-section mb-5 text-center">
-      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
-      <h4 class="text-center fw-medium mb-5" style="color: #000;">Update news about SIPA</h4>
+      <h2 class="fw-bold" style="color: #B8141E;">@lang('messages.news') SIPA</h2>
+      <h4 class="text-center fw-medium mb-5" style="color: #000;">@lang('messages.update_news')</h4>
     </div>
     <div class="mb-5">
 
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
   <div class="flex justify-center items-center w-full">
-    <a href="/news" class="btn btn-findmore2 fw-bold">OTHER NEWS</a>
+    <a href="/news" class="btn btn-findmore2 fw-bold">@lang('messages.other news')</a>
   </div>
 
 </div>
@@ -277,16 +277,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- Section Title -->
     <div class="text-center mb-4 title-loc">
-      <h5 class="fw-bold" style="color: #B8141E;">We’re Closer Than You Think!</h5>
+      <h5 class="fw-bold" style="color: #B8141E;">@lang('messages.we_are_closer')</h5>
       <h5 class="fw-bold">@SIPAFESTIVAL</h5>
     </div>
 
     <!-- Location and Map -->
     <div class="row mb-5 align-items-center">
       <div class="col-md-6">
-        <h6 class="text-danger fw-bold">LOCATION</h6>
-        <p class="fw-bold">Address</p>
-        <p>22 Kedasih Street, <br> Kerten Sub-district, Laweyan District, Surakarta City, <br>Central Java 57143, Indonesia</p>
+        <h6 class="text-danger fw-bold">@lang('messages.location')</h6>
+        <p class="fw-bold">@lang('messages.address')</p>
+        <p>@lang('messages.kedasih'), <br> @lang('messages.subdistrict'), <br>@lang('messages.city')</p>
       </div>
       <div class="col-md-6">
         <iframe 
@@ -302,30 +302,30 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Feedback and Form -->
     <div class="row mt-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <p>We greatly appreciate your insights. For any further information or suggestions, please contact us anytime—our dedicated team is available 24 hours a day, 7 days a week.</p>
-        <h6 class="text-danger fw-bold">Contact information</h6>
+        <p>@lang('messages.greeting_form')</p>
+        <h6 class="text-danger fw-bold">@lang('messages.contact')</h6>
         <p>+62 856-4722-5058<br>sipafestival@gmail.com</p>
       </div>
 
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
-          <h6 class="fw-bold text-center mb-4" style="color: #B8141E;">Feedback & Suggestions</h6>
+          <h6 class="fw-bold text-center mb-4" style="color: #B8141E;">@lang('messages.feedback')</h6>
           <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
               <input name="email" type="email" class="form-control border-danger" placeholder="Email">
             </div>
             <div class="mb-3">
-              <input name="name" type="text" class="form-control border-danger" placeholder="Name">
+              <input name="name" type="text" class="form-control border-danger" placeholder="@lang('messages.name')">
             </div>
             <div class="mb-3">
-              <input name="subject" type="text" class="form-control border-danger" placeholder="Subject">
+              <input name="subject" type="text" class="form-control border-danger" placeholder="@lang('messages.subject')">
             </div>
             <div class="mb-3">
-              <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
+              <textarea name="message" class="form-control border-danger" rows="4" placeholder="@lang('messages.message')"></textarea>
             </div>
             <div class="text-center ">
-              <button type="submit" form="submissionForm" class=" btn-sm btn-findmore2" id="submitBtn">Submit Feedback</button>
+              <button type="submit" form="submissionForm" class=" btn-sm btn-findmore2" id="submitBtn">@lang('messages.submit_feedback')</button>
             </div>
           </form>
         </div>
@@ -336,13 +336,13 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Testimoni SIPA 2024 -->
   <div class="container py-5 testi">
     <div class="text-center mb-4">
-      <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">REVIEW AUDIENCE ON EVENT</h2>
+      <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">@lang('messages.review_title')</h2>
       <h2 class="fw-bold text-dark mb-3">
-        🌟 What Our Audience Says About SIPA 2024! 🌟
+        🌟 @lang('messages.what_our_audience_say') 🌟
       </h2>
       <p class="text-secondary col-md-8 mx-auto">
-        Explore heartfelt testimonials from attendees who experienced mesmerizing performances and vibrant cultural celebrations. <br>
-        Relive the unforgettable moments that made SIPA 2024 truly remarkable!
+        @lang('messages.review_description_1') <br>
+        @lang('messages.review_description_2')
       </p>
     </div>
     <div class="row justify-content-center g-3">
@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "Ini suatu bentuk event yang menurut saya sangat menyenangkan. Ada pertukaran budaya di dalamnya. Untuk itu kita akan terus dukung pelaksanaan SIPA di tahun-tahun mendatang."
+            @lang('messages.review_angela')
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA 2023 telah berlangsung selama tiga malam dengan lancar dan sukses, di mana berhasil mem-branding Kota Solo sebagai kota festival seni pertunjukan."
+            @lang('messages.review_puan')
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "SIPA ini merupakan suatu acara seni pertunjukan yang telah berjalan selama bertahun-tahun. Dan SIPA ini menurut saya merupakan salah satu event kebanggaan di kota yang kita cintai."
+            @lang('messages.review_gusti')
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-12 col-sm-6 col-md-4 col-lg-4">
         <div class="p-3 rounded-4 h-100 shadow-sm" style="background: #fff; border: 2.5px solid #B8141E; font-size: 0.85rem;">
           <p class="text mb-3 text-center" style="color:rgb(0, 0, 0); font-size: 16px;">
-            "Di tengah pandemi pun, SIPA tetap aktif dan menjadi rujukan seni pertunjukan. Terlebih dinanti dan banyak disukai masyarakat."
+            @lang('messages.review_kim')
           </p>
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
@@ -408,19 +408,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- FAQ -->
   <div class="container my-5">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA FESTIVAL</h2>
     <div class="accordion" id="faqSIPA">
 
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq1">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-            How much is the entrance fee to watch SIPA?
+            @lang('messages.faq_question_1')
           </button>
         </h2>
         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>No, admission to SIPA is completely free! You can enjoy all the performances and activities without any charge. (FREE EVENT)</li>
+              <li>@lang('messages.faq_answer_1')</li>
             </ul>
           </div>
         </div>
@@ -429,13 +429,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq2">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-            What I will find at the SIPA Festival
+            @lang('messages.faq_question_2')
           </button>
         </h2>
         <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>Expect a vibrant mix of performances, including music, dance, and theater, along with food stalls and cultural exhibitions!</li>
+              <li>@lang('messages.faq_answer_2')</li>
             </ul>
           </div>
         </div>
@@ -444,13 +444,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq3">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-            What are the different seating categories available at SIPA?
+            @lang('messages.faq_question_3')
           </button>
         </h2>
         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>There are three seating categories available: VIP Seats, Invitation Seats, and General Seats. Each category offers a unique experience and view of the performances</li>
+              <li>@lang('messages.faq_answer_3')</li>
             </ul>
           </div>
         </div>
@@ -459,13 +459,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq4">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-            Will you be posting the schedule in advance?
+            @lang('messages.faq_question_4')
           </button>
         </h2>
         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>Absolutely! Check our official website and social media instagram @sipafestival for the latest updates on the festival schedule.</li>
+              <li>@lang('messages.faq_answer_4')</li>
             </ul>
           </div>
         </div>
@@ -474,13 +474,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="accordion-item">
         <h2 class="accordion-header" id="faq5">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-            What types of cameras are allowed?
+            @lang('messages.faq_question_5')
           </button>
         </h2>
         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqSIPA">
           <div class="accordion-body">
             <ul>
-              <li>VProfessional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.</li>
+              <li>@lang('messages.faq_answer_5')</li>
             </ul>
           </div>
         </div>
@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="medpart-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <p class="mb-0">COMING SOON</p>
+          <p class="mb-0">@lang('messages.coming_soon')</p>
           <!-- 
           <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="medpart-logo" />
           <img src="logo2.png" alt="Logo 2" class="medpart-logo" />

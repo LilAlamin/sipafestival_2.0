@@ -48,7 +48,8 @@ return [
     'faq_answer_4' => 'Tentu saja! Periksa situs web resmi kami dan media sosial Instagram @sipafestival untuk pembaruan terbaru tentang jadwal festival.',
     'faq_question_5' => 'Jenis kamera apa yang diizinkan?',
     'faq_answer_5' => 'Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diizinkan. Namun, Anda dapat membawa kamera kompak dan smartphone.',
-
+    'coming_soon' => 'SEGERA HADIR',
+    'we_are_sipa' => 'Tentang SIPA FESTIVAL',
 
     // DIRECTORS PROFILE
     'directors_profile' => 'Direktur Solo International Performing Arts (SIPA)',
