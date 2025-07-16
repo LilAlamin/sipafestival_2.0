@@ -10,9 +10,10 @@ return [
     'find_more' => 'FIND MORE',
     'welcome_sipa' => 'WELCOME TO SIPA FESTIVAL!',
     'lets_journey' => 'Let’s make new journey on SIPA Festival',
-    'journey_description' => 'Solo International Performing Arts (SIPA) is an annual performing arts festival held in the city of Solo since 2009. 
-    The SIPA performances were initially held at the Pamedan Pura Mangkunegaran (2009–2012), then moved to Vastenburg Fortress (2013–2019), the Central Java Cultural Park in Surakarta (2020), Bengawan Solo Park (2021), returned to Vastenburg Fortress (2022–2023), and most recently back to the Pamedan Pura Mangkunegaran in 2024. 
-    SIPA’s stage features a variety of performing arts from different countries, including music, dance, drama (theater), and more. The event takes place over three consecutive nights.',
+    'journey_description' => 'The Solo International Performing Arts (SIPA) Festival 2025 carries the theme “Nifty, Artful, & Visionary,” which means young, artistic, and visionary. 
+    This theme invites the younger generation, especially Generation Z, to reward themselves with cool creativity, intelligence, and visionary future planning. 
+    This theme stems from the belief that every individual has the potential to express themselves through art and turn ideas into action. Amidst the rapid changes in the world, 
+    SIPA 2025 serves as an open space for expression, exploration, and cross-disciplinary dialogue. Painting, music, dance, theater, and even digital and experimental art all have their place and value to be celebrated together.',
     'last_year' => 'LAST YEAR',
     'update_news' => 'Update News About SIPA Festival',
     'find_out' => 'FIND OUT MORE',

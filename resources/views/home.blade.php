@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
       <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.welcome_sipa')</h1>
-      <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">NIFTY, ARTFUL, & VISIONARY</h1>
       <h2 class="text-center fw-medium mb-5" style="color: #000;">@lang('messages.lets_journey')</h2>
 
       <!-- SLIDER FOTO -->
