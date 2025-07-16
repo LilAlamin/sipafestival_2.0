@@ -71,7 +71,7 @@ return [
 
     // LINE UP
     'line_up' => 'DAFTAR PENAMPIL',
-    'ambassador' => 'PENAMPILAN DUTA FESTIVAL SIPA',
+    'ambassador' => 'DAFTAR PENAMPIL SIPA FESTIVAL 2025',
     'international_delegation' => 'DELEGASI INTERNASIONAL',
     'indonesian_delegation' => 'DELEGASI INDONESIA',
 

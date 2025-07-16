@@ -109,30 +109,52 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <img src="{{ asset('images/delegates/Khambatta Dance Company.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">TBA</h6>
+              <h6 class="card-title fw-bold">Khambatta Dance Company</h6>
+              <p class="card-text">United States of America</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <img src="{{ asset('images/delegates/PARRA.DICE.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">TBA</h6>
+              <h6 class="card-title fw-bold">PARRA.DICE</h6>
+              <p class="card-text">Netherlands</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <img src="{{ asset('images/delegates/Sanggar Kirana.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">TBA</h6>
+              <h6 class="card-title fw-bold">Sanggar Kirana</h6>
+              <p class="card-text">Malaysia</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/SNU.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Seoul National University</h6>
+              <p class="card-text">South Korea</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Colectivo Glovo.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Colectivo Glovo</h6>
+              <p class="card-text">Spanyol</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="p-4 mt-5 delegates-container" style="background-color: #ffeab3; border-radius: 40px;">
       <h4 class="fw-bold mb-4 text-center" style="color: #B8141E;">@lang('messages.indonesian_delegation')</h4>

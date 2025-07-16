@@ -72,7 +72,7 @@ return [
 
     // LINE UP
     'line_up' => 'LINE UP',
-    'ambassador' => 'AMBASSADOR SIPA FESTIVAL PERFORMANCE',
+    'ambassador' => 'SIPA FESTIVAL 2025 PERFORMERS LIST',
     'international_delegation' => 'INTERNATIONAL DELEGATION',
     'indonesian_delegation' => 'INDONESIAN DELEGATION',
 
