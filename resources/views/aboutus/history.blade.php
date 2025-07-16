@@ -65,6 +65,15 @@
         @lang('messages.history_description_4')
       </p>
     </div>
+<h2 class="fw-bold display-6 mt-5 mb-3">@lang('messages.ebook')</h2>
+<div class="flipbook-embed-container">
+    <iframe src="https://heyzine.com/flip-book/d3da65815a.html"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allowfullscreen>
+    </iframe>
+</div>
   </div>
 </section>
 

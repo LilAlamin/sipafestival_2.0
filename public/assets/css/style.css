@@ -747,6 +747,25 @@ button:focus {
     box-shadow: none !important;
 }
 
+/* CSS tambahan untuk flipbook container */
+.flipbook-embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Rasio aspek 4:3 (75% dari lebar) - sesuaikan jika flipbook Anda punya rasio lain */
+    height: 0;
+    overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.flipbook-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* RESPONSIVE DESIGN */
 
 /* Aturan CSS untuk layar dengan lebar maksimum 768px (tablet dan di bawahnya) */
