@@ -40,7 +40,7 @@
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
       <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.gallery_title')</h1>
-      <h2 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">@lang('messages.gallery_subtitle')</h2>
+      <h4 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">@lang('messages.gallery_subtitle')</h4>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6" style= "padding-right: 50px;">
