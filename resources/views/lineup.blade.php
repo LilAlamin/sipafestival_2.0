@@ -152,6 +152,42 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Dongbaek.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Dongbaek Carnival</h6>
+              <p class="card-text">South Korea</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/POD Dance.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">POD Dance Project</h6>
+              <p class="card-text">South Korea</p>
+            </div>
+          </div>
+        </div>  
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Kolaborasi SxI.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Dr Danny Tan</h6>
+              <h4 class="card-title">Kolaborasi Singapore x Indonesia</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Kolaborasi.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Fajar Satriadi</h6>
+              <h4 class="card-title">Kolaborasi Singapore x Indonesia</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -161,25 +197,28 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <img src="{{ asset('images/delegates/Noizekilla.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">TBA</h6>
+              <h6 class="card-title fw-bold">Noizekilla</h6>
+              <p class="card-text">Bali</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <img src="{{ asset('images/delegates/Samohung.png') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">TBA</h6>
+              <h6 class="card-title fw-bold">Samohung</h6>
+              <p class="card-text">Trenggalek</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="{{ asset('images/delegates/TBA.png') }}" class="delegates-img" alt="Delegate TBA">
+            <img src="{{ asset('images/delegates/Sanggar Seni Lepas.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">TBA</h6>
+              <h6 class="card-title fw-bold">Sanggar Seni Lepas</h6>
+              <p class="card-text">South Korea</p>
             </div>
           </div>
         </div>
