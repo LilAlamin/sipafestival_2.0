@@ -765,6 +765,13 @@ button:focus {
     height: 100%;
     border: 0;
 }
+.header-section img.text {
+        width: 120%;
+        max-width: 200%;
+        height: auto;
+        position: relative;
+        left:-70px; 
+    }
 
 /* RESPONSIVE DESIGN */
 

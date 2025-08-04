@@ -60,7 +60,7 @@
 <section class="text-justify py-5 header-section">
   <img src="{{ asset('images/pattern/headerr.webp') }}" alt="Background" class="bg">
   <div class="container">
-    <img src="{{ asset('images/pattern/logosipa2025.png') }}" alt="Solo International Performing Arts Logo" class="text">
+    <img src="{{ asset('images/pattern/logosipa25.png') }}" alt="Solo International Performing Arts Logo" class="text">
     <p class="fw-bold mb-2">4 ━ 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
