@@ -257,10 +257,12 @@ button:focus {
     flex-direction: column;
     gap: 1rem;
 }
-/* .header-section img.text {
+.header-section img.text {
     width: 130%;
     height: auto;
-} */
+    position: relative;
+    left: -75px;
+}
 
 .header-section p {
     font-size: 1.5rem;
@@ -765,13 +767,16 @@ button:focus {
     height: 100%;
     border: 0;
 }
-.header-section img.text {
+
+
+/* .header-section img.text {
         width: 120%;
         max-width: 200%;
         height: auto;
         position: relative;
         left:-70px; 
-    }
+    } */
+
 
 /* RESPONSIVE DESIGN */
 
