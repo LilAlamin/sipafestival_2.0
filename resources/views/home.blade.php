@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
   <style>
   body {
-    background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
+    background-image: url('{{ asset('images/pattern/bgsipa2025.webp') }}');
     background-repeat: repeat;
     background-size: auto;
     background-color: white;
@@ -58,9 +58,9 @@
 
 <!-- Header -->
 <section class="text-justify py-5 header-section">
-  <img src="{{ asset('images/pattern/headerr.webp') }}" alt="Background" class="bg">
+  <img src="{{ asset('images/pattern/bgsipa (3).webp') }}" alt="Background" class="bg">
   <div class="container">
-    <img src="{{ asset('images/pattern/logosipa25.png') }}" alt="Solo International Performing Arts Logo" class="text">
+    <img src="{{ asset('images/pattern/logosipa25.webp') }}" alt="Solo International Performing Arts Logo" class="text">
     <p class="fw-bold mb-2">4 ━ 6 SEPTEMBER 2025</p>
     <div id="countdown" class="d-flex justify-content gap-3 flex-wrap">
       <div class="countdown-item">
@@ -213,12 +213,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
-              <img src="{{ asset('images/pattern/coomingsoon.webp') }}" class="d-block w-100" alt="Gambar 1">
+              <img src="{{ asset('images/maskot/2025.webp') }}" class="d-block w-100" alt="Gambar 1">
             </div>
           </div>
           <p class="mt-3" style="font-size: 18px;">
             <span class="fw-bold">2025</span><br>
-            <span class="fw-normal">SIPA Festival</span>
+            <span class="fw-normal">Patricia Arstuti Pramesti Putri</span>
           </p>
         </div>
       </div>
@@ -409,83 +409,29 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- FAQ -->
   <div class="container my-5">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA FESTIVAL</h2>
-    <div class="accordion" id="faqSIPA">
+    
+      <div class="accordion" id="faqSIPA">
 
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq1">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-            @lang('messages.faq_question_1')
-          </button>
-        </h2>
-        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>@lang('messages.faq_answer_1')</li>
-            </ul>
+          {{-- Gunakan loop untuk membuat setiap item FAQ secara dinamis --}}
+          @for ($i = 1; $i <= 5; $i++)
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="faq{{ $i }}">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $i }}" aria-expanded="false" aria-controls="collapse{{ $i }}">
+                      @lang('messages.faq_question_' . $i)
+                  </button>
+              </h2>
+              <div id="collapse{{ $i }}" class="accordion-collapse collapse" aria-labelledby="faq{{ $i }}" data-bs-parent="#faqSIPA">
+                  <div class="accordion-body">
+                      {{-- Menggunakan ul dan li jika jawaban bisa lebih dari satu poin --}}
+                      <ul>
+                          <li>@lang('messages.faq_answer_' . $i)</li>
+                      </ul>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
+          @endfor
 
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-            @lang('messages.faq_question_2')
-          </button>
-        </h2>
-        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>@lang('messages.faq_answer_2')</li>
-            </ul>
-          </div>
-        </div>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-            @lang('messages.faq_question_3')
-          </button>
-        </h2>
-        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>@lang('messages.faq_answer_3')</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq4">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-            @lang('messages.faq_question_4')
-          </button>
-        </h2>
-        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>@lang('messages.faq_answer_4')</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq5">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-            @lang('messages.faq_question_5')
-          </button>
-        </h2>
-        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqSIPA">
-          <div class="accordion-body">
-            <ul>
-              <li>@lang('messages.faq_answer_5')</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- SPONSOR MEDPART -->
@@ -494,9 +440,15 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="sponsor-container p-4 text-center sponsor-flex">
         <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <img src="{{ asset('images/sponsor/SCK1.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/MANGKUNEGARAN.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/PEMERINTAHKOTASURAKARTA.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/LogoProvinsiJawaTengah.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/LOGO_Wonderful Indonesia - Koleksilogo.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/Bahasa Indonesia Warna.png') }}" alt="Logo Besar" class="sponsor-logo" />
         </div>
       </div>
     </div>

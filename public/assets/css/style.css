@@ -235,17 +235,19 @@ button:focus {
     z-index: -1;
     mask-image: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0)
+        rgb(255, 255, 255),
+        rgb(255, 255, 255),
+        rgb(255, 255, 255),
+        rgba(255, 255, 255, 0)
     );
     -webkit-mask-image: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0)
+        rgb(255, 255, 255),
+        rgb(255, 255, 255),
+        rgb(255, 255, 255),
+        rgba(255, 255, 255, 0)
     );
-    filter: brightness(50%);
+    filter: brightness(100%);
 }
 .header-section .container {
     position: absolute;
@@ -721,9 +723,9 @@ button:focus {
 }
 .accordion-button.collapsed {
     border: 1px solid #ffe19d !important;
-    border-radius: 15px !important;
     background-color: #fff; /* pastikan tetap putih */
 }
+
 .accordion-item {
     border: none;
     border-radius: 15px !important;

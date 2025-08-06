@@ -16,7 +16,7 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background-image: url('{{ asset('images/pattern/bgsipa.webp') }}');
+      background-image: url('{{ asset('images/pattern/bgsipa2025.webp') }}');
       background-repeat: repeat;
       background-size: auto;
       background-color: white;
@@ -199,7 +199,7 @@
           <div class="card h-100 border-0 shadow-sm">
             <img src="{{ asset('images/delegates/Noizekilla.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
-              <h6 class="card-title fw-bold">Noizekilla</h6>
+              <h6 class="card-title fw-bold">NoizeKilla</h6>
               <p class="card-text">Bali</p>
             </div>
           </div>
@@ -218,7 +218,7 @@
             <img src="{{ asset('images/delegates/Sanggar Seni Lepas.jpg') }}" class="delegates-img" alt="Delegate TBA">
             <div class="card-body">
               <h6 class="card-title fw-bold">Sanggar Seni Lepas</h6>
-              <p class="card-text">South Korea</p>
+              <p class="card-text">Nusa Tenggara Barat</p>
             </div>
           </div>
         </div>
