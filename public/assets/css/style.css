@@ -170,6 +170,25 @@ button:focus {
 }
 
 /*Maskot*/
+.btn-social-ig {
+    color: white;
+    background-color:#f0d97b;
+    border: none;
+}
+
+.btn-social-tiktok {
+    color: white;
+    background-color: #f0d97b;
+    border: none;
+}
+.btn-social-tiktok:hover {
+    background-color: #ff0808; /* Warna sedikit lebih terang saat dihover */
+}
+
+/* Optional: styling ikon */
+.btn-social-ig i, .btn-social-tiktok i {
+    font-size: 1.25em; /* Perbesar ukuran ikon */
+}
 .slider-indicator {
     display: flex;
     justify-content: center;

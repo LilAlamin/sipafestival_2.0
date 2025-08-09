@@ -53,6 +53,7 @@ return [
     'coming_soon' => 'SEGERA HADIR',
     'we_are_sipa' => 'Tentang SIPA FESTIVAL',
     'supported'=> 'DIDUKUNG OLEH',
+    'organize' => 'DISELENGGARAKAN OLEH',
     
 
     // DIRECTORS PROFILE

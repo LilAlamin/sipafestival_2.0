@@ -209,16 +209,26 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
       @endphp
       <div class="arc-section mb-5 text-center">
-        <h2 class="fw-bold" style="color: #B8141E;">AMBASSADOR SIPA FESTIVAL</h2>
+        <h2 class="fw-bold" style="color: #B8141E;">AMBASSADOR SIPA 2025</h2>
         <div class="carousel slide mx-auto carousel-margin" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 600px;">
           <div class="carousel-inner custom-rounded">
             <div class="carousel-item active">
               <img src="{{ asset('images/maskot/2025.webp') }}" class="d-block w-100" alt="Gambar 1">
             </div>
           </div>
-          <p class="mt-3" style="font-size: 18px;">
-            <span class="fw-bold">2025</span><br>
-            <span class="fw-normal">Patricia Arstuti Pramesti Putri</span>
+          <p class="mt-2" style="font-size: 18px;">
+            <span class="fw-bold">Patricia Arstuti Pramesti Putri</span><br>
+            <div class="text-center mt-1">
+              <span class="fw-normal d-flex gap-2 justify-content-center">
+                <a href="https://www.instagram.com/patriciaptrr" target="_blank" rel="noopener noreferrer" class="btn btn-social-ig">
+                  <i class="fab fa-instagram"></i>
+                  <span class="ms-1 d-none d-lg-inline">@patriciaptrr</span>
+                </a>
+                <a href="https://www.tiktok.com/@patriciaaaputri" target="_blank" rel="noopener noreferrer" class="btn btn-social-tiktok">
+                  <i class="fab fa-tiktok"></i>
+                  <span class="ms-1 d-none d-lg-inline">@patriciaaaputri</span>
+                </a>
+              </span>
           </p>
         </div>
       </div>
@@ -436,19 +446,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <!-- SPONSOR MEDPART -->
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">@lang('messages.supported')</h2>
-    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">@lang('messages.organize')</h2>
+    <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="sponsor-container p-4 text-center sponsor-flex">
         <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <img src="{{ asset('images/sponsor/SIPACOM.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/SCK1.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/MANGKUNEGARAN.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/PEMERINTAHKOTASURAKARTA.png') }}" alt="Logo Besar" class="sponsor-logo" />
-            <img src="{{ asset('images/sponsor/LogoProvinsiJawaTengah.png') }}" alt="Logo Besar" class="sponsor-logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="sponsor-media row mb-5 align-items-center justify-content-center">
+    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">@lang('messages.supported')</h2>
+    <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
+      <div class="sponsor-container p-4 text-center sponsor-flex">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
             <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LOGO_Wonderful Indonesia - Koleksilogo.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/Bahasa Indonesia Warna.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/KEN.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/LogoProvinsiJawaTengah.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/ISI.png') }}" alt="Logo Besar" class="sponsor-logo" />
         </div>
       </div>
     </div>
@@ -456,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
-    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
+    <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="medpart-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
           <p class="mb-0">@lang('messages.coming_soon')</p>
@@ -473,7 +496,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
     <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
-    <div class="col-10 col-lg-8 mx-auto"> <!-- Perbesar dari col-md-6 -->
+    <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="medpart-container p-4 text-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
           <p class="mb-0">@lang('messages.coming_soon')</p>

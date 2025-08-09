@@ -52,6 +52,7 @@ return [
     'coming_soon' => 'COMING SOON',
     'we_are_sipa' => 'We Are SIPA FESTIVAL',
     'supported'=> 'SUPPORTED BY',
+    'organize' => 'ORGANIZED BY',
 
 
     // DIRECTORS PROFILE
