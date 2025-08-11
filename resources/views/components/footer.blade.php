@@ -20,9 +20,8 @@
         flex-wrap: nowrap;
       }
       .logo-sipa {
-        max-height: 90px;
         margin-bottom: 15px;
-        size: 90px;
+        size: 200px;
       }
       .footer-line {
         border-top: 3px solid #B8141E;
@@ -69,7 +68,7 @@
             <div class="p-3 sipa-custom sipalogo-mod">
               <!-- logo sipa -->
               <div class="col-md-4 mb-4 mb-md-0 logo-sipa">
-                <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 150px;">
+                <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="size: 200px;">
               </div>
               <h4>© 2025 SIPA COMMUNITY GROUP</h4>
             </div>

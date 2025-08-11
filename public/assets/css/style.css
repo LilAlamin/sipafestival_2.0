@@ -170,19 +170,22 @@ button:focus {
 }
 
 /*Maskot*/
-.btn-social-ig {
-    color: white;
-    background-color:#f0d97b;
-    border: none;
+.btn-social{
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 10px !important;
+    font-size: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
-
-.btn-social-tiktok {
-    color: white;
-    background-color: #f0d97b;
-    border: none;
-}
-.btn-social-tiktok:hover {
-    background-color: #ff0808; /* Warna sedikit lebih terang saat dihover */
+.btn-social:hover {
+    background-color: #4d4d4d !important;
+    color: #ffffff !important;
 }
 
 /* Optional: styling ikon */

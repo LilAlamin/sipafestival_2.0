@@ -220,11 +220,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <span class="fw-bold">Patricia Arstuti Pramesti Putri</span><br>
             <div class="text-center mt-1">
               <span class="fw-normal d-flex gap-2 justify-content-center">
-                <a href="https://www.instagram.com/patriciaptrr" target="_blank" rel="noopener noreferrer" class="btn btn-social-ig">
+                <a href="https://www.instagram.com/patriciaptrr" target="_blank" rel="noopener noreferrer" class="btn btn-social">
                   <i class="fab fa-instagram"></i>
                   <span class="ms-1 d-none d-lg-inline">@patriciaptrr</span>
                 </a>
-                <a href="https://www.tiktok.com/@patriciaaaputri" target="_blank" rel="noopener noreferrer" class="btn btn-social-tiktok">
+                <a href="https://www.tiktok.com/@patriciaaaputri" target="_blank" rel="noopener noreferrer" class="btn btn-social">
                   <i class="fab fa-tiktok"></i>
                   <span class="ms-1 d-none d-lg-inline">@patriciaaaputri</span>
                 </a>
