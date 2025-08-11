@@ -69,7 +69,7 @@
             <div class="p-3 sipa-custom sipalogo-mod">
               <!-- logo sipa -->
               <div class="col-md-4 mb-4 mb-md-0 logo-sipa">
-                <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 90px;">
+                <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 150px;">
               </div>
               <h4>© 2025 SIPA COMMUNITY GROUP</h4>
             </div>
