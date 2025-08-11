@@ -58,7 +58,7 @@
 
 <!-- Header -->
 <section class="text-justify py-5 header-section">
-  <img src="{{ asset('images/pattern/bgsipa (3).webp') }}" alt="Background" class="bg">
+  <img src="{{ asset('images/pattern/header.webp') }}" alt="Background" class="bg">
   <div class="container">
     <img src="{{ asset('images/pattern/logosipa25.webp') }}" alt="Solo International Performing Arts Logo" class="text">
     <p class="fw-bold mb-2">4 ━ 6 SEPTEMBER 2025</p>
