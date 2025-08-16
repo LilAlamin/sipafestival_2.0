@@ -222,6 +222,42 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Congwayndut.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Congwayndut</h6>
+              <p class="card-text">Karanganyar</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Darryl Simeon.JPG') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Darryl Simeon</h6>
+              <p class="card-text">Halmahera Barat</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Duo Etnicholic.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Duo Etnicholic</h6>
+              <p class="card-text">Malang</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Rentak Gading Etcnic Bengkulu.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Rentak Gading Etcnic Bengkulu</h6>
+              <p class="card-text">Bengkulu</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
