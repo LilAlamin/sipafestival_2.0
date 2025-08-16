@@ -464,14 +464,14 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
       <div class="sponsor-container p-4 text-center sponsor-flex">
         <div class="d-flex justify-content-center gap-4 flex-wrap">
-            <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo Besar" class="sponsor-logo" />
-            <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/supported.png') }}" alt="Logo Besar" />
+            <!-- <img src="{{ asset('images/sponsor/Logo DANAINDO (BLUE).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LPDP (COLORBLACK).png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LOGO_Wonderful Indonesia - Koleksilogo.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/Bahasa Indonesia Warna.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/KEN.png') }}" alt="Logo Besar" class="sponsor-logo" />
             <img src="{{ asset('images/sponsor/LogoProvinsiJawaTengah.png') }}" alt="Logo Besar" class="sponsor-logo" />
-            <img src="{{ asset('images/sponsor/ISI.png') }}" alt="Logo Besar" class="sponsor-logo" />
+            <img src="{{ asset('images/sponsor/ISI.png') }}" alt="Logo Besar" class="sponsor-logo" /> -->
         </div>
       </div>
     </div>
