@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="fw-bold" style="color: #B8141E;">SIPA @lang('messages.last_year')</h2>
           <div class="container-video position-relative d-inline-block mt-4 video-container">
             <div id="videoThumbnail" class="thumbnail-wrapper" style="position: relative; cursor: pointer;">
-              <img src="images/AM/T.T2024.jpg" alt="Video Thumbnail" class="img-fluid video-thumbnail-img">
+              <img src="images/AM/T.T2025.webp" alt="Video Thumbnail" class="img-fluid video-thumbnail-img">
 
               <div class="play-button position-absolute top-50 start-50 translate-middle">
                 <span class="circle"></span>
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div id="videoIframeWrapper" class="iframe-wrapper" style="display: none;">
               <iframe
-                src="https://www.youtube.com/embed/rJtSeMMQY9g"
+                src="https://www.youtube.com/embed/nRMGBPeQp70"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
