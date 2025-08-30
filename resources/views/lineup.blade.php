@@ -258,6 +258,24 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/Kemantren Langenpraja Pura Mangkunegaran.jpg') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Kemantren Langenpraja Pura Mangkunegaran</h6>
+              <p class="card-text">Solo</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ asset('images/delegates/SCK2.png') }}" class="delegates-img" alt="Delegate TBA">
+            <div class="card-body">
+              <h6 class="card-title fw-bold">Semarak Candrakirana Art Center</h6>
+              <p class="card-text">Solo</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
