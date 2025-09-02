@@ -480,9 +480,9 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">SPONSOR</h2>
     <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
-      <div class="medpart-container p-4 text-center">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <p class="mb-0">@lang('messages.coming_soon')</p>
+      <div class="sponsor-container p-4 text-center sponsor-flex">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+          <img src="{{ asset('images/sponsor/sponsor.png') }}" alt="Logo Besar"/>
           <!-- 
           <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="medpart-logo" />
           <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
@@ -497,9 +497,9 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="sponsor-media row mb-5 align-items-center justify-content-center">
     <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">MEDIA PARTNER</h2>
     <div class="col-10 col-lg-9 mx-auto"> <!-- Perbesar dari col-md-6 -->
-      <div class="medpart-container p-4 text-center">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <p class="mb-0">@lang('messages.coming_soon')</p>
+      <div class="sponsor-container p-4 text-center sponsor-flex">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+          <img src="{{ asset('images/sponsor/medpart.png') }}" alt="Logo Besar"/>
           <!-- 
           <img src="{{ asset('images/sponsor/KEMENKEBUD LOGO 01 (COLOR).png') }}" alt="Logo 1" class="medpart-logo" />
           <img src="logo2.png" alt="Logo 2" class="medpart-logo" />
