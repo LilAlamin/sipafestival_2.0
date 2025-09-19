@@ -393,8 +393,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="d-flex align-items-center justify-content-center">
             <img src="{{ asset('images/211.jpg') }}" class="rounded-circle me-2" style="width: 28px; height: 28px; object-fit: cover;">
             <div class="text-start" style="line-height: 1;">
-              <strong style="font-size: 0.85rem;">Gusti Bhre</strong> <small class="text-muted">(Indonesia)</small><br>
-              <small class="text-secondary">KGPAA Mangkunegara X</small>
+              <strong style="font-size: 0.85rem;">K.G.P.A.A. Mangkoenagoro X</strong> <small class="text-muted">(Indonesia)</small><br>
+              <small class="text-secondary"></small>
             </div>
           </div>
         </div>
@@ -417,32 +417,33 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
     <!-- FAQ -->
-  <div class="container my-5">
-    <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA FESTIVAL</h2>
-    
-      <div class="accordion" id="faqSIPA">
+<div class="container my-5">
+  <h2 class="mb-4 text-center fw-bold" style="color: #B8141E;">FAQ SIPA FESTIVAL</h2>
+  <div class="accordion" id="faqSIPA">
 
-          {{-- Gunakan loop untuk membuat setiap item FAQ secara dinamis --}}
-          @for ($i = 1; $i <= 5; $i++)
-          <div class="accordion-item">
-              <h2 class="accordion-header" id="faq{{ $i }}">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $i }}" aria-expanded="false" aria-controls="collapse{{ $i }}">
-                      @lang('messages.faq_question_' . $i)
-                  </button>
-              </h2>
-              <div id="collapse{{ $i }}" class="accordion-collapse collapse" aria-labelledby="faq{{ $i }}" data-bs-parent="#faqSIPA">
-                  <div class="accordion-body">
-                      {{-- Menggunakan ul dan li jika jawaban bisa lebih dari satu poin --}}
-                      <ul>
-                          <li>@lang('messages.faq_answer_' . $i)</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          @endfor
-
+    {{-- Loop untuk membuat setiap item FAQ secara dinamis --}}
+    @for ($i = 1; $i <= 5; $i++)
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faq-header-{{ $i }}">
+        {{-- Tombol untuk membuka/menutup jawaban --}}
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $i }}" aria-expanded="false" aria-controls="collapse-{{ $i }}">
+          @lang('messages.faq_question_' . $i)
+        </button>
+      </h2>
+      {{-- Konten jawaban yang akan muncul saat diklik --}}
+      <div id="collapse-{{ $i }}" class="accordion-collapse collapse" aria-labelledby="faq-header-{{ $i }}" data-bs-parent="#faqSIPA">
+        <div class="accordion-body">
+          {{-- Pastikan ada konten di sini --}}
+          <ul>
+            <li>@lang('messages.faq_answer_' . $i)</li>
+          </ul>
+        </div>
       </div>
+    </div>
+    @endfor
+
   </div>
+</div>
 
   <!-- SPONSOR MEDPART -->
   <div class="sponsor-media row mb-5 align-items-center justify-content-center">
