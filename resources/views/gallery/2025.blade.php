@@ -94,52 +94,41 @@
       </div>
     </div>
 
+    @php
+        $galleryImages = [
+            'panggung (1).jpg',
+            'panggung (2).jpg',
+            'venue (1).jpg',
+            'venue (2).jpg',
+            'crowd (4).jpg',
+            'crowd (1).jpg',
+            'crowd (3).jpg',
+            'crowd (5).jpg',
+            'penonton (1).jpg',
+            'penonton (2).jpg',
+            'bazzar (1).jpg',
+            'bazzar (2).jpg',
+            'panitia (1).jpg',
+            'panitia (2).jpg',
+            'panitia (3).jpg',
+            'panitia (4).jpg',];
+    @endphp
     <div class="container my-5">
         <div class="arc-section mb-5 text-center">
             <h2 class="fw-bold" style="color: #B8141E;">DOKUMENTASI</h2>
         </div>
         <div class="row justify-content-center text-center">
-            <!-- Gambar 1 -->
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/a.webp') }}" class="img-fluid custom-rounded" alt="Foto 1">
+            @foreach ($galleryImages as $index => $imageName)
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card border-0">
+                        <img src="{{ asset('images/gallery/2025/' . $imageName) }}" 
+                            class="img-fluid custom-rounded" 
+                            alt="Foto Dokumentasi {{ $index + 1 }}">
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/b.webp') }}" class="img-fluid custom-rounded" alt="Foto 2">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/c.webp') }}" class="img-fluid custom-rounded" alt="Foto 3">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/d.webp') }}" class="img-fluid custom-rounded" alt="Foto 4">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/e.webp') }}" class="img-fluid custom-rounded" alt="Foto 5">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/f.webp') }}" class="img-fluid custom-rounded" alt="Foto 6">
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card border-0">
-                    <img src="{{ asset('images/gallery/2024/g.webp') }}" class="img-fluid custom-rounded" alt="Foto 7">
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-
-
-
 
 </section>
 <x-footer />
