@@ -88,6 +88,9 @@ Route::get('/gallery/2023', function () {
 Route::get('/gallery/2024', function () {
     return view('gallery/2024');
 });
+Route::get('/gallery/2025', function () {
+    return view('gallery/2025');
+});
 Route::get('/components/new-header', function () {
     return view('components.new-header');
 });

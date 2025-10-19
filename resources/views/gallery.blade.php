@@ -125,7 +125,7 @@
     <h5 class="mb-4" style="color: #000;">@lang('messages.gallery_subtitle')</h5>
     
     <div class="row g-4 justify-content-center">
-      @for ($year = 2024; $year >= 2009; $year--)
+      @for ($year = 2025; $year >= 2009; $year--)
         <div class="col-lg-4 col-md-6">
             <div class="program-card" style="background-image: url('{{ asset('images/maskot/' . $year . '.webp') }}');">
             <div class="program-card-overlay" >
