@@ -59,7 +59,7 @@
 
     <div class="text-center mb-5">
         <h2 class="fw-bold" style="color: #B8141E;">TEASER SIPA FESTIVAL 2025</h2>
-        <div class="ratio ratio-16x9 rounded-5 mt-4" style="max-width: 1280px; margin: 0 auto; overflow: hidden;">
+        <div class="ratio ratio-1x1 rounded-5 mt-4" style="max-width: 540px; margin: 0 auto; overflow: hidden;">
             <div id="thumbnail" onclick="openVideo()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer;">
                 <img src="{{ asset('images/AM/T.AM2024.jpg') }}" class="img-fluid" alt="On SIPA Last Year" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="play-button position-absolute top-50 start-50 translate-middle">
@@ -68,13 +68,13 @@
                 </div>
             </div>
             <iframe id="videoIframe" 
-                    src="https://www.instagram.com/reel/DNx3TZj3obB/embed/" 
+                    src="https://www.instagram.com/reel/DNx3TZj3obB/embed/?hidecaption=true" 
                     title="Instagram video player" 
                     frameborder="0" 
                     allow="autoplay; encrypted-media" allowfullscreen 
-                    style="display: none;"></iframe>
+                    style="display: none; width: 100%; height: 100%;"></iframe>
         </div>
-    </div> 
+    </div>
 
     <div class="text-center mb-5">
       <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA FESTIVAL 2025</h2>
@@ -93,6 +93,93 @@
                 class="rounded-5" style="display: none;"></iframe>
       </div>
     </div>
+
+    <div class="container text-center mb-5">
+        <h2 class="fw-bold mb-4" style="color: #B8141E;">RECAP SIPA FESTIVAL</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="ratio rounded-5 overflow-hidden" style="--bs-aspect-ratio: 125%;">
+                    <iframe src="https://www.instagram.com/p/DONyUxLDx2i/embed/?hidecaption=true" title="Instagram post 1" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="ratio rounded-5 overflow-hidden" style="--bs-aspect-ratio: 125%;">
+                    <iframe src="https://www.instagram.com/p/DOQgAz-D6EA/embed/?hidecaption=true" title="Instagram post 2" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="ratio rounded-5 overflow-hidden" style="--bs-aspect-ratio: 125%;">
+                    <iframe src="https://www.instagram.com/p/DOafPnRj-v_/embed/?hidecaption=true" title="Instagram post 3" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @php
+      $delegatesImagesIN = [
+              'Khambatta Dance Company.jpg',
+              'PARRA.DICE.jpg',
+              'Sanggar Kirana.jpg',
+              'SNU.jpg',
+              'Colectivo Glovo.jpg',
+              'Dongbaek.jpg',
+              'POD Dance.jpg',
+              'Kolaborasi SxI.png',
+              'Kolaborasi.jpg',       
+      ];
+      @endphp
+      @php
+      $delegatesImages = [
+              'Noizekilla.jpg',
+              'Samohung.png',
+              'Sanggar Seni Lepas.jpg',
+              'Congwayndut.png',
+              'Darryl Simeon.JPG',
+              'Duo Etnicholic.jpg',
+              'Rentak Gading Etcnic Bengkulu.jpg',
+              'Kemantren Langenpraja Pura Mangkunegaran.JPG',
+              'SCK1.png',
+      ];
+      @endphp
+      <style>
+      .uniform-gallery-image {
+          width: 100%;
+          aspect-ratio: 16 / 10 ; 
+          object-fit: cover;
+      }
+      </style>
+    <div class="container my-5">
+        <div class="arc-section mb-5 text-center">
+            <h2 class="fw-bold" style="color: #B8141E;">LINE UP</h2>
+            <h4 class="fw" style="color: #000000ff;">INTERNATIONAL DELEGATION</h4>
+        </div>
+        <div class="row justify-content-center text-center">
+            @foreach ($delegatesImagesIN as $index => $delINTER)
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card border-0">
+                        <img src="{{ asset('images/delegates/' . $delINTER) }}" 
+                            class="img-fluid custom-rounded uniform-gallery-image" alt="Foto Dokumentasi {{ $index + 1 }}">
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="arc-section mb-5 text-center">
+            <h4 class="fw" style="color: #000000ff;">INDONESIA DELEGATION</h4>
+        </div>
+        <div class="row justify-content-center text-center">
+            @foreach ($delegatesImages as $index => $delIN)
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card border-0">
+                        <img src="{{ asset('images/delegates/' . $delIN) }}" 
+                            class="img-fluid custom-rounded uniform-gallery-image" alt="Foto Dokumentasi {{ $index + 1 }}">
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    
+
+    
 
     @php
         $galleryImages = [
@@ -148,8 +235,8 @@ function openVideo() {
   const thumbnail = document.getElementById('thumbnail');
   const iframe = document.getElementById('videoIframe');
   
-  // Ganti link YouTube dengan link embed Instagram Anda
-  const instagramEmbedUrl = "https://www.instagram.com/reel/DNx3TZj3obB/embed/"; // <-- GANTI INI
+  // URL embed Instagram DENGAN parameter hidecaption
+  const instagramEmbedUrl = "https://www.instagram.com/reel/DNx3TZj3obB/embed/?hidecaption=true"; 
 
   thumbnail.style.display = 'none';
   iframe.src = instagramEmbedUrl; // Mengatur 'src' saat diklik
