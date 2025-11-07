@@ -114,6 +114,14 @@
             </div>
         </div>
     </div>
+    <div class="flipbook-embed-container">
+      <iframe src="https://heyzine.com/flip-book/04d91f5e97.html#page/10"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
     @php
       $delegatesImagesIN = [
