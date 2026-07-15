@@ -1,134 +1,193 @@
-  <style>
-    .sidebar-link {
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
+@php
+  $currentRoute = request()->path();
+  
+  // Active states calculations
+  $isHomepage = $currentRoute === 'admin/dashboard';
+  $isNews = str_starts_with($currentRoute, 'admin/dashboard/news') && !str_contains($currentRoute, 'makeNews');
+  $isAddNews = $currentRoute === 'admin/dashboard/news/makeNews';
+  $isGallery = $currentRoute === 'admin/dashboard/gallery';
+  
+  $isComplaints = $currentRoute === 'admin/dashboard/complaints';
+  $isUnread = $currentRoute === 'admin/dashboard/unread';
+  $isRead = $currentRoute === 'admin/dashboard/read';
+  
+  // Feedback is active if we are on any complaint/feedback page
+  $isFeedbackActive = $isComplaints || $isUnread || $isRead || preg_match('#^admin/dashboard/\d+/reply$#', $currentRoute);
+@endphp
 
-    .icon-wrapper {
-      background-color: #ffffff;
-      color: #4F1C51;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
+<!-- Sidebar Container -->
+<div class="flex flex-col w-[252px] bg-[#212529] h-screen sticky top-0 py-5 px-0 items-center shrink-0 border-r border-[#343A40] select-none font-['Plus_Jakarta_Sans',_sans-serif] overflow-y-auto gap-6 scrollbar-thin">
+  
+  <!-- Brand Logo -->
+  <div class="w-[204px] flex justify-start items-center py-2 px-1 shrink-0">
+    <a href="/" class="hover:opacity-90 transition-opacity">
+      <img src="/images/sipalogo.png" alt="SIPA Logo" class="h-14 w-auto object-contain brightness-0 invert" />
+    </a>
+  </div>
 
-    .sidebar-link.active .icon-wrapper {
-      background-color: #4F1C51;
-      color: #ffffff;
-    }
+  <!-- Divider -->
+  <div class="w-full h-0 border-t border-[#343A40] shrink-0"></div>
 
-    .sidebar-icon {
-      fill: currentColor;
-      transition: fill 0.3s ease;
-    }
+  <!-- Quick Action Buttons -->
+  <div class="w-[204px] flex flex-col gap-3 shrink-0">
+    <!-- Add News Action Button -->
+    <a href="/admin/dashboard/news/makeNews" 
+       class="w-full p-3 rounded-lg bg-[#495057] hover:bg-[#495057]/90 text-white flex items-center gap-3 transition-all relative overflow-hidden shadow-[11px_15px_5px_0px_rgba(0,0,0,0),7px_9px_5px_0px_rgba(0,0,0,0.01),4px_5px_4px_0px_rgba(0,0,0,0.03),2px_2px_3px_0px_rgba(0,0,0,0.05),0px_1px_2px_0px_rgba(0,0,0,0.05)] {{ $isAddNews ? 'ring-2 ring-[#C36100]' : '' }}">
+      
+      <!-- Decorative circle (Matches Figma node 99:3053 overlay) -->
+      <div class="absolute -left-1.5 -bottom-1.5 w-6 h-6 rounded-full bg-[#C36100] opacity-90"></div>
+      
+      <div class="w-5 h-5 flex items-center justify-center text-white/90 z-10">
+        <i class="bi bi-plus-lg text-lg"></i>
+      </div>
+      <span class="text-sm font-semibold tracking-wide z-10">Add News</span>
+    </a>
 
-    .sidebar-link span {
-      color: #4F1C51;
-      transition: color 0.3s ease;
-    }
-
-    .sidebar-link.active span {
-      color: #4F1C51;
-      font-weight: bold;
-    }
-
-    .nav-link.active {
-      background-color: white !important; /* atau warna yang kamu mau */
-      color: inherit !important;
-
-      box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
-    }
-
-  </style>
-
-<!-- Sidebar -->
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
-  <a href="/" class="justify-content-center d-md-block mb-3 text-center">
-    <img src="/images/logosipafestival2025.png" alt="sipafestival2025" width="100" height="75" />
-  </a>
-
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a href="/admin/dashboard/" class="sidebar-link nav-link d-flex align-items-center active">
-        <div class="icon-wrapper p-2 me-2 shadow-sm">
-          <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="16"
-            viewBox="0 0 384 512">
-            <path
-              d="M0 64C0 28.7 28.7 0 64 0L224 0v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64h-128V0l128 128z" />
-          </svg>
-        </div>
-        <span>Seluruh Aduan</span>
-      </a>
-    </li>
-    <li>
-      <a href="/admin/dashboard/unread" class="sidebar-link nav-link d-flex align-items-center">
-        <div class="icon-wrapper p-2 me-2 shadow-sm">
-          <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="16"
-            viewBox="0 0 512 512">
-            <path
-              d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-          </svg>
-        </div>
-        <span>Belum Dibalas</span>
-      </a>
-    </li>
-    <li>
-      <a href="/admin/dashboard/read" class="sidebar-link nav-link d-flex align-items-center">
-        <div class="icon-wrapper p-2 me-2 shadow-sm">
-          <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="16"
-            viewBox="0 0 512 512">
-            <path
-              d="M512 240c0 114.9-114.6 208-256 208-37.1 0-72.3-6.4-104.1-17.9-11.9 8.7-31.3 20.6-54.3 30.6-45.9 20.3-74.8 29.2-103.5 29.2-6.5 0-12.3-3.9-14.8-9.9-2.5-6-1.1-12.8 3.4-17.4 1.1-1.2 2.8-3.1 4.9-5.7 4.1-5 9.6-12.4 15.2-21.6 10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240 0 125.1 114.6 32 256 32s256 93.1 256 208z" />
-          </svg>
-        </div>
-        <span>Sudah Dibalas</span>
-      </a>
-    </li>
-    <li>
-      <a href="{{ route('news.showNews') }}" class="sidebar-link nav-link d-flex align-items-center">
-        <div class="icon-wrapper p-2 me-2 shadow-sm">
-          <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="16"
-            viewBox="0 0 512 512">
-            <path
-              d="M512 240c0 114.9-114.6 208-256 208-37.1 0-72.3-6.4-104.1-17.9-11.9 8.7-31.3 20.6-54.3 30.6-45.9 20.3-74.8 29.2-103.5 29.2-6.5 0-12.3-3.9-14.8-9.9-2.5-6-1.1-12.8 3.4-17.4 1.1-1.2 2.8-3.1 4.9-5.7 4.1-5 9.6-12.4 15.2-21.6 10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240 0 125.1 114.6 32 256 32s256 93.1 256 208z" />
-          </svg>
-        </div>
-        <span>Daftar Berita</span>
-      </a>
-    </li>
-  </ul>
-
-  <hr />
-
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li>
-      <form action="{{ route('logout') }}" method="POST" class="sidebar-link nav-link d-flex align-items-center" style="border: none; background: none; padding: 0;">
-  @csrf
-  <button type="submit" style="all: unset; cursor: pointer;" class="d-flex align-items-center">
-    <div class="icon-wrapper p-2 me-2 shadow-sm">
-      <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="16"
-        viewBox="0 0 512 512">
-        <path
-          d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9-18.7 0-33.9-15.2-33.9-33.9v-62.1h-128c-17.7 0-32-14.3-32-32v-64c0-17.7 14.3-32 32-32h128v-62.1c0-18.7 15.2-33.9 33.9-33.9 9 0 17.6 3.6 24 9.9zM160 96H96c-17.7 0-32 14.3-32 32v256c0 17.7 14.3 32 32 32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-53 0-96-43-96-96V128C0 75 43 32 96 32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
-      </svg>
+    <!-- Search Input Wrapper (Figma Search Placeholder converted to Functional Search) -->
+    <div class="w-full p-3 rounded-lg bg-[#212529] border border-[#343A40] flex items-center gap-3 text-white focus-within:border-gray-500 transition-colors">
+      <div class="w-5 h-5 flex items-center justify-center text-white/70">
+        <i class="bi bi-search text-sm"></i>
+      </div>
+      <form action="/admin/dashboard/" method="GET" class="w-full m-0 p-0 flex">
+        <input type="text" name="search" placeholder="Search..." 
+               class="bg-transparent text-sm w-full focus:outline-none text-white placeholder-gray-500 font-medium" />
+      </form>
     </div>
-    <span>Log Out</span>
-  </button>
-</form>
+  </div>
 
-    </li>
-  </ul>
+  <!-- Divider -->
+  <div class="w-full h-0 border-t border-[#343A40] shrink-0"></div>
+
+  <!-- Main Navigation Links -->
+  <div class="w-full flex flex-col shrink-0">
+    
+    <!-- Section Header -->
+    <div class="w-full px-6 pb-3 flex justify-start items-center">
+      <span class="text-[#F8F9FA]/50 text-xs font-bold uppercase tracking-wider">Main Features</span>
+    </div>
+
+    <!-- Homepage -->
+    <a href="{{ route('admin.dashboard') }}" 
+       class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
+              {{ $isHomepage ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 flex items-center justify-center">
+          <i class="bi bi-house-door text-base"></i>
+        </div>
+        <span class="text-sm font-medium">Homepage</span>
+      </div>
+      
+      @if($isHomepage)
+        <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+      @endif
+    </a>
+
+    <!-- News -->
+    <a href="{{ route('news.showNews') }}" 
+       class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
+              {{ $isNews ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 flex items-center justify-center">
+          <i class="bi bi-newspaper text-base"></i>
+        </div>
+        <span class="text-sm font-medium">News</span>
+      </div>
+      
+      <!-- Active Indicator bar -->
+      @if($isNews)
+        <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+      @endif
+    </a>
+
+    <!-- Galery -->
+    <a href="{{ route('admin.gallery') }}" 
+       class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
+              {{ $isGallery ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 flex items-center justify-center">
+          <i class="bi bi-images text-base"></i>
+        </div>
+        <span class="text-sm font-medium">Galery</span>
+      </div>
+      
+      @if($isGallery)
+        <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+      @endif
+    </a>
+
+    <!-- Feedback & Suggestion -->
+    <details class="w-full group" {{ $isFeedbackActive ? 'open' : '' }}>
+      <summary class="w-full h-11 px-6 flex items-center justify-between cursor-pointer list-none transition-all relative text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30 select-none [&::-webkit-details-marker]:hidden {{ $isFeedbackActive ? 'bg-[#343A40] text-[#F8F9FA]' : '' }}">
+        <div class="flex items-center gap-3">
+          <div class="w-5 h-5 flex items-center justify-center">
+            <i class="bi bi-chat-left-text text-base"></i>
+          </div>
+          <span class="text-sm font-medium">Feedback & Suggestion</span>
+        </div>
+
+        <!-- Chevron Arrow -->
+        <div class="w-4 h-4 flex items-center justify-center text-[#F8F9FA]/50 group-open:rotate-180 transition-transform duration-200 mr-1">
+          <i class="bi bi-chevron-down text-xs"></i>
+        </div>
+
+        @if($isFeedbackActive)
+          <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+        @endif
+      </summary>
+
+      <!-- Sub-menu for Complaint Categories (Seluruh, Belum Dibalas, Sudah Dibalas) -->
+      <div class="w-full flex flex-col bg-[#1a1d20]/40 border-b border-[#343A40]/30 py-1 transition-all">
+        <a href="/admin/dashboard/complaints" 
+           class="pl-14 pr-6 py-2 text-xs font-semibold tracking-wide transition-colors 
+                  {{ $isComplaints ? 'text-[#F8F9FA]' : 'text-gray-400 hover:text-white' }}">
+          <i class="bi bi-collection-fill mr-1.5 opacity-70"></i> Seluruh Aduan
+        </a>
+        <a href="/admin/dashboard/unread" 
+           class="pl-14 pr-6 py-2 text-xs font-semibold tracking-wide transition-colors 
+                  {{ $isUnread ? 'text-[#F8F9FA]' : 'text-gray-400 hover:text-white' }}">
+          <i class="bi bi-envelope-exclamation-fill mr-1.5 opacity-70"></i> Belum Dibalas
+        </a>
+        <a href="/admin/dashboard/read" 
+           class="pl-14 pr-6 py-2 text-xs font-semibold tracking-wide transition-colors 
+                  {{ $isRead ? 'text-[#F8F9FA]' : 'text-gray-400 hover:text-white' }}">
+          <i class="bi bi-envelope-check-fill mr-1.5 opacity-70"></i> Sudah Dibalas
+        </a>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="w-full h-0 border-t border-[#343A40] shrink-0"></div>
+
+  <!-- Profile Footer Card (Directly following the Divider after Main Features) -->
+  <div class="w-[204px] p-2.5 rounded-lg bg-[#212529] border border-[#343A40] flex items-center justify-between gap-2 shadow-inner shrink-0 mb-6">
+    <div class="flex items-center gap-2.5 overflow-hidden">
+      <!-- Dynamic Premium Avatar -->
+      <img class="w-8 h-8 rounded-full border border-[#495057] object-cover shrink-0" 
+           src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&color=F8F9FA&background=495057&bold=true" 
+           alt="{{ Auth::user()->name }}" />
+      
+      <!-- User Names & Role -->
+      <div class="flex flex-col justify-center overflow-hidden min-w-0">
+        <span class="text-[#F8F9FA] text-xs font-semibold truncate tracking-wide leading-tight">
+          {{ Auth::user()->name }}
+        </span>
+        <span class="text-[#F8F9FA]/50 text-[10px] truncate leading-tight mt-0.5">
+          Humas / Admin
+        </span>
+      </div>
+    </div>
+
+    <!-- Logout Form / Red Button -->
+    <form action="{{ route('logout') }}" method="POST" class="m-0 p-0 shrink-0">
+      @csrf
+      <button type="submit" 
+              class="w-8 h-8 rounded-md flex items-center justify-center text-[#E51616] hover:bg-[#E51616]/10 hover:text-red-400 transition-all focus:outline-none cursor-pointer" 
+              title="Log Out">
+        <i class="bi bi-box-arrow-right text-lg"></i>
+      </button>
+    </form>
+  </div>
+
 </div>
-
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.sidebar-link');
-
-    links.forEach(link => {
-      link.addEventListener('click', function () {
-        links.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-  });
-  </script>

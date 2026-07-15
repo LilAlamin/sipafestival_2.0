@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Mail\EmailReply;
-use Illuminate\Http\Request;
 use App\Models\Complaint;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 Carbon::setLocale('id');
-
 
 class EmailController extends Controller
 {
@@ -19,7 +17,7 @@ class EmailController extends Controller
     {
         $request->validate([
             'response_subject' => 'required|string',
-            'response_message' => 'required|string'
+            'response_message' => 'required|string',
         ]);
 
         DB::beginTransaction();
@@ -34,10 +32,12 @@ class EmailController extends Controller
             $complaint->save();
             DB::commit();
             Mail::to($complaint->email)->send(new EmailReply($complaint));
+
             return redirect()->route('admin.ReplyEmail')->with('success', 'Order berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();
-            return back()->with('error', 'Gagal mengirim keluhan: ' . $e->getMessage());
+
+            return back()->with('error', 'Gagal mengirim keluhan: '.$e->getMessage());
         }
     }
 }

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\News;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Carbon\Carbon;
-use App\Models\News;
 
 class NewsSeeder extends Seeder
 {
@@ -18,8 +18,7 @@ class NewsSeeder extends Seeder
         News::insert([
             [
                 'title' => 'SIPA 2025 Buka Kesempatan Relawan, Ajak Anak Muda Berkontribusi di Panggung Internasional',
-                'description' =>
-                'Solo International Performing Arts (SIPA) kembali membuka kesempatan bagi anak-anak muda yang antusias di dunia seni dan budaya untuk bergabung sebagai volunteer. Open Recruitment Volunteer SIPA 2025 dibuka mulai 1 hingga 9 Februari 2025.
+                'description' => 'Solo International Performing Arts (SIPA) kembali membuka kesempatan bagi anak-anak muda yang antusias di dunia seni dan budaya untuk bergabung sebagai volunteer. Open Recruitment Volunteer SIPA 2025 dibuka mulai 1 hingga 9 Februari 2025.
                 Festival tahunan berskala internasional ini menampilkan karya seni dari seniman lokal hingga mancanegara, yang akan digelar di Kota Solo, Jawa Tengah. Sejak pertama kali digelar pada tahun 2009, SIPA konsisten menjadi wadah pertunjukan seni lintas negara yang kaya akan keberagaman budaya.
                 Bagi calon relawan yang memiliki semangat berkarya, suka membangun relasi, serta ingin menambah pengalaman dalam dunia pertunjukan, inilah saatnya untuk menjadi bagian dari SIPA Community. Informasi lebih lanjut dan pendaftaran dapat diakses melalui linktr.ee/volunteersipa25.
                             

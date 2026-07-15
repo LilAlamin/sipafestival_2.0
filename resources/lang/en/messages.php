@@ -1,4 +1,5 @@
 <?php
+
 return [
     // HOME PAGE
     'welcome' => 'Welcome to our website',
@@ -51,9 +52,8 @@ return [
     'faq_answer_5' => 'Professional cameras with detachable lenses, such as DSLRs, are not permitted. However, you can bring compact cameras and smartphones.',
     'coming_soon' => 'COMING SOON',
     'we_are_sipa' => 'We Are SIPA FESTIVAL',
-    'supported'=> 'SUPPORTED BY',
+    'supported' => 'SUPPORTED BY',
     'organize' => 'ORGANIZED BY',
-
 
     // DIRECTORS PROFILE
     'directors_profile' => 'Director of Solo International Performing Arts (SIPA)',
@@ -62,7 +62,6 @@ return [
     'directors_description_3' => 'Academically, Irawati holds a bachelor’s degree from the Faculty of Literature, English Literature Department, at Sebelas Maret University (UNS) in Surakarta. She later pursued her postgraduate studies at the Indonesian Institute of the Arts (ISI) Surakarta. Through her dedication and remarkable works, Irawati has brought pride to Indonesia on the international stage and has received numerous accolades. Choreography is one of her standout specialties, with acclaimed works such as Oncot Srimpi Topeng Sumunar (1994), Operet Timun Emas (1996), Obong (1997), Beksan Sekar Ratri Srimpen Kendi Sekar Putri (1999), Bedhaya Kakung “Siguse” (2000), and Sekar Jagad (2002). She has also performed many traditional dances, including Srimpi Anglir Mendung, Srimpi Moncar, Gambyong, Mondraswara, Mondrokusumo, Mondrorini, and Langendriyan.',
     'directors_description_4' => 'Driven by her passion for art and culture, Irawati established the Semarak Candrakirana Arts Center (SCK) in 1998. Today, the center has over 150 active students and has graduated more than 1,000 students. SCK has achieved several accomplishments, including organizing the opening ceremony of SIPA since 2009 and performing at cultural events such as the International Mask Festival (IMF), the Little Puppeteer Festival, and the Semarak Budaya Indonesia (SBI). SCK also represented Indonesia at the Andong Mask Dance Festival in South Korea in 2014 and 2015. Through her work at SCK, Irawati continues to inspire younger generations to love and learn about Indonesian culture through dance.',
     'directors_description_5' => 'Moreover, Irawati once served as the Chairperson of the Mangkunegaran Arts Academy (ASGA) in Solo until 2018. She envisions expanding SIPA to a broader international level. Under her leadership, SIPA has established partnerships with several international organizations through the signing of Memorandums of Understanding (MoUs), such as with the Andong Festival Tourism Foundation in South Korea and Universiti Teknologi MARA in Malaysia. Irawati hopes that in the future, SIPA will continue collaborating with more international institutions to foster global friendship through the arts.',
-
 
     // HISTORY PAGE
     'history' => 'History',
@@ -98,6 +97,5 @@ return [
     'gallery_2022' => 'Solo International Performing Arts (SIPA) 2022 was an annual event celebrating the beauty of performing arts from across the globe. Held in the city of Solo, SIPA 2022 carried the spirit of transformation through art as the driving energy of life. With the theme <strong><em>"Art as The Spirit of Life Changing"</em></strong> and featuring Rianto as the mascot, SIPA 2022 emphasized art’s role as guardian, harmonizer, and catalyst of hope amid the tides of change. Through inspiring performances, the SIPA stage became a space of reflection that in every transformation, art brings light and a burning spirit of life.',
     'gallery_2023' => 'Solo International Performing Arts (SIPA) 2023 was an annual event celebrating the beauty of performing arts from around the world. Held in the city of Solo, SIPA 2023 presented meaningful works as a form of concern for the fading harmony and tolerance in the world. Embracing the spirit of <strong><em>"Say All with Arts",</em></strong> SIPA 2023 affirmed that art is the center of beauty capable of uniting differences. Strengthened by the presence of Wirastuti Sulistyaningsih as the mascot, SIPA 2023 invited all people to nurture life through art, so that the world does not lose its true beauty.',
     'gallery_2024' => 'Solo International Performing Arts (SIPA) 2024 is an annual event that celebrates the beauty of performing arts from around the world. Held in the city of Solo, SIPA 2025 showcases a variety of captivating performances, from traditional dances to innovative contemporary shows. With the theme <strong><em>"Performing Royal Genesis"</em></strong> and featuring Gusti Sura as the mascot, SIPA 2024 successfully highlighted the richness of Javanese culture while presenting a modern atmosphere.',
-
 
 ];

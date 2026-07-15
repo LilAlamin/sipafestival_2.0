@@ -1,13 +1,11 @@
 <?php
 
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\EmailController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\HomeNewsController;
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/trylang', function () {
     return view('trylang');
@@ -17,9 +15,9 @@ Route::get('lang/{lang}', function ($lang) {
     if (in_array($lang, ['en', 'id'])) {
         session(['locale' => $lang]);
     }
+
     return back();
 })->name('lang.switch');
-
 
 Route::get('/', [NewsController::class, 'showNewsHome'])->name('news.showNewsHome');
 Route::get('/news', [NewsController::class, 'showAllNews'])->name('news.showAllNews');
@@ -99,23 +97,22 @@ Route::post('/', [ComplaintController::class, 'store'])->name('data.store');
 
 // admin
 
+Route::redirect('/admin', '/admin/dashboard');
 Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/admin/login', [loginController::class, 'login'])->name('loginbaru');
 Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
-    // Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
-    Route::post('/admin/dashboard/', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
-    Route::get('/admin/dashboard/', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
+    Route::post('/admin/dashboard/complaints', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
+    Route::get('/admin/dashboard/complaints', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
+    Route::get('/admin/dashboard/unread', [ComplaintController::class, 'showUnreadComplaints'])->name('admin.dashboard.unread');
+    Route::get('/admin/dashboard/read', [ComplaintController::class, 'showReadComplaints'])->name('admin.dashboard.read');
 
     Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
     Route::post('/admin/dashboard/{id}/reply', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
-
-    Route::get('/admin/dashboard/reply', function () {
-        return view('admin.reply');
-    });
 
     Route::get('/admin/dashboard/news/makeNews', function () {
         return view('admin.news.makeNews');
@@ -129,6 +126,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'editBySlug'])->name('news.editBySlug');
     Route::put('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'updateBySlug'])->name('news.updateBySlug');
     Route::delete('/admin/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::post('/admin/dashboard/news/{id}/publish', [NewsController::class, 'publish'])->name('news.publish');
+
+    // Gallery Route
+    Route::get('/admin/dashboard/gallery', function () {
+        return view('admin.gallery');
+    })->name('admin.gallery');
 });
 // Route::get('/admin/dashboard/news/{id}/delete', function ($id) {
 //     $news = News::findOrFail($id);

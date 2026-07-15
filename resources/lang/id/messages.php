@@ -1,4 +1,5 @@
 <?php
+
 return [
     // HOME PAGE
     'welcome' => 'selamat datang di situs kami',
@@ -52,9 +53,8 @@ return [
     'faq_answer_5' => 'Kamera profesional dengan lensa yang dapat dilepas, seperti DSLR, tidak diizinkan. Namun, Anda dapat membawa kamera kompak dan smartphone.',
     'coming_soon' => 'SEGERA HADIR',
     'we_are_sipa' => 'Tentang SIPA FESTIVAL',
-    'supported'=> 'DIDUKUNG OLEH',
+    'supported' => 'DIDUKUNG OLEH',
     'organize' => 'DISELENGGARAKAN OLEH',
-    
 
     // DIRECTORS PROFILE
     'directors_profile' => 'Direktur Solo International Performing Arts (SIPA)',
@@ -113,6 +113,5 @@ return [
     'gallery_2023' => 'Solo International Performing Arts (SIPA) 2023 kembali hadir di Benteng Vastenburg, Solo, sebagai ajang seni pertunjukan dunia yang mengangkat tema <strong><em>"The Root of Equity".</em></strong> Diselenggarakan pada tanggal 31 Agustus, 1, dan 2 September 2023, festival ini menyoroti pentingnya keadilan sosial dan kesetaraan melalui ekspresi seni. Dengan menghadirkan Anter Asmorodono sebagai maskot, SIPA 2023 menjadi ruang refleksi dan inspirasi untuk mewujudkan dunia yang lebih adil dan inklusif.',
 
     'gallery_2024' => 'Solo International Performing Arts (SIPA) 2024 kembali digelar di Benteng Vastenburg, Solo, dengan mengangkat tema <strong><em>"Performing Royal Genesis".</em></strong> Diselenggarakan pada tanggal 5, 6, dan 7 September 2024, SIPA 2024 menghadirkan semangat generasi muda yang menjunjung tinggi keberagaman dan persatuan. Dengan menghadirkan Syifa Fauziah sebagai maskot, SIPA 2024 menjadi wadah kolaborasi seni antarbangsa yang memperkuat identitas Indonesia dalam keragaman global.',
-
 
 ];

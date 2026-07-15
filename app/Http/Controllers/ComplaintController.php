@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Complaint;
+use Carbon\Carbon; // Make sure you have a Complaint model
 use Illuminate\Http\Request;
-use App\Models\Complaint; // Make sure you have a Complaint model
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 Carbon::setLocale('id');
-
 
 class ComplaintController extends Controller
 {
@@ -38,17 +37,20 @@ class ComplaintController extends Controller
             ]);
 
             DB::commit();
+
             return redirect('/')->with('success', 'Order berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();
-            return back()->with('error', 'Gagal mengirim keluhan: ' . $e->getMessage());
+
+            return back()->with('error', 'Gagal mengirim keluhan: '.$e->getMessage());
         }
     }
 
     public function showComplaint()
     {
         $complaints = Complaint::all();
-        return view('admin/dashboard', compact('complaints'));
+
+        return view('admin.complaints', compact('complaints'));
     }
 
     public function sendEmail(Request $request, $id)
@@ -62,5 +64,19 @@ class ComplaintController extends Controller
         // Mail::to($complaint->email)->send(new EmailReply($name, $subject, $message));
 
         return view('admin.reply', compact('complaint'));
+    }
+
+    public function showUnreadComplaints()
+    {
+        $complaints = Complaint::where('status', 'belum dibalas')->get();
+
+        return view('admin.unreplied', compact('complaints'));
+    }
+
+    public function showReadComplaints()
+    {
+        $complaints = Complaint::where('status', 'sudah dibalas')->get();
+
+        return view('admin.replied', compact('complaints'));
     }
 }

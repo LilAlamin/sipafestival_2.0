@@ -9,11 +9,13 @@ class News extends Model
 {
     //
     use HasFactory;
+
     protected $fillable = [
         'title',
         'slug', // Tambahkan ini!
         'description',
         'image_path',
+        'status',
         'sent_at',
     ];
 }
