@@ -1,99 +1,110 @@
 
-# 🚀 Instalasi Laravel 12 + XAMPP untuk teman teman lucuqu 
+# 🎭 SIPA Festival 2.0 (Solo International Performing Arts)
 
-Panduan ini menjelaskan langkah-langkah untuk menjalankan proyek Laravel 12 yang telah di-clone, serta menghubungkan ke database menggunakan XAMPP.
+Welcome to **SIPA Festival 2.0**, the official CMS and web portal for managing the **Solo International Performing Arts (SIPA)** festival. This system is designed to handle public complaints, news publishing, and gallery management.
 
----
-
-## ✅ Prasyarat
-
-Pastikan sudah menginstall:
-
-- PHP >= 8.1
-- Composer
-- Git
-- XAMPP (dengan MySQL dan Apache)
+Built with **Laravel 12**, **Vite**, and **Tailwind CSS v4**.
 
 ---
 
-## 📥 Clone Repository
+## ✨ Features
 
-boleh pake terminal apa aja, pke cmd juga boleh, tapi pastiin direktorinya bener yaww
+- **🎭 Public Portal**: View performing arts news and information.
+- **📰 News Management**: Publish news with support for Draft & Published statuses, custom slugs, and images.
+- **💬 Complaint Center**: Direct citizen feedback system (Unreplied vs. Replied categories) with direct email replying interface.
+- **🖼️ Gallery Management**: Admin interface for viewing and managing performance art galleries.
+- **🌐 Multilingual Support**: Seamlessly switch between Indonesian (`id`) and English (`en`).
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Laravel 12
+- **Frontend Tools**: Vite + Tailwind CSS v4
+- **Database**: MySQL
+
+---
+
+## 📥 Installation & Setup
+
+Follow these steps to set up and run the project locally using XAMPP:
+
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/salsarizkii/sipafestival.git
-cd nama-repo
-
+git clone https://github.com/LilAlamin/sipafestival_2.0.git
+cd sipafestival
 ```
 
----
-
-## 📦 Install Dependency Laravel
-make sure composer dah punya yaw, kl blm punya donwload dulu cuy https://getcomposer.org/download/
-
+### 2. Install PHP Dependencies
+Make sure you have [Composer](https://getcomposer.org/) installed:
 ```bash
 composer install
 ```
 
----
-
-## ⚙️ Salin File Environment
-
+### 3. Install Frontend Dependencies
 ```bash
-cp .env.example .env
+npm install
 ```
 
----
+### 4. Environment Configuration
+Copy the environment template file:
+> [!NOTE]
+> The template file in this repository is named `.env example` (with a space).
+```bash
+cp ".env example" .env
+```
 
-## 🔑 Generate App Key
-
+Generate the application key:
 ```bash
 php artisan key:generate
 ```
 
----
+### 5. Database Configuration
+1. Open **XAMPP** and start **Apache** and **MySQL**.
+2. Open **phpMyAdmin**: [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
+3. Create a new database named `sipafestival`.
+4. Update your `.env` file with your database credentials:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=sipafestival
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-## 🛠️ Konfigurasi Database (XAMPP)
-
-1. Jalankan **XAMPP**, aktifkan **Apache** dan **MySQL**.
-2. Buka **phpMyAdmin** di browser: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
-3. Buat database baru, namanya: `sipafestival`
-4. Edit file `.env`, sesuaikan bagian ini:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=sipafestival
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-> ⚠️ Secara default, user `root` di XAMPP tidak memiliki password. Jika kamu mengubahnya, sesuaikan di `.env`.
-
----
-
-## 🧱 Migrasi Database (Opsional)
-
-Jika project menggunakan migration:
-
+### 6. Migrations & Seeders
+Run the migrations and seed dummy data (News, Complaints, etc.):
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
 
 ---
 
-## 🌐 Jalankan Server Laravel
+## 🚀 Running the Application
 
+### Local Development Server (Concurrently)
+To run the Laravel server, Vite compiler, queue listener, and log output concurrently in a single command:
 ```bash
+composer dev
+```
+The application will be available at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+### Manual Run
+If you prefer running them in separate terminal windows:
+```bash
+# Terminal 1: Laravel Web Server
 php artisan serve
-```
 
-Aplikasi akan berjalan di: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+# Terminal 2: Vite Dev Server
+npm run dev
+```
 
 ---
 
-## ✅ Selesai!
+## 🧹 Code Quality & Formatting
+We use Laravel Pint to enforce standard PHP style guidelines. Run this before staging and committing code:
+```bash
+./vendor/bin/pint
+```
 
-Laravel 12 sudah berhasil dijalankan dan terhubung ke database menggunakan XAMPP. Selamat ngoding! 😄
-
-- slamat ngoding fwennn -salsa-
