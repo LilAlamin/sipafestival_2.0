@@ -1,4 +1,9 @@
 
+
+<p align="center">
+  <img src="public/images/sipalogo.png" alt="SIPA Logo" width="250" />
+</p>
+
 # 🎭 SIPA Festival 2.0 (Solo International Performing Arts)
 
 Welcome to **SIPA Festival 2.0**, the official CMS and web portal for managing the **Solo International Performing Arts (SIPA)** festival. This system is designed to handle public complaints, news publishing, and gallery management.
