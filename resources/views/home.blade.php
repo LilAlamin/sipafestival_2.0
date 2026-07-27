@@ -233,10 +233,49 @@
       filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
     }
 
+    /* Mascot Caption Text (No Card Box Background) */
+    .mascot-caption {
+      position: absolute;
+      right: clamp(20px, 3.5vw, 60px);
+      bottom: clamp(240px, 32vh, 380px);
+      z-index: 5;
+      background: transparent;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      pointer-events: none;
+    }
+
+    .caption-title {
+      font-size: clamp(0.8rem, 1.1vw, 1.05rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+    }
+
+    .caption-name {
+      font-family: 'Font_SIPA26', serif;
+      font-size: clamp(1.4rem, 2vw, 2.1rem);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
     /* Mobile & Tablet Styles (< 992px) */
     @media (max-width: 991px) {
       body {
         padding: 24px 12px;
+      }
+
+      .header-logo {
+        margin-bottom: 15px;
       }
 
       .opsi2-layout {
@@ -269,20 +308,31 @@
         position: relative;
         right: auto;
         bottom: auto;
-        margin: 35px auto 0 auto;
+        margin: 10px auto 30px auto;
         text-align: center;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         z-index: 1;
       }
 
       .mascot-img {
         height: auto;
         min-height: unset;
-        max-height: 520px;
-        max-width: 90vw;
+        max-height: 480px;
+        max-width: 88vw;
         object-position: center;
         filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
+      }
+
+      .mascot-caption {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 12px;
+        text-align: center;
+        align-self: center;
+        padding: 8px 18px;
       }
     }
 
@@ -330,6 +380,15 @@
     <img src="{{ asset('images/logo_putih.png') }}" alt="Logo SIPA Festival" class="logo-img">
   </div>
 
+  <!-- Mascot Image (On Mobile: below logo. On Desktop: fixed at bottom right) -->
+  <div class="mascot-container">
+    <img src="{{ asset('images/maskot/gondrong_gunarto.webp') }}" alt="Maskot Gondrong Gunarto" class="mascot-img">
+    <div class="mascot-caption">
+      <span class="caption-title">Ambassador SIPA 2026</span>
+      <span class="caption-name">Gondrong Gunarto</span>
+    </div>
+  </div>
+
   <!-- Layout Container from Figma OPSI 2 (Max Width 918px, Left Aligned Content) -->
   <div class="opsi2-layout">
     <div class="text-section">
@@ -358,11 +417,6 @@
         </a>
       </div>
     </div>
-  </div>
-
-  <!-- Mascot Image on the Right Side -->
-  <div class="mascot-container">
-    <img src="{{ asset('images/maskot/gondrong_gunarto.webp') }}" alt="Maskot Gondrong Gunarto" class="mascot-img">
   </div>
 
   <footer>
