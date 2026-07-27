@@ -11,11 +11,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Google Font Poppins for body text -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Lottie Web Player CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans / Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     @font-face {
@@ -32,13 +30,6 @@
       font-style: italic;
     }
 
-    @font-face {
-      font-family: 'Font_SIPA26-Regular';
-      src: url("{{ asset('assets/Font_SIPA26/CormorantGaramond-Regular.ttf') }}") format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -46,9 +37,9 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
       min-height: 100vh;
-      background-color: #0d0d11;
+      background-color: #0b0c10;
       color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -56,6 +47,7 @@
       align-items: center;
       position: relative;
       overflow-x: hidden;
+      padding: 40px 20px;
     }
 
     /* Fixed Background Image Layer */
@@ -72,105 +64,118 @@
       z-index: -2;
     }
 
-    /* Light Vignette Overlay to preserve bright original background */
+    /* Dark Radial Vignette Overlay */
     .bg-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.35) 100%);
+      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.65) 100%);
       z-index: -1;
       pointer-events: none;
     }
 
-    .main-container {
-      position: relative;
-      z-index: 2;
+    .header-logo {
       width: 100%;
-      max-width: 900px;
-      padding: 40px 20px;
       text-align: center;
-      margin: auto;
+      margin-bottom: 40px;
     }
 
     .logo-img {
-      max-width: 240px;
+      max-width: 230px;
       width: 100%;
       height: auto;
-      margin-bottom: 25px;
       filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.7));
       animation: fadeInDown 1.2s ease-out forwards;
     }
 
-    .construction-title {
-      font-family: 'Font_SIPA26', serif;
-      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #ffffff;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
-      margin-bottom: 15px;
-      line-height: 1.2;
+    /* Layout Container from Figma OPSI 2 (width 918px, left-aligned contents) */
+    .opsi2-layout {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 918px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .text-section {
+      margin-bottom: 35px;
       animation: fadeInUp 1.2s ease-out forwards;
     }
 
-    .subtitle {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.1rem, 2.8vw, 1.5rem);
-      font-weight: 600;
-      letter-spacing: 1px;
+    .construction-title {
+      font-family: 'Font_SIPA26', serif;
+      font-size: clamp(2rem, 4.5vw, 56px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-      margin-bottom: 15px;
-      animation: fadeInUp 1.4s ease-out forwards;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     }
 
-    .font-sipa-italic {
+    .subtitle-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+      font-size: clamp(1.2rem, 2.5vw, 30px);
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .subtitle-bold {
+      font-weight: 700;
+    }
+
+    .subtitle-italic {
       font-family: 'Font_SIPA26-Italic', serif;
       font-style: italic;
       font-weight: 400;
-      font-size: 1.2em;
+      font-size: 1.35em;
       padding: 0 4px;
     }
 
-    .info-text {
-      font-size: clamp(0.875rem, 2vw, 1.05rem);
-      font-weight: 300;
+    .subtitle-medium {
+      font-weight: 500;
+    }
+
+    .ig-info-text {
+      font-size: clamp(0.95rem, 1.8vw, 24px);
+      font-weight: 500;
       color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      line-height: 1.3;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-      animation: fadeInUp 1.5s ease-out forwards;
+      animation: fadeInUp 1.4s ease-out forwards;
     }
 
-    /* IG Embed Card */
-    .ig-embed-card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      padding: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      display: inline-block;
+    /* Instagram Wide Container (Figma OPSI 2 Rectangle 2 - Width 918px) */
+    .ig-card-container {
       width: 100%;
-      max-width: 440px;
-      margin: 0 auto 30px auto;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       animation: fadeInUp 1.6s ease-out forwards;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
     }
 
-    .ig-embed-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    }
-
-    .ig-embed-card iframe {
+    .ig-card-container iframe {
       width: 100%;
-      height: 480px;
+      height: 380px;
       border: none;
-      border-radius: 16px;
+      border-radius: 14px;
       background: #ffffff;
     }
 
@@ -180,14 +185,13 @@
       gap: 10px;
       background: linear-gradient(135deg, #e1306c, #c13584, #833ab4);
       color: #ffffff;
-      padding: 12px 28px;
+      padding: 12px 32px;
       border-radius: 50px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       font-size: 1rem;
       box-shadow: 0 8px 20px rgba(225, 48, 108, 0.4);
       transition: all 0.3s ease;
-      margin-top: 10px;
     }
 
     .social-btn:hover {
@@ -199,7 +203,7 @@
     footer {
       position: relative;
       z-index: 2;
-      padding: 20px;
+      padding-top: 30px;
       font-size: 0.875rem;
       color: rgba(255, 255, 255, 0.6);
       text-align: center;
@@ -235,22 +239,34 @@
   <div class="bg-layer"></div>
   <div class="bg-overlay"></div>
 
-  <div class="main-container">
-    <!-- Logo -->
+  <!-- Top Centered Logo -->
+  <div class="header-logo">
     <img src="{{ asset('images/logo_putih.png') }}" alt="Logo SIPA Festival" class="logo-img">
+  </div>
 
-    <!-- Lottie Gears Animation -->
-    <div id="gears-animation" style="width: 140px; height: 140px; margin: 0 auto 15px auto; filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.6));"></div>
+  <!-- Layout Container from Figma OPSI 2 (Max Width 918px, Left Aligned Content) -->
+  <div class="opsi2-layout">
+    <div class="text-section">
+      <!-- Title: WEBSITE UNDER CONSTRUCTION -->
+      <h1 class="construction-title">WEBSITE UNDER CONSTRUCTION</h1>
+      
+      <!-- Subtitle: SIPA Festival 2026 is Coming Soon -->
+      <div class="subtitle-row">
+        <span class="subtitle-bold">SIPA Festival 2026</span>
+        <span class="subtitle-italic">is</span>
+        <span class="subtitle-medium">Coming Soon</span>
+      </div>
+    </div>
 
-    <!-- Title & Subtitle based on Figma OPSI 2 -->
-    <h1 class="construction-title">WEBSITE UNDER CONSTRUCTION</h1>
-    <p class="subtitle">SIPA Festival 2026 <span class="font-sipa-italic">is</span> Coming Soon</p>
-    <p class="info-text">for more information, follow <strong>@sipafestival</strong> on Instagram</p>
+    <!-- Instagram Section -->
+    <div class="instagram-section">
+      <p class="ig-info-text">
+        for more information, follow <strong>@sipafestival</strong> on instagram
+      </p>
 
-    <!-- Embed Instagram SIPA Festival -->
-    <div class="ig-embed-card">
-      <iframe src="https://www.instagram.com/sipafestival/embed" allowtransparency="true" scrolling="no"></iframe>
-      <div>
+      <!-- Wide Rectangle 2 Instagram Card Container -->
+      <div class="ig-card-container">
+        <iframe src="https://www.instagram.com/sipafestival/embed" allowtransparency="true" scrolling="no"></iframe>
         <a href="https://www.instagram.com/sipafestival" target="_blank" rel="noopener noreferrer" class="social-btn">
           <i class="fab fa-instagram fs-5"></i> Follow @sipafestival
         </a>
@@ -263,16 +279,5 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      lottie.loadAnimation({
-        container: document.getElementById('gears-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: "{{ asset('animation/Gears%20Animation.json') }}"
-      });
-    });
-  </script>
 </body>
 </html>
