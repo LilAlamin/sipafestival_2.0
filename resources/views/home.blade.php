@@ -203,7 +203,7 @@
       box-shadow: 0 12px 25px rgba(225, 48, 108, 0.6);
     }
 
-    /* Mascot Container on Bottom Right Side (Scrolls naturally with page) */
+    /* Mascot Container on Bottom Right Side */
     .mascot-container {
       position: absolute;
       right: 0;
@@ -217,35 +217,54 @@
     }
 
     .mascot-img {
-      height: clamp(650px, 96vh, 1080px);
+      height: 85vh;
+      max-height: 880px;
+      min-height: 560px;
       width: auto;
-      max-width: min(56vw, 950px);
+      max-width: 48vw;
       object-fit: contain;
       object-position: bottom right;
       filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
     }
 
-    @media (max-width: 1200px) {
+    /* Laptop / Small Desktop (1024px - 1399px) */
+    @media (max-width: 1399px) {
       .mascot-img {
-        height: clamp(550px, 88vh, 880px);
-        max-width: 50vw;
+        height: 80vh;
+        max-height: 720px;
+        min-height: 480px;
+        max-width: 46vw;
       }
     }
 
-    @media (max-width: 991px) {
+    /* Tablet / Medium Screen (768px - 1023px) */
+    @media (max-width: 1023px) {
+      .mascot-img {
+        height: 70vh;
+        max-height: 580px;
+        min-height: 400px;
+        max-width: 42vw;
+      }
+    }
+
+    /* Mobile / Small Screen (< 768px) */
+    @media (max-width: 767px) {
       .mascot-container {
         position: relative;
         right: auto;
         bottom: auto;
-        margin: 20px auto 0 auto;
+        margin: 30px auto 0 auto;
         text-align: center;
         justify-content: center;
+        align-items: center;
       }
 
       .mascot-img {
         height: auto;
-        max-width: 320px;
-        max-height: none;
+        min-height: unset;
+        max-height: 420px;
+        max-width: 85vw;
+        object-position: center;
       }
     }
 
