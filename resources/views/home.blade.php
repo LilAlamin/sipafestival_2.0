@@ -98,9 +98,17 @@
       z-index: 2;
       width: 100%;
       max-width: 918px;
-      margin-left: clamp(20px, 6vw, 100px);
+      margin-left: clamp(20px, 5vw, 90px);
       margin-right: auto;
       text-align: left;
+    }
+
+    /* Desktop / Laptop Responsive Layout Adjustments */
+    @media (max-width: 1440px) {
+      .opsi2-layout {
+        max-width: clamp(520px, 55vw, 760px);
+        margin-left: clamp(20px, 4vw, 50px);
+      }
     }
 
     .text-section {
@@ -217,43 +225,64 @@
     }
 
     .mascot-img {
-      height: 96vh;
-      max-height: 1080px;
-      min-height: 640px;
+      height: min(90vh, 850px);
       width: auto;
-      max-width: 56vw;
+      max-width: min(44vw, 700px);
       object-fit: contain;
       object-position: bottom right;
       filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
     }
 
-    /* Tablet & Medium Screen (768px - 1199px) */
-    @media (max-width: 1199px) {
-      .mascot-img {
-        height: 94vh;
-        min-height: 520px;
-        max-width: 52vw;
+    /* Mobile & Tablet Styles (< 992px) */
+    @media (max-width: 991px) {
+      body {
+        padding: 24px 12px;
       }
-    }
 
-    /* Mobile / Small Screen (< 768px) */
-    @media (max-width: 767px) {
+      .opsi2-layout {
+        margin: 0 auto;
+        padding: 0 10px;
+        text-align: center;
+      }
+
+      .construction-title {
+        text-align: center;
+      }
+
+      .subtitle-row {
+        justify-content: center;
+      }
+
+      .ig-info-text {
+        text-align: center;
+      }
+
+      .ig-card-container {
+        padding: 16px;
+      }
+
+      .ig-card-container iframe {
+        height: clamp(280px, 45vh, 360px);
+      }
+
       .mascot-container {
         position: relative;
         right: auto;
         bottom: auto;
-        margin: 30px auto 0 auto;
+        margin: 35px auto 0 auto;
         text-align: center;
         justify-content: center;
         align-items: center;
+        z-index: 1;
       }
 
       .mascot-img {
         height: auto;
         min-height: unset;
-        max-height: 480px;
-        max-width: 88vw;
+        max-height: 520px;
+        max-width: 90vw;
         object-position: center;
+        filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
       }
     }
 
