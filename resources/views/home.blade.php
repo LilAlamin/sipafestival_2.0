@@ -77,6 +77,8 @@
     }
 
     .header-logo {
+      position: relative;
+      z-index: 2;
       width: 100%;
       text-align: center;
       margin-bottom: 40px;
@@ -206,7 +208,7 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      z-index: 3;
+      z-index: -1;
       pointer-events: none;
       animation: fadeInUp 1.4s ease-out forwards;
       display: flex;
@@ -215,9 +217,9 @@
     }
 
     .mascot-img {
-      height: clamp(560px, 86vh, 920px);
+      height: clamp(650px, 96vh, 1080px);
       width: auto;
-      max-width: min(50vw, 840px);
+      max-width: min(56vw, 950px);
       object-fit: contain;
       object-position: bottom right;
       filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
@@ -225,8 +227,8 @@
 
     @media (max-width: 1200px) {
       .mascot-img {
-        height: clamp(480px, 78vh, 780px);
-        max-width: 46vw;
+        height: clamp(550px, 88vh, 880px);
+        max-width: 50vw;
       }
     }
 
