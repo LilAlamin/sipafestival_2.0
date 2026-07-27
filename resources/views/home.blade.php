@@ -201,6 +201,36 @@
       box-shadow: 0 12px 25px rgba(225, 48, 108, 0.6);
     }
 
+    /* Mascot Container on the Right Side */
+    .mascot-container {
+      position: absolute;
+      right: clamp(10px, 4vw, 70px);
+      top: 180px;
+      z-index: 3;
+      pointer-events: none;
+      animation: fadeInUp 1.4s ease-out forwards;
+    }
+
+    .mascot-img {
+      max-width: clamp(280px, 30vw, 460px);
+      height: auto;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7));
+    }
+
+    @media (max-width: 991px) {
+      .mascot-container {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px auto 0 auto;
+        text-align: center;
+      }
+
+      .mascot-img {
+        max-width: 260px;
+      }
+    }
+
     footer {
       position: relative;
       z-index: 2;
@@ -273,6 +303,11 @@
         </a>
       </div>
     </div>
+  </div>
+
+  <!-- Mascot Image on the Right Side -->
+  <div class="mascot-container">
+    <img src="{{ asset('images/maskot/gondrong_gunarto.webp') }}" alt="Maskot Gondrong Gunarto" class="mascot-img">
   </div>
 
   <footer>
