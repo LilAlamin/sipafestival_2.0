@@ -201,33 +201,41 @@
       box-shadow: 0 12px 25px rgba(225, 48, 108, 0.6);
     }
 
-    /* Mascot Container on the Right Side */
+    /* Mascot Container on Bottom Right Side */
     .mascot-container {
-      position: absolute;
-      right: clamp(10px, 4vw, 70px);
-      top: 180px;
+      position: fixed;
+      right: 0;
+      bottom: 0;
       z-index: 3;
       pointer-events: none;
       animation: fadeInUp 1.4s ease-out forwards;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
 
     .mascot-img {
-      max-width: clamp(280px, 30vw, 460px);
+      max-width: min(48vw, 680px);
+      max-height: 82vh;
+      width: auto;
       height: auto;
-      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7));
+      object-fit: contain;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
     }
 
     @media (max-width: 991px) {
       .mascot-container {
         position: relative;
         right: auto;
-        top: auto;
+        bottom: auto;
         margin: 20px auto 0 auto;
         text-align: center;
+        justify-content: center;
       }
 
       .mascot-img {
-        max-width: 260px;
+        max-width: 320px;
+        max-height: none;
       }
     }
 
