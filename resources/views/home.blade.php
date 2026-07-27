@@ -26,6 +26,13 @@
     }
 
     @font-face {
+      font-family: 'Font_SIPA26-Italic';
+      src: url("{{ asset('assets/Font_SIPA26/CormorantGaramond-Italic.ttf') }}") format('truetype');
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    @font-face {
       font-family: 'Font_SIPA26-Regular';
       src: url("{{ asset('assets/Font_SIPA26/CormorantGaramond-Regular.ttf') }}") format('truetype');
       font-weight: normal;
@@ -88,7 +95,7 @@
     }
 
     .logo-img {
-      max-width: 220px;
+      max-width: 240px;
       width: 100%;
       height: auto;
       margin-bottom: 25px;
@@ -98,25 +105,43 @@
 
     .construction-title {
       font-family: 'Font_SIPA26', serif;
-      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
       font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #ffffff;
       text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       line-height: 1.2;
       animation: fadeInUp 1.2s ease-out forwards;
     }
 
     .subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.1rem, 2.8vw, 1.5rem);
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       color: #ffffff;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-      margin-bottom: 35px;
+      margin-bottom: 15px;
       animation: fadeInUp 1.4s ease-out forwards;
+    }
+
+    .font-sipa-italic {
+      font-family: 'Font_SIPA26-Italic', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.2em;
+      padding: 0 4px;
+    }
+
+    .info-text {
+      font-size: clamp(0.875rem, 2vw, 1.05rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      animation: fadeInUp 1.5s ease-out forwards;
     }
 
     /* IG Embed Card */
@@ -217,9 +242,10 @@
     <!-- Lottie Gears Animation -->
     <div id="gears-animation" style="width: 140px; height: 140px; margin: 0 auto 15px auto; filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.6));"></div>
 
-    <!-- Title with Font_SIPA26 -->
-    <h1 class="construction-title">UNDER CONSTRUCTION</h1>
-    <p class="subtitle">SIPA FESTIVAL 2026 IS COMING SOON</p>
+    <!-- Title & Subtitle based on Figma OPSI 2 -->
+    <h1 class="construction-title">WEBSITE UNDER CONSTRUCTION</h1>
+    <p class="subtitle">SIPA Festival 2026 <span class="font-sipa-italic">is</span> Coming Soon</p>
+    <p class="info-text">for more information, follow <strong>@sipafestival</strong> on Instagram</p>
 
     <!-- Embed Instagram SIPA Festival -->
     <div class="ig-embed-card">
