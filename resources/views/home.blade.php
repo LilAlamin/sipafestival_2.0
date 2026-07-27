@@ -90,13 +90,14 @@
       animation: fadeInDown 1.2s ease-out forwards;
     }
 
-    /* Layout Container from Figma OPSI 2 (width 918px, left-aligned contents) */
+    /* Layout Container from Figma OPSI 2 (width 918px, left-positioned matching x=83px in Figma) */
     .opsi2-layout {
       position: relative;
       z-index: 2;
       width: 100%;
       max-width: 918px;
-      margin: 0 auto;
+      margin-left: clamp(20px, 6vw, 100px);
+      margin-right: auto;
       text-align: left;
     }
 
