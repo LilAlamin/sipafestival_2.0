@@ -217,33 +217,22 @@
     }
 
     .mascot-img {
-      height: 85vh;
-      max-height: 880px;
-      min-height: 560px;
+      height: 96vh;
+      max-height: 1080px;
+      min-height: 640px;
       width: auto;
-      max-width: 48vw;
+      max-width: 56vw;
       object-fit: contain;
       object-position: bottom right;
       filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
     }
 
-    /* Laptop / Small Desktop (1024px - 1399px) */
-    @media (max-width: 1399px) {
+    /* Tablet & Medium Screen (768px - 1199px) */
+    @media (max-width: 1199px) {
       .mascot-img {
-        height: 80vh;
-        max-height: 720px;
-        min-height: 480px;
-        max-width: 46vw;
-      }
-    }
-
-    /* Tablet / Medium Screen (768px - 1023px) */
-    @media (max-width: 1023px) {
-      .mascot-img {
-        height: 70vh;
-        max-height: 580px;
-        min-height: 400px;
-        max-width: 42vw;
+        height: 94vh;
+        min-height: 520px;
+        max-width: 52vw;
       }
     }
 
@@ -262,8 +251,8 @@
       .mascot-img {
         height: auto;
         min-height: unset;
-        max-height: 420px;
-        max-width: 85vw;
+        max-height: 480px;
+        max-width: 88vw;
         object-position: center;
       }
     }
