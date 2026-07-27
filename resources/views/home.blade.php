@@ -201,9 +201,9 @@
       box-shadow: 0 12px 25px rgba(225, 48, 108, 0.6);
     }
 
-    /* Mascot Container on Bottom Right Side */
+    /* Mascot Container on Bottom Right Side (Scrolls naturally with page) */
     .mascot-container {
-      position: fixed;
+      position: absolute;
       right: 0;
       bottom: 0;
       z-index: 3;
@@ -215,12 +215,19 @@
     }
 
     .mascot-img {
-      max-width: min(48vw, 680px);
-      max-height: 82vh;
+      height: clamp(560px, 86vh, 920px);
       width: auto;
-      height: auto;
+      max-width: min(50vw, 840px);
       object-fit: contain;
-      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
+      object-position: bottom right;
+      filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.95));
+    }
+
+    @media (max-width: 1200px) {
+      .mascot-img {
+        height: clamp(480px, 78vh, 780px);
+        max-width: 46vw;
+      }
     }
 
     @media (max-width: 991px) {
@@ -234,6 +241,7 @@
       }
 
       .mascot-img {
+        height: auto;
         max-width: 320px;
         max-height: none;
       }
