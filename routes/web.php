@@ -20,6 +20,10 @@ Route::get('lang/{lang}', function ($lang) {
 })->name('lang.switch');
 
 Route::get('/', [NewsController::class, 'showNewsHome'])->name('news.showNewsHome');
+Route::get('/home2026', [NewsController::class, 'showNewsHome2026'])->name('news.showNewsHome2026');
+Route::get('/2026', [NewsController::class, 'showNewsHome2026']);
+Route::get('/home-backup', [NewsController::class, 'showNewsHomeBackup'])->name('news.showNewsHomeBackup');
+Route::get('/home_backup', [NewsController::class, 'showNewsHomeBackup']);
 Route::get('/news', [NewsController::class, 'showAllNews'])->name('news.showAllNews');
 Route::get('/news/{slug}', [NewsController::class, 'viewNews'])->name('news.HomeView');
 
