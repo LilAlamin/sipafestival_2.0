@@ -90,10 +90,39 @@
         </div>
       </div>
 
+      <!-- Language Selector Pill Button (Figma Styled ID / EN Dropdown) -->
+      <div class="relative" data-dropdown>
+        <button type="button" class="flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-bold text-white tracking-wider transition-all duration-200 hover:border-white/30 cursor-pointer shadow-sm" data-dropdown-button>
+          <i class="fa-solid fa-globe text-xs text-gray-300"></i>
+          <span>ID</span>
+          <i class="fa-solid fa-chevron-down text-[9px] text-gray-400"></i>
+        </button>
+        
+        <div data-dropdown-menu class="absolute right-0 mt-2.5 w-36 rounded-xl bg-[#181920] border border-white/15 shadow-2xl py-1.5 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none z-50">
+          <a href="?lang=id" class="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-white bg-white/5 transition-colors">
+            <span class="flex items-center gap-2">
+              <span class="text-sm">🇮🇩</span> ID (Bahasa)
+            </span>
+            <i class="fa-solid fa-check text-[10px] text-[#e63946]"></i>
+          </a>
+          <a href="?lang=en" class="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
+            <span class="flex items-center gap-2">
+              <span class="text-sm">🇬🇧</span> EN (English)
+            </span>
+          </a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Mobile Hamburger Toggle -->
-    <div class="md:hidden flex items-center">
+    <!-- Mobile Hamburger Toggle & Quick Lang Pill -->
+    <div class="md:hidden flex items-center gap-3">
+      <!-- Quick Language Pill for Mobile -->
+      <a href="?lang=en" class="flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1 rounded-full text-xs font-bold text-white">
+        <i class="fa-solid fa-globe text-[11px] text-gray-300"></i>
+        <span>ID</span>
+      </a>
+
       <button id="sipa-menu-toggle" type="button" class="p-2 text-gray-300 hover:text-white focus:outline-none">
         <svg id="sipa-menu-icon-bars" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -142,6 +171,15 @@
           @for ($year = 2025; $year >= 2009; $year--)
             <a href="/gallery/{{ $year }}" class="block py-1 text-sm text-gray-400 hover:text-white">SIPA {{ $year }}</a>
           @endfor
+        </div>
+      </div>
+
+      <!-- Language Selector inside Mobile Drawer -->
+      <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+        <span class="text-sm text-gray-400">Language / Bahasa</span>
+        <div class="flex items-center gap-2">
+          <a href="?lang=id" class="px-3 py-1 rounded-full text-xs font-bold bg-white text-black">ID</a>
+          <a href="?lang=en" class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-gray-300 hover:text-white">EN</a>
         </div>
       </div>
     </div>
