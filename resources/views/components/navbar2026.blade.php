@@ -90,24 +90,47 @@
         </div>
       </div>
 
-      <!-- Language Selector Pill Button (Figma Styled ID / EN Dropdown) -->
+      <!-- Language Selector Pill Button (High Quality SVG Flag & Dropdown) -->
       <div class="relative" data-dropdown>
         <button type="button" class="flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-bold text-white tracking-wider transition-all duration-200 hover:border-white/30 cursor-pointer shadow-sm" data-dropdown-button>
-          <i class="fa-solid fa-globe text-xs text-gray-300"></i>
+          <!-- Indonesia Flag SVG -->
+          <svg class="w-4 h-3 rounded-[2px] object-cover shrink-0 shadow-sm" viewBox="0 0 640 480">
+            <g fill-rule="evenodd" stroke-width="1pt">
+              <path fill="#e63946" d="M0 0h640v240H0z"/>
+              <path fill="#ffffff" d="M0 240h640v240H0z"/>
+            </g>
+          </svg>
           <span>ID</span>
-          <i class="fa-solid fa-chevron-down text-[9px] text-gray-400"></i>
+          <svg class="w-2.5 h-2.5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+          </svg>
         </button>
         
-        <div data-dropdown-menu class="absolute right-0 mt-2.5 w-36 rounded-xl bg-[#181920] border border-white/15 shadow-2xl py-1.5 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none z-50">
-          <a href="?lang=id" class="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-white bg-white/5 transition-colors">
-            <span class="flex items-center gap-2">
-              <span class="text-sm">🇮🇩</span> ID (Bahasa)
+        <div data-dropdown-menu class="absolute right-0 mt-2.5 w-40 rounded-xl bg-[#181920] border border-white/15 shadow-2xl py-1.5 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none z-50">
+          <a href="?lang=id" class="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-white bg-white/10 transition-colors">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-3 rounded-[2px] object-cover shrink-0 shadow-sm" viewBox="0 0 640 480">
+                <g fill-rule="evenodd" stroke-width="1pt">
+                  <path fill="#e63946" d="M0 0h640v240H0z"/>
+                  <path fill="#ffffff" d="M0 240h640v240H0z"/>
+                </g>
+              </svg>
+              <span>ID (Indonesia)</span>
             </span>
-            <i class="fa-solid fa-check text-[10px] text-[#e63946]"></i>
+            <svg class="w-3 h-3 text-[#e63946] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
           </a>
           <a href="?lang=en" class="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
-            <span class="flex items-center gap-2">
-              <span class="text-sm">🇬🇧</span> EN (English)
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-3 rounded-[2px] object-cover shrink-0 shadow-sm" viewBox="0 0 640 480">
+                <path fill="#012169" d="M0 0h640v480H0z"/>
+                <path fill="#fff" d="m75 0 245 180L565 0h75v55L395 240l245 185v55h-75L320 295 75 480H0v-55l245-185L0 55V0h75z"/>
+                <path fill="#C8102E" d="m400 240 240 180v30L360 240h40zM240 240 0 60V30l280 210h-40zm0 0L0 420v30l280-210h-40zm160 0 240-180V30L360 240h40z"/>
+                <path fill="#fff" d="M240 0v480h160V0H240zM0 160v160h640V160H0z"/>
+                <path fill="#C8102E" d="M267 0v480h106V0H267zM0 187v106h640V187H0z"/>
+              </svg>
+              <span>EN (English)</span>
             </span>
           </a>
         </div>
@@ -119,7 +142,12 @@
     <div class="md:hidden flex items-center gap-3">
       <!-- Quick Language Pill for Mobile -->
       <a href="?lang=en" class="flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1 rounded-full text-xs font-bold text-white">
-        <i class="fa-solid fa-globe text-[11px] text-gray-300"></i>
+        <svg class="w-3.5 h-2.5 rounded-[1.5px] object-cover shrink-0" viewBox="0 0 640 480">
+          <g fill-rule="evenodd" stroke-width="1pt">
+            <path fill="#e63946" d="M0 0h640v240H0z"/>
+            <path fill="#ffffff" d="M0 240h640v240H0z"/>
+          </g>
+        </svg>
         <span>ID</span>
       </a>
 
@@ -178,8 +206,25 @@
       <div class="pt-3 border-t border-white/10 flex items-center justify-between">
         <span class="text-sm text-gray-400">Language / Bahasa</span>
         <div class="flex items-center gap-2">
-          <a href="?lang=id" class="px-3 py-1 rounded-full text-xs font-bold bg-white text-black">ID</a>
-          <a href="?lang=en" class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-gray-300 hover:text-white">EN</a>
+          <a href="?lang=id" class="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-black">
+            <svg class="w-3.5 h-2.5 rounded-[1.5px] object-cover shrink-0" viewBox="0 0 640 480">
+              <g fill-rule="evenodd" stroke-width="1pt">
+                <path fill="#e63946" d="M0 0h640v240H0z"/>
+                <path fill="#ffffff" d="M0 240h640v240H0z"/>
+              </g>
+            </svg>
+            <span>ID</span>
+          </a>
+          <a href="?lang=en" class="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-gray-300 hover:text-white">
+            <svg class="w-3.5 h-2.5 rounded-[1.5px] object-cover shrink-0" viewBox="0 0 640 480">
+              <path fill="#012169" d="M0 0h640v480H0z"/>
+              <path fill="#fff" d="m75 0 245 180L565 0h75v55L395 240l245 185v55h-75L320 295 75 480H0v-55l245-185L0 55V0h75z"/>
+              <path fill="#C8102E" d="m400 240 240 180v30L360 240h40zM240 240 0 60V30l280 210h-40zm0 0L0 420v30l280-210h-40zm160 0 240-180V30L360 240h40z"/>
+              <path fill="#fff" d="M240 0v480h160V0H240zM0 160v160h640V160H0z"/>
+              <path fill="#C8102E" d="M267 0v480h106V0H267zM0 187v106h640V187H0z"/>
+            </svg>
+            <span>EN</span>
+          </a>
         </div>
       </div>
     </div>
