@@ -73,7 +73,7 @@ class NewsController extends Controller
     {
         $news = News::where('status', 'published')->orderBy('sent_at', 'desc')->get();
 
-        return view('home_backup', compact('news'));
+        return view('archive.home_2025', compact('news'));
     }
 
     public function showNewsHome2026()

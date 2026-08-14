@@ -1,285 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sipafestival 2025</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/js/main.js') }}">
+  <title>SIPA Festival 2025 - Solo International Performing Arts</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ asset('images/sipalogo.png') }}">
+
+  <!-- Google Fonts & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- GSAP & Lenis Smooth Scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Vite / Tailwind CSS -->
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+
   <style>
-    * {
-      font-family: 'Poppins', sans-serif;
+    @font-face {
+      font-family: 'Cabinet Grotesk';
+      src: url('https://cdn.fontshare.com/wf/J6PPRPKWXDUIYA47IXLEQB4R4OPVYDQH/N2ZXAXWEHVMLISD2TIXJC7EF4GOY43L4/NXM4Z4TDCMYWBZ7AVI2N6DQ5VMWNENMU.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+      font-style: normal;
     }
+    @font-face {
+      font-family: 'Cabinet Grotesk';
+      src: url('https://cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.woff2') format('woff2');
+      font-weight: 500;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Cabinet Grotesk';
+      src: url('https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2') format('woff2');
+      font-weight: 700;
+      font-display: swap;
+      font-style: normal;
+    }
+
+    .font-cabinet {
+      font-family: 'Cabinet Grotesk', sans-serif !important;
+    }
+    .font-script {
+      font-family: 'Alex Brush', cursive !important;
+    }
+
     body {
-      background-image: url('{{ asset('images/pattern/bgsipa2025.webp') }}');
-      background-repeat: repeat;
-      background-size: auto;
-      background-color: white;
-    }
-    
-    #slider {
-      width: 100%;
-      max-width: 700px;
-      height: 500px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px 100px 20px 100px !important;
+      background-color: #0b0c10;
+      color: #fafafa;
+      overflow-x: hidden;
     }
   </style>
 </head>
-<body>
+<body class="bg-[#0b0c10] text-[#fafafa] font-cabinet selection:bg-[#406422] selection:text-white">
 
-<x-header title="Selamat Datang" />
+  <!-- Fixed Top Navbar Component -->
+  <x-navbar2026 />
 
+  <!-- MAIN WRAPPER -->
+  <main class="w-full bg-[#0b0c10] relative">
 
-<!-- SIPA Experience -->
-<section class="py-5 welcome-section" id="welcome-section">
-  <div class="container welcome-container" id="welcome-section">
-      <h1 class="text-center fw-bold" style="color: #B8141E;">@lang('messages.gallery_title')</h1>
-      <h4 class="text-center fw-medium mb-5" style="color:rgb(0, 0, 0);">@lang('messages.gallery_subtitle')</h4>
-
-      <div class="row mb-5 align-items-center">
-        <div class="col-md-6" style= "padding-right: 50px;">
-          <h2 class="fw-bold mb-3" style="color: #B8141E;">SIPA FESTIVAL 2025</h2>
-            <p style="text-align: justify;">
-                    @lang('messages.journey_description')
-            </p>
-        </div>
-        <div class="col-md-6 d-flex justify-content-center">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
-            <img src="{{ asset('images/maskot/2025.webp') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-          </div>
-        </div>
+    <!-- ========================================================= -->
+    <!-- 1. HERO SECTION (Matching Figma Exactly like 2026)        -->
+    <!-- ========================================================= -->
+    <section class="relative w-full h-[850px] lg:h-[900px] bg-black overflow-hidden flex flex-col justify-between pt-[90px]">
+      
+      <!-- Hero Background Maskot with Theatrical Lighting -->
+      <div class="absolute inset-0">
+        <img src="{{ asset('images/maskot/2025.webp') }}" alt="SIPA Festival 2025" class="w-full h-full object-cover object-center brightness-95 contrast-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+        <div class="absolute inset-0 bg-radial from-transparent via-black/10 to-black/60"></div>
       </div>
 
-    <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: #B8141E;">TEASER SIPA FESTIVAL 2025</h2>
-        <div class="ratio ratio-1x1 rounded-5 mt-4" style="max-width: 540px; margin: 0 auto; overflow: hidden;">
-            <div id="thumbnail" onclick="openVideo()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer;">
-                <img src="{{ asset('images/AM/T.AM2024.jpg') }}" class="img-fluid" alt="On SIPA Last Year" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="play-button position-absolute top-50 start-50 translate-middle">
-                    <span class="circle"></span>
-                    <i class="bi bi-play-fill"></i>
-                </div>
-            </div>
-            <iframe id="videoIframe" 
-                    src="https://www.instagram.com/reel/DNx3TZj3obB/embed/?hidecaption=true" 
-                    title="Instagram video player" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media" allowfullscreen 
-                    style="display: none; width: 100%; height: 100%;"></iframe>
-        </div>
-    </div>
+      <!-- Left Theatrical Ornate Curtain (Node 4152:12801) -->
+      <div class="absolute inset-y-0 left-0 w-[180px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+        <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
 
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #B8141E;">AFTER MOVIE SIPA FESTIVAL 2025</h2>
-      <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
-        <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/AM/T.AM2024.jpg') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
-          <div class="play-button position-absolute top-50 start-50 translate-middle">
-            <span class="circle"></span>
-            <i class="bi bi-play-fill"></i>
+      <!-- Right Theatrical Ornate Curtain (Node 4152:12802) -->
+      <div class="absolute inset-y-0 right-0 w-[180px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+        <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Bottom Floor Vector Shadow (Node 4152:12813) -->
+      <div class="absolute bottom-0 inset-x-0 h-[337px] pointer-events-none z-10">
+        <img src="{{ asset('images/pattern/theme_vector_bottom.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Return Button Top Left -->
+      <div class="max-w-[1040px] w-full mx-auto px-4 sm:px-6 lg:px-0 pt-6 relative z-20">
+        <a href="/gallery" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-xs font-semibold text-white/90 hover:text-white hover:bg-black/75 transition-all">
+          <i class="fa-solid fa-arrow-left text-xs"></i>
+          <span>Kembali ke Galeri Visual</span>
+        </a>
+      </div>
+
+      <!-- Hero Bottom Content Lockup (Figma Exact Position) -->
+      <div class="max-w-[1040px] w-full mx-auto px-4 sm:px-6 lg:px-0 pb-10 sm:pb-12 relative z-20 flex flex-col justify-end space-y-6">
+        
+        <!-- Row 1: Title Lockup Right Aligned (Node 4152:13811) -->
+        <div class="w-full flex justify-end">
+          <div class="text-right max-w-xl">
+            <span class="font-cabinet text-xs sm:text-[14px] font-normal text-gray-200 tracking-wider block mb-1">
+              Solo International Performing Arts 2025
+            </span>
+            <h1 class="font-cabinet font-bold text-2xl sm:text-3xl lg:text-[38px] text-white tracking-tight leading-[1.2] drop-shadow-[0_0_25px_rgba(255,255,255,0.7)]">
+              Nifty, Artful, & Visionary
+            </h1>
           </div>
         </div>
-        <iframe id="videoIframe" width="1280" height="720"
-                src="https://www.youtube.com/embed/eOg3baFV5q8"
-                title="YouTube video" frameborder="0"
-                allow="autoplay; encrypted-media" allowfullscreen
-                class="rounded-5" style="display: none;"></iframe>
+
+        <!-- Row 2: Official Support & Partners Logo Bar Centered (Node 4152:12814) -->
+        <div class="w-full flex items-center justify-center gap-4 sm:gap-6 flex-wrap opacity-85 brightness-0 invert pt-2">
+          <img src="{{ asset('images/sponsor/SCK1.png') }}" class="h-6 sm:h-8 w-auto object-contain" alt="Semarak Candrakirana">
+          <img src="{{ asset('images/sponsor/SIPACOM.png') }}" class="h-5 sm:h-7 w-auto object-contain" alt="SIPA Community">
+          <img src="{{ asset('images/sponsor/MANGKUNEGARAN.png') }}" class="h-6 sm:h-8 w-auto object-contain" alt="Pura Mangkunegaran">
+          <img src="{{ asset('images/sponsor/PEMERINTAHKOTASURAKARTA.png') }}" class="h-6 sm:h-8 w-auto object-contain" alt="Pemkot Surakarta">
+        </div>
+
       </div>
-    </div>
 
-    <div class="container text-center mb-5">
-        <h2 class="fw-bold mb-4" style="color: #B8141E;">RECAP SIPA FESTIVAL</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="ratio rounded-5 overflow-hidden" style="--bs-aspect-ratio: 125%;">
-                    <iframe src="https://www.instagram.com/p/DONyUxLDx2i/embed/?hidecaption=true" title="Instagram post 1" allowfullscreen loading="lazy"></iframe>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="ratio rounded-5 overflow-hidden" style="--bs-aspect-ratio: 125%;">
-                    <iframe src="https://www.instagram.com/p/DOQgAz-D6EA/embed/?hidecaption=true" title="Instagram post 2" allowfullscreen loading="lazy"></iframe>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="ratio rounded-5 overflow-hidden" style="--bs-aspect-ratio: 125%;">
-                    <iframe src="https://www.instagram.com/p/DOafPnRj-v_/embed/?hidecaption=true" title="Instagram post 3" allowfullscreen loading="lazy"></iframe>
-                </div>
-            </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- EDITION STORY & THEME NARRATIVE                           -->
+    <!-- ========================================================= -->
+    <section class="relative max-w-[1140px] mx-auto px-6 sm:px-10 py-16 sm:py-24 z-20">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-6 sm:p-10 lg:p-12 backdrop-blur-md">
+        
+        <div class="lg:col-span-7 space-y-5">
+          <div class="flex items-center gap-2 text-[#f19500] text-xs font-bold uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-[#f19500]"></span>
+            <span>Tema & Filosofi Edisi</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-cabinet font-bold text-white tracking-tight leading-snug">
+            SIPA Festival 2025
+          </h2>
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-cabinet text-justify">
+            The Solo International Performing Arts (SIPA) Festival 2025 carries the theme <em>"Nifty, Artful, & Visionary,"</em> which means young, artistic, and visionary. This theme invites the younger generation, especially Generation Z, to reward themselves with cool creativity, intelligence, and visionary future planning.
+          </p>
+          <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-cabinet text-justify">
+            Amidst the rapid changes in the world, SIPA 2025 serves as an open space for expression, exploration, and cross-disciplinary dialogue. Painting, music, dance, theater, and even digital and experimental art all have their place and value to be celebrated together.
+          </p>
         </div>
-    </div>
-    <div class="flipbook-embed-container">
-      <iframe src="https://heyzine.com/flip-book/04d91f5e97.html#page/10"
-              width="100%"
-              height="100%"
-              frameborder="0"
-              allowfullscreen>
-      </iframe>
-    </div>
 
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm rounded-[24px] overflow-hidden border border-white/15 shadow-2xl group">
+            <img src="{{ asset('images/maskot/2025.webp') }}" class="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Maskot SIPA 2025">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-4 text-center">
+              <span class="text-xs text-white/90 font-medium">Maskot Resmi SIPA 2025</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- TEASER & AFTERMOVIE SECTION                               -->
+    <!-- ========================================================= -->
+    <section class="relative max-w-[1140px] mx-auto px-6 sm:px-10 pb-16 z-20">
+      
+      <div class="text-center mb-10">
+        <span class="text-[#f19500] text-xs font-bold uppercase tracking-widest block mb-2">Dokumentasi Audio Visual</span>
+        <h2 class="text-2xl sm:text-3xl font-cabinet font-bold text-white tracking-tight">
+          After Movie & Teaser SIPA 2025
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Video 1: Teaser -->
+        <div class="bg-white/5 border border-white/10 rounded-[28px] p-4 sm:p-6 backdrop-blur-md flex flex-col items-center">
+          <h3 class="text-base font-semibold text-white mb-4">Teaser SIPA Festival 2025</h3>
+          <div class="w-full aspect-video rounded-[20px] overflow-hidden bg-black/60 shadow-xl">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/eOg3baFV5q8" title="Teaser SIPA 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Video 2: Aftermovie / Instagram Reel -->
+        <div class="bg-white/5 border border-white/10 rounded-[28px] p-4 sm:p-6 backdrop-blur-md flex flex-col items-center">
+          <h3 class="text-base font-semibold text-white mb-4">Aftermovie Official SIPA 2025</h3>
+          <div class="w-full aspect-video rounded-[20px] overflow-hidden bg-black/60 shadow-xl">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/eOg3baFV5q8" title="After Movie SIPA 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- PHOTO DOCUMENTATION GALLERY GRID                          -->
+    <!-- ========================================================= -->
     @php
-      $delegatesImagesIN = [
-              'Khambatta Dance Company.jpg',
-              'PARRA.DICE.jpg',
-              'Sanggar Kirana.jpg',
-              'SNU.jpg',
-              'Colectivo Glovo.jpg',
-              'Dongbaek.jpg',
-              'POD Dance.jpg',
-              'Kolaborasi SxI.png',
-              'Kolaborasi.jpg',       
+      $galleryImages = [
+        'panggung (1).jpg',
+        'panggung (2).jpg',
+        'venue (1).jpg',
+        'venue (2).jpg',
+        'crowd (4).jpg',
+        'crowd (1).jpg',
+        'crowd (3).jpg',
+        'crowd (5).jpg',
+        'penonton (1).jpg',
+        'penonton (2).jpg',
+        'bazzar (1).jpg',
+        'bazzar (2).jpg',
+        'panitia (1).jpg',
+        'panitia (2).jpg',
+        'panitia (3).jpg',
+        'panitia (4).jpg',
       ];
-      @endphp
-      @php
-      $delegatesImages = [
-              'Noizekilla.jpg',
-              'Samohung.png',
-              'Sanggar Seni Lepas.jpg',
-              'Congwayndut.png',
-              'Darryl Simeon.JPG',
-              'Duo Etnicholic.jpg',
-              'Rentak Gading Etcnic Bengkulu.jpg',
-              'Kemantren Langenpraja Pura Mangkunegaran.JPG',
-              'SCK1.png',
-      ];
-      @endphp
-      <style>
-      .uniform-gallery-image {
-          width: 100%;
-          aspect-ratio: 16 / 10 ; 
-          object-fit: cover;
-      }
-      </style>
-    <div class="container my-5">
-        <div class="arc-section mb-5 text-center">
-            <h2 class="fw-bold" style="color: #B8141E;">LINE UP</h2>
-            <h4 class="fw" style="color: #000000ff;">INTERNATIONAL DELEGATION</h4>
-        </div>
-        <div class="row justify-content-center text-center">
-            @foreach ($delegatesImagesIN as $index => $delINTER)
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('images/delegates/' . $delINTER) }}" 
-                            class="img-fluid custom-rounded uniform-gallery-image" alt="Foto Dokumentasi {{ $index + 1 }}">
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <div class="arc-section mb-5 text-center">
-            <h4 class="fw" style="color: #000000ff;">INDONESIA DELEGATION</h4>
-        </div>
-        <div class="row justify-content-center text-center">
-            @foreach ($delegatesImages as $index => $delIN)
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('images/delegates/' . $delIN) }}" 
-                            class="img-fluid custom-rounded uniform-gallery-image" alt="Foto Dokumentasi {{ $index + 1 }}">
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-    
-
-    
-
-    @php
-        $galleryImages = [
-            'panggung (1).jpg',
-            'panggung (2).jpg',
-            'venue (1).jpg',
-            'venue (2).jpg',
-            'crowd (4).jpg',
-            'crowd (1).jpg',
-            'crowd (3).jpg',
-            'crowd (5).jpg',
-            'penonton (1).jpg',
-            'penonton (2).jpg',
-            'bazzar (1).jpg',
-            'bazzar (2).jpg',
-            'panitia (1).jpg',
-            'panitia (2).jpg',
-            'panitia (3).jpg',
-            'panitia (4).jpg',];
     @endphp
-    <div class="container my-5">
-        <div class="arc-section mb-5 text-center">
-            <h2 class="fw-bold" style="color: #B8141E;">DOKUMENTASI</h2>
+
+    <section class="relative max-w-[1240px] mx-auto px-6 sm:px-10 pb-24 z-20">
+      
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+        <div>
+          <span class="text-[#f19500] text-xs font-bold uppercase tracking-widest block mb-1">Momen Panggung & Suasana</span>
+          <h2 class="text-2xl sm:text-3xl font-cabinet font-bold text-white tracking-tight">
+            Dokumentasi Foto 2025
+          </h2>
         </div>
-        <div class="row justify-content-center text-center">
-            @foreach ($galleryImages as $index => $imageName)
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('images/gallery/2025/' . $imageName) }}" 
-                            class="img-fluid custom-rounded" 
-                            alt="Foto Dokumentasi {{ $index + 1 }}">
-                    </div>
-                </div>
-            @endforeach
-        </div>
+        <span class="text-xs text-gray-400 font-medium">{{ count($galleryImages) }} Foto Arsip</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 photo-grid">
+        @foreach ($galleryImages as $index => $imageName)
+          <div class="group relative rounded-[20px] overflow-hidden bg-[#18161c] h-[220px] sm:h-[260px] shadow-xl border border-white/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#f19500]/60">
+            <img src="{{ asset('images/gallery/2025/' . $imageName) }}" alt="Foto Dokumentasi SIPA 2025 {{ $index + 1 }}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 brightness-95 group-hover:brightness-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-white font-medium">SIPA 2025 #{{ $index + 1 }}</span>
+            </div>
+          </div>
+        @endforeach
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer Component -->
+  <footer class="border-t border-white/10 bg-[#0b0c10] py-10 text-center text-xs text-gray-400 relative z-20">
+    <div class="max-w-[1440px] mx-auto px-6 space-y-4">
+      <div class="flex justify-center items-center">
+        <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" class="h-8 w-auto brightness-0 invert">
+      </div>
+      <p class="max-w-md mx-auto text-gray-400">Solo International Performing Arts 2026 • Kinetic Kinship : Beyond Boundaries</p>
+      <p>&copy; {{ date('Y') }} SIPA Festival. All Rights Reserved.</p>
     </div>
+  </footer>
 
-</section>
-<x-footer />
+  <!-- GSAP Entrance Animation & Lenis Scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Initialize Lenis Smooth Scroll
+      if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true
+        });
 
-<script>
-  function openVideo() {
-  const thumbnail = document.getElementById('thumbnail');
-  const iframe = document.getElementById('videoIframe');
-  const youtubeLink = "https://www.youtube.com/embed/eOg3baFV5q8?autoplay=1"; // Autoplay enabled
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
 
-  thumbnail.style.display = 'none';
-  iframe.src = youtubeLink;
-  iframe.style.display = 'block';
-}
+      // 2. Safe Photo Grid Reveal
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-function openVideo() {
-  const thumbnail = document.getElementById('thumbnail');
-  const iframe = document.getElementById('videoIframe');
-  
-  // URL embed Instagram DENGAN parameter hidecaption
-  const instagramEmbedUrl = "https://www.instagram.com/reel/DNx3TZj3obB/embed/?hidecaption=true"; 
-
-  thumbnail.style.display = 'none';
-  iframe.src = instagramEmbedUrl; // Mengatur 'src' saat diklik
-  iframe.style.display = 'block';
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  let lastScrollTop = 0;
-  const navbar = document.querySelector('.navbar');
-  const showAreaHeight = 50; // area atas layar untuk mouseover
-
-  if (!navbar) return;
-
-  window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if(scrollTop > lastScrollTop && scrollTop > 100){
-      // scroll down → sembunyikan navbar
-      navbar.style.top = '-80px';
-    } else {
-      // scroll up → tampilkan navbar
-      navbar.style.top = '0';
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-
-  window.addEventListener('mousemove', function(e) {
-    if (e.clientY <= showAreaHeight) {
-      navbar.style.top = '0';
-    }
-  });
-});
-
-</script>
+        const photoGrid = document.querySelector('.photo-grid');
+        if (photoGrid) {
+          gsap.fromTo(photoGrid.children, 
+            { opacity: 0, y: 20 },
+            { 
+              opacity: 1, 
+              y: 0, 
+              duration: 0.6, 
+              stagger: 0.04, 
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: photoGrid,
+                start: 'top 90%',
+                toggleActions: 'play none none none'
+              }
+            }
+          );
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>

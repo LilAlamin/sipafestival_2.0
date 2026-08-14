@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400&display=swap" rel="stylesheet">
 
   <!-- Lenis & GSAP Animation Libraries -->
@@ -72,14 +72,18 @@
       font-family: 'Cabinet Grotesk', -apple-system, sans-serif !important;
     }
 
-    /* Fixed Background Stage Layer with bg_fix.png */
+    .font-script {
+      font-family: 'Alex Brush', 'Brush Script MT', cursive;
+    }
+
+    /* Fixed Background Stage Layer with background26.webp */
     .bg-layer {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-image: url("{{ asset('images/bg_fix.png') }}");
+      background-image: url("{{ asset('images/background26.webp') }}");
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -125,50 +129,124 @@
   <!-- Navbar Component 2026 -->
   <x-navbar2026 />
 
-  <!-- SECTION 1: HERO SECTION OVERLAY (Desktop Figma Match + Requested Mobile Sequence) -->
+  <!-- SECTION 1: HERO SECTION OVERLAY (Pixel-Perfect Figma Match Node 4145:2753) -->
   <section id="hero" class="relative min-h-screen flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-4 overflow-hidden">
     
-    <!-- Gondrong Gunarto Portrait (Desktop Only Absolute Bleed) -->
+    <!-- Left Theatrical Ornate Curtain Border (Figma Node 4145:2755) -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border (Figma Node 4145:2760) -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Instrument String Light Rays behind Gondrong Gunarto (Figma Node 4145:2758) -->
+    <div class="hidden lg:block absolute right-0 top-0 h-full w-[650px] xl:w-[850px] pointer-events-none z-0 opacity-45 mix-blend-screen overflow-hidden">
+      <img src="{{ asset('images/pattern/hero_gondrong_glow.svg') }}" class="w-full h-full object-cover object-right" alt="">
+    </div>
+
+    <!-- Bottom Soft Gradient Shadow for Seamless Section Transition -->
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <!-- Gondrong Gunarto Portrait (Desktop Full Bleed to Right Edge) -->
     <div class="hidden lg:flex absolute right-0 bottom-0 z-10 pointer-events-none items-end justify-end h-full">
       <img src="{{ asset('images/maskot/gondrong_gunarto.webp') }}"
            alt="Gondrong Gunarto - Solo International Performing Arts 2026 Ambassador"
            class="w-auto max-w-none h-[88vh] object-contain object-right-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]">
     </div>
 
+    <!-- Ambassador SIPA 2026 Badge Overlay (Desktop Placement Matching Figma Node 4145:3893) -->
+    <div class="hidden lg:block absolute right-12 lg:right-28 bottom-28 z-20 text-left pointer-events-none">
+      <span class="text-sm lg:text-[15px] font-normal tracking-wide text-gray-200 font-cabinet block">Ambassador SIPA 2026:</span>
+      <h4 class="text-3xl lg:text-[38px] font-sipa-bold font-bold text-white tracking-wide hero-title-glow mt-1">Gondrong Gunarto</h4>
+    </div>
+
     <!-- Main Hero Container -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-16 w-full my-auto z-20 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
       
-      <!-- Left Column / Mobile Sequence Container -->
-      <div class="lg:col-span-7 flex flex-col items-center lg:items-start justify-center space-y-3 sm:space-y-5 text-center lg:text-left py-0">
+      <!-- Left Column Content Lockup (Shifted left on desktop, perfectly centered internally) -->
+      <div class="lg:col-span-6 flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center py-0 lg:-ml-12 xl:-ml-20">
         
         <!-- 1. Logo Putih Artwork (Top) -->
-        <div class="w-full flex justify-center lg:justify-start -ml-0 sm:-ml-8 lg:-ml-28 -mt-0 sm:-mt-6 lg:-mt-24">
+        <div class="w-full flex justify-center -mt-0 sm:-mt-6 lg:-mt-10">
           <img src="{{ asset('images/logo_putih.png') }}"
                alt="Solo International Performing Arts — Kinetic Kinship : Beyond Boundaries"
-               class="w-full max-w-[310px] sm:max-w-[500px] lg:max-w-[660px] h-auto object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">
+               class="w-full max-w-[310px] sm:max-w-[480px] lg:max-w-[560px] xl:max-w-[600px] h-auto object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.45)]">
         </div>
 
-        <!-- 2. Gondrong Gunarto Mascot Image (Mobile Only: Under Logo, Above Text) -->
+        <!-- 2. Gondrong Gunarto Mascot Image (Mobile Only) -->
         <div class="block lg:hidden w-full my-1 flex justify-center items-center">
           <img src="{{ asset('images/maskot/gondrong_gunarto.webp') }}"
                alt="Gondrong Gunarto Ambassador"
-               class="h-[36vh] sm:h-[48vh] w-auto object-contain mx-auto drop-shadow-[0_15px_45px_rgba(0,0,0,0.95)]">
+               class="h-[34vh] sm:h-[44vh] w-auto object-contain mx-auto drop-shadow-[0_15px_45px_rgba(0,0,0,0.95)]">
         </div>
 
-        <!-- 3. Description Paragraph (Exact Figma Node 4082:9121 Match - Adjusted Offset) -->
-        <p class="text-white font-medium text-sm sm:text-base leading-[1.35] sm:leading-[1.2] max-w-[580px] lg:max-w-[640px] text-center mx-auto lg:mx-0 lg:-ml-16 mt-3 sm:mt-6 lg:mt-8 px-2 sm:px-0 tracking-normal">
-          Where movement connects us, and differences become a force for creation,<br class="hidden sm:inline">
-          together through the universal language of performance.
+        <!-- Mobile Ambassador Badge (Under Mobile Image) -->
+        <div class="block lg:hidden text-center my-1">
+          <span class="text-xs font-normal text-gray-300 font-cabinet">Ambassador SIPA 2026:</span>
+          <h4 class="text-xl font-sipa-bold font-bold text-white hero-title-glow">Gondrong Gunarto</h4>
+        </div>
+
+        <!-- Countdown Timer Component (Counting down to 10 September 2026) -->
+        <div id="hero-countdown" class="w-full flex justify-center items-center pt-2 sm:pt-3">
+          <div class="inline-flex items-center gap-2 sm:gap-3 bg-black/40 backdrop-blur-md border border-white/15 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-2xl sm:rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
+            
+            <!-- Days -->
+            <div class="flex flex-col items-center min-w-[38px] sm:min-w-[46px]">
+              <span id="countdown-days" class="text-lg sm:text-2xl lg:text-[26px] font-bold font-cabinet text-white leading-none hero-title-glow">00</span>
+              <span class="text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-gray-400 mt-0.5 font-cabinet">Hari</span>
+            </div>
+            
+            <span class="text-gray-500 font-bold text-sm sm:text-base mb-2">:</span>
+
+            <!-- Hours -->
+            <div class="flex flex-col items-center min-w-[38px] sm:min-w-[46px]">
+              <span id="countdown-hours" class="text-lg sm:text-2xl lg:text-[26px] font-bold font-cabinet text-white leading-none hero-title-glow">00</span>
+              <span class="text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-gray-400 mt-0.5 font-cabinet">Jam</span>
+            </div>
+
+            <span class="text-gray-500 font-bold text-sm sm:text-base mb-2">:</span>
+
+            <!-- Minutes -->
+            <div class="flex flex-col items-center min-w-[38px] sm:min-w-[46px]">
+              <span id="countdown-minutes" class="text-lg sm:text-2xl lg:text-[26px] font-bold font-cabinet text-white leading-none hero-title-glow">00</span>
+              <span class="text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-gray-400 mt-0.5 font-cabinet">Menit</span>
+            </div>
+
+            <span class="text-gray-500 font-bold text-sm sm:text-base mb-2">:</span>
+
+            <!-- Seconds -->
+            <div class="flex flex-col items-center min-w-[38px] sm:min-w-[46px]">
+              <span id="countdown-seconds" class="text-lg sm:text-2xl lg:text-[26px] font-bold font-cabinet text-[#e63946] leading-none drop-shadow-[0_0_15px_rgba(230,57,70,0.6)]">00</span>
+              <span class="text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-gray-400 mt-0.5 font-cabinet">Detik</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. Festival Date (Matching Figma Node 4145:3899 - Centered) -->
+        <div class="w-full flex justify-center pt-1 sm:pt-2">
+          <h3 class="font-sipa-bold text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-white tracking-wide hero-title-glow text-center">
+            10-12 September 2026
+          </h3>
+        </div>
+
+        <!-- 4. Description Paragraph (Matching Figma Node 4145:3898 - 2 Lines) -->
+        <p class="text-white/95 font-normal text-sm sm:text-[15px] lg:text-base leading-[1.45] sm:leading-[1.4] max-w-[620px] sm:max-w-[680px] lg:max-w-[720px] text-center mx-auto px-2 sm:px-4 tracking-normal">
+          Where movement connects us, and differences become a force for creation, together<br class="hidden sm:inline">
+          through the universal language of performance.
         </p>
 
       </div>
 
       <!-- Right Column Spacer (Desktop Only) -->
-      <div class="hidden lg:block lg:col-span-5"></div>
+      <div class="hidden lg:block lg:col-span-6"></div>
 
     </div>
 
-    <!-- 4. Sponsor Logos Strip (Bottom) -->
+    <!-- 5. Sponsor Logos Strip (Bottom) (Matching Figma Node 4145:2896) -->
     <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-16 z-20 pt-2 pb-4 sm:pb-8 flex justify-center items-center">
       <img src="{{ asset('images/sponsor/sponsor_strip_hero.png') }}"
            alt="SIPA 2026 Official Sponsors & Media Partners"
@@ -176,58 +254,503 @@
     </div>
   </section>
 
-  <!-- SECTION: MEET OUR AMBASSADOR (100% Figma Node 4116:321 Pixel-Perfect Match) -->
-  <section id="ambassador" class="relative py-20 lg:py-28 bg-[#0a120e] bg-cover bg-center z-10 border-t border-white/10" style="background-image: url('{{ asset('images/ambassador/ambassador_bg.jpg') }}');">
-    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
-    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
-    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
+  <!-- SECTION: TEASER / FESTIVAL VIDEO SECTION (Pixel-Perfect Figma Match Node 4145:1328) -->
+  <section id="teaser-video" class="relative py-16 sm:py-24 lg:py-28 bg-[#0b0c10] z-10 overflow-hidden">
+    
+    <!-- Ambient Background Stage Lighting & Atmospheric Glow -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b0c10] via-[#120a10]/50 to-[#0b0c10] pointer-events-none z-0"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[800px] lg:w-[1000px] h-[300px] sm:h-[450px] bg-[#e63946]/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
 
-    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-10 flex flex-col items-center">
       
-      <!-- Section Header Lockup -->
-      <div class="max-w-3xl mx-auto space-y-2 mb-12 sm:mb-16">
-        <span class="text-base sm:text-lg font-normal tracking-wide text-gray-200 font-cabinet block">Meet our Ambassador</span>
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-sipa-bold font-bold text-white tracking-tight">“Gondrong” Gunarto</h2>
+      <!-- Section Title Lockup (Matching Figma Node 4145:3907) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-4xl lg:text-[40px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          A Festival That Moves
+        </h2>
+        <span class="text-3xl sm:text-5xl lg:text-[48px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          Beyond Boundaries
+        </span>
       </div>
 
-      <!-- 3-Photo Showcase Cards Layout (Pixel-Perfect Figma Match) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center max-w-[1100px] mx-auto mb-12 sm:mb-16">
-        
-        <!-- Left Photo Card: Vespa & Kecapi (Figma Node 4085-9303) -->
-        <div class="relative rounded-[22px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] h-[400px] sm:h-[460px] border border-white/10 group transition-transform duration-500 hover:scale-[1.02]">
-          <img src="{{ asset('images/ambassador/card1.png') }}" 
-               alt="Gondrong Gunarto with Vespa and Kecapi" 
-               class="w-full h-full object-cover">
-        </div>
-
-        <!-- Center Photo Card (Taller & Spotlight Highlighted): Djembe Drum (Figma Node 4085-9301) -->
-        <div class="relative rounded-[22px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.9)] h-[450px] sm:h-[530px] border border-white/15 group transition-transform duration-500 hover:scale-[1.02]">
-          <img src="{{ asset('images/ambassador/card2.png') }}" 
-               alt="Gondrong Gunarto Spotlight Djembe" 
-               class="w-full h-full object-cover">
-        </div>
-
-        <!-- Right Photo Card: Vespa & Drum (Figma Node 4085-9302) -->
-        <div class="relative rounded-[22px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] h-[400px] sm:h-[460px] border border-white/10 group transition-transform duration-500 hover:scale-[1.02]">
-          <img src="{{ asset('images/ambassador/card3.png') }}" 
-               alt="Gondrong Gunarto Vespa Performance" 
-               class="w-full h-full object-cover">
-        </div>
-
+      <!-- YouTube Video Embed Frame Box (Matching Figma Node 4145:3908) -->
+      <div class="w-full relative aspect-video rounded-[16px] sm:rounded-[24px] overflow-hidden border border-white/15 shadow-[0_25px_70px_rgba(0,0,0,0.9)] bg-black group">
+        <iframe 
+          class="w-full h-full object-cover rounded-[16px] sm:rounded-[24px]"
+          src="https://www.youtube-nocookie.com/embed/zH0uYvN35sM?rel=0&modestbranding=1" 
+          title="Solo International Performing Arts 2026 Official Teaser" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <!-- Description Paragraph (Centered below cards - Exact Figma Text) -->
-      <div class="max-w-[860px] mx-auto text-center px-4">
-        <p class="text-gray-200/90 text-sm sm:text-base lg:text-[16.5px] font-normal leading-[1.75] tracking-wide">
-          Rooted in the rich heritage of Javanese gamelan while boldly exploring cultural boundaries, his distinctive artistic instinct continues to create powerful and inspiring works for today's generation. As SIPA's ambassador, his role extends beyond representing the festival. His presence embodies SIPA's spirit of inclusive collaboration, artistic courage, and boundless creativity.
+      <!-- Description Paragraph (Matching Figma Node 4145:3912) -->
+      <div class="max-w-[840px] mx-auto text-center mt-8 sm:mt-10">
+        <p class="font-cabinet text-gray-200/90 text-sm sm:text-lg lg:text-[20px] font-normal leading-[1.6] sm:leading-[1.5] tracking-normal">
+          Step into a world where music, movement, and culture meet.<br class="hidden sm:inline">
+          Experience the spirit of SIPA through the moments that bring us closer together.
         </p>
       </div>
 
     </div>
   </section>
 
+  <!-- SECTION: THEME LOCKUP SECTION (100% Pixel-Perfect Figma Match Node 4145:3914) -->
+  <section id="theme-showcase" class="relative min-h-screen w-full bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden flex flex-col justify-center items-center py-16 sm:py-20" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border (Figma Node 4145:3925) -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border (Figma Node 4145:3926) -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Full-Width Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <!-- Center Content Lockup -->
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-20 flex flex-col items-center justify-center space-y-8 sm:space-y-12 my-auto">
+      
+      <!-- Section Title Lockup (Matching Figma Node 4145:4060) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+        <h2 class="text-2xl sm:text-4xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          A Festival That Moves
+        </h2>
+        <span class="text-3xl sm:text-5xl lg:text-[44px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          Beyond Boundaries
+        </span>
+      </div>
+
+      <!-- Main Glowing Theme Artwork Lockup (Matching Figma Node 4145:4059) -->
+      <div class="w-full flex justify-center items-center">
+        <img src="{{ asset('images/logo_putih.png') }}"
+             alt="Solo International Performing Arts — Kinetic Kinship : Beyond Boundaries"
+             class="w-full max-w-[320px] sm:max-w-[520px] lg:max-w-[580px] xl:max-w-[620px] h-auto object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.7)] transform-gpu hover:scale-[1.02] transition-transform duration-500">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: MEET OUR PERFORMERS (Pixel-Perfect Figma Node 4145:4066 Match) -->
+  <section id="lineup" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
+
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      
+      <!-- Section Title Lockup (Matching Figma Node 4145:4066) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-12 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          Meet Our
+        </h2>
+        <span class="text-4xl sm:text-5xl lg:text-[50px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          Performers
+        </span>
+      </div>
+
+      <!-- 4 Tall Rounded Performer Cards (Pixel-Perfect Figma Match) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-center max-w-[1280px] mx-auto mb-10 sm:mb-12">
+        
+        <!-- Card 1: Khambatta Dance Company -->
+        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
+          <img src="{{ asset('images/delegates/Khambatta Dance Company.jpg') }}" 
+               alt="Khambatta Dance Company" 
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+               loading="eager" 
+               decoding="async">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
+          
+          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
+            USA
+          </span>
+          
+          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
+            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Contemporary Dance</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Khambatta Dance Company</h3>
+          </div>
+        </div>
+
+        <!-- Card 2: Rentak Gading Etnic Bengkulu -->
+        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
+          <img src="{{ asset('images/delegates/Rentak Gading Etcnic Bengkulu.jpg') }}" 
+               alt="Rentak Gading Etnic" 
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+               loading="eager" 
+               decoding="async">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
+          
+          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
+            INDONESIA
+          </span>
+          
+          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
+            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Ethnic Music & Percussion</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Rentak Gading Etnic</h3>
+          </div>
+        </div>
+
+        <!-- Card 3: Colectivo Glovo -->
+        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
+          <img src="{{ asset('images/delegates/Colectivo Glovo.jpg') }}" 
+               alt="Colectivo Glovo" 
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+               loading="eager" 
+               decoding="async">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
+          
+          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
+            SPAIN
+          </span>
+          
+          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
+            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Physical Theater</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Colectivo Glovo</h3>
+          </div>
+        </div>
+
+        <!-- Card 4: POD Dance Project -->
+        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
+          <img src="{{ asset('images/delegates/POD Dance.jpg') }}" 
+               alt="POD Dance Project" 
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+               loading="eager" 
+               decoding="async">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
+          
+          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
+            SOUTH KOREA
+          </span>
+          
+          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
+            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Modern Performing Arts</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">POD Dance Project</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Carousel Controls & See All Link (Matching Figma Node 4145:4066) -->
+      <div class="max-w-[1280px] mx-auto flex items-center justify-between relative pt-2">
+        
+        <!-- Empty Spacer Left to Balance Center Alignment -->
+        <div class="w-28 hidden sm:block"></div>
+
+        <!-- Center Controls: Prev/Next Buttons + Indicator Dots -->
+        <div class="flex items-center gap-3.5 mx-auto sm:mx-0">
+          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          
+          <div class="flex items-center gap-1.5 px-1">
+            <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+          </div>
+
+          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Right Side: See All Performers Link -->
+        <a href="/lineup" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium font-cabinet text-gray-200 hover:text-white hover:underline transition-all group">
+          <span>See All Performers</span>
+          <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-0.5 transition-transform"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: MEET OUR AMBASSADOR (100% Figma Node 4145:4647 Pixel-Perfect Match) -->
+  <section id="ambassador" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border (Figma Node 4152:13936) -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/ambassador_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border (Figma Node 4152:13937) -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/ambassador_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-20 flex flex-col items-center">
+      
+      <!-- Section Header Lockup (Matching Figma Node 4145:4777) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-10 sm:mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          SIPA 2026
+        </h2>
+        <span class="text-4xl sm:text-5xl lg:text-[42px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          Ambassador
+        </span>
+      </div>
+
+      <!-- 3-Photo Showcase Layout (Matching Figma Nodes 4146:4781, 4146:4782, 4146:4783) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center justify-center max-w-[1040px] mx-auto mb-10 sm:mb-12">
+        
+        <!-- Left Photo Card: Vespa & Kecapi (Fix 1 2) -->
+        <div class="relative rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[360px] sm:h-[400px] lg:h-[420px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] transform-gpu">
+          <img src="{{ asset('images/ambassador/card1_figma.webp') }}" 
+               alt="Gondrong Gunarto with Vespa and Kecapi" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+               loading="eager"
+               decoding="async">
+        </div>
+
+        <!-- Center Photo Card (Taller Spotlight Drum Performance - Fix 3 2) -->
+        <div class="relative rounded-[20px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)] h-[410px] sm:h-[460px] lg:h-[480px] border border-white/25 group transition-all duration-500 hover:-translate-y-2 hover:border-white/50 hover:shadow-[0_30px_70px_rgba(0,0,0,1)] transform-gpu">
+          <img src="{{ asset('images/ambassador/card2_figma.webp') }}" 
+               alt="Gondrong Gunarto Spotlight Djembe" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+               loading="eager"
+               decoding="async">
+        </div>
+
+        <!-- Right Photo Card: Vespa & Drum (Fix 2 2) -->
+        <div class="relative rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[360px] sm:h-[400px] lg:h-[420px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] transform-gpu">
+          <img src="{{ asset('images/ambassador/card3_figma.webp') }}" 
+               alt="Gondrong Gunarto Vespa Performance" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+               loading="eager"
+               decoding="async">
+        </div>
+
+      </div>
+
+      <!-- Description Paragraph (Matching Figma Node 4145:4780) -->
+      <div class="max-w-[1040px] mx-auto text-center px-4">
+        <p class="font-cabinet text-gray-200/90 text-sm sm:text-base lg:text-[16px] font-normal leading-[1.6] tracking-normal">
+          Rooted in the rich heritage of Javanese gamelan while boldly exploring cultural boundaries, his distinctive artistic instinct continues to create powerful and inspiring works for today’s generation. As SIPA’s ambassador, his role extends beyond representing the festival. His presence embodies SIPA’s spirit of inclusive collaboration, artistic courage, and boundless creativity.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: SIPA STORY & AMBASSADOR HISTORY (Pixel-Perfect Figma Node 4151:8481 Match) -->
+  <section id="history-story" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
+      
+      <!-- Section Header Lockup (Matching Figma Node 4151:8485) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-10 sm:mb-14">
+        <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          Solo International Performing Arts
+        </h2>
+        <span class="text-3xl sm:text-4xl lg:text-[42px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          Story
+        </span>
+      </div>
+
+      <!-- Maskot Carousel Viewport Slider Wrapper -->
+      <div class="overflow-hidden w-full max-w-[1060px] mx-auto mb-8 sm:mb-10">
+        <div id="story-slider-track" class="flex transition-transform duration-500 ease-in-out w-full">
+          
+          <!-- SLIDE 1 (Dot 1): 2025, 2024, 2023 -->
+          <div class="w-full shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-center px-1">
+            
+            <!-- Card: 2025 -->
+            <a href="/gallery/2025" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2025.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2025" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2025</h3>
+              </div>
+            </a>
+
+            <!-- Card: 2024 -->
+            <a href="/gallery/2024" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/20 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2024.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2024" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2024</h3>
+              </div>
+            </a>
+
+            <!-- Card: 2023 -->
+            <a href="/gallery/2023" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2023.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2023" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2023</h3>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- SLIDE 2 (Dot 2): 2022, 2021, 2020 -->
+          <div class="w-full shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-center px-1">
+            
+            <!-- Card: 2022 -->
+            <a href="/gallery/2022" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2022.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2022" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2022</h3>
+              </div>
+            </a>
+
+            <!-- Card: 2021 -->
+            <a href="/gallery/2021" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2021.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2021" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2021</h3>
+              </div>
+            </a>
+
+            <!-- Card: 2020 -->
+            <a href="/gallery/2020" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2020.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2020" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2020</h3>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- SLIDE 3 (Dot 3): 2019, 2018, 2017 -->
+          <div class="w-full shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-center px-1">
+            
+            <!-- Card: 2019 -->
+            <a href="/gallery/2019" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2019.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2019" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2019</h3>
+              </div>
+            </a>
+
+            <!-- Card: 2018 -->
+            <a href="/gallery/2018" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2018.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2018" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2018</h3>
+              </div>
+            </a>
+
+            <!-- Card: 2017 -->
+            <a href="/gallery/2017" class="group relative rounded-[20px] overflow-hidden h-[240px] sm:h-[260px] border border-white/15 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/40 block transform-gpu bg-[#0a0a0a]">
+              <img src="{{ asset('images/maskot/2017.webp') }}" 
+                   alt="SIPA Ambassador Maskot 2017" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                   loading="eager"
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+              <div class="absolute bottom-5 left-5 z-20 space-y-0.5">
+                <span class="text-xs uppercase tracking-widest text-gray-300 font-cabinet font-medium block">SIPA Festival</span>
+                <h3 class="font-cabinet font-bold text-2xl sm:text-[26px] text-white leading-tight group-hover:text-[#e63946] transition-colors">2017</h3>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Row with Pagination Controls & Discover History Link (Matching Figma Node 4151:8582) -->
+      <div class="max-w-[1060px] mx-auto flex items-center justify-between pt-2">
+        
+        <!-- Left / Center Carousel Controls -->
+        <div class="flex items-center gap-3">
+          <button id="story-prev-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          
+          <div class="flex items-center gap-2 px-1">
+            <button type="button" data-story-dot="0" class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer"></button>
+            <button type="button" data-story-dot="1" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer"></button>
+            <button type="button" data-story-dot="2" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer"></button>
+          </div>
+
+          <button id="story-next-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Right Side: Discover Full History Link -->
+        <a href="/aboutus/history" class="inline-flex items-center gap-1.5 text-base sm:text-[19px] font-cabinet font-medium text-white underline hover:text-gray-200 transition-all group">
+          <span>Discover Our Full History</span>
+          <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- SECTION: FESTIVAL HIGHLIGHTS FULL-BLEED GRID SECTION -->
-  <section id="festival-showcase" class="relative w-full bg-[#0b0c10] z-10 border-t border-b border-white/10 overflow-hidden">
+  <section id="festival-showcase" class="relative w-full bg-[#0b0c10] z-10 overflow-hidden">
     
     <!-- Floating Logo Lockup Overlay (Melayang Paling Atas di Tengah Section Grid) -->
     <div class="absolute top-6 sm:top-10 lg:top-14 left-1/2 -translate-x-1/2 z-30 w-full max-w-[340px] sm:max-w-[500px] lg:max-w-[620px] px-4 text-center pointer-events-none">
@@ -302,37 +825,54 @@
 
   </section>
 
-  <!-- SECTION 5: LATEST NEWS & ARTICLES (Figma Artikel Pilihan Arunika Match) -->
-  <section id="news" class="relative py-20 lg:py-24 bg-[#0b0c10]/95 z-10 border-t border-white/10">
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-12">
+  <!-- SECTION 5: LATEST NEWS & ARTICLES (Pixel-Perfect Figma Node 4152:13848 Match) -->
+  <section id="news" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
       
-      <!-- Section Header Lockup (Exact Figma Match) -->
-      <div class="max-w-3xl mb-10 sm:mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white tracking-tight mb-3">Artikel Pilihan Arunika</h2>
-        <p class="text-gray-300/90 text-sm sm:text-base font-normal leading-relaxed max-w-2xl">
-          Kumpulan bacaan ringan tentang manfaat aromaterapi, rahasia di balik wewangian, hingga cara sederhana menciptakan suasana nyaman di rumah.
-        </p>
+      <!-- Section Header Lockup (Matching Figma Node 4152:13853) -->
+      <div class="flex flex-wrap items-center justify-start gap-x-3 gap-y-1 mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          Solo International Performing Arts
+        </h2>
+        <span class="text-3xl sm:text-4xl lg:text-[42px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          News
+        </span>
       </div>
 
       <!-- Articles Asymmetric Grid Layout (1 Large Card Left + 2 Stacked Horizontal Cards Right) -->
       @if(isset($news) && count($news) >= 3)
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch mb-8 sm:mb-10">
           
           <!-- Left Column: Featured Big Article Card (Item 1) -->
           @php $firstNews = $news[0]; @endphp
           <div class="lg:col-span-6">
-            <a href="{{ route('news.HomeView', $firstNews->slug) }}" class="group bg-white rounded-[28px] p-4 sm:p-5 flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full h-[220px] sm:h-[260px] lg:h-[270px] rounded-2xl overflow-hidden mb-4 sm:mb-5 shrink-0">
+            <a href="{{ route('news.HomeView', $firstNews->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+              <div class="w-full h-[210px] sm:h-[230px] rounded-[16px] overflow-hidden mb-3.5 shrink-0">
                 <img src="{{ asset('images/news/'.$firstNews->image_path) }}" alt="{{ $firstNews->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between px-1">
                 <div>
-                  <h3 class="text-[#1f2937] font-bold text-lg sm:text-xl md:text-2xl leading-snug tracking-tight mb-2 group-hover:text-[#5c7c33] transition-colors line-clamp-2">{{ $firstNews->title }}</h3>
-                  <p class="text-[#9ca3af] text-xs sm:text-sm font-normal mb-3 block">{{ \Carbon\Carbon::parse($firstNews->sent_at ?? now())->format('j F Y') }}</p>
-                  <p class="text-[#4b5563] text-xs sm:text-sm font-normal leading-relaxed line-clamp-3 mb-4 sm:mb-6">{!! strip_tags($firstNews->description) !!}</p>
+                  <h3 class="text-[#171717] font-cabinet font-medium text-lg sm:text-[20px] leading-snug tracking-tight mb-1.5 group-hover:text-[#406422] transition-colors line-clamp-2">{{ $firstNews->title }}</h3>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">{{ \Carbon\Carbon::parse($firstNews->sent_at ?? now())->format('j F Y') }}</p>
+                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-3 mb-4">{!! strip_tags($firstNews->description) !!}</p>
                 </div>
                 <div class="text-right mt-auto">
-                  <span class="text-[#5c7c33] group-hover:text-[#4d7c0f] text-xs sm:text-sm font-semibold inline-block transition-colors">
+                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
                     Baca Selengkapnya
                   </span>
                 </div>
@@ -341,20 +881,20 @@
           </div>
 
           <!-- Right Column: 2 Stacked Horizontal Cards (Items 2 & 3) -->
-          <div class="lg:col-span-6 flex flex-col gap-6 justify-between">
+          <div class="lg:col-span-6 flex flex-col gap-5 justify-between">
             @foreach($news->skip(1)->take(2) as $item)
-            <a href="{{ route('news.HomeView', $item->slug) }}" class="group bg-white rounded-[28px] p-4 sm:p-5 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-5 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[180px] lg:w-[200px] h-[160px] sm:h-auto rounded-2xl overflow-hidden shrink-0">
+            <a href="{{ route('news.HomeView', $item->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0">
                 <img src="{{ asset('images/news/'.$item->image_path) }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between py-1 px-1">
                 <div>
-                  <h4 class="text-[#1f2937] font-bold text-base sm:text-lg leading-snug tracking-tight mb-1.5 line-clamp-2 group-hover:text-[#5c7c33] transition-colors">{{ $item->title }}</h4>
-                  <p class="text-[#9ca3af] text-xs sm:text-sm font-normal mb-2 block">{{ \Carbon\Carbon::parse($item->sent_at ?? now())->format('j F Y') }}</p>
-                  <p class="text-[#4b5563] text-xs sm:text-sm font-normal leading-relaxed line-clamp-2 mb-3">{!! strip_tags($item->description) !!}</p>
+                  <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">{{ $item->title }}</h4>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">{{ \Carbon\Carbon::parse($item->sent_at ?? now())->format('j F Y') }}</p>
+                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">{!! strip_tags($item->description) !!}</p>
                 </div>
                 <div class="text-right mt-auto">
-                  <span class="text-[#5c7c33] group-hover:text-[#4d7c0f] text-xs sm:text-sm font-semibold inline-block transition-colors">
+                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
                     Baca Selengkapnya
                   </span>
                 </div>
@@ -366,24 +906,24 @@
         </div>
       @else
         <!-- Fallback 3 Article Layout (Exact Match with Figma Design) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch mb-8 sm:mb-10">
           
           <!-- Left Column: Featured Big Article Card -->
           <div class="lg:col-span-6">
-            <a href="/news" class="group bg-white rounded-[28px] p-4 sm:p-5 flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full h-[220px] sm:h-[260px] lg:h-[270px] rounded-2xl overflow-hidden mb-4 sm:mb-5 shrink-0">
+            <a href="{{ route('news.showAllNews') }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+              <div class="w-full h-[210px] sm:h-[230px] rounded-[16px] overflow-hidden mb-3.5 shrink-0">
                 <img src="{{ asset('images/news/art1.png') }}" alt="Mengapa Aromaterapi Lebih Dari Sekadar Wewangian?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between px-1">
                 <div>
-                  <h3 class="text-[#1f2937] font-bold text-lg sm:text-xl md:text-2xl leading-snug tracking-tight mb-2 group-hover:text-[#5c7c33] transition-colors">Mengapa Aromaterapi Lebih Dari Sekadar Wewangian?</h3>
-                  <p class="text-[#9ca3af] text-xs sm:text-sm font-normal mb-3 block">5 Mei 2025</p>
-                  <p class="text-[#4b5563] text-xs sm:text-sm font-normal leading-relaxed line-clamp-3 mb-4 sm:mb-6">
+                  <h3 class="text-[#171717] font-cabinet font-medium text-lg sm:text-[20px] leading-snug tracking-tight mb-1.5 group-hover:text-[#406422] transition-colors">Mengapa Aromaterapi Lebih Dari Sekadar Wewangian?</h3>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">5 Mei 2025</p>
+                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-3 mb-4">
                     Di balik harum lavender dan kayu cendana, ada ketenangan yang meresap ke dalam dada. Artikel ini membahas bagaimana aroma-aroma alami dapat menjadi teman sunyi dalam hari-hari...
                   </p>
                 </div>
                 <div class="text-right mt-auto">
-                  <span class="text-[#5c7c33] group-hover:text-[#4d7c0f] text-xs sm:text-sm font-semibold inline-block transition-colors">
+                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
                     Baca Selengkapnya
                   </span>
                 </div>
@@ -392,23 +932,23 @@
           </div>
 
           <!-- Right Column: 2 Stacked Horizontal Cards -->
-          <div class="lg:col-span-6 flex flex-col gap-6 justify-between">
+          <div class="lg:col-span-6 flex flex-col gap-5 justify-between">
             
             <!-- Top Right Horizontal Card -->
-            <a href="/news" class="group bg-white rounded-[28px] p-4 sm:p-5 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-5 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[180px] lg:w-[200px] h-[160px] sm:h-auto rounded-2xl overflow-hidden shrink-0">
+            <a href="{{ route('news.showAllNews') }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0">
                 <img src="{{ asset('images/news/art2.png') }}" alt="Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between py-1 px-1">
                 <div>
-                  <h4 class="text-[#1f2937] font-bold text-base sm:text-lg leading-snug tracking-tight mb-1.5 line-clamp-2 group-hover:text-[#5c7c33] transition-colors">Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami</h4>
-                  <p class="text-[#9ca3af] text-xs sm:text-sm font-normal mb-2 block">5 Mei 2025</p>
-                  <p class="text-[#4b5563] text-xs sm:text-sm font-normal leading-relaxed line-clamp-2 mb-3">
+                  <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami</h4>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">5 Mei 2025</p>
+                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">
                     Stres pekerjaan sering kali membuat pikiran riuh. Dengan sentuhan wangi citru...
                   </p>
                 </div>
                 <div class="text-right mt-auto">
-                  <span class="text-[#5c7c33] group-hover:text-[#4d7c0f] text-xs sm:text-sm font-semibold inline-block transition-colors">
+                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
                     Baca Selengkapnya
                   </span>
                 </div>
@@ -416,20 +956,20 @@
             </a>
 
             <!-- Bottom Right Horizontal Card -->
-            <a href="/news" class="group bg-white rounded-[28px] p-4 sm:p-5 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-5 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[180px] lg:w-[200px] h-[160px] sm:h-auto rounded-2xl overflow-hidden shrink-0">
+            <a href="{{ route('news.showAllNews') }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0">
                 <img src="{{ asset('images/news/art3.png') }}" alt="Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between py-1 px-1">
                 <div>
-                  <h4 class="text-[#1f2937] font-bold text-base sm:text-lg leading-snug tracking-tight mb-1.5 line-clamp-2 group-hover:text-[#5c7c33] transition-colors">Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami</h4>
-                  <p class="text-[#9ca3af] text-xs sm:text-sm font-normal mb-2 block">5 Mei 2025</p>
-                  <p class="text-[#4b5563] text-xs sm:text-sm font-normal leading-relaxed line-clamp-2 mb-3">
+                  <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami</h4>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">5 Mei 2025</p>
+                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">
                     Stres pekerjaan sering kali membuat pikiran riuh. Dengan sentuhan wangi citru...
                   </p>
                 </div>
                 <div class="text-right mt-auto">
-                  <span class="text-[#5c7c33] group-hover:text-[#4d7c0f] text-xs sm:text-sm font-semibold inline-block transition-colors">
+                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
                     Baca Selengkapnya
                   </span>
                 </div>
@@ -441,127 +981,69 @@
         </div>
       @endif
 
-    </div>
-  </section>
-
-  <!-- SECTION 4: LINE UP & PERFORMING DELEGATES (Figma Node 4119:359 Performer Section Match - 60fps Optimized) -->
-  <section id="lineup" class="relative py-24 bg-[#0b0c10] bg-cover bg-center z-10 border-t border-white/10 overflow-hidden" style="background-image: url('{{ asset('images/performer_bg.jpg') }}');">
-    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
-    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
-    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
-
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-14 gap-4">
-        <div>
-          <span class="text-xs font-bold tracking-widest text-[#e63946] uppercase font-cabinet block mb-1">PERFORMERS & DELEGATES</span>
-          <h2 class="text-3xl sm:text-5xl font-sipa-bold font-bold text-white">Line Up Seniman 2026</h2>
-        </div>
-        <a href="/lineup" class="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors shrink-0">
-          <span>Lihat Seluruh Line Up</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
-      <!-- 4 Tall Vertical Performer Cards Grid (Exact Figma Node 4119:359 Specs) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7 items-center max-w-[1200px] mx-auto">
+      <!-- Bottom Row with Pagination Controls & Discover More Link (Matching Figma Node 4152:13929) -->
+      <div class="flex items-center justify-between pt-2">
         
-        <!-- Card 1: Khambatta Dance Company -->
-        <div class="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[480px] sm:h-[540px] lg:h-[570px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Khambatta Dance Company.jpg') }}" 
-               alt="Khambatta Dance Company" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
+        <!-- Left / Center Carousel Controls -->
+        <div class="flex items-center gap-3">
+          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
           
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            USA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1.5 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Contemporary Dance</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Khambatta Dance Company</h3>
+          <div class="flex items-center gap-1.5 px-1">
+            <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
           </div>
+
+          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
         </div>
 
-        <!-- Card 2: Rentak Gading Etnic Bengkulu -->
-        <div class="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[480px] sm:h-[540px] lg:h-[570px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Rentak Gading Etcnic Bengkulu.jpg') }}" 
-               alt="Rentak Gading Etnic" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            INDONESIA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1.5 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Ethnic Music & Percussion</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Rentak Gading Etnic</h3>
-          </div>
-        </div>
-
-        <!-- Card 3: Colectivo Glovo -->
-        <div class="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[480px] sm:h-[540px] lg:h-[570px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Colectivo Glovo.jpg') }}" 
-               alt="Colectivo Glovo" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            SPAIN
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1.5 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Physical Theater</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Colectivo Glovo</h3>
-          </div>
-        </div>
-
-        <!-- Card 4: POD Dance Project -->
-        <div class="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[480px] sm:h-[540px] lg:h-[570px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/POD Dance.jpg') }}" 
-               alt="POD Dance Project" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            SOUTH KOREA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1.5 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Modern Performing Arts</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">POD Dance Project</h3>
-          </div>
-        </div>
+        <!-- Right Side: Discover More Link -->
+        <a href="{{ route('news.showAllNews') }}" class="inline-flex items-center gap-1.5 text-base sm:text-[19px] font-cabinet font-medium text-white underline hover:text-gray-200 transition-all group">
+          <span>Discover More</span>
+          <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+        </a>
 
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION: BEYOND THE STAGE / INSTAGRAM SHOWCASE (Figma Node 4081:6597 Match) -->
-  <section id="instagram-showcase" class="relative py-20 lg:py-24 bg-[#0a120e] bg-cover bg-center z-10 border-t border-white/10 overflow-hidden" style="background-image: url('{{ asset('images/ambassador/ambassador_bg.jpg') }}');">
-    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
-    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
-    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-0"></div>
 
-    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
+
+  <!-- SECTION: BEYOND THE STAGE / INSTAGRAM SHOWCASE (100% Figma Node 4146:7261 Match) -->
+  <section id="instagram-showcase" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
       
-      <!-- Section Header Lockup (Exact Figma Match) -->
+      <!-- Section Header Lockup (Matching Figma Node 4146:7261) -->
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 gap-4">
-        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white tracking-tight leading-tight">
-          Beyond the Stage, There’s a Story
-        </h2>
-        <p class="text-gray-300/90 text-sm sm:text-base font-normal leading-relaxed max-w-md">
+        <div class="flex flex-wrap items-center justify-start gap-x-3 gap-y-1">
+          <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+            Beyond the Stages, There’s a
+          </h2>
+          <span class="text-3xl sm:text-4xl lg:text-[42px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+            Story
+          </span>
+        </div>
+        <p class="font-cabinet text-gray-300/90 text-sm sm:text-base font-normal leading-relaxed max-w-md">
           Discover the moments, and connections that bring people together through movement, culture, and performance.
         </p>
       </div>
@@ -703,12 +1185,302 @@
 
       </div>
 
-      <!-- Right Bottom Link: Jelajah Instagram SIPA -->
-      <div class="flex justify-end">
-        <a href="https://www.instagram.com/sipafestival/" target="_blank" class="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-gray-200 hover:text-white transition-colors group">
-          <span>Jelajah Instagram SIPA</span>
-          <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+      <!-- Right Bottom Link: Explore Instagram (Matching Figma Node 4146:7261) -->
+      <div class="flex justify-end max-w-[1200px] mx-auto pt-2">
+        <a href="https://www.instagram.com/sipafestival/" target="_blank" class="inline-flex items-center gap-1.5 text-base sm:text-[19px] font-cabinet font-medium text-white underline hover:text-gray-200 transition-all group">
+          <span>Explore Instagram</span>
+          <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
         </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: TESTIMONIALS (What Our Audience Says - Pixel-Perfect Figma Node 4146:7546 Match) -->
+  <section id="testimonials" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
+      
+      <!-- Section Header Lockup (Matching Figma Node 4146:7550 & 4147:7880) -->
+      <div class="flex flex-col items-center text-center max-w-[1040px] mx-auto mb-10 sm:mb-14">
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mb-3">
+          <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+            What Our
+          </h2>
+          <span class="text-3xl sm:text-4xl lg:text-[42px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+            Audience
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+            Says
+          </h2>
+        </div>
+        <p class="font-cabinet text-gray-300/90 text-sm sm:text-base font-normal leading-relaxed max-w-2xl">
+          Explore heartfelt testimonials from attendees who experienced mesmerizing performances and vibrant cultural celebrations.
+        </p>
+      </div>
+
+      <!-- 3 Testimonial Cards Grid (Matching Figma Node 4147:7751 Specs) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 max-w-[1060px] mx-auto mb-8 sm:mb-10 items-stretch">
+        
+        <!-- Testimonial Card 1 -->
+        <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+          <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+            <div class="space-y-3 mb-6">
+              <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+              <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                This is a form of event that I find very enjoyable. There is a cultural exchange within it. For that, we will continue to support the implementation of SIPA in the years to come.
+              </p>
+            </div>
+            <div class="space-y-1 pt-2">
+              <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Angela Tanoesoedibjo (Indonesia)</h4>
+              <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Wamenparekraf</p>
+              <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+          <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+            <div class="space-y-3 mb-6">
+              <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+              <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                SIPA 2023 has successfully taken place over three nights, branding Solo City as a vibrant international cultural hub of performing arts festivals.
+              </p>
+            </div>
+            <div class="space-y-1 pt-2">
+              <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Puan Maharani (Indonesia)</h4>
+              <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Ketua DPR RI</p>
+              <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+          <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+            <div class="space-y-3 mb-6">
+              <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+              <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                SIPA is an art performance event that has been running for years. And SIPA is one of the pride events in the city we love.
+              </p>
+            </div>
+            <div class="space-y-1 pt-2">
+              <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">K.G.P.A.A. Mangkoenagoro X (Indonesia)</h4>
+              <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Pura Mangkunegaran</p>
+              <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row with Pagination Controls (Matching Figma Node 4146:7558) -->
+      <div class="max-w-[1060px] mx-auto flex items-center justify-center pt-2">
+        <div class="flex items-center gap-3">
+          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          
+          <div class="flex items-center gap-1.5 px-1">
+            <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+          </div>
+
+          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- SECTION: QUESTION & ANSWER / FAQ (Pixel-Perfect Figma Node 4148:8017 Match) -->
+  <section id="faq" class="relative py-20 sm:py-24 lg:py-28 bg-[#0b0c10] bg-cover bg-center z-10 overflow-hidden" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+    
+    <!-- Left Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] left-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Right Theatrical Ornate Curtain Border -->
+    <div class="absolute -top-[12%] sm:-top-[16%] -bottom-[2%] right-0 w-[160px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <!-- Top & Bottom Soft Gradient Shadows for Seamless Transition -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10] to-transparent pointer-events-none z-10"></div>
+
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
+      
+      <!-- Section Header Lockup (Matching Figma Node 4148:8025) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-10 sm:mb-14">
+        <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-cabinet font-medium text-white tracking-tight leading-tight">
+          Question &
+        </h2>
+        <span class="text-3xl sm:text-4xl lg:text-[42px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
+          Answer
+        </span>
+      </div>
+
+      <!-- FAQ Content Grid: 5 Accordions Left + Customer Service Box Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 max-w-[1060px] mx-auto items-stretch">
+        
+        <!-- Left Column: 5 Interactive Accordion Items (lg:col-span-8) -->
+        <div class="lg:col-span-8 flex flex-col gap-3 sm:gap-3.5">
+          
+          <!-- Accordion Item 1 -->
+          <div class="faq-item bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-2.5 sm:p-3 shadow-lg transition-all">
+            <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-3.5 sm:p-4">
+              <button type="button" class="faq-toggle w-full flex items-center justify-between gap-3 text-left cursor-pointer">
+                <span class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] lg:text-[20px] leading-snug">
+                  Kapan dan di mana SIPA Festival 2026 diselenggarakan?
+                </span>
+                <i class="faq-icon fa-solid fa-chevron-down text-sm text-[#171717] transition-transform duration-300 shrink-0"></i>
+              </button>
+              <div class="faq-answer hidden pt-3 mt-3 border-t border-[#d4d4d4]/60">
+                <p class="font-cabinet font-normal text-[#171717]/90 text-xs sm:text-[15px] leading-relaxed">
+                  SIPA 2026 diselenggarakan pada tanggal 10, 11, dan 12 September 2026 di Pamedan Pura Mangkunegaran, Solo, Jawa Tengah mulai pukul 19.00 WIB.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="faq-item bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-2.5 sm:p-3 shadow-lg transition-all">
+            <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-3.5 sm:p-4">
+              <button type="button" class="faq-toggle w-full flex items-center justify-between gap-3 text-left cursor-pointer">
+                <span class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] lg:text-[20px] leading-snug">
+                  Apakah tiket masuk ke pertunjukan SIPA Festival gratis?
+                </span>
+                <i class="faq-icon fa-solid fa-chevron-down text-sm text-[#171717] transition-transform duration-300 shrink-0"></i>
+              </button>
+              <div class="faq-answer hidden pt-3 mt-3 border-t border-[#d4d4d4]/60">
+                <p class="font-cabinet font-normal text-[#171717]/90 text-xs sm:text-[15px] leading-relaxed">
+                  Ya! Masuk ke panggung pertunjukan SIPA Festival tidak dipungut biaya tiket (Gratis). Seluruh masyarakat dan wisatawan dapat hadir dan menikmati seni pertunjukan internasional ini.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="faq-item bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-2.5 sm:p-3 shadow-lg transition-all">
+            <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-3.5 sm:p-4">
+              <button type="button" class="faq-toggle w-full flex items-center justify-between gap-3 text-left cursor-pointer">
+                <span class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] lg:text-[20px] leading-snug">
+                  Siapa saja delegasi seni yang tampil di SIPA 2026?
+                </span>
+                <i class="faq-icon fa-solid fa-chevron-down text-sm text-[#171717] transition-transform duration-300 shrink-0"></i>
+              </button>
+              <div class="faq-answer hidden pt-3 mt-3 border-t border-[#d4d4d4]/60">
+                <p class="font-cabinet font-normal text-[#171717]/90 text-xs sm:text-[15px] leading-relaxed">
+                  SIPA 2026 menghadirkan delegasi seni tari, musik, teater dari nusantara dan mancanegara termasuk Malaysia, Taiwan, Jepang, Korea Selatan, Australia, serta seniman-seniman terbaik Indonesia.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div class="faq-item bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-2.5 sm:p-3 shadow-lg transition-all">
+            <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-3.5 sm:p-4">
+              <button type="button" class="faq-toggle w-full flex items-center justify-between gap-3 text-left cursor-pointer">
+                <span class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] lg:text-[20px] leading-snug">
+                  Bagaimana cara mendaftar sebagai Volunteer atau Mitra SIPA?
+                </span>
+                <i class="faq-icon fa-solid fa-chevron-down text-sm text-[#171717] transition-transform duration-300 shrink-0"></i>
+              </button>
+              <div class="faq-answer hidden pt-3 mt-3 border-t border-[#d4d4d4]/60">
+                <p class="font-cabinet font-normal text-[#171717]/90 text-xs sm:text-[15px] leading-relaxed">
+                  Pendaftaran relawan (SIPAfam) dan kolaborasi partnership dibuka secara berkala. Ikuti perkembangan terbarunya di website ini atau melalui Instagram resmi kami @sipafestival.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 5 -->
+          <div class="faq-item bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-2.5 sm:p-3 shadow-lg transition-all">
+            <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-3.5 sm:p-4">
+              <button type="button" class="faq-toggle w-full flex items-center justify-between gap-3 text-left cursor-pointer">
+                <span class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] lg:text-[20px] leading-snug">
+                  Apakah tersedia area UMKM dan merchandise resmi di venue?
+                </span>
+                <i class="faq-icon fa-solid fa-chevron-down text-sm text-[#171717] transition-transform duration-300 shrink-0"></i>
+              </button>
+              <div class="faq-answer hidden pt-3 mt-3 border-t border-[#d4d4d4]/60">
+                <p class="font-cabinet font-normal text-[#171717]/90 text-xs sm:text-[15px] leading-relaxed">
+                  Tentu saja! Di area venue tersedia stan merchandise resmi SIPA 2026 serta SIPA Night Market yang memamerkan aneka kuliner khas dan produk kreatif lokal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Customer Service Card Box (lg:col-span-4) -->
+        <div class="lg:col-span-4 flex flex-col">
+          <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-2.5 sm:p-3 shadow-xl h-full flex flex-col">
+            <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-6 sm:p-8 flex flex-col items-center justify-between text-center h-full min-h-[380px]">
+              
+              <!-- Headset Icon & Text Content -->
+              <div class="flex flex-col items-center">
+                <img src="{{ asset('images/pattern/customer_service_headset.svg') }}" class="w-16 h-16 sm:w-20 sm:h-20 mb-5" alt="Customer Service">
+                <h3 class="font-cabinet font-medium text-[#171717] text-lg sm:text-[20px] lg:text-[22px] leading-snug mb-2">
+                  Pertanyaan Belum Terjawab?
+                </h3>
+                <p class="font-cabinet font-normal text-[#171717]/80 text-xs sm:text-[15px] leading-relaxed max-w-[240px]">
+                  Masih ada yang ingin ditanyakan? Kami dengan senang hati membantu.
+                </p>
+              </div>
+
+              <!-- Customer Service Button (Matching Figma Lime Pill Button) -->
+              <div class="w-full pt-6">
+                <a href="https://wa.me/6281234567890" target="_blank" class="w-full bg-[#406422] hover:bg-[#2d4718] text-white font-cabinet font-medium py-3 px-5 rounded-xl shadow-lg transition-all duration-300 text-center text-sm sm:text-base flex items-center justify-center gap-2 group">
+                  <span>Customer Service</span>
+                  <i class="fa-solid fa-headset text-sm group-hover:scale-110 transition-transform"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -749,25 +1521,16 @@
 
       // 3. Play Hero Animation Function
       const playHeroAnimation = () => {
-        const heroTl = gsap.timeline();
-        heroTl.from('#hero h1', {
-          opacity: 0,
-          y: 40,
-          duration: 1,
-          ease: 'power3.out'
-        })
-        .from('#hero p', {
-          opacity: 0,
-          y: 25,
-          duration: 0.8,
-          ease: 'power3.out'
-        }, '-=0.5')
-        .from('#hero .flex.gap-4', {
-          opacity: 0,
-          y: 20,
-          duration: 0.8,
-          ease: 'power3.out'
-        }, '-=0.4');
+        const heroItems = document.querySelectorAll('#hero .lg\\:col-span-6 > div, #hero .lg\\:col-span-6 > p, #hero .lg\\:col-span-6 > h3');
+        if (heroItems.length > 0) {
+          gsap.from(heroItems, {
+            opacity: 0,
+            y: 30,
+            stagger: 0.12,
+            duration: 0.8,
+            ease: 'power3.out'
+          });
+        }
       };
 
       // 4. GSAP Animated Splash Screen Timeline
@@ -840,11 +1603,137 @@
       };
 
       // Apply safe reveals to all sections
+      animateSection('#teaser-video > div');
+      animateSection('#theme-showcase > div');
       animateSection('#ambassador .grid > div');
+      animateSection('#history-story .grid > a');
       animateSection('#festival-showcase .grid > div');
       animateSection('#news .grid > div');
       animateSection('#lineup .grid > div');
       animateSection('#instagram-showcase .grid > div');
+      animateSection('#testimonials .grid > div');
+      animateSection('#faq .grid > div');
+
+      // 6. Countdown Timer Logic (Target: 10 September 2026 19:00:00 WIB)
+      const initCountdown = () => {
+        const targetDate = new Date('2026-09-10T19:00:00+07:00').getTime();
+        const daysEl = document.getElementById('countdown-days');
+        const hoursEl = document.getElementById('countdown-hours');
+        const minutesEl = document.getElementById('countdown-minutes');
+        const secondsEl = document.getElementById('countdown-seconds');
+
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+        const updateCountdown = () => {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          if (distance <= 0) {
+            daysEl.textContent = '00';
+            hoursEl.textContent = '00';
+            minutesEl.textContent = '00';
+            secondsEl.textContent = '00';
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          daysEl.textContent = String(days).padStart(2, '0');
+          hoursEl.textContent = String(hours).padStart(2, '0');
+          minutesEl.textContent = String(minutes).padStart(2, '0');
+          secondsEl.textContent = String(seconds).padStart(2, '0');
+        };
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      };
+
+      initCountdown();
+
+      // 7. SIPA Story & Maskot History Carousel Logic (GSAP Cinematic Stagger & Slide Transition)
+      const initStoryCarousel = () => {
+        let currentPage = 0;
+        const totalPages = 3;
+        const track = document.getElementById('story-slider-track');
+        const prevBtn = document.getElementById('story-prev-btn');
+        const nextBtn = document.getElementById('story-next-btn');
+        const dots = document.querySelectorAll('[data-story-dot]');
+
+        if (!track || !prevBtn || !nextBtn || dots.length === 0) return;
+
+        const updateSlider = (page) => {
+          currentPage = (page + totalPages) % totalPages;
+          
+          // GSAP smooth slide animation with cubic easing
+          gsap.to(track, {
+            xPercent: -currentPage * 100,
+            duration: 0.75,
+            ease: 'power3.out'
+          });
+
+          // Soft micro-stagger on the newly visible cards
+          const activeSlide = track.children[currentPage];
+          if (activeSlide) {
+            const cards = activeSlide.querySelectorAll('a');
+            gsap.fromTo(cards, 
+              { opacity: 0.35, y: 20, scale: 0.96 },
+              { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.08, ease: 'power2.out' }
+            );
+          }
+          
+          dots.forEach((dot, idx) => {
+            if (idx === currentPage) {
+              dot.className = 'w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer';
+            } else {
+              dot.className = 'w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer';
+            }
+          });
+        };
+
+        prevBtn.addEventListener('click', () => updateSlider(currentPage - 1));
+        nextBtn.addEventListener('click', () => updateSlider(currentPage + 1));
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => updateSlider(idx));
+        });
+      };
+
+      initStoryCarousel();
+
+      // 8. Interactive FAQ Accordion Logic
+      const initFaqAccordion = () => {
+        const toggles = document.querySelectorAll('.faq-toggle');
+        toggles.forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const item = toggle.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
+            const icon = toggle.querySelector('.faq-icon');
+            const isHidden = answer.classList.contains('hidden');
+
+            // Close other open answers for clean accordion UX
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+              }
+            });
+
+            if (isHidden) {
+              answer.classList.remove('hidden');
+              icon?.classList.add('rotate-180');
+            } else {
+              answer.classList.add('hidden');
+              icon?.classList.remove('rotate-180');
+            }
+
+            ScrollTrigger.refresh();
+          });
+        });
+      };
+
+      initFaqAccordion();
 
       // Recalculate layout heights once all images & assets finish loading
       window.addEventListener('load', () => {

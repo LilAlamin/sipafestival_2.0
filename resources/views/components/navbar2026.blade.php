@@ -52,17 +52,22 @@
       </a>
 
       <!-- About Us Dropdown -->
-      <div class="relative" data-dropdown>
-        <button type="button" class="text-base tracking-wide flex items-center gap-1.5 transition-all duration-200 py-1 border-b-2 {{ request()->is('aboutus*') ? 'border-white text-white font-medium' : 'border-transparent text-gray-300 hover:text-white' }}" data-dropdown-button>
+      <div class="relative group" data-dropdown>
+        <button type="button" class="text-base tracking-wide flex items-center gap-1.5 transition-all duration-200 py-1 border-b-2 {{ request()->is('aboutus*') ? 'border-white text-white font-medium' : 'border-transparent text-gray-300 hover:text-white' }} cursor-pointer" data-dropdown-button>
           <span>About Us</span>
+          <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-white transition-transform duration-300 shrink-0 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+          </svg>
         </button>
         
-        <div data-dropdown-menu class="absolute right-0 mt-3 w-52 rounded-lg bg-[#181920] border border-white/10 shadow-2xl py-2 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none">
-          <a href="/aboutus/director" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
-            Director Profile
+        <div data-dropdown-menu class="absolute right-0 mt-3 w-52 rounded-xl bg-[#181920] border border-white/10 shadow-2xl py-2 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none z-50 backdrop-blur-md">
+          <a href="/aboutus/director" class="flex items-center justify-between px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors {{ request()->is('aboutus/director') ? 'text-white font-semibold bg-white/5' : '' }}">
+            <span>Director Profile</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-gray-500"></i>
           </a>
-          <a href="/aboutus/history" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
-            History of SIPA
+          <a href="/aboutus/history" class="flex items-center justify-between px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors {{ request()->is('aboutus/history') ? 'text-white font-semibold bg-white/5' : '' }}">
+            <span>History of SIPA</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-gray-500"></i>
           </a>
         </div>
       </div>
@@ -73,12 +78,15 @@
       </a>
 
       <!-- Gallery -->
-      <div class="relative" data-dropdown>
-        <button type="button" class="text-base tracking-wide flex items-center gap-1.5 transition-all duration-200 py-1 border-b-2 {{ request()->is('gallery*') ? 'border-white text-white font-medium' : 'border-transparent text-gray-300 hover:text-white' }}" data-dropdown-button>
+      <div class="relative group" data-dropdown>
+        <button type="button" class="text-base tracking-wide flex items-center gap-1.5 transition-all duration-200 py-1 border-b-2 {{ request()->is('gallery*') ? 'border-white text-white font-medium' : 'border-transparent text-gray-300 hover:text-white' }} cursor-pointer" data-dropdown-button>
           <span>Gallery</span>
+          <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-white transition-transform duration-300 shrink-0 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+          </svg>
         </button>
         
-        <div data-dropdown-menu class="absolute right-0 mt-3 w-48 rounded-lg bg-[#181920] border border-white/10 shadow-2xl py-2 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none max-h-64 overflow-y-auto">
+        <div data-dropdown-menu class="absolute right-0 mt-3 w-48 rounded-xl bg-[#181920] border border-white/10 shadow-2xl py-2 transition-all duration-200 origin-top-right opacity-0 scale-95 pointer-events-none max-h-64 overflow-y-auto z-50 backdrop-blur-md">
           <a href="/gallery" class="block px-4 py-2 text-sm text-white font-medium hover:bg-white/5 transition-colors">
             All Galleries
           </a>
@@ -257,8 +265,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeAllDropdowns() {
     dropdowns.forEach(dd => {
       const menu = dd.querySelector('[data-dropdown-menu]');
+      const arrow = dd.querySelector('.dropdown-arrow');
       if (menu) {
         menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+      }
+      if (arrow) {
+        arrow.classList.remove('rotate-180');
       }
     });
   }
@@ -266,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdowns.forEach(dd => {
     const btn = dd.querySelector('[data-dropdown-button]');
     const menu = dd.querySelector('[data-dropdown-menu]');
+    const arrow = dd.querySelector('.dropdown-arrow');
 
     if (btn && menu) {
       btn.addEventListener('click', function(e) {
@@ -274,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
         closeAllDropdowns();
         if (isClosed) {
           menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+          if (arrow) arrow.classList.add('rotate-180');
         }
       });
     }
