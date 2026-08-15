@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard/export-excel', [dashboardController::class, 'exportExcel'])->name('admin.exportExcel');
     Route::get('/admin/dashboard/export-pdf', [dashboardController::class, 'exportPdf'])->name('admin.exportPdf');
 
+    Route::post('/admin/send-email/{id}', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
     Route::post('/admin/send-email', [EmailController::class, 'sendEmail'])->name('admin.sendEmail');
 
     // News Routes
