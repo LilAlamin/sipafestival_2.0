@@ -23,6 +23,7 @@
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
   <!-- Vite / Tailwind CSS -->
+  
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   <style>
