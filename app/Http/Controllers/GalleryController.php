@@ -62,6 +62,9 @@ class GalleryController extends Controller
                 $query->where('is_published', true);
             } elseif ($request->status === 'draft') {
                 $query->where('is_published', false);
+            }
+        }
+
         $galleries = $query->orderBy('year', 'desc')->get();
 
         $totalAll = Gallery::count();

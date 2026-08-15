@@ -63,56 +63,82 @@ Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('log
 Route::post('/admin/login', [loginController::class, 'login'])->name('login.submit');
 Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
+use App\Http\Controllers\UserController;
+
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin/dashboard/export-excel', [dashboardController::class, 'exportExcel'])->name('admin.exportExcel');
-    Route::get('/admin/dashboard/export-pdf', [dashboardController::class, 'exportPdf'])->name('admin.exportPdf');
+    // Dashboard & Reports
+    Route::middleware(['permission:dashboard'])->group(function () {
+        Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/admin/dashboard/export-excel', [dashboardController::class, 'exportExcel'])->name('admin.exportExcel');
+        Route::get('/admin/dashboard/export-pdf', [dashboardController::class, 'exportPdf'])->name('admin.exportPdf');
+    });
 
-    Route::post('/admin/send-email/{id}', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
-    Route::post('/admin/send-email', [EmailController::class, 'sendEmail'])->name('admin.sendEmail');
+    // News Management
+    Route::middleware(['permission:news'])->group(function () {
+        Route::get('/admin/dashboard/news', [NewsController::class, 'showNews'])->name('news.showNews');
+        Route::get('/admin/dashboard/news/makeNews', function () {
+            return view('admin.news.makeNews');
+        })->name('news.makeNews');
+        Route::post('/admin/dashboard/news/store', [NewsController::class, 'store'])->name('news.store');
+        Route::get('/admin/dashboard/news/{slug}', [NewsController::class, 'viewNewsAdmin'])->name('news.viewNewsAdmin');
+        Route::get('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'editBySlug'])->name('news.editBySlug');
+        Route::put('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'updateBySlug'])->name('news.updateBySlug');
+        Route::delete('/admin/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+        Route::post('/admin/dashboard/news/{id}/publish', [NewsController::class, 'publish'])->name('news.publish');
+    });
 
-    // News Routes
-    Route::get('/admin/dashboard/news', [NewsController::class, 'showNews'])->name('news.showNews');
-    Route::get('/admin/dashboard/news/makeNews', function () {
-        return view('admin.news.makeNews');
-    })->name('news.makeNews');
-    Route::post('/admin/dashboard/news/store', [NewsController::class, 'store'])->name('news.store');
-    Route::get('/admin/dashboard/news/{slug}', [NewsController::class, 'viewNewsAdmin'])->name('news.viewNewsAdmin');
-    Route::get('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'editBySlug'])->name('news.editBySlug');
-    Route::put('/admin/dashboard/news/edit/{slug}', [NewsController::class, 'updateBySlug'])->name('news.updateBySlug');
-    Route::delete('/admin/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
-    Route::post('/admin/dashboard/news/{id}/publish', [NewsController::class, 'publish'])->name('news.publish');
-
-    // Gallery CMS Routes
-    Route::get('/admin/dashboard/gallery', [GalleryController::class, 'adminIndex'])->name('admin.gallery.index');
-    Route::get('/admin/dashboard/gallery/create', [GalleryController::class, 'adminCreate'])->name('admin.gallery.create');
-    Route::post('/admin/dashboard/gallery', [GalleryController::class, 'adminStore'])->name('admin.gallery.store');
-    Route::get('/admin/dashboard/gallery/{id}/edit', [GalleryController::class, 'adminEdit'])->name('admin.gallery.edit');
-    Route::put('/admin/dashboard/gallery/{id}', [GalleryController::class, 'adminUpdate'])->name('admin.gallery.update');
-    Route::delete('/admin/dashboard/gallery/{id}/photo', [GalleryController::class, 'adminDeletePhoto'])->name('admin.gallery.deletePhoto');
-    Route::delete('/admin/dashboard/gallery/{id}', [GalleryController::class, 'adminDestroy'])->name('admin.gallery.destroy');
+    // Gallery CMS Management
+    Route::middleware(['permission:gallery'])->group(function () {
+        Route::get('/admin/dashboard/gallery', [GalleryController::class, 'adminIndex'])->name('admin.gallery.index');
+        Route::get('/admin/dashboard/gallery/create', [GalleryController::class, 'adminCreate'])->name('admin.gallery.create');
+        Route::post('/admin/dashboard/gallery', [GalleryController::class, 'adminStore'])->name('admin.gallery.store');
+        Route::get('/admin/dashboard/gallery/{id}/edit', [GalleryController::class, 'adminEdit'])->name('admin.gallery.edit');
+        Route::put('/admin/dashboard/gallery/{id}', [GalleryController::class, 'adminUpdate'])->name('admin.gallery.update');
+        Route::delete('/admin/dashboard/gallery/{id}/photo', [GalleryController::class, 'adminDeletePhoto'])->name('admin.gallery.deletePhoto');
+        Route::delete('/admin/dashboard/gallery/{id}', [GalleryController::class, 'adminDestroy'])->name('admin.gallery.destroy');
+    });
 
     // Homepage Content Settings
-    Route::get('/admin/dashboard/home-settings', [HomeSettingController::class, 'index'])->name('admin.homeSettings');
-    Route::post('/admin/dashboard/home-settings', [HomeSettingController::class, 'update'])->name('admin.homeSettings.update');
+    Route::middleware(['permission:home_settings'])->group(function () {
+        Route::get('/admin/dashboard/home-settings', [HomeSettingController::class, 'index'])->name('admin.homeSettings');
+        Route::post('/admin/dashboard/home-settings', [HomeSettingController::class, 'update'])->name('admin.homeSettings.update');
+    });
 
     // History E-Book & PDF Settings
-    Route::get('/admin/dashboard/history-ebook', [HistoryEbookController::class, 'index'])->name('admin.historyEbook');
-    Route::post('/admin/dashboard/history-ebook', [HistoryEbookController::class, 'update'])->name('admin.historyEbook.update');
+    Route::middleware(['permission:history_ebook'])->group(function () {
+        Route::get('/admin/dashboard/history-ebook', [HistoryEbookController::class, 'index'])->name('admin.historyEbook');
+        Route::post('/admin/dashboard/history-ebook', [HistoryEbookController::class, 'update'])->name('admin.historyEbook.update');
+    });
 
     // Performers / Line Up Management
-    Route::get('/admin/dashboard/performers', [PerformerController::class, 'index'])->name('admin.performers.index');
-    Route::get('/admin/dashboard/performers/create', [PerformerController::class, 'create'])->name('admin.performers.create');
-    Route::post('/admin/dashboard/performers', [PerformerController::class, 'store'])->name('admin.performers.store');
-    Route::get('/admin/dashboard/performers/{id}/edit', [PerformerController::class, 'edit'])->name('admin.performers.edit');
-    Route::put('/admin/dashboard/performers/{id}', [PerformerController::class, 'update'])->name('admin.performers.update');
-    Route::delete('/admin/dashboard/performers/{id}', [PerformerController::class, 'destroy'])->name('admin.performers.destroy');
+    Route::middleware(['permission:performers'])->group(function () {
+        Route::get('/admin/dashboard/performers', [PerformerController::class, 'index'])->name('admin.performers.index');
+        Route::get('/admin/dashboard/performers/create', [PerformerController::class, 'create'])->name('admin.performers.create');
+        Route::post('/admin/dashboard/performers', [PerformerController::class, 'store'])->name('admin.performers.store');
+        Route::get('/admin/dashboard/performers/{id}/edit', [PerformerController::class, 'edit'])->name('admin.performers.edit');
+        Route::put('/admin/dashboard/performers/{id}', [PerformerController::class, 'update'])->name('admin.performers.update');
+        Route::delete('/admin/dashboard/performers/{id}', [PerformerController::class, 'destroy'])->name('admin.performers.destroy');
+    });
 
-    // Feedback & Complaints Routes
-    Route::get('/admin/dashboard/complaints', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
-    Route::get('/admin/dashboard/unread', [ComplaintController::class, 'showUnreadComplaints'])->name('admin.dashboard.showUnreadComplaints');
-    Route::get('/admin/dashboard/read', [ComplaintController::class, 'showReadComplaints'])->name('admin.dashboard.showReadComplaints');
-    Route::get('/admin/dashboard/send-email/{id}', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
+    // Feedback & Complaints Management
+    Route::middleware(['permission:feedback'])->group(function () {
+        Route::get('/admin/dashboard/complaints', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
+        Route::get('/admin/dashboard/unread', [ComplaintController::class, 'showUnreadComplaints'])->name('admin.dashboard.showUnreadComplaints');
+        Route::get('/admin/dashboard/read', [ComplaintController::class, 'showReadComplaints'])->name('admin.dashboard.showReadComplaints');
+        Route::get('/admin/dashboard/send-email/{id}', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
+        Route::post('/admin/send-email/{id}', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
+        Route::post('/admin/send-email', [EmailController::class, 'sendEmail'])->name('admin.sendEmail');
+    });
+
+    // User & Access Permissions Management (Super Admin & Permitted Users)
+    Route::middleware(['permission:users'])->group(function () {
+        Route::get('/admin/dashboard/users', [UserController::class, 'index'])->name('admin.users.index');
+        Route::get('/admin/dashboard/users/create', [UserController::class, 'create'])->name('admin.users.create');
+        Route::post('/admin/dashboard/users', [UserController::class, 'store'])->name('admin.users.store');
+        Route::get('/admin/dashboard/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+        Route::put('/admin/dashboard/users/{id}', [UserController::class, 'update'])->name('admin.users.update');
+        Route::delete('/admin/dashboard/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+    });
 });
 // Route::get('/admin/dashboard/news/{id}/delete', function ($id) {
 //     $news = News::findOrFail($id);

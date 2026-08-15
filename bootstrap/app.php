@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\SetLocale::class,
 
         ]);
+
+        $middleware->alias([
+            'permission' => \App\Http\Middleware\CheckFeaturePermission::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

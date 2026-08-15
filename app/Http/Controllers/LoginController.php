@@ -22,7 +22,15 @@ class loginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
-            return redirect()->intended(route('admin.dashboard'));
+            $user = Auth::user();
+
+            if (! $user->is_active) {
+                Auth::logout();
+
+                return back()->withErrors(['email' => 'Akun Anda telah dinonaktifkan. Silakan hubungi Super Admin.'])->withInput();
+            }
+
+            return redirect()->to($user->getDefaultRedirectRoute());
         }
 
         return back()->withErrors([
