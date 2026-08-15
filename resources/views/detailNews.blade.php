@@ -77,11 +77,15 @@
       
       <!-- Hero Background Image with Atmospheric Lighting -->
       <div class="absolute inset-0">
-        @if($news->image_path)
-          <img src="{{ asset('/images/news/' . $news->image_path) }}" alt="{{ $news->title }}" class="w-full h-full object-cover object-center brightness-95 contrast-105">
-        @else
-          <img src="{{ asset('images/maskot/2024.webp') }}" alt="{{ $news->title }}" class="w-full h-full object-cover object-center brightness-95 contrast-105">
-        @endif
+        @php
+          $detailImg = (!empty($news->image_path) && file_exists(public_path('images/news/' . $news->image_path)))
+                      ? asset('/images/news/' . $news->image_path)
+                      : asset('images/news/art1.png');
+        @endphp
+        <img src="{{ $detailImg }}" 
+             onerror="this.onerror=null;this.src='{{ asset('images/news/art1.png') }}'" 
+             alt="{{ $news->title }}" 
+             class="w-full h-full object-cover object-center brightness-95 contrast-105">
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50"></div>
         <div class="absolute inset-0 bg-radial from-transparent via-black/20 to-black/70"></div>
       </div>

@@ -38,13 +38,15 @@
                         
                         <!-- Thumbnail Image -->
                         <div class="w-full sm:w-[133px] h-[92px] rounded-[6px] overflow-hidden bg-white border border-[#dee2e6] shrink-0">
-                            @if($draft->image_path)
-                                <img src="{{ asset('/images/news/' . $draft->image_path) }}" alt="{{ $draft->title }}" class="w-full h-full object-cover" />
-                            @else
-                                <div class="w-full h-full flex items-center justify-center text-gray-300">
-                                    <i class="bi bi-image text-2xl"></i>
-                                </div>
-                            @endif
+                            @php
+                                $draftImg = (!empty($draft->image_path) && file_exists(public_path('images/news/' . $draft->image_path)))
+                                          ? asset('/images/news/' . $draft->image_path)
+                                          : asset('/images/news/art1.png');
+                            @endphp
+                            <img src="{{ $draftImg }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('/images/news/art1.png') }}'" 
+                                 alt="{{ $draft->title }}" 
+                                 class="w-full h-full object-cover" />
                         </div>
                         
                         <!-- Content Details -->
@@ -166,13 +168,15 @@
                 @if($publishedNews)
                     <!-- Cover Image -->
                     <div class="bg-white h-[160px] overflow-hidden rounded-[8px] border border-[#dee2e6] w-full shrink-0">
-                        @if($publishedNews->image_path)
-                            <img src="{{ asset('/images/news/' . $publishedNews->image_path) }}" alt="{{ $publishedNews->title }}" class="w-full h-full object-cover" />
-                        @else
-                            <div class="w-full h-full flex items-center justify-center text-gray-300">
-                                <i class="bi bi-image text-3xl"></i>
-                            </div>
-                        @endif
+                        @php
+                            $pubImg = (!empty($publishedNews->image_path) && file_exists(public_path('images/news/' . $publishedNews->image_path)))
+                                      ? asset('/images/news/' . $publishedNews->image_path)
+                                      : asset('/images/news/art1.png');
+                        @endphp
+                        <img src="{{ $pubImg }}" 
+                             onerror="this.onerror=null;this.src='{{ asset('/images/news/art1.png') }}'" 
+                             alt="{{ $publishedNews->title }}" 
+                             class="w-full h-full object-cover" />
                     </div>
                     
                     <!-- Cover Content details -->
