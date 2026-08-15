@@ -62,16 +62,22 @@ class GalleryController extends Controller
                 $query->where('is_published', true);
             } elseif ($request->status === 'draft') {
                 $query->where('is_published', false);
-            }
-        }
-
         $galleries = $query->orderBy('year', 'desc')->get();
 
         $totalAll = Gallery::count();
         $totalPublished = Gallery::where('is_published', true)->count();
         $totalDraft = Gallery::where('is_published', false)->count();
+        $totalVideos = Gallery::whereNotNull('aftermovie_url')->where('aftermovie_url', '!=', '')->count();
 
-        return view('admin.gallery.index', compact('galleries', 'totalAll', 'totalPublished', 'totalDraft'));
+        $allGalleriesForCount = Gallery::all();
+        $totalPhotos = 0;
+        foreach ($allGalleriesForCount as $g) {
+            if (is_array($g->photos)) {
+                $totalPhotos += count($g->photos);
+            }
+        }
+
+        return view('admin.gallery.index', compact('galleries', 'totalAll', 'totalPublished', 'totalDraft', 'totalVideos', 'totalPhotos'));
     }
 
     /**
