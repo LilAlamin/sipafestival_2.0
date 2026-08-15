@@ -31,6 +31,7 @@ Route::get('/home-backup', [NewsController::class, 'showNewsHomeBackup'])->name(
 Route::get('/home_backup', [NewsController::class, 'showNewsHomeBackup']);
 Route::get('/news', [NewsController::class, 'showAllNews'])->name('news.showAllNews');
 Route::get('/news/{slug}', [NewsController::class, 'viewNews'])->name('news.HomeView');
+Route::get('/news/view/{slug}', [NewsController::class, 'viewNews'])->name('news.view');
 
 Route::get('/lineup', function () {
     $internationalPerformers = Performer::where('type', 'international')->orderBy('order')->get();
@@ -105,6 +106,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard/performers/{id}/edit', [PerformerController::class, 'edit'])->name('admin.performers.edit');
     Route::put('/admin/dashboard/performers/{id}', [PerformerController::class, 'update'])->name('admin.performers.update');
     Route::delete('/admin/dashboard/performers/{id}', [PerformerController::class, 'destroy'])->name('admin.performers.destroy');
+
+    // Feedback & Complaints Routes
+    Route::get('/admin/dashboard/complaints', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
+    Route::get('/admin/dashboard/unread', [ComplaintController::class, 'showUnreadComplaints'])->name('admin.dashboard.showUnreadComplaints');
+    Route::get('/admin/dashboard/read', [ComplaintController::class, 'showReadComplaints'])->name('admin.dashboard.showReadComplaints');
+    Route::get('/admin/dashboard/send-email/{id}', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
 });
 // Route::get('/admin/dashboard/news/{id}/delete', function ($id) {
 //     $news = News::findOrFail($id);
