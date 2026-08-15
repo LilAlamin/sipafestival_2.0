@@ -61,11 +61,28 @@ class ComplaintController extends Controller
         }
     }
 
-    public function showComplaint()
+    public function showComplaint(Request $request)
     {
-        $complaints = Complaint::all();
+        $query = Complaint::query();
 
-        return view('admin.complaints', compact('complaints'));
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('subject', 'like', "%{$search}%")
+                    ->orWhere('message', 'like', "%{$search}%")
+                    ->orWhere('response_subject', 'like', "%{$search}%")
+                    ->orWhere('response_message', 'like', "%{$search}%");
+            });
+        }
+
+        $complaints = $query->orderBy('created_at', 'desc')->get();
+        $totalAll = Complaint::count();
+        $totalUnread = Complaint::where('status', 'belum dibalas')->count();
+        $totalReplied = Complaint::where('status', 'sudah dibalas')->count();
+
+        return view('admin.complaints', compact('complaints', 'totalAll', 'totalUnread', 'totalReplied'));
     }
 
     public function sendEmail(Request $request, $id)
@@ -75,23 +92,52 @@ class ComplaintController extends Controller
         $subject = $complaint->subject;
         $message = $complaint->message;
 
-        // Send email logic here
-        // Mail::to($complaint->email)->send(new EmailReply($name, $subject, $message));
-
         return view('admin.reply', compact('complaint'));
     }
 
-    public function showUnreadComplaints()
+    public function showUnreadComplaints(Request $request)
     {
-        $complaints = Complaint::where('status', 'belum dibalas')->get();
+        $query = Complaint::where('status', 'belum dibalas');
 
-        return view('admin.unreplied', compact('complaints'));
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('subject', 'like', "%{$search}%")
+                    ->orWhere('message', 'like', "%{$search}%");
+            });
+        }
+
+        $complaints = $query->orderBy('created_at', 'desc')->get();
+        $totalAll = Complaint::count();
+        $totalUnread = Complaint::where('status', 'belum dibalas')->count();
+        $totalReplied = Complaint::where('status', 'sudah dibalas')->count();
+
+        return view('admin.unreplied', compact('complaints', 'totalAll', 'totalUnread', 'totalReplied'));
     }
 
-    public function showReadComplaints()
+    public function showReadComplaints(Request $request)
     {
-        $complaints = Complaint::where('status', 'sudah dibalas')->get();
+        $query = Complaint::where('status', 'sudah dibalas');
 
-        return view('admin.replied', compact('complaints'));
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('subject', 'like', "%{$search}%")
+                    ->orWhere('message', 'like', "%{$search}%")
+                    ->orWhere('response_subject', 'like', "%{$search}%")
+                    ->orWhere('response_message', 'like', "%{$search}%");
+            });
+        }
+
+        $complaints = $query->orderBy('created_at', 'desc')->get();
+        $totalAll = Complaint::count();
+        $totalUnread = Complaint::where('status', 'belum dibalas')->count();
+        $totalReplied = Complaint::where('status', 'sudah dibalas')->count();
+
+        return view('admin.replied', compact('complaints', 'totalAll', 'totalUnread', 'totalReplied'));
     }
 }
