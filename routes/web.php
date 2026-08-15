@@ -59,7 +59,7 @@ Route::post('/', [ComplaintController::class, 'store'])->name('data.store');
 
 Route::redirect('/admin', '/admin/dashboard');
 Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('login');
-Route::post('/admin/login', [loginController::class, 'login']);
+Route::post('/admin/login', [loginController::class, 'login'])->name('login.submit');
 Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {

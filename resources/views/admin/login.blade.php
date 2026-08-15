@@ -155,7 +155,7 @@
                     @endif
 
                     <!-- Form -->
-                    <form action="{{ route('loginbaru') }}" method="post" class="space-y-5">
+                    <form action="{{ url('/admin/login') }}" method="post" class="space-y-5">
                         @csrf
 
                         <!-- Email -->
