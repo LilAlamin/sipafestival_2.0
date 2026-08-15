@@ -14,21 +14,22 @@ class NewsController extends Controller
     {
         try {
             $validated = $request->validate([
-                'title' => 'required|string',
+                'title' => 'required|string|max:255',
                 'description' => 'required|string',
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg,webp,gif|max:10240',
                 'slug' => 'nullable|string|unique:news,slug',
             ]);
 
-            $image = $request->file('image');
-            $imageName = time().'_'.$image->getClientOriginalName();
-            $destinationPath = public_path('images/news');
-            $image->move($destinationPath, $imageName);
+            $imagePath = $this->convertAndSaveNewsWebp($request->file('image'), $request->title);
+            $slug = $request->slug ? Str::slug($request->slug) : Str::slug($request->title);
 
-            // hanya nama file disimpan ke database
-            $path = $imageName;
-
-            $slug = $request->slug ?: Str::slug($request->title);
+            // Ensure unique slug
+            $originalSlug = $slug;
+            $count = 1;
+            while (News::where('slug', $slug)->exists()) {
+                $slug = "{$originalSlug}-{$count}";
+                $count++;
+            }
 
             DB::beginTransaction();
 
@@ -39,7 +40,7 @@ class NewsController extends Controller
                 'title' => $request->title,
                 'slug' => $slug,
                 'description' => $request->description,
-                'image_path' => $path, // simpan nama file saja
+                'image_path' => $imagePath,
                 'status' => $status,
                 'sent_at' => $sentAt,
             ]);
@@ -51,15 +52,35 @@ class NewsController extends Controller
             DB::rollBack();
             Log::error('Error saat simpan berita: '.$e->getMessage());
 
-            return back()->with('error', 'Gagal menyimpan berita: '.$e->getMessage());
+            return back()->withInput()->with('error', 'Gagal menyimpan berita: '.$e->getMessage());
         }
     }
 
-    public function showNews()
+    public function showNews(Request $request)
     {
-        $news = News::all();
+        $query = News::query();
 
-        return view('admin.news.showNews', compact('news'));
+        // Shortlist by Status (published / draft)
+        if ($request->filled('status') && in_array($request->status, ['published', 'draft'])) {
+            $query->where('status', $request->status);
+        }
+
+        // Search by Title or Content
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        $news = $query->orderBy('created_at', 'desc')->get();
+
+        $totalAll = News::count();
+        $totalPublished = News::where('status', 'published')->count();
+        $totalDraft = News::where('status', 'draft')->count();
+
+        return view('admin.news.showNews', compact('news', 'totalAll', 'totalPublished', 'totalDraft'));
     }
 
     public function showNewsHome()
@@ -94,7 +115,7 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
 
-        return view('admin.news.edit', compact('news'));
+        return view('admin.news.makeNews', compact('news'));
     }
 
     public function updateBySlug(Request $request, $slug)
@@ -103,26 +124,30 @@ class NewsController extends Controller
             $news = News::where('slug', $slug)->firstOrFail();
 
             $validated = $request->validate([
-                'title' => 'required|string',
+                'title' => 'required|string|max:255',
                 'description' => 'required|string',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:10240',
                 'slug' => 'nullable|string|unique:news,slug,'.$news->id,
             ]);
 
             if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $imageName = time().'_'.$image->getClientOriginalName();
-                $destinationPath = public_path('images/news');
-                $image->move($destinationPath, $imageName);
-                $news->image_path = $imageName;
+                // Delete old image if custom
+                $oldPath = public_path('images/news/'.$news->image_path);
+                if (file_exists($oldPath) && str_starts_with($news->image_path, 'news_')) {
+                    @unlink($oldPath);
+                }
+
+                $news->image_path = $this->convertAndSaveNewsWebp($request->file('image'), $request->title);
             }
 
             $status = $request->input('action') === 'draft' ? 'draft' : 'published';
             $sentAt = $status === 'published' ? ($news->sent_at ?: now()) : null;
 
+            $newSlug = $request->slug ? Str::slug($request->slug) : Str::slug($request->title);
+
             $news->title = $request->title;
             $news->description = $request->description;
-            $news->slug = $request->slug ?: Str::slug($request->title);
+            $news->slug = $newSlug;
             $news->status = $status;
             $news->sent_at = $sentAt;
             $news->save();
@@ -131,8 +156,43 @@ class NewsController extends Controller
         } catch (\Exception $e) {
             Log::error('Error saat update berita: '.$e->getMessage());
 
-            return back()->with('error', 'Gagal memperbarui berita: '.$e->getMessage());
+            return back()->withInput()->with('error', 'Gagal memperbarui berita: '.$e->getMessage());
         }
+    }
+
+    /**
+     * Helper to convert news image into lightweight WebP.
+     */
+    private function convertAndSaveNewsWebp($imageFile, $title)
+    {
+        $destinationDir = public_path('images/news');
+
+        if (! file_exists($destinationDir)) {
+            mkdir($destinationDir, 0755, true);
+        }
+
+        $slug = Str::slug($title);
+        $filename = 'news_'.$slug.'_'.time().'.webp';
+        $targetPath = $destinationDir.'/'.$filename;
+
+        $sourcePath = $imageFile->getRealPath();
+        $sourceData = file_get_contents($sourcePath);
+
+        $imageResource = @imagecreatefromstring($sourceData);
+
+        if ($imageResource !== false) {
+            imagepalettetotruecolor($imageResource);
+            imagealphablending($imageResource, true);
+            imagesavealpha($imageResource, true);
+
+            imagewebp($imageResource, $targetPath, 85);
+            imagedestroy($imageResource);
+        } else {
+            $filename = 'news_'.$slug.'_'.time().'.'.$imageFile->getClientOriginalExtension();
+            $imageFile->move($destinationDir, $filename);
+        }
+
+        return $filename;
     }
 
     public function destroy($id)

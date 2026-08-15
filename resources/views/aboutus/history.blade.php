@@ -382,6 +382,12 @@
 
     <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
       
+      @php
+        $historyPdfPath = \App\Models\SiteSetting::get('history_ebook_pdf_path', 'ebook/sipa_16_tahun.pdf');
+        $historyTitle = \App\Models\SiteSetting::get('history_ebook_title', 'Enam Belas Tahun Perjalanan SIPA');
+        $historySubtitle = \App\Models\SiteSetting::get('history_ebook_subtitle', 'Buku dokumentasi dan arsip profil festival seni pertunjukan internasional Solo dari masa ke masa.');
+      @endphp
+
       <!-- Section Header -->
       <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-8 sm:mb-10">
         <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mb-2">
@@ -393,7 +399,7 @@
           </span>
         </div>
         <p class="font-cabinet text-gray-300/90 text-sm sm:text-base font-normal leading-relaxed">
-          Buku dokumentasi dan arsip profil festival seni pertunjukan internasional Solo dari masa ke masa.
+          {{ $historySubtitle }}
         </p>
       </div>
 
@@ -405,7 +411,7 @@
           <!-- Title & Hint -->
           <div class="flex items-center gap-2 text-gray-300">
             <i class="fa-solid fa-book-open text-[#f19500]"></i>
-            <span class="font-semibold text-white">Enam Belas Tahun Perjalanan SIPA</span>
+            <span class="font-semibold text-white">{{ $historyTitle }}</span>
             <span class="text-xs text-gray-400 hidden sm:inline">• Tarik ujung kertas untuk membalik</span>
           </div>
 
@@ -424,7 +430,7 @@
             </button>
 
             <!-- Download PDF Button -->
-            <a href="{{ asset('ebook/sipa_16_tahun.pdf') }}" download="Enam_Belas_Tahun_Perjalanan_SIPA.pdf" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all" title="Unduh PDF Resmi">
+            <a href="{{ asset($historyPdfPath) }}" download="{{ \Illuminate\Support\Str::slug($historyTitle) }}.pdf" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all" title="Unduh PDF Resmi">
               <i class="fa-solid fa-download text-xs"></i>
             </a>
 
@@ -600,7 +606,7 @@
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
         try {
-          const pdfDoc = await pdfjsLib.getDocument('{{ asset("ebook/sipa_16_tahun.pdf") }}').promise;
+          const pdfDoc = await pdfjsLib.getDocument('{{ asset($historyPdfPath) }}').promise;
           const totalPages = pdfDoc.numPages; // 286
           if (totalPageSpan) totalPageSpan.textContent = totalPages;
 

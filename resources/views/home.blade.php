@@ -1,5 +1,16 @@
+@php
+  $activeLocale = 'en';
+  if (request()->query('lang') === 'id' || (isset($_COOKIE['googtrans']) && (str_ends_with($_COOKIE['googtrans'], '/id') || str_contains($_COOKIE['googtrans'], '/en/id'))) || session('locale') === 'id') {
+    if (request()->query('lang') !== 'en') {
+      $activeLocale = 'id';
+    }
+  }
+  if (request()->query('lang') === 'en') {
+    $activeLocale = 'en';
+  }
+@endphp
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="{{ $activeLocale }}" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -273,15 +284,15 @@
         </span>
       </div>
 
-      <!-- YouTube Video Embed Frame Box (Matching Figma Node 4145:3908) -->
+      <!-- YouTube Video Embed Frame Box (Matching Figma Node 4145:3908 - Dynamic from Admin Settings) -->
       <div class="w-full relative aspect-video rounded-[16px] sm:rounded-[24px] overflow-hidden border border-white/15 shadow-[0_25px_70px_rgba(0,0,0,0.9)] bg-black group">
         <iframe 
           class="w-full h-full object-cover rounded-[16px] sm:rounded-[24px]"
-          src="https://www.youtube-nocookie.com/embed/zH0uYvN35sM?rel=0&modestbranding=1" 
-          title="Solo International Performing Arts 2026 Official Teaser" 
+          src="{{ \App\Models\SiteSetting::get('home_teaser_youtube_url', 'https://www.youtube-nocookie.com/embed/zH0uYvN35sM') }}" 
+          title="{{ \App\Models\SiteSetting::get('home_teaser_title', 'Solo International Performing Arts 2026 Official Teaser') }}" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin"
+          referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen>
         </iframe>
       </div>
@@ -346,94 +357,67 @@
     <div class="max-w-[1360px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
       
       <!-- Section Title Lockup (Matching Figma Node 4145:4066) -->
-      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-12 sm:mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-cabinet font-medium text-white tracking-tight leading-tight">
-          Meet Our
-        </h2>
-        <span class="text-4xl sm:text-5xl lg:text-[50px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight">
-          Performers
-        </span>
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center mb-12 sm:mb-16 notranslate" translate="no">
+        @if ($activeLocale === 'id')
+          <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-cabinet font-medium text-white tracking-tight leading-tight notranslate" translate="no">
+            Temui Para
+          </h2>
+          <span class="text-4xl sm:text-5xl lg:text-[50px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight notranslate" translate="no">
+            Penampil
+          </span>
+        @else
+          <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-cabinet font-medium text-white tracking-tight leading-tight notranslate" translate="no">
+            Meet Our
+          </h2>
+          <span class="text-4xl sm:text-5xl lg:text-[50px] font-script italic text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] leading-tight notranslate" translate="no">
+            Performers
+          </span>
+        @endif
       </div>
 
-      <!-- 4 Tall Rounded Performer Cards (Pixel-Perfect Figma Match) -->
+      <!-- 4 Tall Rounded Performer Cards (Dynamic from Database) -->
+      @php
+        $homePerformers = \App\Models\Performer::where('is_featured_home', true)->orderBy('order')->take(4)->get();
+        if ($homePerformers->count() < 4) {
+            $fillCount = 4 - $homePerformers->count();
+            $extraPerformers = \App\Models\Performer::whereNotIn('id', $homePerformers->pluck('id'))->orderBy('order')->take($fillCount)->get();
+            $homePerformers = $homePerformers->merge($extraPerformers);
+        }
+      @endphp
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-center max-w-[1280px] mx-auto mb-10 sm:mb-12">
-        
-        <!-- Card 1: Khambatta Dance Company -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Khambatta Dance Company.jpg') }}" 
-               alt="Khambatta Dance Company" 
+        @forelse($homePerformers as $p)
+        @php
+          $pImg = (!empty($p->image_path) && file_exists(public_path('images/' . $p->image_path))) 
+                  ? asset('images/' . $p->image_path) 
+                  : asset('images/delegates/Khambatta Dance Company.jpg');
+        @endphp
+        <!-- Performer Card: {{ $p->name }} -->
+        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu bg-[#181920]">
+          <img src="{{ $pImg }}" 
+               alt="{{ $p->name }}" 
                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
                loading="eager" 
                decoding="async">
           <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
           
           <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            USA
+            {{ $p->country_badge ?: strtoupper(substr($p->country, 0, 4)) }}
           </span>
           
           <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Contemporary Dance</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Khambatta Dance Company</h3>
+            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">
+              {{ $p->category ?: 'Performing Arts' }}
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">
+              {{ $p->name }}
+            </h3>
           </div>
         </div>
-
-        <!-- Card 2: Rentak Gading Etnic Bengkulu -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Rentak Gading Etcnic Bengkulu.jpg') }}" 
-               alt="Rentak Gading Etnic" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            INDONESIA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Ethnic Music & Percussion</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Rentak Gading Etnic</h3>
-          </div>
+        @empty
+        <div class="col-span-full py-12 text-center text-gray-400">
+          <p class="text-sm font-medium">Belum ada data penampil.</p>
         </div>
-
-        <!-- Card 3: Colectivo Glovo -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Colectivo Glovo.jpg') }}" 
-               alt="Colectivo Glovo" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            SPAIN
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Physical Theater</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Colectivo Glovo</h3>
-          </div>
-        </div>
-
-        <!-- Card 4: POD Dance Project -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/POD Dance.jpg') }}" 
-               alt="POD Dance Project" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            SOUTH KOREA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Modern Performing Arts</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">POD Dance Project</h3>
-          </div>
-        </div>
-
+        @endforelse
       </div>
 
       <!-- Bottom Carousel Controls & See All Link (Matching Figma Node 4145:4066) -->
@@ -855,20 +839,28 @@
       </div>
 
       <!-- Articles Asymmetric Grid Layout (1 Large Card Left + 2 Stacked Horizontal Cards Right) -->
-      @if(isset($news) && count($news) >= 3)
+      @if(isset($news) && count($news) > 0)
+        @php
+          $firstNews = $news->first();
+          $otherNews = $news->skip(1)->take(2);
+        @endphp
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch mb-8 sm:mb-10">
           
           <!-- Left Column: Featured Big Article Card (Item 1) -->
-          @php $firstNews = $news[0]; @endphp
-          <div class="lg:col-span-6">
+          <div class="{{ $otherNews->count() > 0 ? 'lg:col-span-6' : 'lg:col-span-12 max-w-2xl mx-auto w-full' }}">
+            @php
+              $firstImg = (!empty($firstNews->image_path) && file_exists(public_path('images/news/'.$firstNews->image_path))) 
+                          ? asset('images/news/'.$firstNews->image_path) 
+                          : asset('images/news/art1.png');
+            @endphp
             <a href="{{ route('news.HomeView', $firstNews->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full h-[210px] sm:h-[230px] rounded-[16px] overflow-hidden mb-3.5 shrink-0">
-                <img src="{{ asset('images/news/'.$firstNews->image_path) }}" alt="{{ $firstNews->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="w-full h-[210px] sm:h-[240px] rounded-[16px] overflow-hidden mb-3.5 shrink-0 bg-gray-100">
+                <img src="{{ $firstImg }}" alt="{{ $firstNews->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between px-1">
                 <div>
                   <h3 class="text-[#171717] font-cabinet font-medium text-lg sm:text-[20px] leading-snug tracking-tight mb-1.5 group-hover:text-[#406422] transition-colors line-clamp-2">{{ $firstNews->title }}</h3>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">{{ \Carbon\Carbon::parse($firstNews->sent_at ?? now())->format('j F Y') }}</p>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">{{ \Carbon\Carbon::parse($firstNews->sent_at ?? $firstNews->created_at ?? now())->format('j F Y') }}</p>
                   <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-3 mb-4">{!! strip_tags($firstNews->description) !!}</p>
                 </div>
                 <div class="text-right mt-auto">
@@ -881,16 +873,22 @@
           </div>
 
           <!-- Right Column: 2 Stacked Horizontal Cards (Items 2 & 3) -->
+          @if($otherNews->count() > 0)
           <div class="lg:col-span-6 flex flex-col gap-5 justify-between">
-            @foreach($news->skip(1)->take(2) as $item)
+            @foreach($otherNews as $item)
+            @php
+              $itemImg = (!empty($item->image_path) && file_exists(public_path('images/news/'.$item->image_path))) 
+                         ? asset('images/news/'.$item->image_path) 
+                         : asset('images/news/art2.png');
+            @endphp
             <a href="{{ route('news.HomeView', $item->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0">
-                <img src="{{ asset('images/news/'.$item->image_path) }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0 bg-gray-100">
+                <img src="{{ $itemImg }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <div class="flex-1 flex flex-col justify-between py-1 px-1">
                 <div>
                   <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">{{ $item->title }}</h4>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">{{ \Carbon\Carbon::parse($item->sent_at ?? now())->format('j F Y') }}</p>
+                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">{{ \Carbon\Carbon::parse($item->sent_at ?? $item->created_at ?? now())->format('j F Y') }}</p>
                   <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">{!! strip_tags($item->description) !!}</p>
                 </div>
                 <div class="text-right mt-auto">
@@ -902,82 +900,14 @@
             </a>
             @endforeach
           </div>
+          @endif
 
         </div>
       @else
-        <!-- Fallback 3 Article Layout (Exact Match with Figma Design) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch mb-8 sm:mb-10">
-          
-          <!-- Left Column: Featured Big Article Card -->
-          <div class="lg:col-span-6">
-            <a href="{{ route('news.showAllNews') }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full h-[210px] sm:h-[230px] rounded-[16px] overflow-hidden mb-3.5 shrink-0">
-                <img src="{{ asset('images/news/art1.png') }}" alt="Mengapa Aromaterapi Lebih Dari Sekadar Wewangian?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              </div>
-              <div class="flex-1 flex flex-col justify-between px-1">
-                <div>
-                  <h3 class="text-[#171717] font-cabinet font-medium text-lg sm:text-[20px] leading-snug tracking-tight mb-1.5 group-hover:text-[#406422] transition-colors">Mengapa Aromaterapi Lebih Dari Sekadar Wewangian?</h3>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">5 Mei 2025</p>
-                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-3 mb-4">
-                    Di balik harum lavender dan kayu cendana, ada ketenangan yang meresap ke dalam dada. Artikel ini membahas bagaimana aroma-aroma alami dapat menjadi teman sunyi dalam hari-hari...
-                  </p>
-                </div>
-                <div class="text-right mt-auto">
-                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
-                    Baca Selengkapnya
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Right Column: 2 Stacked Horizontal Cards -->
-          <div class="lg:col-span-6 flex flex-col gap-5 justify-between">
-            
-            <!-- Top Right Horizontal Card -->
-            <a href="{{ route('news.showAllNews') }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0">
-                <img src="{{ asset('images/news/art2.png') }}" alt="Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              </div>
-              <div class="flex-1 flex flex-col justify-between py-1 px-1">
-                <div>
-                  <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami</h4>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">5 Mei 2025</p>
-                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">
-                    Stres pekerjaan sering kali membuat pikiran riuh. Dengan sentuhan wangi citru...
-                  </p>
-                </div>
-                <div class="text-right mt-auto">
-                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
-                    Baca Selengkapnya
-                  </span>
-                </div>
-              </div>
-            </a>
-
-            <!-- Bottom Right Horizontal Card -->
-            <a href="{{ route('news.showAllNews') }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0">
-                <img src="{{ asset('images/news/art3.png') }}" alt="Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              </div>
-              <div class="flex-1 flex flex-col justify-between py-1 px-1">
-                <div>
-                  <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">Menciptakan Ruang Kerja yang Tenang dengan Aroma Alami</h4>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">5 Mei 2025</p>
-                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">
-                    Stres pekerjaan sering kali membuat pikiran riuh. Dengan sentuhan wangi citru...
-                  </p>
-                </div>
-                <div class="text-right mt-auto">
-                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
-                    Baca Selengkapnya
-                  </span>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
+        <!-- Empty State Fallback -->
+        <div class="bg-[#fafafa] rounded-[20px] p-8 border border-[#d4d4d4] text-center shadow-xl mb-8 sm:mb-10 text-gray-500 font-cabinet">
+          <i class="fa-solid fa-newspaper text-3xl mb-3 text-gray-400"></i>
+          <p class="text-base font-medium">Belum ada berita yang dipublikasikan saat ini.</p>
         </div>
       @endif
 
@@ -1469,12 +1399,12 @@
                 </p>
               </div>
 
-              <!-- Customer Service Button (Matching Figma Lime Pill Button) -->
+              <!-- Customer Service Button (Trigger Pop-up Modal) -->
               <div class="w-full pt-6">
-                <a href="https://wa.me/6281234567890" target="_blank" class="w-full bg-[#406422] hover:bg-[#2d4718] text-white font-cabinet font-medium py-3 px-5 rounded-xl shadow-lg transition-all duration-300 text-center text-sm sm:text-base flex items-center justify-center gap-2 group">
+                <button type="button" onclick="openAskModal()" class="w-full bg-[#406422] hover:bg-[#2d4718] text-white font-cabinet font-medium py-3 px-5 rounded-xl shadow-lg transition-all duration-300 text-center text-sm sm:text-base flex items-center justify-center gap-2 group cursor-pointer">
                   <span>Customer Service</span>
                   <i class="fa-solid fa-headset text-sm group-hover:scale-110 transition-transform"></i>
-                </a>
+                </button>
               </div>
 
             </div>
@@ -1486,6 +1416,177 @@
     </div>
   </section>
 
+  <!-- POP-UP MODAL: Tanya / Customer Service (Matching SIPA FAQ Card Theme) -->
+  <div id="askModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+    <div id="askModalContainer" class="relative w-full max-w-lg bg-[#fafafa] border border-[#d4d4d4] rounded-[24px] p-2.5 sm:p-3.5 shadow-[0_25px_60px_rgba(0,0,0,0.7)] transform scale-95 transition-all duration-300 text-left font-cabinet overflow-hidden">
+      
+      <!-- Inner Dashed Border Container (Matching FAQ Card) -->
+      <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[18px] p-6 sm:p-7 flex flex-col">
+        
+        <!-- Modal Header -->
+        <div class="flex items-start justify-between pb-4 border-b border-gray-200/80 relative">
+          <div class="flex items-start gap-3">
+            <div class="w-11 h-11 rounded-xl bg-[#406422]/10 border border-[#406422]/20 flex items-center justify-center text-[#406422] shrink-0 mt-0.5">
+              <i class="fa-solid fa-headset text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-cabinet font-medium text-[#171717] tracking-tight leading-snug">
+                Customer Service SIPA
+              </h3>
+              <p class="text-xs sm:text-sm font-cabinet font-normal text-[#171717]/80 mt-1">
+                Punya pertanyaan seputar tiket, jadwal, delegasi, atau venue? Tuliskan pertanyaan Anda di bawah ini:
+              </p>
+            </div>
+          </div>
+          <button type="button" onclick="closeAskModal()" class="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 text-gray-500 hover:text-black flex items-center justify-center transition-all cursor-pointer shrink-0 ml-2">
+            <i class="fa-solid fa-xmark text-base"></i>
+          </button>
+        </div>
+
+        <!-- Success Alert (Hidden by default) -->
+        <div id="askSuccessAlert" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-sm flex items-center gap-3 shadow-sm">
+          <i class="fa-solid fa-circle-check text-xl text-emerald-600 shrink-0"></i>
+          <div id="askSuccessMessage" class="font-cabinet font-medium">Pertanyaan Anda berhasil dikirim! Tim SIPA akan segera merespons melalui email.</div>
+        </div>
+
+        <!-- Error Alert (Hidden by default) -->
+        <div id="askErrorAlert" class="hidden mt-4 p-4 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-sm flex items-center gap-3 shadow-sm">
+          <i class="fa-solid fa-circle-exclamation text-xl text-rose-600 shrink-0"></i>
+          <div id="askErrorMessage" class="font-cabinet font-medium">Terjadi kesalahan. Silakan periksa data Anda.</div>
+        </div>
+
+        <!-- Modal Form -->
+        <form id="askForm" onsubmit="submitAskForm(event)" class="mt-5 space-y-4">
+          @csrf
+          
+          <div>
+            <label for="modal_name" class="block font-cabinet font-medium text-xs text-[#171717] uppercase tracking-wider mb-1.5">
+              Nama Lengkap <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="modal_name" name="name" required placeholder="Contoh: Budi Santoso"
+                   class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-[#d4d4d4] text-[#171717] text-sm focus:outline-none focus:border-[#406422] focus:ring-2 focus:ring-[#406422]/20 transition-all placeholder-gray-400 font-cabinet font-normal shadow-sm">
+          </div>
+
+          <div>
+            <label for="modal_email" class="block font-cabinet font-medium text-xs text-[#171717] uppercase tracking-wider mb-1.5">
+              Alamat Email <span class="text-red-500">*</span>
+            </label>
+            <input type="email" id="modal_email" name="email" required placeholder="emailanda@example.com"
+                   class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-[#d4d4d4] text-[#171717] text-sm focus:outline-none focus:border-[#406422] focus:ring-2 focus:ring-[#406422]/20 transition-all placeholder-gray-400 font-cabinet font-normal shadow-sm">
+          </div>
+
+          <div>
+            <label for="modal_subject" class="block font-cabinet font-medium text-xs text-[#171717] uppercase tracking-wider mb-1.5">
+              Topik / Subjek <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="modal_subject" name="subject" required placeholder="Contoh: Info Tiket & Jadwal Panggung"
+                   class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-[#d4d4d4] text-[#171717] text-sm focus:outline-none focus:border-[#406422] focus:ring-2 focus:ring-[#406422]/20 transition-all placeholder-gray-400 font-cabinet font-normal shadow-sm">
+          </div>
+
+          <div>
+            <label for="modal_message" class="block font-cabinet font-medium text-xs text-[#171717] uppercase tracking-wider mb-1.5">
+              Pertanyaan / Pesan Anda <span class="text-red-500">*</span>
+            </label>
+            <textarea id="modal_message" name="message" rows="3" required placeholder="Tuliskan pertanyaan detail Anda di sini..."
+                      class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-[#d4d4d4] text-[#171717] text-sm focus:outline-none focus:border-[#406422] focus:ring-2 focus:ring-[#406422]/20 transition-all placeholder-gray-400 font-cabinet font-normal shadow-sm resize-none"></textarea>
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3">
+            <button type="button" onclick="closeAskModal()" class="px-5 py-2.5 rounded-xl border border-[#d4d4d4] text-gray-600 hover:text-black hover:bg-black/5 text-sm font-cabinet font-medium transition-all cursor-pointer">
+              Batal
+            </button>
+            <button type="submit" id="askSubmitBtn" class="px-6 py-2.5 rounded-xl bg-[#406422] hover:bg-[#2d4718] text-white text-sm font-cabinet font-medium shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer">
+              <span id="askBtnText">Kirim Pertanyaan</span>
+              <i id="askBtnIcon" class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openAskModal() {
+      const modal = document.getElementById('askModal');
+      const container = document.getElementById('askModalContainer');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      container.classList.remove('scale-95');
+      container.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAskModal() {
+      const modal = document.getElementById('askModal');
+      const container = document.getElementById('askModalContainer');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      container.classList.remove('scale-100');
+      container.classList.add('scale-95');
+      document.body.style.overflow = '';
+      document.getElementById('askSuccessAlert')?.classList.add('hidden');
+      document.getElementById('askErrorAlert')?.classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAskModal();
+    });
+    document.getElementById('askModal')?.addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeAskModal();
+    });
+
+    async function submitAskForm(event) {
+      event.preventDefault();
+      const form = document.getElementById('askForm');
+      const btn = document.getElementById('askSubmitBtn');
+      const btnText = document.getElementById('askBtnText');
+      const btnIcon = document.getElementById('askBtnIcon');
+      const successAlert = document.getElementById('askSuccessAlert');
+      const errorAlert = document.getElementById('askErrorAlert');
+
+      btn.disabled = true;
+      btnText.textContent = 'Mengirim...';
+      btnIcon.className = 'fa-solid fa-spinner fa-spin text-xs';
+      successAlert.classList.add('hidden');
+      errorAlert.classList.add('hidden');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("{{ route('data.store') }}", {
+          method: 'POST',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          form.reset();
+          successAlert.classList.remove('hidden');
+          document.getElementById('askSuccessMessage').textContent = data.message;
+          setTimeout(() => {
+            closeAskModal();
+          }, 3000);
+        } else {
+          errorAlert.classList.remove('hidden');
+          document.getElementById('askErrorMessage').textContent = data.message || 'Terjadi kesalahan saat mengirim pertanyaan.';
+        }
+      } catch (err) {
+        errorAlert.classList.remove('hidden');
+        document.getElementById('askErrorMessage').textContent = 'Koneksi bermasalah. Silakan coba lagi.';
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Kirim Pertanyaan';
+        btnIcon.className = 'fa-solid fa-paper-plane text-xs';
+      }
+    }
+  </script>
+
   <!-- Footer Component -->
   <footer class="border-t border-white/10 bg-[#0b0c10]/95 backdrop-blur-md py-12 text-center text-xs text-gray-400 relative z-10">
     <div class="max-w-[1440px] mx-auto px-6 space-y-6">
@@ -1495,6 +1596,7 @@
       <p class="max-w-md mx-auto text-gray-400">Solo International Performing Arts 2026 • Kinetic Kinship : Beyond Boundaries</p>
       <p>&copy; {{ date('Y') }} SIPA Festival. All Rights Reserved.</p>
     </div>
+  </footer>
   <!-- GSAP & Lenis Smooth Scroll Setup Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {

@@ -134,36 +134,73 @@
 
 
     <!-- ========================================================= -->
-    <!-- EDITION STORY & THEME NARRATIVE                           -->
+    <!-- 2. ABOUT [YEAR] & AFTER MOVIE (Figma Node 4152:12763)     -->
     <!-- ========================================================= -->
-    <section class="relative max-w-[1140px] mx-auto px-6 sm:px-10 py-16 sm:py-24 z-20">
+    <section class="relative w-full min-h-[900px] bg-cover bg-center overflow-hidden py-16 sm:py-20" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-white/[0.03] border border-white/10 rounded-[32px] p-6 sm:p-10 lg:p-12 backdrop-blur-md">
+      <!-- Left Theatrical Curtains (Node 4152:12765) -->
+      <div class="absolute inset-y-0 left-0 w-[200px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+        <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Right Theatrical Curtains (Node 4152:12766) -->
+      <div class="absolute inset-y-0 right-0 w-[200px] sm:w-[241px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+        <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Top Vector Shadow (Node 4152:12768) -->
+      <div class="absolute top-0 inset-x-0 h-[337px] pointer-events-none z-10 -scale-y-100">
+        <img src="{{ asset('images/pattern/theme_vector_bottom.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Bottom Vector Shadow (Node 4152:12767) -->
+      <div class="absolute bottom-0 inset-x-0 h-[337px] pointer-events-none z-10">
+        <img src="{{ asset('images/pattern/theme_vector_bottom.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Content Container (1040px width strictly matching Figma) -->
+      <div class="max-w-[1040px] mx-auto px-4 sm:px-6 lg:px-0 relative z-20 space-y-16">
         
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-2 text-[#f19500] text-xs font-bold uppercase tracking-widest">
-            <span class="w-2 h-2 rounded-full bg-[#f19500]"></span>
-            <span>Tema & Filosofi Edisi</span>
+        <!-- About Year Lockup (Node 4152:12769: left-[197px] top-[69px] w-[597px]) -->
+        <div class="max-w-[778px] space-y-4">
+          
+          <!-- Title Row: SIPA Festival 2025 (Node 4152:12770) -->
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span class="text-[32px] sm:text-[36px] font-cabinet font-medium text-white tracking-tight leading-[1.2]">
+              SIPA
+            </span>
+            <span class="text-[36px] sm:text-[40px] font-script italic text-white leading-[1.2] drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+              Festival
+            </span>
+            <span class="text-[32px] sm:text-[36px] font-cabinet font-medium text-white tracking-tight leading-[1.2]">
+              2025
+            </span>
           </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-cabinet font-bold text-white tracking-tight leading-snug">
-            SIPA Festival 2025
-          </h2>
-          <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-cabinet text-justify">
-            The Solo International Performing Arts (SIPA) Festival 2025 carries the theme <em>"Nifty, Artful, & Visionary,"</em> which means young, artistic, and visionary. This theme invites the younger generation, especially Generation Z, to reward themselves with cool creativity, intelligence, and visionary future planning.
-          </p>
-          <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-cabinet text-justify">
-            Amidst the rapid changes in the world, SIPA 2025 serves as an open space for expression, exploration, and cross-disciplinary dialogue. Painting, music, dance, theater, and even digital and experimental art all have their place and value to be celebrated together.
+
+          <!-- Description Paragraph (Node 4152:12774: text-[20px] leading-[1.2]) -->
+          <p class="font-cabinet font-medium text-base sm:text-[20px] text-white leading-[1.2] text-left">
+            @lang('messages.journey_description')
           </p>
         </div>
 
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-full max-w-sm rounded-[24px] overflow-hidden border border-white/15 shadow-2xl group">
-            <img src="{{ asset('images/maskot/2025.webp') }}" class="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Maskot SIPA 2025">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-            <div class="absolute bottom-4 inset-x-4 text-center">
-              <span class="text-xs text-white/90 font-medium">Maskot Resmi SIPA 2025</span>
-            </div>
+        <!-- Aftermovie Video Lockup (Node 4152:12775: top-[366px] w-[1040px]) -->
+        <div class="w-full flex flex-col items-center gap-5">
+          
+          <!-- Header: After Movie SIPA Festival 2025 (Node 4152:12776) -->
+          <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-white">
+            <span class="text-[36px] sm:text-[40px] font-script italic leading-[1.2] drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+              After Movie
+            </span>
+            <span class="text-[32px] sm:text-[36px] font-cabinet font-medium leading-[1.2]">
+              SIPA Festival 2025
+            </span>
           </div>
+
+          <!-- Video Player Box (Node 4152:12779: rounded-[20px] h-[400px]) -->
+          <div class="w-full h-[320px] sm:h-[400px] rounded-[20px] overflow-hidden bg-black/60 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 relative">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/eOg3baFV5q8" title="After Movie SIPA Festival 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
         </div>
 
       </div>
@@ -172,85 +209,58 @@
 
 
     <!-- ========================================================= -->
-    <!-- TEASER & AFTERMOVIE SECTION                               -->
-    <!-- ========================================================= -->
-    <section class="relative max-w-[1140px] mx-auto px-6 sm:px-10 pb-16 z-20">
-      
-      <div class="text-center mb-10">
-        <span class="text-[#f19500] text-xs font-bold uppercase tracking-widest block mb-2">Dokumentasi Audio Visual</span>
-        <h2 class="text-2xl sm:text-3xl font-cabinet font-bold text-white tracking-tight">
-          After Movie & Teaser SIPA 2025
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Video 1: Teaser -->
-        <div class="bg-white/5 border border-white/10 rounded-[28px] p-4 sm:p-6 backdrop-blur-md flex flex-col items-center">
-          <h3 class="text-base font-semibold text-white mb-4">Teaser SIPA Festival 2025</h3>
-          <div class="w-full aspect-video rounded-[20px] overflow-hidden bg-black/60 shadow-xl">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/eOg3baFV5q8" title="Teaser SIPA 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Video 2: Aftermovie / Instagram Reel -->
-        <div class="bg-white/5 border border-white/10 rounded-[28px] p-4 sm:p-6 backdrop-blur-md flex flex-col items-center">
-          <h3 class="text-base font-semibold text-white mb-4">Aftermovie Official SIPA 2025</h3>
-          <div class="w-full aspect-video rounded-[20px] overflow-hidden bg-black/60 shadow-xl">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/eOg3baFV5q8" title="After Movie SIPA 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- PHOTO DOCUMENTATION GALLERY GRID                          -->
+    <!-- 3. PHOTO DOCUMENTATION (Exact 100% Figma Node 4152:12780) -->
     <!-- ========================================================= -->
     @php
-      $galleryImages = [
-        'panggung (1).jpg',
-        'panggung (2).jpg',
-        'venue (1).jpg',
-        'venue (2).jpg',
-        'crowd (4).jpg',
-        'crowd (1).jpg',
-        'crowd (3).jpg',
-        'crowd (5).jpg',
-        'penonton (1).jpg',
-        'penonton (2).jpg',
-        'bazzar (1).jpg',
-        'bazzar (2).jpg',
-        'panitia (1).jpg',
-        'panitia (2).jpg',
-        'panitia (3).jpg',
-        'panitia (4).jpg',
+      $allPhotos2025 = [
+        'panggung (1).webp',
+        'venue (1).webp',
+        'crowd (1).webp',
+        'penonton (1).webp',
+        'panggung (2).webp',
+        'crowd (4).webp',
+        'crowd (3).webp',
+        'venue (2).webp',
+        'crowd (5).webp',
+        'penonton (2).webp',
+        'bazzar (1).webp',
+        'bazzar (2).webp',
+        'panitia (1).webp',
+        'panitia (2).webp',
+        'panitia (3).webp',
+        'panitia (4).webp',
       ];
     @endphp
 
-    <section class="relative max-w-[1240px] mx-auto px-6 sm:px-10 pb-24 z-20">
+    <section class="relative w-full min-h-[580px] overflow-hidden bg-black z-20">
       
-      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
-        <div>
-          <span class="text-[#f19500] text-xs font-bold uppercase tracking-widest block mb-1">Momen Panggung & Suasana</span>
-          <h2 class="text-2xl sm:text-3xl font-cabinet font-bold text-white tracking-tight">
-            Dokumentasi Foto 2025
-          </h2>
-        </div>
-        <span class="text-xs text-gray-400 font-medium">{{ count($galleryImages) }} Foto Arsip</span>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 photo-grid">
-        @foreach ($galleryImages as $index => $imageName)
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#18161c] h-[220px] sm:h-[260px] shadow-xl border border-white/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#f19500]/60">
-            <img src="{{ asset('images/gallery/2025/' . $imageName) }}" alt="Foto Dokumentasi SIPA 2025 {{ $index + 1 }}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 brightness-95 group-hover:brightness-105" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <span class="text-xs text-white font-medium">SIPA 2025 #{{ $index + 1 }}</span>
-            </div>
+      <!-- Seamless Full-Width Photo Grid (Exact Figma Collage Style) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full">
+        @foreach ($allPhotos2025 as $index => $photo)
+          <div class="relative w-full h-[260px] sm:h-[300px] lg:h-[340px] overflow-hidden group">
+            <img src="{{ asset('images/gallery/2025/' . $photo) }}" alt="SIPA 2025 Documentation {{ $index + 1 }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90 group-hover:brightness-105" loading="lazy">
           </div>
         @endforeach
+      </div>
+
+      <!-- Top Vignette Shadow (Node 4152:12789: h-[347px] -scale-y-100) -->
+      <div class="absolute top-0 inset-x-0 h-[280px] sm:h-[347px] pointer-events-none z-10 -scale-y-100 opacity-90">
+        <img src="{{ asset('images/pattern/theme_vector_bottom.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Bottom Vignette Shadow (Node 4152:12788: h-[208px]) -->
+      <div class="absolute bottom-0 inset-x-0 h-[160px] sm:h-[208px] pointer-events-none z-10 opacity-90">
+        <img src="{{ asset('images/pattern/theme_vector_bottom.svg') }}" class="w-full h-full object-cover" alt="">
+      </div>
+
+      <!-- Floating Centered Title Lockup (Node 4152:12790: top-[51px]) -->
+      <div class="absolute top-6 sm:top-[51px] left-1/2 -translate-x-1/2 text-white z-20 whitespace-nowrap flex flex-wrap items-center justify-center gap-3 sm:gap-4 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] pointer-events-none">
+        <span class="font-cabinet font-medium text-2xl sm:text-[36px] tracking-tight leading-[1.2]">
+          SIPA Festival 2025
+        </span>
+        <span class="font-script italic text-3xl sm:text-[40px] leading-[1.2] drop-shadow-[0_0_20px_rgba(255,255,255,0.7)]">
+          Documentation
+        </span>
       </div>
 
     </section>

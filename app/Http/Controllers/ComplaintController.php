@@ -38,9 +38,24 @@ class ComplaintController extends Controller
 
             DB::commit();
 
-            return redirect('/')->with('success', 'Order berhasil disimpan!');
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Pertanyaan Anda berhasil dikirim! Tim SIPA akan segera merespons melalui email.',
+                    'data' => $complaint,
+                ]);
+            }
+
+            return redirect('/')->with('success', 'Pertanyaan Anda berhasil dikirim! Tim SIPA akan segera merespons melalui email.');
         } catch (\Exception $e) {
             DB::rollBack();
+
+            if ($request->expectsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Gagal mengirim pertanyaan: '.$e->getMessage(),
+                ], 422);
+            }
 
             return back()->with('error', 'Gagal mengirim keluhan: '.$e->getMessage());
         }

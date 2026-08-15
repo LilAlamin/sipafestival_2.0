@@ -3,9 +3,12 @@
   
   // Active states calculations
   $isHomepage = $currentRoute === 'admin/dashboard';
+  $isHomeSettings = str_starts_with($currentRoute, 'admin/dashboard/home-settings');
+  $isHistoryEbook = str_starts_with($currentRoute, 'admin/dashboard/history-ebook');
+  $isPerformers = str_starts_with($currentRoute, 'admin/dashboard/performers');
   $isNews = str_starts_with($currentRoute, 'admin/dashboard/news') && !str_contains($currentRoute, 'makeNews');
   $isAddNews = $currentRoute === 'admin/dashboard/news/makeNews';
-  $isGallery = $currentRoute === 'admin/dashboard/gallery';
+  $isGallery = str_starts_with($currentRoute, 'admin/dashboard/gallery');
   
   $isComplaints = $currentRoute === 'admin/dashboard/complaints';
   $isUnread = $currentRoute === 'admin/dashboard/unread';
@@ -82,6 +85,54 @@
       @endif
     </a>
 
+    <!-- Pengaturan Beranda -->
+    <a href="{{ route('admin.homeSettings') }}" 
+       class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
+              {{ $isHomeSettings ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 flex items-center justify-center">
+          <i class="bi bi-sliders text-base"></i>
+        </div>
+        <span class="text-sm font-medium">Pengaturan Beranda</span>
+      </div>
+      
+      @if($isHomeSettings)
+        <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+      @endif
+    </a>
+
+    <!-- E-Book History PDF -->
+    <a href="{{ route('admin.historyEbook') }}" 
+       class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
+              {{ $isHistoryEbook ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 flex items-center justify-center">
+          <i class="bi bi-file-earmark-pdf text-base"></i>
+        </div>
+        <span class="text-sm font-medium">E-Book History</span>
+      </div>
+      
+      @if($isHistoryEbook)
+        <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+      @endif
+    </a>
+
+    <!-- Line Up & Performers -->
+    <a href="{{ route('admin.performers.index') }}" 
+       class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
+              {{ $isPerformers ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 flex items-center justify-center">
+          <i class="bi bi-people text-base"></i>
+        </div>
+        <span class="text-sm font-medium">Line Up & Performers</span>
+      </div>
+      
+      @if($isPerformers)
+        <div class="absolute right-0 top-0 w-[5px] h-11 bg-[#F8F9FA] rounded-l-[4px]"></div>
+      @endif
+    </a>
+
     <!-- News -->
     <a href="{{ route('news.showNews') }}" 
        class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
@@ -100,7 +151,7 @@
     </a>
 
     <!-- Galery -->
-    <a href="{{ route('admin.gallery') }}" 
+    <a href="{{ route('admin.gallery.index') }}" 
        class="w-full h-11 px-6 flex items-center justify-between transition-all relative group 
               {{ $isGallery ? 'bg-[#343A40] text-[#F8F9FA]' : 'text-[#F8F9FA]/80 hover:text-white hover:bg-[#343A40]/30' }}">
       <div class="flex items-center gap-3">

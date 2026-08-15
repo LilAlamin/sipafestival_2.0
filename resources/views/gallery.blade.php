@@ -62,28 +62,28 @@
     }
   </style>
 </head>
-<body class="bg-[#0b0c10] text-[#fafafa] font-cabinet selection:bg-[#406422] selection:text-white">
+<body class="bg-[#0b0c10] text-[#fafafa] font-cabinet selection:bg-[#406422] selection:text-white bg-cover bg-center bg-fixed min-h-screen" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
 
   <!-- Fixed Top Navbar Component -->
   <x-navbar2026 />
 
-  <!-- MAIN GALLERY ARCHIVE (Unified with 2026 Stage Theme) -->
-  <main class="relative min-h-screen bg-[#0b0c10] bg-cover bg-center bg-fixed overflow-hidden pt-28 sm:pt-36 pb-24" style="background-image: url('{{ asset('images/pattern/theme_bg.webp') }}');">
+  <!-- Fixed Left Theatrical Ornate Curtain Border (Continuous Full Viewport) -->
+  <div class="fixed inset-y-0 left-0 w-[160px] sm:w-[220px] lg:w-[260px] pointer-events-none z-10 mix-blend-soft-light opacity-95 -scale-x-100">
+    <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
+  </div>
+
+  <!-- Fixed Right Theatrical Ornate Curtain Border (Continuous Full Viewport) -->
+  <div class="fixed inset-y-0 right-0 w-[160px] sm:w-[220px] lg:w-[260px] pointer-events-none z-10 mix-blend-soft-light opacity-95">
+    <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
+  </div>
+
+  <!-- Top & Bottom Soft Vignette Shadows -->
+  <div class="fixed inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0b0c10]/95 via-[#0b0c10]/40 to-transparent pointer-events-none z-10"></div>
+  <div class="fixed inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0b0c10]/95 via-[#0b0c10]/40 to-transparent pointer-events-none z-10"></div>
+
+  <!-- MAIN GALLERY ARCHIVE -->
+  <main class="relative min-h-screen overflow-hidden pt-28 sm:pt-36 pb-32">
     
-    <!-- Left Theatrical Ornate Curtain Border Overlay (Fixed Screen Edge) -->
-    <div class="fixed inset-y-0 left-0 w-[140px] sm:w-[190px] lg:w-[230px] pointer-events-none z-10 mix-blend-soft-light opacity-80 -scale-x-100">
-      <img src="{{ asset('images/pattern/theme_vector_left.svg') }}" class="w-full h-full object-cover" alt="">
-    </div>
-
-    <!-- Right Theatrical Ornate Curtain Border Overlay (Fixed Screen Edge) -->
-    <div class="fixed inset-y-0 right-0 w-[140px] sm:w-[190px] lg:w-[230px] pointer-events-none z-10 mix-blend-soft-light opacity-80">
-      <img src="{{ asset('images/pattern/theme_vector_right.svg') }}" class="w-full h-full object-cover" alt="">
-    </div>
-
-    <!-- Top & Bottom Soft Gradient Shadows -->
-    <div class="fixed inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0b0c10]/90 to-transparent pointer-events-none z-10"></div>
-    <div class="fixed inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0b0c10]/90 to-transparent pointer-events-none z-10"></div>
-
     <div class="max-w-[1240px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
       
       <!-- Section Header -->
@@ -102,42 +102,27 @@
       </div>
 
       <!-- Gallery Grid of Years (3 Columns on Desktop, 2 on Tablet, 1 on Mobile) -->
+      <!-- Gallery Grid of Years (3 Columns on Desktop, 2 on Tablet, 1 on Mobile) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 gallery-grid">
         
         @php
-          $yearThemes = [
-            2025 => 'Maskot & Suasana 2025',
-            2024 => 'Pamedan Mangkunegaran',
-            2023 => 'Benteng Vastenburg',
-            2022 => 'Art & Cultural Revival',
-            2021 => 'Virtual & Hybrid Edition',
-            2020 => 'Digital Resilience Solo',
-            2019 => '11th Annual Fest',
-            2018 => 'Decade of Performing Arts',
-            2017 => 'Nusantara & Global Waves',
-            2016 => 'Vastenburg Spectacular',
-            2015 => 'Melodies of The World',
-            2014 => 'International Heritage',
-            2013 => 'Historical Fort Edition',
-            2012 => 'Royal Pamedan Legacy',
-            2011 => 'Cultural Harmony',
-            2010 => 'The Global Stage',
-            2009 => 'Inaugural SIPA Festival',
-          ];
+          $galleryList = isset($galleries) && $galleries->count() > 0 
+                         ? $galleries 
+                         : \App\Models\Gallery::where('is_published', true)->orderBy('year', 'desc')->get();
         @endphp
 
-        @for ($year = 2025; $year >= 2009; $year--)
-          <a href="/gallery/{{ $year }}" class="group relative rounded-[24px] overflow-hidden bg-[#18161c] h-[320px] sm:h-[360px] shadow-2xl border border-white/15 transition-all duration-500 hover:-translate-y-2 hover:border-[#f19500]/60 hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)] flex flex-col justify-between p-6">
+        @forelse ($galleryList as $item)
+          <a href="{{ url('/gallery/' . $item->year) }}" class="group relative rounded-[24px] overflow-hidden bg-[#18161c] h-[320px] sm:h-[360px] shadow-2xl border border-white/15 transition-all duration-500 hover:-translate-y-2 hover:border-[#f19500]/60 hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)] flex flex-col justify-between p-6">
             
             <!-- Maskot Background Image with Zoom & Dark Gradient -->
-            <img src="{{ asset('images/maskot/' . $year . '.webp') }}" alt="SIPA {{ $year }}" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 brightness-95 group-hover:brightness-105">
+            <img src="{{ $item->maskot_src }}" alt="SIPA {{ $item->year }}" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 brightness-95 group-hover:brightness-105" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 group-hover:via-black/30 transition-colors duration-500 pointer-events-none"></div>
 
             <!-- Top Pill Badge -->
             <div class="relative z-10 flex items-center justify-between">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] font-bold text-white tracking-widest uppercase">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#f19500]"></span>
-                SIPA {{ $year }}
+                SIPA {{ $item->year }}
               </span>
               <div class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#f19500] border border-white/20 group-hover:border-[#f19500] flex items-center justify-center text-white transition-all duration-300">
                 <i class="fa-solid fa-arrow-right text-xs -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
@@ -147,10 +132,10 @@
             <!-- Bottom Content Lockup -->
             <div class="relative z-10 mt-auto">
               <span class="text-xs text-gray-300 font-medium block mb-1">
-                {{ $yearThemes[$year] ?? 'Dokumentasi Festival' }}
+                {{ $item->location ?: ($item->theme_title ?: 'Dokumentasi Festival') }}
               </span>
               <h2 class="font-cabinet font-extrabold text-3xl sm:text-4xl text-white tracking-tight leading-none mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                {{ $year }}
+                {{ $item->year }}
               </h2>
               <span class="inline-flex items-center gap-2 text-xs font-semibold text-white/90 group-hover:text-[#f19500] transition-colors">
                 <span>Lihat Dokumentasi</span>
@@ -158,7 +143,11 @@
               </span>
             </div>
           </a>
-        @endfor
+        @empty
+          <div class="col-span-full py-16 text-center text-gray-400">
+            <p class="text-base font-semibold">Belum ada data galeri visual yang diterbitkan.</p>
+          </div>
+        @endforelse
 
       </div>
 
@@ -176,17 +165,9 @@
     </div>
   </footer>
 
-  <!-- GSAP Entrance Animation & Lenis Scroll -->
+  <!-- GSAP Entrance Animation & Lenis Smooth Scroll -->
   <script>
-    // Ensure browser starts at top on reload
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-
     document.addEventListener('DOMContentLoaded', () => {
-      window.scrollTo(0, 0);
-
       // 1. Initialize Lenis Smooth Scroll
       if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
@@ -210,7 +191,7 @@
         }
       }
 
-      // 2. Safe Fail-Safe GSAP Animations
+      // 2. Fail-Safe GSAP Animations
       if (typeof gsap !== 'undefined') {
         if (typeof ScrollTrigger !== 'undefined') {
           gsap.registerPlugin(ScrollTrigger);
@@ -226,12 +207,12 @@
         const grid = document.querySelector('.gallery-grid');
         if (grid) {
           gsap.fromTo(grid.children, 
-            { opacity: 0, y: 30 },
+            { opacity: 0, y: 25 },
             { 
               opacity: 1, 
               y: 0, 
-              duration: 0.65, 
-              stagger: 0.05, 
+              duration: 0.6, 
+              stagger: 0.04, 
               ease: 'power2.out',
               scrollTrigger: {
                 trigger: grid,

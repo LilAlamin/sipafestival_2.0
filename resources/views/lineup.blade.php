@@ -108,6 +108,15 @@
           </p>
         </div>
 
+        @php
+          $intlList = isset($internationalPerformers) && $internationalPerformers->count() > 0 
+                      ? $internationalPerformers 
+                      : \App\Models\Performer::where('type', 'international')->orderBy('order')->get();
+          $natList = isset($nationalPerformers) && $nationalPerformers->count() > 0 
+                     ? $nationalPerformers 
+                     : \App\Models\Performer::where('type', 'national')->orderBy('order')->get();
+        @endphp
+
         <!-- Section Title: International Delegate (Node 4152:17808) -->
         <div class="mb-6">
           <h2 class="text-lg sm:text-[20px] font-cabinet font-medium text-white tracking-tight leading-[1.2]">
@@ -117,87 +126,30 @@
 
         <!-- 8 Cards Grid (2 Rows x 4 Columns = 1040px width, 242px x 380px, gap 24px) (Node 4152:17816) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 delegates-grid">
-          
-          <!-- Card 1: Khambatta Dance Company -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Khambatta Dance Company.jpg') }}" alt="Khambatta Dance Company" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          @forelse($intlList as $item)
+          @php
+            $imgSrc = (!empty($item->image_path) && file_exists(public_path('images/' . $item->image_path))) 
+                      ? asset('images/' . $item->image_path) 
+                      : asset('images/delegates/Khambatta Dance Company.jpg');
+          @endphp
+          <!-- Performer Card: {{ $item->name }} -->
+          <div class="group relative rounded-[20px] overflow-hidden bg-[#1e1c24] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
+            <img src="{{ $imgSrc }}" alt="{{ $item->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
             <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">United States of America</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Khambatta Dance Company</h3>
+              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">
+                {{ $item->country }}
+              </span>
+              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">
+                {{ $item->name }}
+              </h3>
             </div>
           </div>
-
-          <!-- Card 2: PARRA.DICE -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/PARRA.DICE.jpg') }}" alt="PARRA.DICE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Netherlands</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">PARRA.DICE</h3>
-            </div>
+          @empty
+          <div class="col-span-full py-12 text-center text-gray-400">
+            <p class="text-sm font-medium">Belum ada delegasi internasional yang ditambahkan.</p>
           </div>
-
-          <!-- Card 3: Sanggar Kirana -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Sanggar Kirana.jpg') }}" alt="Sanggar Kirana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Malaysia</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Sanggar Kirana</h3>
-            </div>
-          </div>
-
-          <!-- Card 4: Seoul National University -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/SNU.jpg') }}" alt="Seoul National University" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">South Korea</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Seoul National University</h3>
-            </div>
-          </div>
-
-          <!-- Card 5: Colectivo Glovo -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Colectivo Glovo.jpg') }}" alt="Colectivo Glovo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Spain</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Colectivo Glovo</h3>
-            </div>
-          </div>
-
-          <!-- Card 6: Dongbaek Carnival -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Dongbaek.jpg') }}" alt="Dongbaek Carnival" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">South Korea</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Dongbaek Carnival</h3>
-            </div>
-          </div>
-
-          <!-- Card 7: POD Dance Project -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/POD Dance.jpg') }}" alt="POD Dance Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">South Korea</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">POD Dance Project</h3>
-            </div>
-          </div>
-
-          <!-- Card 8: Dr. Danny Tan & Fajar Satriadi -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Kolaborasi SxI.png') }}" alt="Dr Danny Tan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Singapore x Indonesia</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Dr. Danny Tan & Fajar</h3>
-            </div>
-          </div>
-
+          @endforelse
         </div>
       </div>
     </section>
@@ -235,87 +187,30 @@
 
         <!-- 8 Cards Grid (2 Rows x 4 Columns = 1040px width, 242px x 380px, gap 24px) (Node 4152:17817) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 delegates-grid">
-          
-          <!-- Card 1: NoizeKilla -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Noizekilla.jpg') }}" alt="NoizeKilla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          @forelse($natList as $item)
+          @php
+            $imgSrc = (!empty($item->image_path) && file_exists(public_path('images/' . $item->image_path))) 
+                      ? asset('images/' . $item->image_path) 
+                      : asset('images/delegates/Noizekilla.jpg');
+          @endphp
+          <!-- Performer Card: {{ $item->name }} -->
+          <div class="group relative rounded-[20px] overflow-hidden bg-[#1e1c24] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
+            <img src="{{ $imgSrc }}" alt="{{ $item->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
             <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Bali</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">NoizeKilla</h3>
+              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">
+                {{ $item->country }}
+              </span>
+              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">
+                {{ $item->name }}
+              </h3>
             </div>
           </div>
-
-          <!-- Card 2: Samohung -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Samohung.png') }}" alt="Samohung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Trenggalek</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Samohung</h3>
-            </div>
+          @empty
+          <div class="col-span-full py-12 text-center text-gray-400">
+            <p class="text-sm font-medium">Belum ada delegasi nasional yang ditambahkan.</p>
           </div>
-
-          <!-- Card 3: Sanggar Seni Lepas -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Sanggar Seni Lepas.jpg') }}" alt="Sanggar Seni Lepas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Nusa Tenggara Barat</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Sanggar Seni Lepas</h3>
-            </div>
-          </div>
-
-          <!-- Card 4: Congwayndut -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Congwayndut.png') }}" alt="Congwayndut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Karanganyar</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Congwayndut</h3>
-            </div>
-          </div>
-
-          <!-- Card 5: Darryl Simeon -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Darryl Simeon.JPG') }}" alt="Darryl Simeon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Halmahera Barat</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Darryl Simeon</h3>
-            </div>
-          </div>
-
-          <!-- Card 6: Duo Etnicholic -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Duo Etnicholic.jpg') }}" alt="Duo Etnicholic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Malang</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Duo Etnicholic</h3>
-            </div>
-          </div>
-
-          <!-- Card 7: Rentak Gading Etcnic Bengkulu -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/Rentak Gading Etcnic Bengkulu.jpg') }}" alt="Rentak Gading Etcnic Bengkulu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Bengkulu</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Rentak Gading Etcnic</h3>
-            </div>
-          </div>
-
-          <!-- Card 8: Semarak Candrakirana Art Center -->
-          <div class="group relative rounded-[20px] overflow-hidden bg-[#d9d9d9] h-[380px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)] cursor-pointer">
-            <img src="{{ asset('images/delegates/SCK1.png') }}" alt="Semarak Candrakirana Art Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5 z-10 pointer-events-none">
-              <span class="font-cabinet text-xs text-[#f19500] font-bold tracking-wider uppercase block mb-1">Solo</span>
-              <h3 class="font-cabinet font-bold text-lg text-white tracking-tight leading-snug">Semarak Candrakirana</h3>
-            </div>
-          </div>
-
+          @endforelse
         </div>
       </div>
     </section>

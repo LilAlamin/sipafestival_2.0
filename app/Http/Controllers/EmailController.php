@@ -31,13 +31,14 @@ class EmailController extends Controller
             ]);
             $complaint->save();
             DB::commit();
+
             Mail::to($complaint->email)->send(new EmailReply($complaint));
 
-            return redirect()->route('admin.ReplyEmail')->with('success', 'Order berhasil disimpan!');
+            return redirect()->route('admin.dashboard.showComplaint')->with('success', 'Balasan email berhasil dikirim ke '.$complaint->email.'!');
         } catch (\Exception $e) {
             DB::rollBack();
 
-            return back()->with('error', 'Gagal mengirim keluhan: '.$e->getMessage());
+            return back()->withInput()->with('error', 'Gagal mengirim email balasan: '.$e->getMessage());
         }
     }
 }
