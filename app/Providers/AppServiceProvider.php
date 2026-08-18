@@ -12,7 +12,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Bind public_path to public_html on cPanel if detected
+        $cpanelPublic = realpath(base_path('../../public_html'));
+        if ($cpanelPublic && is_dir($cpanelPublic)) {
+            $this->app->usePublicPath($cpanelPublic);
+        }
     }
 
     /**
