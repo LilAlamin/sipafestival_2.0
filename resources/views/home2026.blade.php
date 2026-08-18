@@ -355,85 +355,56 @@
         </span>
       </div>
 
-      <!-- 4 Tall Rounded Performer Cards (Pixel-Perfect Figma Match) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-center max-w-[1280px] mx-auto mb-10 sm:mb-12">
-        
-        <!-- Card 1: Khambatta Dance Company -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Khambatta Dance Company.jpg') }}" 
-               alt="Khambatta Dance Company" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            USA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Contemporary Dance</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Khambatta Dance Company</h3>
-          </div>
-        </div>
+      <!-- 4 Tall Rounded Performer Cards in Carousel Slider (Dynamic from Database) -->
+      @php
+        $homePerformers = \App\Models\Performer::orderByDesc('is_featured_home')->orderBy('order')->get();
+        if ($homePerformers->isEmpty()) {
+            $homePerformers = collect();
+        }
+        $performerChunks = $homePerformers->chunk(4);
+        $totalPerformerPages = max(1, $performerChunks->count());
+      @endphp
 
-        <!-- Card 2: Rentak Gading Etnic Bengkulu -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Rentak Gading Etcnic Bengkulu.jpg') }}" 
-               alt="Rentak Gading Etnic" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            INDONESIA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Ethnic Music & Percussion</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Rentak Gading Etnic</h3>
+      <div class="relative overflow-hidden max-w-[1280px] mx-auto mb-10 sm:mb-12">
+        <div id="performers-slider-track" class="flex transition-transform duration-500 ease-out will-change-transform">
+          @forelse($performerChunks as $chunkIndex => $chunk)
+          <div class="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-center">
+            @foreach($chunk as $p)
+            @php
+              $pImg = (!empty($p->image_path) && file_exists(public_path('images/' . $p->image_path))) 
+                      ? asset('images/' . $p->image_path) 
+                      : asset('images/delegates/Khambatta Dance Company.jpg');
+            @endphp
+            <!-- Performer Card: {{ $p->name }} -->
+            <a href="/lineup" class="block relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu bg-[#181920]">
+              <img src="{{ $pImg }}" 
+                   alt="{{ $p->name }}" 
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
+                   loading="eager" 
+                   decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
+              
+              <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
+                {{ $p->country_badge ?: strtoupper(substr($p->country, 0, 4)) }}
+              </span>
+              
+              <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
+                <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">
+                  {{ $p->category ?: 'Performing Arts' }}
+                </span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">
+                  {{ $p->name }}
+                </h3>
+              </div>
+            </a>
+            @endforeach
           </div>
-        </div>
-
-        <!-- Card 3: Colectivo Glovo -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/Colectivo Glovo.jpg') }}" 
-               alt="Colectivo Glovo" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            SPAIN
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Physical Theater</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">Colectivo Glovo</h3>
+          @empty
+          <div class="w-full py-12 text-center text-gray-400">
+            <p class="text-sm font-medium">Belum ada data penampil.</p>
           </div>
+          @endforelse
         </div>
-
-        <!-- Card 4: POD Dance Project -->
-        <div class="relative rounded-[22px] sm:rounded-[26px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] h-[460px] sm:h-[520px] lg:h-[560px] border border-white/15 group transition-all duration-500 hover:-translate-y-2 hover:border-white/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.95)] flex flex-col justify-between transform-gpu">
-          <img src="{{ asset('images/delegates/POD Dance.jpg') }}" 
-               alt="POD Dance Project" 
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
-               loading="eager" 
-               decoding="async">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-          
-          <span class="relative z-20 self-end m-4 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 font-cabinet">
-            SOUTH KOREA
-          </span>
-          
-          <div class="relative z-20 p-6 sm:p-7 space-y-1 mt-auto">
-            <span class="text-xs text-gray-300 font-cabinet uppercase tracking-widest block font-medium">Modern Performing Arts</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#e63946] transition-colors leading-snug font-sipa-bold">POD Dance Project</h3>
-          </div>
-        </div>
-
       </div>
 
       <!-- Bottom Carousel Controls & See All Link (Matching Figma Node 4145:4066) -->
@@ -444,17 +415,17 @@
 
         <!-- Center Controls: Prev/Next Buttons + Indicator Dots -->
         <div class="flex items-center gap-3.5 mx-auto sm:mx-0">
-          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+          <button id="performer-prev-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm active:scale-95" aria-label="Previous Performers">
             <i class="fa-solid fa-chevron-left text-xs"></i>
           </button>
           
           <div class="flex items-center gap-1.5 px-1">
-            <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+            @for($i = 0; $i < $totalPerformerPages; $i++)
+            <button type="button" data-performer-dot="{{ $i }}" class="{{ $i === 0 ? 'w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60' }} transition-all cursor-pointer" aria-label="Performer page {{ $i + 1 }}"></button>
+            @endfor
           </div>
 
-          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+          <button id="performer-next-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm active:scale-95" aria-label="Next Performers">
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </button>
         </div>
@@ -464,6 +435,8 @@
           <span>See All Performers</span>
           <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-0.5 transition-transform"></i>
         </a>
+
+      </div>
 
       </div>
 
@@ -1701,6 +1674,57 @@
       };
 
       initStoryCarousel();
+
+      // 7b. Meet Our Performers Carousel Logic (Smooth Sliding & Page Dots)
+      const initPerformerCarousel = () => {
+        let currentPage = 0;
+        const track = document.getElementById('performers-slider-track');
+        const prevBtn = document.getElementById('performer-prev-btn');
+        const nextBtn = document.getElementById('performer-next-btn');
+        const dots = document.querySelectorAll('[data-performer-dot]');
+        const totalPages = dots.length || 1;
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const updateSlider = (page) => {
+          currentPage = (page + totalPages) % totalPages;
+
+          if (typeof gsap !== 'undefined') {
+            gsap.to(track, {
+              xPercent: -currentPage * 100,
+              duration: 0.65,
+              ease: 'power2.out'
+            });
+
+            const activeSlide = track.children[currentPage];
+            if (activeSlide) {
+              const cards = activeSlide.querySelectorAll('a');
+              gsap.fromTo(cards,
+                { opacity: 0.5, y: 15, scale: 0.98 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.05, ease: 'power2.out' }
+              );
+            }
+          } else {
+            track.style.transform = `translateX(-${currentPage * 100}%)`;
+          }
+
+          dots.forEach((dot, idx) => {
+            if (idx === currentPage) {
+              dot.className = 'w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer';
+            } else {
+              dot.className = 'w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer';
+            }
+          });
+        };
+
+        prevBtn.addEventListener('click', () => updateSlider(currentPage - 1));
+        nextBtn.addEventListener('click', () => updateSlider(currentPage + 1));
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => updateSlider(idx));
+        });
+      };
+
+      initPerformerCarousel();
 
       // 8. Interactive FAQ Accordion Logic
       const initFaqAccordion = () => {
