@@ -714,17 +714,17 @@
         
         <!-- Left / Center Carousel Controls -->
         <div class="flex items-center gap-3">
-          <button id="story-prev-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+          <button id="story-prev-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm" aria-label="Previous Story">
             <i class="fa-solid fa-chevron-left text-xs"></i>
           </button>
           
           <div class="flex items-center gap-2 px-1">
-            <button type="button" data-story-dot="0" class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer"></button>
-            <button type="button" data-story-dot="1" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer"></button>
-            <button type="button" data-story-dot="2" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer"></button>
+            <button type="button" data-story-dot="0" class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer" aria-label="Story slide 1"></button>
+            <button type="button" data-story-dot="1" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer" aria-label="Story slide 2"></button>
+            <button type="button" data-story-dot="2" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer" aria-label="Story slide 3"></button>
           </div>
 
-          <button id="story-next-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+          <button id="story-next-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm" aria-label="Next Story">
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </button>
         </div>
@@ -845,69 +845,111 @@
         </span>
       </div>
 
-      <!-- Articles Asymmetric Grid Layout (1 Large Card Left + 2 Stacked Horizontal Cards Right) -->
+      <!-- Articles Asymmetric Grid Layout Slider Track -->
       @if(isset($news) && count($news) > 0)
         @php
-          $firstNews = $news->first();
-          $otherNews = $news->skip(1)->take(2);
+          $newsChunks = $news->chunk(3);
+          $totalNewsPages = max(1, $newsChunks->count());
         @endphp
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch mb-8 sm:mb-10">
-          
-          <!-- Left Column: Featured Big Article Card (Item 1) -->
-          <div class="{{ $otherNews->count() > 0 ? 'lg:col-span-6' : 'lg:col-span-12 max-w-2xl mx-auto w-full' }}">
-            @php
-              $firstImg = (!empty($firstNews->image_path) && file_exists(public_path('images/news/'.$firstNews->image_path))) 
-                          ? asset('images/news/'.$firstNews->image_path) 
-                          : asset('images/news/art1.png');
-            @endphp
-            <a href="{{ route('news.HomeView', $firstNews->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full h-[210px] sm:h-[240px] rounded-[16px] overflow-hidden mb-3.5 shrink-0 bg-gray-100">
-                <img src="{{ $firstImg }}" alt="{{ $firstNews->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              </div>
-              <div class="flex-1 flex flex-col justify-between px-1">
-                <div>
-                  <h3 class="text-[#171717] font-cabinet font-medium text-lg sm:text-[20px] leading-snug tracking-tight mb-1.5 group-hover:text-[#406422] transition-colors line-clamp-2">{{ $firstNews->title }}</h3>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">{{ \Carbon\Carbon::parse($firstNews->sent_at ?? $firstNews->created_at ?? now())->format('j F Y') }}</p>
-                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-3 mb-4">{!! strip_tags($firstNews->description) !!}</p>
-                </div>
-                <div class="text-right mt-auto">
-                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
-                    Baca Selengkapnya
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+        <div class="overflow-hidden w-full max-w-[1280px] mx-auto mb-8 sm:mb-10">
+          <div id="news-slider-track" class="flex transition-transform duration-500 ease-in-out w-full will-change-transform">
+            @foreach($newsChunks as $chunkIndex => $chunk)
+              @php
+                $firstNews = $chunk->first();
+                $otherNews = $chunk->skip(1);
+              @endphp
+              <div class="w-full shrink-0 px-1">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+                  
+                  <!-- Left Column: Featured Big Article Card (Item 1) -->
+                  <div class="{{ $otherNews->count() > 0 ? 'lg:col-span-6' : 'lg:col-span-12 max-w-2xl mx-auto w-full' }}">
+                    @php
+                      $firstImg = (!empty($firstNews->image_path) && file_exists(public_path('images/news/'.$firstNews->image_path))) 
+                                  ? asset('images/news/'.$firstNews->image_path) 
+                                  : asset('images/news/art1.png');
+                    @endphp
+                    <a href="{{ route('news.HomeView', $firstNews->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col justify-between h-full shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                      <div class="w-full h-[210px] sm:h-[240px] rounded-[16px] overflow-hidden mb-3.5 shrink-0 bg-gray-100">
+                        <img src="{{ $firstImg }}" alt="{{ $firstNews->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" decoding="async">
+                      </div>
+                      <div class="flex-1 flex flex-col justify-between px-1">
+                        <div>
+                          <h3 class="text-[#171717] font-cabinet font-medium text-lg sm:text-[20px] leading-snug tracking-tight mb-1.5 group-hover:text-[#406422] transition-colors line-clamp-2">{{ $firstNews->title }}</h3>
+                          <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-2 block">{{ \Carbon\Carbon::parse($firstNews->sent_at ?? $firstNews->created_at ?? now())->format('j F Y') }}</p>
+                          <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-3 mb-4">{!! strip_tags($firstNews->description) !!}</p>
+                        </div>
+                        <div class="text-right mt-auto">
+                          <span class="text-[#406422] font-cabinet font-semibold group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-flex items-center gap-1 transition-colors">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
 
-          <!-- Right Column: 2 Stacked Horizontal Cards (Items 2 & 3) -->
-          @if($otherNews->count() > 0)
-          <div class="lg:col-span-6 flex flex-col gap-5 justify-between">
-            @foreach($otherNews as $item)
-            @php
-              $itemImg = (!empty($item->image_path) && file_exists(public_path('images/news/'.$item->image_path))) 
-                         ? asset('images/news/'.$item->image_path) 
-                         : asset('images/news/art2.png');
-            @endphp
-            <a href="{{ route('news.HomeView', $item->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0 bg-gray-100">
-                <img src="{{ $itemImg }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              </div>
-              <div class="flex-1 flex flex-col justify-between py-1 px-1">
-                <div>
-                  <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">{{ $item->title }}</h4>
-                  <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">{{ \Carbon\Carbon::parse($item->sent_at ?? $item->created_at ?? now())->format('j F Y') }}</p>
-                  <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">{!! strip_tags($item->description) !!}</p>
+                  <!-- Right Column: 2 Stacked Horizontal Cards (Items 2 & 3) -->
+                  @if($otherNews->count() > 0)
+                  <div class="lg:col-span-6 flex flex-col gap-5 justify-between">
+                    @foreach($otherNews as $item)
+                    @php
+                      $itemImg = (!empty($item->image_path) && file_exists(public_path('images/news/'.$item->image_path))) 
+                                 ? asset('images/news/'.$item->image_path) 
+                                 : asset('images/news/art2.png');
+                    @endphp
+                    <a href="{{ route('news.HomeView', $item->slug) }}" class="group bg-[#fafafa] rounded-[20px] p-3.5 sm:p-4 border border-[#d4d4d4] flex flex-col sm:flex-row items-stretch gap-4 shadow-xl flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                      <div class="w-full sm:w-[160px] lg:w-[175px] h-[150px] sm:h-auto rounded-[16px] overflow-hidden shrink-0 bg-gray-100">
+                        <img src="{{ $itemImg }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" decoding="async">
+                      </div>
+                      <div class="flex-1 flex flex-col justify-between py-1 px-1">
+                        <div>
+                          <h4 class="text-[#171717] font-cabinet font-medium text-base sm:text-[18px] lg:text-[20px] leading-snug tracking-tight mb-1 line-clamp-2 group-hover:text-[#406422] transition-colors">{{ $item->title }}</h4>
+                          <p class="text-[#525252] font-cabinet text-xs sm:text-[14px] font-normal mb-1.5 block">{{ \Carbon\Carbon::parse($item->sent_at ?? $item->created_at ?? now())->format('j F Y') }}</p>
+                          <p class="text-[#171717]/90 font-cabinet text-xs sm:text-[14px] font-normal leading-relaxed line-clamp-2 mb-3">{!! strip_tags($item->description) !!}</p>
+                        </div>
+                        <div class="text-right mt-auto">
+                          <span class="text-[#406422] font-cabinet font-semibold group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-flex items-center gap-1 transition-colors">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                    @endforeach
+                  </div>
+                  @endif
+
                 </div>
-                <div class="text-right mt-auto">
-                  <span class="text-[#406422] font-cabinet font-medium group-hover:text-[#2d4718] text-xs sm:text-[14px] underline inline-block transition-colors">
-                    Baca Selengkapnya
-                  </span>
-                </div>
               </div>
-            </a>
             @endforeach
           </div>
-          @endif
+        </div>
+
+        <!-- Bottom Row with Pagination Controls & Discover More Link (Matching Figma Node 4152:13929) -->
+        <div class="flex items-center justify-between pt-2">
+          
+          <!-- Left / Center Carousel Controls -->
+          <div class="flex items-center gap-3">
+            <button id="news-prev-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm" aria-label="Previous News">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            
+            <div class="flex items-center gap-2 px-1">
+              @for($i = 0; $i < $totalNewsPages; $i++)
+                <button type="button" data-news-dot="{{ $i }}" class="{{ $i === 0 ? 'w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60' }} transition-all cursor-pointer" aria-label="News page {{ $i + 1 }}"></button>
+              @endfor
+            </div>
+
+            <button id="news-next-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm" aria-label="Next News">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+
+          <!-- Right Side: Discover More Link -->
+          <a href="{{ route('news.showAllNews') }}" class="inline-flex items-center gap-1.5 text-base sm:text-[19px] font-cabinet font-medium text-white underline hover:text-gray-200 transition-all group">
+            <span>Discover More</span>
+            <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+          </a>
 
         </div>
       @else
@@ -917,34 +959,6 @@
           <p class="text-base font-medium">Belum ada berita yang dipublikasikan saat ini.</p>
         </div>
       @endif
-
-      <!-- Bottom Row with Pagination Controls & Discover More Link (Matching Figma Node 4152:13929) -->
-      <div class="flex items-center justify-between pt-2">
-        
-        <!-- Left / Center Carousel Controls -->
-        <div class="flex items-center gap-3">
-          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
-            <i class="fa-solid fa-chevron-left text-xs"></i>
-          </button>
-          
-          <div class="flex items-center gap-1.5 px-1">
-            <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
-          </div>
-
-          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
-            <i class="fa-solid fa-chevron-right text-xs"></i>
-          </button>
-        </div>
-
-        <!-- Right Side: Discover More Link -->
-        <a href="{{ route('news.showAllNews') }}" class="inline-flex items-center gap-1.5 text-base sm:text-[19px] font-cabinet font-medium text-white underline hover:text-gray-200 transition-all group">
-          <span>Discover More</span>
-          <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
-        </a>
-
-      </div>
 
     </div>
   </section>
@@ -1170,94 +1184,243 @@
         </p>
       </div>
 
-      <!-- 3 Testimonial Cards Grid (Matching Figma Node 4147:7751 Specs) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 max-w-[1060px] mx-auto mb-8 sm:mb-10 items-stretch">
-        
-        <!-- Testimonial Card 1 -->
-        <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
-          <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
-            <div class="space-y-3 mb-6">
-              <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
-              <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
-                This is a form of event that I find very enjoyable. There is a cultural exchange within it. For that, we will continue to support the implementation of SIPA in the years to come.
-              </p>
+      <!-- Testimonials Carousel Viewport Slider Wrapper -->
+      <div class="overflow-hidden w-full max-w-[1060px] mx-auto mb-8 sm:mb-10">
+        <div id="testimonials-slider-track" class="flex transition-transform duration-500 ease-in-out w-full will-change-transform">
+          
+          <!-- SLIDE 1 (Dot 1): Angela, Puan, Mangkoenagoro X -->
+          <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch px-1">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    This is a form of event that I find very enjoyable. There is a cultural exchange within it. For that, we will continue to support the implementation of SIPA in the years to come.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Angela Tanoesoedibjo (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Wamenparekraf</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="space-y-1 pt-2">
-              <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Angela Tanoesoedibjo (Indonesia)</h4>
-              <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Wamenparekraf</p>
-              <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+
+            <!-- Testimonial Card 2 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    SIPA 2023 has successfully taken place over three nights, branding Solo City as a vibrant international cultural hub of performing arts festivals.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Puan Maharani (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Ketua DPR RI</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    SIPA is an art performance event that has been running for years. And SIPA is one of the pride events in the city we love.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">K.G.P.A.A. Mangkoenagoro X (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Pura Mangkunegaran</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Testimonial Card 2 -->
-        <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
-          <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
-            <div class="space-y-3 mb-6">
-              <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
-              <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
-                SIPA 2023 has successfully taken place over three nights, branding Solo City as a vibrant international cultural hub of performing arts festivals.
-              </p>
+          <!-- SLIDE 2 (Dot 2): Sandiaga Uno, Kim Kwan-soo, Gibran Rakabuming -->
+          <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch px-1">
+            <!-- Testimonial Card 4 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    SIPA Festival consistently presents the world's best cultural expressions and boosts regional creative economy while elevating Solo onto the global stage.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Sandiaga S. Uno (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Menparekraf RI</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="space-y-1 pt-2">
-              <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Puan Maharani (Indonesia)</h4>
-              <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Ketua DPR RI</p>
-              <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+
+            <!-- Testimonial Card 5 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    Even through challenging times, SIPA has consistently remained active and served as a world-class benchmark for international performing arts.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Kim Kwan-soo (South Korea)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">SIPA Director Korea</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 6 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    SIPA has become the cultural heart and soul of Solo City, creating unforgettable bridges between local heritage and global contemporary arts.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Gibran Rakabuming (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Wapres RI / Tokoh Surakarta</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Testimonial Card 3 -->
-        <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
-          <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
-            <div class="space-y-3 mb-6">
-              <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
-              <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
-                SIPA is an art performance event that has been running for years. And SIPA is one of the pride events in the city we love.
-              </p>
+          <!-- SLIDE 3 (Dot 3): Eko Supriyanto, Dr. Irawati, Dr. Osuji Chinyere -->
+          <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch px-1">
+            <!-- Testimonial Card 7 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    SIPA offers an exceptional platform for creators from across continents to exchange artistic energies and collaborate without boundaries.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Eko Supriyanto (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Choreographer & Maestro</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="space-y-1 pt-2">
-              <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">K.G.P.A.A. Mangkoenagoro X (Indonesia)</h4>
-              <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Pura Mangkunegaran</p>
-              <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+
+            <!-- Testimonial Card 8 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    Through Kinetic Kinship, we continue our lifelong mission of celebrating unity through art, embracing diversity and nurturing the next generation of performers.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Dr. R.Ay. Irawati (Indonesia)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">Festival Director SIPA</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 9 -->
+            <div class="bg-[#fafafa] border border-[#d4d4d4] rounded-[20px] p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col">
+              <div class="bg-[#fafafa] border-2 border-dashed border-[#f19500] rounded-[16px] p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="space-y-3 mb-6">
+                  <img src="{{ asset('images/pattern/testimonial_quote.svg') }}" class="w-4 h-4" alt="quote">
+                  <p class="font-cabinet font-medium text-[#171717] text-base sm:text-[18px] leading-snug">
+                    Performing at SIPA was a truly magical experience. The passion of the audience and the hospitality of Solo City will forever stay in our hearts.
+                  </p>
+                </div>
+                <div class="space-y-1 pt-2">
+                  <h4 class="font-cabinet font-bold text-[#171717] text-sm sm:text-[16px] leading-tight">Dr. Osuji Chinyere (Nigeria)</h4>
+                  <p class="font-cabinet font-normal text-[#737373] text-xs sm:text-[13px]">International Performing Artist</p>
+                  <div class="flex items-center gap-1 pt-1 text-[#f19500] text-xs">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
 
       <!-- Bottom Row with Pagination Controls (Matching Figma Node 4146:7558) -->
       <div class="max-w-[1060px] mx-auto flex items-center justify-center pt-2">
         <div class="flex items-center gap-3">
-          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+          <button id="testimonials-prev-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm" aria-label="Previous Testimonials">
             <i class="fa-solid fa-chevron-left text-xs"></i>
           </button>
           
-          <div class="flex items-center gap-1.5 px-1">
-            <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-white/35"></span>
+          <div class="flex items-center gap-2 px-1">
+            <button type="button" data-testimonials-dot="0" class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer" aria-label="Testimonials slide 1"></button>
+            <button type="button" data-testimonials-dot="1" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer" aria-label="Testimonials slide 2"></button>
+            <button type="button" data-testimonials-dot="2" class="w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer" aria-label="Testimonials slide 3"></button>
           </div>
 
-          <button type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all cursor-pointer shadow-sm">
+          <button id="testimonials-next-btn" type="button" class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all cursor-pointer shadow-sm" aria-label="Next Testimonials">
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </button>
         </div>
@@ -1861,6 +2024,108 @@
       };
 
       initPerformerCarousel();
+
+      // 7c. News Carousel Logic (Smooth Sliding & Page Dots)
+      const initNewsCarousel = () => {
+        let currentPage = 0;
+        const track = document.getElementById('news-slider-track');
+        const prevBtn = document.getElementById('news-prev-btn');
+        const nextBtn = document.getElementById('news-next-btn');
+        const dots = document.querySelectorAll('[data-news-dot]');
+        const totalPages = dots.length || 1;
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const updateSlider = (page) => {
+          currentPage = (page + totalPages) % totalPages;
+
+          if (typeof gsap !== 'undefined') {
+            gsap.to(track, {
+              xPercent: -currentPage * 100,
+              duration: 0.65,
+              ease: 'power3.out'
+            });
+
+            const activeSlide = track.children[currentPage];
+            if (activeSlide) {
+              const cards = activeSlide.querySelectorAll('a');
+              gsap.fromTo(cards,
+                { opacity: 0.45, y: 18, scale: 0.98 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out' }
+              );
+            }
+          } else {
+            track.style.transform = `translateX(-${currentPage * 100}%)`;
+          }
+
+          dots.forEach((dot, idx) => {
+            if (idx === currentPage) {
+              dot.className = 'w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer';
+            } else {
+              dot.className = 'w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer';
+            }
+          });
+        };
+
+        prevBtn.addEventListener('click', () => updateSlider(currentPage - 1));
+        nextBtn.addEventListener('click', () => updateSlider(currentPage + 1));
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => updateSlider(idx));
+        });
+      };
+
+      initNewsCarousel();
+
+      // 7d. Testimonials Carousel Logic (GSAP Cinematic Slide & Dots)
+      const initTestimonialsCarousel = () => {
+        let currentPage = 0;
+        const totalPages = 3;
+        const track = document.getElementById('testimonials-slider-track');
+        const prevBtn = document.getElementById('testimonials-prev-btn');
+        const nextBtn = document.getElementById('testimonials-next-btn');
+        const dots = document.querySelectorAll('[data-testimonials-dot]');
+
+        if (!track || !prevBtn || !nextBtn || dots.length === 0) return;
+
+        const updateSlider = (page) => {
+          currentPage = (page + totalPages) % totalPages;
+
+          if (typeof gsap !== 'undefined') {
+            gsap.to(track, {
+              xPercent: -currentPage * 100,
+              duration: 0.75,
+              ease: 'power3.out'
+            });
+
+            const activeSlide = track.children[currentPage];
+            if (activeSlide) {
+              const cards = activeSlide.querySelectorAll('.bg-\\[\\#fafafa\\]');
+              gsap.fromTo(cards,
+                { opacity: 0.35, y: 20, scale: 0.96 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.08, ease: 'power2.out' }
+              );
+            }
+          } else {
+            track.style.transform = `translateX(-${currentPage * 100}%)`;
+          }
+
+          dots.forEach((dot, idx) => {
+            if (idx === currentPage) {
+              dot.className = 'w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-pointer';
+            } else {
+              dot.className = 'w-1.5 h-1.5 rounded-full bg-white/35 hover:bg-white/60 transition-all cursor-pointer';
+            }
+          });
+        };
+
+        prevBtn.addEventListener('click', () => updateSlider(currentPage - 1));
+        nextBtn.addEventListener('click', () => updateSlider(currentPage + 1));
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => updateSlider(idx));
+        });
+      };
+
+      initTestimonialsCarousel();
 
       // 8. Interactive FAQ Accordion Logic
       const initFaqAccordion = () => {

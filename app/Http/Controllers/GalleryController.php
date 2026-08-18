@@ -18,7 +18,11 @@ class GalleryController extends Controller
             ->orderBy('year', 'desc')
             ->get();
 
-        return view('gallery', compact('galleries'));
+        $news = \App\Models\News::where('status', 'published')
+            ->orderBy('sent_at', 'desc')
+            ->get();
+
+        return view('gallery', compact('galleries', 'news'));
     }
 
     /**
