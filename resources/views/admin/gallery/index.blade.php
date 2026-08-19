@@ -284,7 +284,7 @@
                                 <form action="{{ route('admin.gallery.destroy', $item->id) }}" 
                                       method="POST" 
                                       class="inline m-0 p-0"
-                                      onsubmit="return confirm('Apakah Anda yakin ingin menghapus data galeri tahun {{ $item->year }} beserta seluruh fotonya?')">
+                                      onsubmit="return confirmDelete(event, 'Hapus Galeri {{ $item->year }}?', 'Apakah Anda yakin ingin menghapus data galeri tahun {{ $item->year }} beserta seluruh foto dokumentasinya?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" 

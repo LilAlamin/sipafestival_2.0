@@ -258,10 +258,18 @@
 
 <script>
     function deleteSpecificPhoto(photoPath) {
-        if (confirm('Yakin ingin menghapus foto dokumentasi ini?')) {
-            document.getElementById('photoToDeleteInput').value = photoPath;
-            document.getElementById('deletePhotoForm').submit();
-        }
+        ConfirmDialog.show({
+            title: 'Hapus Foto Dokumentasi?',
+            message: 'Foto ini akan dihapus permanen dari galeri edisi ini.',
+            confirmButtonText: 'Ya, Hapus Foto',
+            cancelButtonText: 'Batal',
+            type: 'danger',
+            icon: 'bi-image-fill',
+            onConfirm: () => {
+                document.getElementById('photoToDeleteInput').value = photoPath;
+                document.getElementById('deletePhotoForm').submit();
+            }
+        });
     }
 
     document.addEventListener('DOMContentLoaded', function() {

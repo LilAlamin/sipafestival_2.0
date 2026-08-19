@@ -144,12 +144,12 @@
                             </a>
                             <form action="{{ route('admin.performers.destroy', $item->id) }}" 
                                   method="POST" 
-                                  onsubmit="return confirm('Apakah Anda yakin ingin menghapus performer \'{{ $item->name }}\'?')" 
+                                  onsubmit="return confirmDelete(event, 'Hapus Performer?', 'Apakah Anda yakin ingin menghapus performer \'{{ addslashes($item->name) }}\'?')" 
                                   class="inline-block m-0">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" 
-                                        class="w-8 h-8 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 flex items-center justify-center transition-all" 
+                                        class="w-8 h-8 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 flex items-center justify-center transition-all cursor-pointer" 
                                         title="Hapus Performer">
                                     <i class="bi bi-trash text-xs"></i>
                                 </button>

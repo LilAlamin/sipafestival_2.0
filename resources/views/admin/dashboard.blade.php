@@ -77,7 +77,7 @@
                                 <a href="{{ route('news.editBySlug', $draft->slug) }}" class="p-1 text-[#6c757d] hover:text-[#212529] transition-colors" title="Edit Draft">
                                     <i class="bi bi-pencil-square text-sm"></i>
                                 </a>
-                                <form action="{{ route('news.destroy', $draft->id) }}" method="POST" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus draft berita ini?')">
+                                <form action="{{ route('news.destroy', $draft->id) }}" method="POST" class="inline" onsubmit="return confirmDelete(event, 'Hapus Draft Berita?', 'Apakah Anda yakin ingin menghapus draft berita ini?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="p-1 text-[#6c757d] hover:text-rose-600 transition-colors cursor-pointer" title="Hapus Draft">

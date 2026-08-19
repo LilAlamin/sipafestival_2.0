@@ -161,7 +161,7 @@
                             <!-- Delete -->
                             <form action="{{ route('news.destroy', $item->id) }}" 
                                   method="POST" 
-                                  onsubmit="return confirm('Apakah Anda yakin ingin menghapus berita \'{{ addslashes($item->title) }}\'?')" 
+                                  onsubmit="return confirmDelete(event, 'Hapus Berita?', 'Apakah Anda yakin ingin menghapus berita \'{{ addslashes($item->title) }}\'?')" 
                                   class="inline-block m-0">
                                 @csrf
                                 @method('DELETE')

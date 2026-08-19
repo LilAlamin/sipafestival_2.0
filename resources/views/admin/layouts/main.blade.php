@@ -50,23 +50,13 @@
 
             <!-- Main Content Area -->
             <main class="flex-1 overflow-y-auto p-8">
-                @if(session('success'))
-                    <div class="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-sm flex items-center gap-3">
-                        <i class="bi bi-check-circle-fill text-lg"></i>
-                        <span>{{ session('success') }}</span>
-                    </div>
-                @endif
-                @if(session('error'))
-                    <div class="mb-6 p-4 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-sm flex items-center gap-3">
-                        <i class="bi bi-exclamation-triangle-fill text-lg"></i>
-                        <span>{{ session('error') }}</span>
-                    </div>
-                @endif
-
                 @yield('content')
             </main>
         </div>
     </div>
+
+    <!-- Modern Toast & Confirmation Modal System -->
+    @include('admin.component.alerts')
 </body>
 
 </html>
