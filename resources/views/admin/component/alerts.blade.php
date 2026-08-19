@@ -10,12 +10,12 @@
 
 <!-- Custom Confirmation Modal Backdrop & Dialog -->
 <div id="sipa-confirm-modal" 
-     class="fixed inset-0 z-[100000] hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none"
+     class="fixed inset-0 z-[100000] hidden flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none"
      aria-hidden="true">
     
     <!-- Modal Card -->
     <div id="sipa-confirm-card" 
-         class="bg-white rounded-3xl p-6 sm:p-7 max-w-md w-full shadow-2xl border border-gray-150 transform transition-all duration-300 scale-95 opacity-0 text-center relative overflow-hidden">
+         class="bg-white rounded-3xl p-6 sm:p-7 max-w-md w-full m-auto shadow-2xl border border-gray-150 transform transition-all duration-300 scale-95 opacity-0 text-center relative overflow-hidden">
         
         <!-- Header Glow Accent -->
         <div id="sipa-confirm-glow" class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 bg-rose-500/10 rounded-full blur-xl pointer-events-none"></div>
@@ -358,6 +358,7 @@
 
             // Show Modal
             modal.classList.remove('hidden');
+            modal.classList.add('flex');
             modal.classList.remove('pointer-events-none');
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
@@ -378,6 +379,7 @@
             card.classList.add('scale-95', 'opacity-0');
 
             setTimeout(() => {
+                modal.classList.remove('flex');
                 modal.classList.add('hidden');
                 modal.classList.add('pointer-events-none');
                 currentConfirmCallback = null;
